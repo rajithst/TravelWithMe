@@ -1,14 +1,32 @@
 /**
  * Created by rajith on 2/25/17.
  */
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+
+const User = require('../models/users');
+
 
 //register
 
-router.get('/register',function (req,res,next) {
+router.post('/register',function (req,res,next) {
 
-    res.send('Register');
+    var newUser = new User({
+        name : req.body.name,
+        email : req.body.email,
+        username : req.body.username,
+        password : req.body.password
+
+    });
+    User.addUser(newUser,function (err,user) {
+        if (err){
+            res.json({success:false,msg:"Failed to register User"});
+        }else{
+            res.json({success:true,msg:"Successfully registered User"});
+        }
+    })
 
 });
 
