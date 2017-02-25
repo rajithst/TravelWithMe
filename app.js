@@ -9,25 +9,32 @@ var cors = require('cors');
 var passport = require('passport');
 var mongoose = require('mongoose');
 
+
 const app = express();
 const port = process.env.PORT || 3000;
 const users = require('./routes/users');
 const config = require('./config/database');
 
 mongoose.connect(config.database);
-mongoose.connection.on("connected",()=>{
+mongoose.connection.on("connected",function(){
     console.log("connected to  " + config.database);
-})
+});
 
-mongoose.connection.on("error",(err)=>{
+mongoose.connection.on("error",function(err){
     console.log("error to connect  " + err);
-})
+});
 
 app.use(cors());
 app.use(express.static(path.join(__dirname,"public")));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+//passport middleware
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
 //routes
 app.use('/users',users);
 

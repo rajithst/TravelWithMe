@@ -7,6 +7,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/users');
+const config = require('../config/database');
 
 
 //register
@@ -33,14 +34,47 @@ router.post('/register',function (req,res,next) {
 //authenticate
 router.post('/authenticate',function (req,res,next) {
 
-    res.send('auth');
+    const  email = req.body.email;
+    const  password = req.body.password;
+
+    User.getUserByemail(email,function (err,user) {
+        if(err) throw err;
+
+        if(!user){
+            res.json({success:false,msg:"No User Found"});
+        }
+
+        User.comparePassword(password,user.password,function (err,isMatch) {
+
+            if (err) throw err;
+            if(isMatch){
+                const token = jwt.sign(user,config.secret,{
+                    expiresIn:604800
+                });
+                res.json({
+                    success:true,
+                    token:"JWT "+ token,
+                    user:{
+                        id:user._id,
+                        name:user.name,
+                        email:user.email,
+                        username:user.username
+                    }});
+
+            }else{
+                res.json({success:false,msg:"Password Does not match"});
+
+            }
+        })
+
+    })
 
 });
 
 //profile
-router.get('/profile',function (req,res,next) {
+router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res,next) {
 
-    res.send('profile');
+    res.json({user:req.user});
 
 });
 
