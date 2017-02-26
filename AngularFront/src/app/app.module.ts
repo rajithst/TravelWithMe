@@ -14,6 +14,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 
 const appRoute:Routes = [
 
@@ -42,7 +43,7 @@ const appRoute:Routes = [
     RouterModule.forRoot(appRoute),
     FlashMessagesModule
   ],
-  providers: [ValidateService],
+  providers: [ValidateService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
