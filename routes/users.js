@@ -37,6 +37,7 @@ router.post('/authenticate',function (req,res,next) {
     const  email = req.body.email;
     const  password = req.body.password;
 
+
     User.getUserByemail(email,function (err,user) {
         if(err) throw err;
 
