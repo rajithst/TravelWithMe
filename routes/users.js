@@ -12,8 +12,7 @@ const config = require('../config/database');
 
 //register
 
-router.post('/register',function (req,res,next) {   users/register
-
+router.post('/register',function (req,res,next) {
     var newUser = new User({
         name : req.body.name,
         email : req.body.email,
