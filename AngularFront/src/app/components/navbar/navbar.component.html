@@ -13,15 +13,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav navbar-left">
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['']">home</a></li>
-        
+
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/dashboard']">dashboard</a></li>
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/profile']">profile</a></li>
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/login']">login</a></li>
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}"><a [routerLink]="['/register']">register</a></li>
-        <li><a href="#" (click)="logoutClick()">logout</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true} " *ngIf="authService.loggedIn()"><a [routerLink]="['/dashboard']">dashboard</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="authService.loggedIn()"><a [routerLink]="['/profile']" >profile</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="!authService.loggedIn()"><a [routerLink]="['/login']">login</a></li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="!authService.loggedIn()"><a [routerLink]="['/register']">register</a></li>
+        <li *ngIf="authService.loggedIn()"><a href="#" (click)="logoutClick()">logout</a></li>
       </ul>
     </div>
   </div>
