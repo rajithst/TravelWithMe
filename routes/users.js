@@ -12,7 +12,7 @@ const config = require('../config/database');
 
 //register
 
-router.post('/register',function (req,res,next) {
+router.post('/register',function (req,res,next) {   users/register
 
     var newUser = new User({
         name : req.body.name,
@@ -21,6 +21,7 @@ router.post('/register',function (req,res,next) {
         password : req.body.password
 
     });
+    
     User.addUser(newUser,function (err,user) {
         if (err){
             res.json({success:false,msg:"Failed to register User"});
