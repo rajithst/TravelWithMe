@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import { AngularFire } from 'angularfire2';
 import { Router } from '@angular/router';
 
 
@@ -17,6 +18,7 @@ export class NavbarComponent implements OnInit {
     private flashMessage:FlashMessagesService,
     private route:Router,
     private authService:AuthService,
+    public af: AngularFire
   ) { }
 
   ngOnInit() {
