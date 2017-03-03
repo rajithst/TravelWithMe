@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
 import {FlashMessagesModule } from 'angular2-flash-messages';
 import { AngularFireModule,AuthProviders, AuthMethods } from 'angularfire2';
+import { AgmCoreModule } from 'angular2-google-maps/core';
+
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -17,6 +19,8 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
 import { FirebaseService } from './services/firebase.service';
+import { CreateBusinesspageComponent } from './components/create-businesspage/create-businesspage.component';
+import { BusinesspageService } from './services/businesspage.service';
 
 const appRoute:Routes = [
 
@@ -24,7 +28,8 @@ const appRoute:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
-  {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]}
+  {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]},
+  {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]}
 
 
 ]
@@ -51,6 +56,8 @@ const firebaseAuthConfig = {
     ProfileComponent,
     DashboardComponent,
     HomeComponent,
+    CreateBusinesspageComponent,
+
 
   ],
   imports: [
@@ -59,9 +66,12 @@ const firebaseAuthConfig = {
     HttpModule,
     RouterModule.forRoot(appRoute),
     FlashMessagesModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig)
+    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAGVsf4PFWkyjY-5Y-pbKpm3QJ6Zmhl2Xo'
+    })
   ],
-  providers: [ValidateService,AuthService,AuthGuard,FirebaseService],
+  providers: [ValidateService,AuthService,AuthGuard,FirebaseService,BusinesspageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

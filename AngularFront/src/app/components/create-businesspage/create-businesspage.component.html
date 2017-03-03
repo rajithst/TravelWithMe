@@ -1,0 +1,90 @@
+<div class="container">
+	<div class="row">
+		<form class="form-horizontal" (submit)="pageCreate()">
+            <fieldset>
+                <!-- Form Name -->
+                <legend>Form Name</legend>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">page Name</label>
+                    <div class="col-md-6">
+                        <input id="textinput"  [(ngModel)]="pagename" name="pagename" type="text" placeholder="placeholder" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="notifymode">buisness type</label>
+                    <div class="col-md-6">
+                        <select id="notifymode" class="form-control" [(ngModel)]="businesstype" name="businesstype">
+
+                            <option value="1">Local business</option>
+                            <option value="2">Company,Organization</option>
+                            <option value="3">Brand or Products</option>
+                        </select>
+                    </div>
+                </div>
+
+              <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">page image</label>
+                    <div class="col-md-6">
+                        <input type="file" class="form-control" id="images" name="images[]" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="textinput">Target Areas</label>
+                    <div class="col-md-6">
+                        <div class="pac-card" id="pac-card">
+      <div>
+        <div id="title">
+          Autocomplete search
+        </div>
+
+        <sebm-google-map [latitude]="lat" [longitude]="lng">
+          <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude"></sebm-google-map-marker>
+        </sebm-google-map>
+
+        <div id="type-selector" class="pac-controls">
+          <input type="radio" name="type" id="changetype-all" checked="checked">
+          <label for="changetype-all">All</label>
+
+          <input type="radio" name="type" id="changetype-establishment">
+          <label for="changetype-establishment">Establishments</label>
+
+          <input type="radio" name="type" id="changetype-address">
+          <label for="changetype-address">Addresses</label>
+
+          <input type="radio" name="type" id="changetype-geocode">
+          <label for="changetype-geocode">Geocodes</label>
+        </div>
+        <div id="strict-bounds-selector" class="pac-controls">
+          <input type="checkbox" id="use-strict-bounds" value="">
+          <label for="use-strict-bounds">Strict Bounds</label>
+        </div>
+      </div>
+      <div id="pac-container">
+        <input id="pac-input" type="text"
+            placeholder="Enter a location">
+      </div>
+    </div>
+    <div id="map"></div>
+    <div id="infowindow-content">
+      <img src="" width="16" height="16" id="place-icon">
+      <span id="place-name"  class="title"></span><br>
+      <span id="place-address"></span>
+    </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="submitButton"></label>
+                    <div class="col-md-8">
+                        <button id="submitButton" name="submitButton" class="btn btn-success" type="submit">Save</button>
+                        <button id="cancel" name="cancel" class="btn btn-inverse" type="reset">Cancel</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+	</div>
+</div>
+

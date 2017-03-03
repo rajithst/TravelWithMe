@@ -75,6 +75,7 @@ router.post('/authenticate',function (req,res,next) {
 //profile
 router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res,next) {
 
+    console.log(req.user);
     res.json({user:req.user});
 
 });
