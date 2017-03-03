@@ -10,6 +10,7 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/users');
+const Bpage = require('../models/businesspages');
 const config = require('../config/database');
 
 
@@ -17,18 +18,32 @@ const config = require('../config/database');
 
 router.post('/createpage',function (req,res,next) {
 
+    var BusinessPage = new Bpage({
+
+        pagename:req.body.pagename,
+        businesstype:req.body.businesstype,
+        pageimage:req.body.pageimage,
+        targetareas:req.body.targetareas
+
+    });
 
 
+    Bpage.addBpagedata(BusinessPage,function (err,docs) {
+        if (err){
+            res.json({success:false,msg:"Failed to create page"});
+        }else{
+            console.log(docs);
+            res.json({success:true,msg:"Successfully created page"});
+        }
+    })
 
-   res.json({user:req.body});
 });
 
-//authenticate
 
 //profile
 router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res,next) {
 
-    console.log(req.user);
+    //console.log(req.user);
     res.json({user:req.user});
 
 });

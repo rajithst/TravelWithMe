@@ -11,16 +11,18 @@ const schema = mongoose.Schema;
 
 var businesspageSchema = new schema({
 
-
-    name:{type:String},
-    email:{type:String},
-    username:{type:String},
-    password:{type:String}
-
+    useerid:{type:Number},
+    pagename:{type:String},
+    businesstype:{type:String},
+    pageimage:{type:String},
+    targetareas:{type:String}
 });
 
-const User =  module.exports = mongoose.model('Bpage',businesspageSchema);
 
+
+const Bpage =  module.exports = mongoose.model('Bpage',businesspageSchema);
+
+/*
 module.exports.getUserById = function (id,callback) {
 
     User.findById(id,callback);
@@ -30,19 +32,14 @@ module.exports.getUserByemail = function (email,callback) {
     const query = {email:email}
     User.findOne(query,callback);
 }
+*/
+module.exports.addBpagedata = function (BusinessPage,callback) {
 
-module.exports.addUser = function (newUser,callback) {
-    bcrypt.genSalt(10,function (err,salt) {
-        bcrypt.hash(newUser.password,salt, function (err,hash) {
-            if(err) throw err;
-
-            newUser.password = hash;
-            newUser.save(callback);
-        });
-    });
-
+    BusinessPage.save(callback);
 }
 
+
+/*
 module.exports.comparePassword = function (passwrod,hash,callback) {
     bcrypt.compare(passwrod, hash, function(err, isMatch) {
         if(err) throw err;
@@ -53,4 +50,4 @@ module.exports.comparePassword = function (passwrod,hash,callback) {
             callback(null,false);
         }
     });
-}
+}*/

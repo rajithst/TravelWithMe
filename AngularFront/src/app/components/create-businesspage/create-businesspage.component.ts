@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BusinesspageService } from '../../services/businesspage.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -11,28 +12,56 @@ import { Router } from '@angular/router';
 })
 export class CreateBusinesspageComponent implements OnInit {
 
+  user:any;
   pagename:String;
   businesstype:Number;
+  pageimage:String;
+  targetareas:String;
 
   constructor(
     private bservices:BusinesspageService,
     private flashMessage:FlashMessagesService,
     private route:Router,
+    private authService:AuthService
 
   ) { }
 
   ngOnInit() {
 
+    this.authService.getProfile().subscribe(profile=>{
+        this.user = profile.user;
+        console.log(this.user);
+      },
 
+      err=>{
+        console.log(err);
+        return false;
+
+      })
   }
+
+
   pageCreate(){
 
    const user = {
+
+      id:this.user._id,
       pagename: this.pagename,
-      businesstype: this.businesstype
+      businesstype: this.businesstype,
+      pageimage:'test',
+      targetareas:"1,2,3,4"
     };
     this.bservices.submitPagedata(user).subscribe(data=>{
-      console.log(data)
+
+      if(data.success){
+        this.flashMessage.show('New Page created',{cssClass:'alert-success',timeout:3000});
+        this.route.navigate(['/profile'])
+      }else{
+
+        this.flashMessage.show('something went wrong',{cssClass:'alert-danger',timeout:3000});
+        this.route.navigate(['/profile'])
+
+      }
 
     });
 
