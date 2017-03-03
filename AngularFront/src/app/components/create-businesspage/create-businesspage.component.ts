@@ -30,11 +30,10 @@ export class CreateBusinesspageComponent implements OnInit {
 
     this.authService.getProfile().subscribe(profile=>{
         this.user = profile.user;
-        console.log(this.user);
+
       },
 
       err=>{
-        console.log(err);
         return false;
 
       })
