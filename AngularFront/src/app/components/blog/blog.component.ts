@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GooglemapsService } from '../../services/googlemaps.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
-  constructor() { }
+  place:String;
+
+  constructor(
+    private mapService:GooglemapsService,
+    private route:Router
+  ) { }
 
   ngOnInit() {
   }
@@ -21,7 +28,11 @@ export class BlogComponent implements OnInit {
 
   placeSearch(){
 
-    console.log('clicked')
+    console.log(this.place);
+    this.mapService.getLocations(this.place).subscribe(res=>{
+
+      console.log(res);
+    })
 
   }
 
