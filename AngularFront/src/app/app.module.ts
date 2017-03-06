@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule,Routes } from '@angular/router';
 import {FlashMessagesModule } from 'angular2-flash-messages';
-import { AngularFireModule,AuthProviders, AuthMethods } from 'angularfire2';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
@@ -15,12 +14,15 @@ import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './services/auth.guard';
+import { CreateBusinesspageComponent } from './components/create-businesspage/create-businesspage.component';
+import { BlogComponent } from './components/blog/blog.component';
+
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth.guard';
-import { FirebaseService } from './services/firebase.service';
-import { CreateBusinesspageComponent } from './components/create-businesspage/create-businesspage.component';
 import { BusinesspageService } from './services/businesspage.service';
+import { GooglemapsService } from './services/googlemaps.service';
+
 
 const appRoute:Routes = [
 
@@ -29,23 +31,12 @@ const appRoute:Routes = [
   {path:'login',component:LoginComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]},
-  {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]}
+  {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]},
+  {path:'profile/create/:id/blog',component:BlogComponent, canActivate: [AuthGuard]}
 
 
 ]
 
-export const firebaseConfig = {
-  apiKey: 'AIzaSyAPaE2lYzFYFIurYT5JYn-JAXrmy2AezOI',
-  authDomain: 'travelwithme-b18f1.firebaseapp.com',
-  databaseURL: "https://travelwithme-b18f1.firebaseio.com",
-  storageBucket: "travelwithme-b18f1.appspot.com",
-  messagingSenderId: "445664524246"
-};
-
-const firebaseAuthConfig = {
-  provider: AuthProviders.Google,
-  method: AuthMethods.Popup
-};
 
 @NgModule({
   declarations: [
@@ -57,6 +48,7 @@ const firebaseAuthConfig = {
     DashboardComponent,
     HomeComponent,
     CreateBusinesspageComponent,
+    BlogComponent,
 
 
   ],
@@ -66,12 +58,11 @@ const firebaseAuthConfig = {
     HttpModule,
     RouterModule.forRoot(appRoute),
     FlashMessagesModule,
-    AngularFireModule.initializeApp(firebaseConfig, firebaseAuthConfig),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAGVsf4PFWkyjY-5Y-pbKpm3QJ6Zmhl2Xo'
     })
   ],
-  providers: [ValidateService,AuthService,AuthGuard,FirebaseService,BusinesspageService],
+  providers: [ValidateService,AuthService,AuthGuard,BusinesspageService,GooglemapsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
