@@ -59,7 +59,7 @@ const appRoute:Routes = [
     RouterModule.forRoot(appRoute),
     FlashMessagesModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAGVsf4PFWkyjY-5Y-pbKpm3QJ6Zmhl2Xo'
+      apiKey: 'AIzaSyCskb-CN9GH0d5KmjmEL8gZ52SvTYuN7mI'
     })
   ],
   providers: [ValidateService,AuthService,AuthGuard,BusinesspageService,GooglemapsService],

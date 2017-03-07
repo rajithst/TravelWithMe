@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class BlogComponent implements OnInit {
 
   place:String;
+  places:Object;
 
   constructor(
     private mapService:GooglemapsService,
@@ -30,8 +31,8 @@ export class BlogComponent implements OnInit {
 
     console.log(this.place);
     this.mapService.getLocations(this.place).subscribe(res=>{
-
-      console.log(res);
+      this.places= res.results;
+      console.log(this.places)
     })
 
   }
