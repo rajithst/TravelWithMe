@@ -1,4 +1,4 @@
-<form (submit)="submitBlogpost()">
+<form class="form" (submit)="submitBlogpost()">
   <div class="form-group">
     <label for="email">Article name</label>
     <input type="text" class="form-control" id="email" name="name" [(ngModel)]="name">
@@ -10,16 +10,22 @@
 
   <div class="form-group">
     <label for="pwd">Location</label>
-    <input type="test" class="form-control" [(ngModel)]="place" name="place" (keyup)="placeSearch()">
+    <input type="test" class="form-control" [(ngModel)]="geo" name="geo" value="{{val}}">
     <div *ngIf="places">
-      <div *ngFor="let res of places"><img src="{{res.icon}}" alt=""> &nbsp; {{ res.formatted_address}}</div>
+      <ul>
+      <div *ngFor="let res of places">
+
+        <li (click)="addTotag($event)" id="{{ res.formatted_address}}"><img src="{{res.icon}}" alt=""> &nbsp; {{ res.formatted_address}}</li>
+
+      </div>
+      </ul>
 
     </div>
   </div>
 
   <div class="form-group">
     <label for="comment">write post</label>
-    <textarea class="form-control" rows="5" id="comment"></textarea>
+    <textarea class="form-control" rows="5" id="comment" [(ngModel)]="body" name="body"></textarea>
   </div>
 
   <button type="submit" class="btn btn-default">Submit</button>

@@ -22,6 +22,7 @@ import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { BusinesspageService } from './services/businesspage.service';
 import { GooglemapsService } from './services/googlemaps.service';
+import { BlogServiceService } from './services/blog-service.service';
 
 
 const appRoute:Routes = [
@@ -62,7 +63,15 @@ const appRoute:Routes = [
       apiKey: 'AIzaSyCskb-CN9GH0d5KmjmEL8gZ52SvTYuN7mI'
     })
   ],
-  providers: [ValidateService,AuthService,AuthGuard,BusinesspageService,GooglemapsService],
+  providers: [
+    ValidateService,
+    AuthService,
+    AuthGuard,
+    BusinesspageService,
+    GooglemapsService,
+    BlogServiceService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

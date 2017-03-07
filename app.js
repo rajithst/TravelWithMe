@@ -12,8 +12,13 @@ var mongoose = require('mongoose');
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+
 const users = require('./routes/users');
 const profile = require('./routes/profile');
+const blog = require('./routes/blog');
+
+
 const config = require('./config/database');
 
 mongoose.connect(config.database);
@@ -39,6 +44,7 @@ require('./config/passport')(passport);
 //routes
 app.use('/users',users);
 app.use('/profile',profile);
+app.use('/blog',blog);
 
 
 app.get('/',function(req,res){
