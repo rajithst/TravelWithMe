@@ -17,13 +17,16 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './services/auth.guard';
 import { CreateBusinesspageComponent } from './components/create-businesspage/create-businesspage.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
+
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
 import { BusinesspageService } from './services/businesspage.service';
 import { GooglemapsService } from './services/googlemaps.service';
 import { BlogServiceService } from './services/blog-service.service';
-import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
+import { Auth0Service } from './services/auth0.service';
+
 
 
 const appRoute:Routes = [
@@ -71,7 +74,8 @@ const appRoute:Routes = [
     AuthGuard,
     BusinesspageService,
     GooglemapsService,
-    BlogServiceService
+    BlogServiceService,
+    Auth0Service
 
   ],
   bootstrap: [AppComponent]

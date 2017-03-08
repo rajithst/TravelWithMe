@@ -1,10 +1,21 @@
-<div *ngIf="user">
+<div >
+<!--  <div *ngIf="user">
 <div classs="page-header"><h1>{{user.name}}</h1></div>
 
 <ul class="list-group">
   <li class="list-group-items">{{user.email}}</li>
    <li class="list-group-items">{{user.username}}</li>
 </ul>
+  </div>-->
+
+  <div *ngIf="profile">
+    <div classs="page-header"><h1>{{profile.nickname}}</h1></div>
+
+    <ul class="list-group">
+      <li class="list-group-items"></li>
+      <li class="list-group-items"></li>
+    </ul>
+  </div>
 
 <ul>
   <li><a [routerLink]="['create/'+user._id+'/businesspage']">create new business page</a></li>
