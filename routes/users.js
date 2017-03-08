@@ -13,6 +13,8 @@ const config = require('../config/database');
 //register
 
 router.post('/register',function (req,res,next) {
+    newUser = new User();
+
     var newUser = new User({
         name : req.body.name,
         email : req.body.email,
@@ -74,8 +76,6 @@ router.post('/authenticate',function (req,res,next) {
 
 //profile
 router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res,next) {
-
-    console.log(req.user);
     res.json({user:req.user});
 
 });

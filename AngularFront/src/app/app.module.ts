@@ -23,6 +23,7 @@ import { AuthService } from './services/auth.service';
 import { BusinesspageService } from './services/businesspage.service';
 import { GooglemapsService } from './services/googlemaps.service';
 import { BlogServiceService } from './services/blog-service.service';
+import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 
 
 const appRoute:Routes = [
@@ -33,8 +34,8 @@ const appRoute:Routes = [
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]},
   {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]},
-  {path:'profile/create/:id/blog',component:BlogComponent, canActivate: [AuthGuard]}
-
+  {path:'profile/create/:id/blog',component:BlogComponent, canActivate: [AuthGuard]},
+  {path:'profile/settings/:id',component:ProfilesettingsComponent, canActivate: [AuthGuard]}
 
 ]
 
@@ -50,6 +51,7 @@ const appRoute:Routes = [
     HomeComponent,
     CreateBusinesspageComponent,
     BlogComponent,
+    ProfilesettingsComponent,
 
 
   ],
