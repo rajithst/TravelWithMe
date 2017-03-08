@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
     })*/
 
       this.profile = JSON.parse(localStorage.getItem('profile'));
+      console.log(this.profile)
 
 
   }
