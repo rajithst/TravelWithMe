@@ -29,6 +29,7 @@ export class Auth0Service {
 public login() {
   // Call the show method to display the widget.
   this.lock.show();
+
 }
 
 public authenticated() {

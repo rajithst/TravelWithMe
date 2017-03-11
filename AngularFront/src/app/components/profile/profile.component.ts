@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
-import {Auth0Service} from '../../services/auth0.service'
 
 @Component({
   selector: 'app-profile',
@@ -10,13 +8,12 @@ import {Auth0Service} from '../../services/auth0.service'
 })
 export class ProfileComponent implements OnInit {
 
-  user:Object;
-  profile:any
+  user:any;
+  profile:any;
+
 
   constructor(
-    private authService:AuthService,
-    private route:Router,
-    private auth: Auth0Service
+    private authService:AuthService
 
   ) { }
 
@@ -33,7 +30,16 @@ export class ProfileComponent implements OnInit {
     })*/
 
       this.profile = JSON.parse(localStorage.getItem('profile'));
-      console.log(this.profile)
+
+
+      const data = {
+        id:this.profile.identities[0].user_id,
+        provider:this.profile.identities[0].provider
+      };
+
+      this.authService.checkId(data).subscribe(res=>{
+
+      })
 
 
   }

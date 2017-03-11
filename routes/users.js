@@ -7,14 +7,13 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/users');
+const SM = require('../models/socialmedia');
 const config = require('../config/database');
 
 
 //register
 
-router.post('/register',function (req,res,next) {
-    newUser = new User();
-
+router.post('/register',function (req,res) {
     var newUser = new User({
         name : req.body.name,
         email : req.body.email,
@@ -34,7 +33,7 @@ router.post('/register',function (req,res,next) {
 });
 
 //authenticate
-router.post('/authenticate',function (req,res,next) {
+router.post('/authenticate',function (req,res) {
 
     const  email = req.body.email;
     const  password = req.body.password;
@@ -74,14 +73,31 @@ router.post('/authenticate',function (req,res,next) {
 
 });
 
+
+
+router.post('/checkid',function (req,res) {
+
+    SM.checkId(req.body.id,req.body.provider,function (err,match) {
+        if (err) throw err;
+        if (match){
+            console.log(match);
+        }
+
+    })
+
+});
+
+
+
+
 //profile
-router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res,next) {
+router.get('/profile',passport.authenticate('jwt',{session:false}),function (req,res) {
     res.json({user:req.user});
 
 });
 
 //validate
-router.get('/validate',function (req,res,next) {
+router.get('/validate',function (req,res) {
 
     res.send('validate');
 
