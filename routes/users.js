@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-
+var request = require("request");
 const User = require('../models/users');
 const SM = require('../models/socialmedia');
 const config = require('../config/database');
@@ -77,10 +77,47 @@ router.post('/authenticate',function (req,res) {
 
 router.post('/checkid',function (req,res) {
 
+    console.log(req.body.userid);
     SM.checkId(req.body.id,req.body.provider,function (err,match) {
         if (err) throw err;
         if (match){
-            console.log(match);
+
+            var params = { method: 'POST',
+                url: 'https://travelwithme.auth0.com/oauth/token',
+                headers: { 'content-type': 'application/json' },
+                body:
+                    { client_id: 'iYgyLbUZs2bJVVwmq8AyTH2pau2ob7fU',
+                        client_secret: 'AhATNg_4YF1_VXEyBsYpClA7jYoK6Aj_sgx7xio0mHP3Ul0QpBJVvJyCKRrevZNZ',
+                        audience: 'https://travelwithme.auth0.com/api/v2/',
+                        grant_type: 'client_credentials' },
+                json: true };
+
+            request(params, function(error, response, body) {
+                //this is your Auth0 access_token
+
+                const actoken = body.access_token;
+                const type = body.token_type;
+
+
+                const opts= {
+                    method: 'GET',
+                        url: 'https://travelwithme.auth0.com/api/v2/users/'+req.body.userid,
+                        headers: {Authorization:type+" "+actoken
+
+                        }
+                };
+
+                request(opts, function(error, response, body){
+                    //this is the access_token necesarry to use the external API
+                    console.log(body);
+
+            });
+
+
+        });
+
+
+
         }
 
     })

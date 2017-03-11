@@ -32,8 +32,6 @@ import { Auth0Service } from './services/auth0.service';
 const appRoute:Routes = [
 
   {path:'',component:HomeComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'login',component:LoginComponent},
   {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
   {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]},
   {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]},
