@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 
-declare var Auth0Lock: any;
+declare const Auth0Lock: any;
 @Injectable()
 export class Auth0Service {
 
-  lock = new Auth0Lock('gHhXS61sxta0CztzyZ5oJC3Zp4AYOq19', 'travelwithme.auth0.com', {});
+  lock = new Auth0Lock('qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx', 'travelwithme00.auth0.com', {});
 
   constructor() {
 

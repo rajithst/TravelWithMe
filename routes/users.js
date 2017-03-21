@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
-var request = require("request");
+const request = require("request");
 const User = require('../models/users');
 const SM = require('../models/socialmedia');
 const config = require('../config/database');
@@ -83,12 +83,12 @@ router.post('/checkid',function (req,res) {
         if (match){
 
             var params = { method: 'POST',
-                url: 'https://travelwithme.auth0.com/oauth/token',
+                url: 'https://travelwithme00.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
                 body:
-                    { client_id: 'iYgyLbUZs2bJVVwmq8AyTH2pau2ob7fU',
-                        client_secret: 'AhATNg_4YF1_VXEyBsYpClA7jYoK6Aj_sgx7xio0mHP3Ul0QpBJVvJyCKRrevZNZ',
-                        audience: 'https://travelwithme.auth0.com/api/v2/',
+                    { client_id: 'qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx',
+                        client_secret: 'i3EURknAFgysL8bzBBbsPYfs91o4tegeERTYuQnPN_r_Zk4raKYeA1oI5L8nYQlG',
+                        audience: 'https://travelwithme00.auth0.com/api/v2/',
                         grant_type: 'client_credentials' },
                 json: true };
 
@@ -101,7 +101,7 @@ router.post('/checkid',function (req,res) {
 
                 const opts= {
                     method: 'GET',
-                        url: 'https://travelwithme.auth0.com/api/v2/users/'+req.body.userid,
+                        url: 'https://travelwithme00.auth0.com/api/v2/users/'+req.body.userid,
                         headers: {Authorization:type+" "+actoken
 
                         }
