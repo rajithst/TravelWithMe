@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Page Registration</title>
+    <title>Edit Profile</title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -180,74 +180,57 @@
     <main>
         <div class="container-fluid row">
 
-            <!--Form with header-->
-			<div class="card col-md-6">
-			    <div class="card-block">
+            <!--edit form-->
+            <div class="card">
+                <div class="card-block">
 
-			        <!--Header-->
-			        <div class="form-header blue-gradient">
-			            <h3><i class="fa fa-file-text-o"></i> Page Details:</h3>
-			        </div>
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3><i class="fa fa-lock"></i> Edit Profile:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
 
-			        <!--Body-->
-			        <div class="md-form">
-			            <i class="fa fa-file-text-o prefix"></i>
-			            <input type="text" id="form3" class="form-control">
-			            <label for="form3">Page Name</label>
-			        </div>
-			        <div class="md-form">
-			            <i class="fa fa-briefcase prefix"></i>
-			            <input type="text" id="form2" class="form-control">
-			            <label for="form2">Business Type</label>
-			        </div>
+                    <!--Body-->
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        <input type="text" id="name" class="form-control" value="Nuwan Tharaka">
+                        <label for="form2">Name</label>
+                    </div>
 
-			        <div class="text-center">
-			            
-			            <hr>
-			            <!-- <fieldset class="form-group"> -->
-			            	<input type="radio" name="rdo">
-			                <label for="radio1">All</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio2">Esablishments</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio3">Addresses</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio4">Geocodes</label>
-			                <input type="checkbox" id="checkbox1">
-			                <label for="checkbox1">Strict Bounds</label>
-			            <!-- </fieldset> -->
-			            <hr>
-			        </div>
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input type="password" id="password_cur" class="form-control">
+                        <label for="form4">Current password</label>
+                    </div>
 
-			        <button class="btn btn-indigo">Save</button>
-			        <button class="btn btn-indigo">Cancel</button>
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input type="password" id="password" class="form-control">
+                        <label for="form4">New password</label>
+                    </div>
 
-			    </div>
-			</div>
-			<!--/Form with header-->
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix"></i>
+                        <input type="password" id="password_v" class="form-control">
+                        <label for="form4">Verify password</label>
+                    </div>
 
+                    <div class="text-center">
+                        <button class="btn btn-deep-purple">Save</button>
+                    </div>
 
-            <div class="col-md-1">
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer">
+                    <div class="options">
+                        <p>Not a member? <a href="#">Sign Up</a></p>
+                        <p>Forgot <a href="#">Password?</a></p>
+                    </div>
+                </div>
+
             </div>
-
-			<!--Terms and Conditions-->
-			<div class="card testimonial-card col-md-5">
-
-			    
-
-			    <div class="card-block">
-			        <!--Name-->
-			        <h4 class="card-title">Terms and Conditions</h4>
-			        <hr>
-			        <!--Quotation-->
-			        <p><i class="fa fa-arrow-right"></i> Condition 1</p>
-			        <p><i class="fa fa-arrow-right"></i> Condition 2</p>
-			        <p><i class="fa fa-arrow-right"></i> Condition 3</p>
-			    </div>
-
-			</div>
-			<!--Terms and Conditions-->
-            
+            <!--edit form-->
 
         </div>
     </main>
