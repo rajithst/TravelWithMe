@@ -5,12 +5,12 @@ declare const Auth0Lock: any;
 @Injectable()
 export class Auth0Service {
 
-  lock = new Auth0Lock('qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx', 'travelwithme00.auth0.com', {});
+  lock = new Auth0Lock('zBbweYotqAV1M2tPxP03w3qY1JRH2mAj', 'travelproject.auth0.com', {});
 
   constructor() {
 
 
-    this.lock.on("authenticated", (authResult:any) => {
+    this.lock.on('authenticated', (authResult:any) => {
       this.lock.getProfile(authResult.idToken,function (error:any,profile:any) {
         if (error){
           throw new Error(error);

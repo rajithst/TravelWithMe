@@ -77,16 +77,18 @@ router.post('/authenticate',function (req,res) {
 
 router.post('/checkid',function (req,res) {
 
-    console.log(req.body.userid);
+   /* console.log(req.body);
     SM.checkId(req.body.id,req.body.provider,function (err,match) {
         if (err) throw err;
         if (match){
 
-            var params = { method: 'POST',
+            var params = {
+
+                method: 'POST',
                 url: 'https://travelwithme00.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
                 body:
-                    { client_id: 'qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx',
+                    {   client_id: 'qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx',
                         client_secret: 'i3EURknAFgysL8bzBBbsPYfs91o4tegeERTYuQnPN_r_Zk4raKYeA1oI5L8nYQlG',
                         audience: 'https://travelwithme00.auth0.com/api/v2/',
                         grant_type: 'client_credentials' },
@@ -109,7 +111,7 @@ router.post('/checkid',function (req,res) {
 
                 request(opts, function(error, response, body){
                     //this is the access_token necesarry to use the external API
-                    console.log(body);
+                    //console.log(body);
 
             });
 
@@ -120,7 +122,7 @@ router.post('/checkid',function (req,res) {
 
         }
 
-    })
+    });*/
 
 });
 
