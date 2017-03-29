@@ -190,38 +190,92 @@
 			        </div>
 
 			        <!--Body-->
+
+                    <!-- Page Name -->
 			        <div class="md-form">
 			            <i class="fa fa-file-text-o prefix"></i>
-			            <input type="text" id="form3" class="form-control">
-			            <label for="form3">Page Name</label>
+			            <input type="text" id="pageName" class="form-control">
+			            <label for="pageName">Page Name</label>
 			        </div>
+                    <!-- Page Name -->
+
+                    <!-- Business Type -->
 			        <div class="md-form">
 			            <i class="fa fa-briefcase prefix"></i>
-			            <input type="text" id="form2" class="form-control">
-			            <label for="form2">Business Type</label>
+			            <input type="text" id="busiType" class="form-control">
+			            <label for="busiType">Business Type</label>
 			        </div>
+                    <!-- Business Type -->
 
-			        <div class="text-center">
-			            
-			            <hr>
-			            <!-- <fieldset class="form-group"> -->
-			            	<input type="radio" name="rdo">
-			                <label for="radio1">All</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio2">Esablishments</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio3">Addresses</label>
-			                <input type="radio" name="rdo">
-			                <label for="radio4">Geocodes</label>
-			                <input type="checkbox" id="checkbox1">
-			                <label for="checkbox1">Strict Bounds</label>
-			            <!-- </fieldset> -->
-			            <hr>
-			        </div>
+                    <!-- Page Image -->
+                    <div class="md-form">
+                        <i class="fa fa-picture-o prefix"></i>
+                        <input class="form-control" type="text" placeholder="Upload Page Image">
+                        <div align="right" style="width: 100%">
+                            <div class="file-field btn btn-indigo btn-sm">
+                                <span>Choose Page Image</span>
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page Image -->
 
-			        <button class="btn btn-indigo">Save</button>
-			        <button class="btn btn-indigo">Cancel</button>
+                    <!-- Target Area -->
+                    <div class="md-form">
+                        <i class="fa fa-map-marker prefix"></i>
+                        <label >Target Area</label>
+                    </div>
 
+                    <br><br>
+                    <div class="card-block" style="border: inset">
+                    <!-- AutoComplete -->
+                        ------AutoComplete goes here------
+                    <!-- AutoComplete -->
+
+                    <!-- Radio & Checkbox -->
+                    <div class="form-inline">
+                        <fieldset class="form-group">
+                            <input name="group1" type="radio" id="radio_1" checked="checked">
+                            <label for="radio_1">All</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input name="group1" type="radio" id="radio_2">
+                            <label for="radio_2">Esablishments</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input name="group1" type="radio" id="radio_3">
+                            <label for="radio_3">Addresses</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input name="group1" type="radio" id="radio_4">
+                            <label for="radio_4">Geocodes</label>
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <input type="checkbox" id="checkbox_1">
+                            <label for="checkbox_1">Strict Bounds</label>
+                        </fieldset>
+                    </div>
+                    <!-- Radio & Checkbox -->
+
+                    <!-- Enter Location -->
+                    <div class="md-form">
+                        <input type="text" id="location" class="form-control">
+                        <label for="location">Enter Location</label>
+                    </div>
+                    <!-- Enter Location -->
+
+                    </div>
+                    <!-- Target Area -->
+                        <br>
+
+                    <div align="right">
+                        <button class="btn btn-indigo">Save</button>
+                        <button class="btn btn-indigo">Cancel</button>
+                    </div>
 			    </div>
 			</div>
 			<!--/Form with header-->
