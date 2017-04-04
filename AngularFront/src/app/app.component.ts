@@ -11,7 +11,7 @@ export class AppComponent {
   constructor(private auth: Auth0Service) {}
 
   title = 'app works!';
-  latitude: number =7.7505019;
+ /* latitude: number =7.7505019;
   longitude: number = 80.1652569;
-  zoom: number = 10;
+  zoom: number = 10;*/
 }

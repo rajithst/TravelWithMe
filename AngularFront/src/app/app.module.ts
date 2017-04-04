@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule,Routes } from '@angular/router';
-import {FlashMessagesModule } from 'angular2-flash-messages';
-import { AgmCoreModule } from 'angular2-google-maps/core';
+import { RouterModule, Routes } from '@angular/router';
+/*import { FlashMessagesModule } from 'angular2-flash-messages';*/
+
 
 
 import { AppComponent } from './app.component';
@@ -29,14 +29,14 @@ import { Auth0Service } from './services/auth0.service';
 
 
 
-const appRoute:Routes = [
+const appRoute: Routes = [
 
-  {path:'',component:HomeComponent},
-  {path:'profile',component:ProfileComponent, canActivate: [AuthGuard]},
-  {path:'dashboard',component:DashboardComponent, canActivate: [AuthGuard]},
-  {path:'profile/create/:id/businesspage',component:CreateBusinesspageComponent, canActivate: [AuthGuard]},
-  {path:'profile/create/:id/blog',component:BlogComponent, canActivate: [AuthGuard]},
-  {path:'profile/settings/:id',component:ProfilesettingsComponent, canActivate: [AuthGuard]}
+  {path: '' , component: HomeComponent} ,
+  {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
+  {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
+  {path: 'profile/create/:id/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
+  {path: 'profile/create/:id/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
+  {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]}
 
 ]
 
@@ -60,11 +60,9 @@ const appRoute:Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    /*FlashMessagesModule,*/
     RouterModule.forRoot(appRoute),
-    FlashMessagesModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCskb-CN9GH0d5KmjmEL8gZ52SvTYuN7mI'
-    })
+
   ],
   providers: [
     ValidateService,
