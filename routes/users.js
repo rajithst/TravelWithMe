@@ -77,7 +77,6 @@ router.post('/authenticate',function (req,res) {
 
 router.post('/checkid',function (req,res) {
 
-   /* console.log(req.body);
     SM.checkId(req.body.id,req.body.provider,function (err,match) {
         if (err) throw err;
         if (match){
@@ -85,12 +84,12 @@ router.post('/checkid',function (req,res) {
             var params = {
 
                 method: 'POST',
-                url: 'https://travelwithme00.auth0.com/oauth/token',
+                url: 'https://travelproject.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
                 body:
-                    {   client_id: 'qSMhZJoNGaTWDEUcR6qjNreeDQXB6Gdx',
-                        client_secret: 'i3EURknAFgysL8bzBBbsPYfs91o4tegeERTYuQnPN_r_Zk4raKYeA1oI5L8nYQlG',
-                        audience: 'https://travelwithme00.auth0.com/api/v2/',
+                    {   client_id: 'zBbweYotqAV1M2tPxP03w3qY1JRH2mAj',
+                        client_secret: 't685DI17CAiws1GVdDVfegoDteXwbTmwjhBijIp9klDAJLSKjTU6ChyDsMqsdEdp',
+                        audience: 'https://travelproject.auth0.com/api/v2/',
                         grant_type: 'client_credentials' },
                 json: true };
 
@@ -100,10 +99,9 @@ router.post('/checkid',function (req,res) {
                 const actoken = body.access_token;
                 const type = body.token_type;
 
-
                 const opts= {
                     method: 'GET',
-                        url: 'https://travelwithme00.auth0.com/api/v2/users/'+req.body.userid,
+                        url: 'https://travelproject.auth0.com/api/v2/users/'+req.body.userid,
                         headers: {Authorization:type+" "+actoken
 
                         }
@@ -122,7 +120,7 @@ router.post('/checkid',function (req,res) {
 
         }
 
-    });*/
+    });
 
 });
 

@@ -10,6 +10,9 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
 
+  public tether = require('./js/tether.min.js');
+
+
   place:String;
   places:Object;
   val:String;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ValidateService} from '../../services/validate.service';
 import {AuthService} from '../../services/auth.service';
-import { FlashMessagesService } from 'angular2-flash-messages';
+/*import { FlashMessagesService } from 'angular2-flash-messages';*/
 import { Router } from '@angular/router';
 
 
@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private validateService:ValidateService,
-    private flashMessage:FlashMessagesService,
+    //private flashMessage:FlashMessagesService,
     private authservice:AuthService,
     private route:Router
   ) { }
@@ -42,23 +42,23 @@ export class RegisterComponent implements OnInit {
     if(!this.validateService.validateRegister(user)){
 
 
-      this.flashMessage.show('All fields must be filled',{cssClass:'alert-danger',timeout:3000});
+      //this.flashMessage.show('All fields must be filled',{cssClass:'alert-danger',timeout:3000});
     }
 
     if(!this.validateService.validateEmail(user.email)){
 
-      this.flashMessage.show('Email must be valid',{cssClass:'alert-danger',timeout:3000});
+      //this.flashMessage.show('Email must be valid',{cssClass:'alert-danger',timeout:3000});
     }
 
 
     this.authservice.registerUser(user).subscribe(data =>{
 
       if(data.success){
-        this.flashMessage.show('Youre registered',{cssClass:'alert-success',timeout:3000});
+        //this.flashMessage.show('Youre registered',{cssClass:'alert-success',timeout:3000});
         this.route.navigate(['/login'])
       }else{
 
-        this.flashMessage.show('something went wrong',{cssClass:'alert-danger',timeout:3000});
+        //this.flashMessage.show('something went wrong',{cssClass:'alert-danger',timeout:3000});
         this.route.navigate(['/register'])
 
       }

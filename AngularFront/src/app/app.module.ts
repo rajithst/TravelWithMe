@@ -35,7 +35,7 @@ const appRoute: Routes = [
   {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/:id/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
-  {path: 'profile/create/:id/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
+  {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]}
 
 ]
