@@ -5,7 +5,7 @@ declare const Auth0Lock: any;
 @Injectable()
 export class Auth0Service {
 
-  lock = new Auth0Lock('zBbweYotqAV1M2tPxP03w3qY1JRH2mAj', 'travelproject.auth0.com', {});
+  lock = new Auth0Lock('Gcw8OrOOHWjaUsOQbMQDbHm24LI3h2Iv', 'travelproject.auth0.com', {});
 
   constructor() {
 

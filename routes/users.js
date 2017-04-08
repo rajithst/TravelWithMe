@@ -87,14 +87,14 @@ router.post('/checkid',function (req,res) {
                 url: 'https://travelproject.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
                 body:
-                    {   client_id: 'zBbweYotqAV1M2tPxP03w3qY1JRH2mAj',
-                        client_secret: 't685DI17CAiws1GVdDVfegoDteXwbTmwjhBijIp9klDAJLSKjTU6ChyDsMqsdEdp',
+                    {   client_id: 'Gcw8OrOOHWjaUsOQbMQDbHm24LI3h2Iv',
+                        client_secret: 'EWcY8KYmpixlVIAJb4t4etEXVzgkEeqvDvgaomtP7L8CRIkjG-szNCw85E9_y_-C',
                         audience: 'https://travelproject.auth0.com/api/v2/',
                         grant_type: 'client_credentials' },
                 json: true };
 
             request(params, function(error, response, body) {
-                //this is your Auth0 access_token
+                console.log(body);
 
                 const actoken = body.access_token;
                 const type = body.token_type;

@@ -31,7 +31,7 @@ mongoose.connection.on("error",function(err){
 });
 
 app.use(cors());
-app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"pp")));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
