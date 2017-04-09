@@ -37,10 +37,8 @@ export class ProfileComponent implements OnInit {
         userid: this.profile.user_id
       };
 
-      console.log(data);
-
       this.authService.checkId(data).subscribe(res => {
-        console.log(res);
+        this.user = res;
 
       });
 
