@@ -1,4 +1,10 @@
-<!--Navbar-->
+<script>
+  function setVisible(){
+    document.getElementById("loginform").style.display = "block";
+    document.getElementById("homesearch").style.display = "none";
+  }
+</script>
+
 <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
 
   <!-- Collapse button-->
@@ -29,7 +35,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <li class="nav-item">
-          <a href="javascript:void(0)" class="center btn btn-raised btn-danger btn-round" data-toggle="modal" data-target="#login" value="click" onclick="setVisible()">Login</a>
+          <a href="javascript:void(0)" class="center btn btn-raised btn-danger btn-round" data-toggle="modal" data-target="#login" value="click" (click)="setVisible()">Login</a>
 
         </li>
       </ul>
@@ -50,9 +56,8 @@
   </div>
 
 </nav>
-<!--/.Navbar-->
 
-<!--Carousel Wrapper-->
+
 <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
   <!--Indicators-->
   <ol class="carousel-indicators">
@@ -145,8 +150,7 @@
   </a>
   <!--/.Controls-->
 </div>
-<!--/.Carousel Wrapper-->
-<!--/.Main layout-->
+
 <section class="section" id="register" >
 
   <div class="container-fluid viewone full-bg-imgs">
@@ -218,7 +222,6 @@
 </section>
 
 
-<!--Footer-->
 <footer class="page-footer center-on-small-only">
 
   <!--Footer Links-->
