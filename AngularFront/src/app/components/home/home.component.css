@@ -1,7 +1,3 @@
-
-/* TEMPLATE STYLES */
-/* Necessary for full page carousel*/
-
 html,
 body,
 .view {
@@ -71,7 +67,7 @@ footer.page-footer {
 }
 
 .carousel-item:nth-child(1) {
-  background-image: url("https://goodfon.org/_ph/85/213022566.jpg");
+  background-image: url("http://goodfon.org/_ph/85/213022566.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
