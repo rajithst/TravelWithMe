@@ -19,14 +19,17 @@ export class Auth0Service {
   constructor() {
 
 
-    this.lock.on('authenticated', (authResult:any) => {
-      this.lock.getProfile(authResult.idToken,function (error:any,profile:any) {
+    this.lock.on('authenticated', (authResult: any) => {
+      this.lock.getProfile(authResult.idToken, function (error: any, profile: any) {
         if (error){
           throw new Error(error);
         }
 
-        localStorage.setItem('id_token',authResult.idToken);
-        localStorage.setItem('profile',JSON.stringify(profile));
+        console.log(authResult.idToken);
+        console.log(profile);
+
+        localStorage.setItem('id_token', authResult.idToken);
+        localStorage.setItem('profile', JSON.stringify(profile));
 
       });
     });

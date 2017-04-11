@@ -38,7 +38,9 @@ export class ProfileComponent implements OnInit {
       };
 
       this.authService.checkId(data).subscribe(res => {
-        this.user = res;
+        this.user = JSON.parse(res.data);
+        console.log(this.user);
+
 
       });
 
