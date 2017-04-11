@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+import { FacebookService } from '../../services/facebook.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,11 +11,14 @@ export class ProfileComponent implements OnInit {
 
   user: any;
   profile: any;
-  token: string;
+  actoken: any;
+  userid:any;
 
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+
+    private FbService: FacebookService
 
   ) { }
 
@@ -41,6 +45,12 @@ export class ProfileComponent implements OnInit {
         this.user = JSON.parse(res.data);
         console.log(this.user);
 
+        const actoken = this.user.identities[0].access_token;
+        const userid = this.user.identities[0].user_id;
+
+        this.FbService.placesLiked(actoken,userid).subscribe(places=>{
+          console.log(places)
+        })
 
       });
 

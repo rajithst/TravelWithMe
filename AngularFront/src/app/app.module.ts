@@ -26,6 +26,7 @@ import { BusinesspageService } from './services/businesspage.service';
 import { GooglemapsService } from './services/googlemaps.service';
 import { BlogServiceService } from './services/blog-service.service';
 import { Auth0Service } from './services/auth0.service';
+import { FacebookService } from './services/facebook.service';
 
 
 
@@ -71,7 +72,8 @@ const appRoute: Routes = [
     BusinesspageService,
     GooglemapsService,
     BlogServiceService,
-    Auth0Service
+    Auth0Service,
+    FacebookService
 
   ],
   bootstrap: [AppComponent]

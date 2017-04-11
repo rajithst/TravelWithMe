@@ -6,6 +6,8 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const request = require("request");
+const fbgraph = require('fbgraphapi');
+
 const User = require('../models/users');
 const SM = require('../models/socialmedia');
 const config = require('../config/database');
@@ -81,18 +83,15 @@ router.post('/checkid',function (req,res) {
         if (err) throw err;
         if (match){
 
-            var params = { method: 'POST',
+            var options = { method: 'POST',
                 url: 'https://travelproject.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
                 body: '{"client_id":"8cfUH0JgfwIwXfMJwH1jSPh6q0KlubWw","client_secret":"EuDgEwp7sxP_v8oiDN4oXOYKo32qKyeKbsn0_bsL6ZyRt5y-fKN-bDk5w63OsGQF","audience":"https://travelproject.auth0.com/api/v2/","grant_type":"client_credentials"}' };
-
-            request(params, function(error, response, body) {
+            request(options, function(error, response, body) {
 
                 const accessToken = JSON.parse(body).access_token;
                 const type = JSON.parse(body).token_type;
 
-                console.log(accessToken);
-                console.log(type);
 
                 const opts= {
                     method: 'GET',
@@ -103,9 +102,6 @@ router.post('/checkid',function (req,res) {
                 };
 
                 request(opts, function(error, response, body){
-                    //this is the access_token necesarry to use the external API
-                    console.log(body);
-
                     res.json({success:true,data:body});
 
             });
