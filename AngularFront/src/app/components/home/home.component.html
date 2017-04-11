@@ -30,7 +30,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <li class="nav-item">
-          <a href="javascript:void(0)" class="center btn btn-raised btn-danger btn-round" data-toggle="modal" data-target="#login" value="click" (click)="setVisible()">Login</a>
+          <a  class="center btn btn-raised btn-danger btn-round" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="!authService.loggedIn()" (click)="auth.login()">Login</a>
 
         </li>
       </ul>

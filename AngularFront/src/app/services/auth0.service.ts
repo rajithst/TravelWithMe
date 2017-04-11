@@ -2,10 +2,19 @@ import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 
 declare const Auth0Lock: any;
+
+const  options = {
+  languageDictionary: {
+    title: 'Log to Travel'
+  },
+};
+
 @Injectable()
+
+
 export class Auth0Service {
 
-  lock = new Auth0Lock('Gcw8OrOOHWjaUsOQbMQDbHm24LI3h2Iv', 'travelproject.auth0.com', {});
+  lock = new Auth0Lock('Gcw8OrOOHWjaUsOQbMQDbHm24LI3h2Iv', 'travelproject.auth0.com', options );
 
   constructor() {
 
