@@ -18,7 +18,7 @@ import { AuthGuard } from './services/auth.guard';
 import { CreateBusinesspageComponent } from './components/create-businesspage/create-businesspage.component';
 import { BlogComponent } from './components/blog/blog.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
-
+import { ViewpostComponent } from './components/viewpost/viewpost.component';
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -30,6 +30,7 @@ import { FacebookService } from './services/facebook.service';
 
 
 
+
 const appRoute: Routes = [
 
   {path: '' , component: HomeComponent} ,
@@ -37,9 +38,10 @@ const appRoute: Routes = [
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/:id/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
-  {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]}
+  {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
+  {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]}
 
-]
+];
 
 
 @NgModule({
@@ -54,6 +56,7 @@ const appRoute: Routes = [
     CreateBusinesspageComponent,
     BlogComponent,
     ProfilesettingsComponent,
+    ViewpostComponent,
 
 
   ],

@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation } from '@angular/core';
 import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
-import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css']
+  styleUrls: ['./blog.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BlogComponent implements OnInit {
-
-  public tether = require('./js/tether.min.js');
 
 
 
@@ -29,8 +28,7 @@ export class BlogComponent implements OnInit {
 
   constructor(
     private mapService:GooglemapsService,
-    private blogService:BlogServiceService,
-    private route:Router,
+    private blogService:BlogServiceService
   ) { }
 
   ngOnInit() {
