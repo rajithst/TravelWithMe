@@ -14,10 +14,10 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.min.css" rel="stylesheet">
 
     <!-- Style for Read more / Read less -->
     <style type="text/css">
@@ -95,6 +95,8 @@
             font-family: FontAwesome;
         }
     </style>
+
+    <!-- media query  -->
     <style>
 
         #sideNavEdited {
@@ -118,16 +120,19 @@
         @media only screen and (min-width: 768px) {
 
             #linkSlidingBar{
-                pointer-events: none; cursor: default;
+                pointer-events: none; cursor: default; display: none;
             }
 
             #pageContent{
-                width: calc(100% - 330px);
+                margin-right: 40px;
+                margin-left:  40px;
+                position:absolute; left:270px;
             }
+
         }
 
     </style>
-
+    <!-- media query  -->
 
 </head>
 
@@ -237,35 +242,83 @@
 
         <!-- SideNav slide-out button -->
         <div class="float-xs-left">
-            <a id="linkSlidingBar" href="#" data-activates="slide-out" class="button-collapse" ><i class="fa fa-bars" ></i></a>
+            <a id="linkSlidingBar" href="#" data-activates="slide-out" class="button-collapse waves-effect" ><i class="fa fa-bars" ></i></a>
         </div>
 
         <!-- Breadcrumb-->
         <div class="breadcrumb-dn">
-            <p>MDB Blog Article</p>
+            <p>TVM</p>
         </div>
 
+        <div class="float-xs-left">
+            <form class="form-inline">
+                <input class="form-control" type="text" style="color: white !important;width: 500px; margin-left=50px; " placeholder="Search">
+            </form>
+        </div>
 
         <ul class="nav navbar-nav float-xs-right">
 
             <li class="nav-item ">
-                <a class="nav-link"> <span class="tag red z-depth-1">2</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Cart</span></a>
+                <a class="nav-link"><i class="fa fa-plus-circle fa-lg"></i> <span class="hidden-sm-down"></span></a>
             </li>
+
             <li class="nav-item ">
-                <a class="nav-link"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
+                <a class="nav-link"><i class="fa fa-plane fa-lg"></i> <span class="hidden-sm-down"></span></a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Support</span></a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Register</span></a>
-            </li>
+
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
-                <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-                    <a class="dropdown-item" href="#">Logout</a>
-                    <a class="dropdown-item" href="#">My account</a>
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-envelope fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
                 </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-commenting fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                </div>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plane"></i> <span class="hidden-sm-down">My Trips</span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                </div>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">My account</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+
+                </div>
+            </li>
+            <!-- <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-cogs"></i> <span class="hidden-sm-down">Settings</span></a>
+            </li> -->
+
+            <li class="nav-item">
+                <div class="float-xs-right">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-cogs"></i></a>
+                </div>
+
             </li>
         </ul>
 
@@ -277,6 +330,7 @@
 <!--Main layout-->
 <main style="margin-left: 0; margin-right: 0; padding-top: 60px;">
     <div class="container-fluid">
+
         <div class="row">
             <div  style="padding-left: 0;">
                 <!-- Side Navbar column -->
@@ -317,6 +371,7 @@
                     </li>
                     <!--/. Logo -->
 
+
                     <!--Social-->
                     <li>
                         <ul class="social">
@@ -329,64 +384,36 @@
                     <!--/Social-->
 
                     <ul class="collapsible collapsible-accordion">
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-cutlery"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#" class="waves-effect">Breakfast</a>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
                                     </li>
-                                    <li><a href="#" class="waves-effect">Sandwiches</a>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
                                     </li>
-                                    <li><a href="#" class="waves-effect">Lunch</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Dessert</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Snacks</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Soups</a>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Workshops<i class="fa fa-angle-down rotate-icon"></i></a>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
                             <div class="collapsible-body">
                                 <ul>
-                                    <li><a href="#" class="waves-effect">How it looks?</a>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
                                     </li>
-                                    <li><a href="#" class="waves-effect">Cooking workshops</a>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-thumbs-o-up"></i> Collaboration<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">My past collaborations</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Write me your idea</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-photo"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">Photos</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Videos</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-newspaper-o"></i> Publications<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">Media</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Books</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+
+                       <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                       </li>
+                       
                         <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
                             <div class="collapsible-body">
                                 <ul>
@@ -402,12 +429,16 @@
                 <!-- Side Navbar column -->
             </div>
 
-            <div id="pageContent" class="pull-right">
+            <div id="pageContent" align="center">
+            <div class="">
                 <!-- Article and Right-Side bar -->
                 <div class="row">
+                        <!--
+                        <a id="sideNavButton" href="#" data-activates="slide-out" class="float-xs-left btn btn-purple btn-rounded waves-effect button-collapse " style="margin-left: 20px;"><i class="fa fa-bars"></i></a>
+                        -->
 
                     <!-- Article -->
-                    <div class="col-md-8" style="padding-top: 8px;">
+                    <div class="col-lg-8" style="padding-top: 8px;">
                         <!--Section: Post-->
                         <section class="section section-blog-fw">
 
@@ -482,7 +513,7 @@
                     <!-- Article -->
 
                     <!-- Right Side Bar -->
-                    <div class="col-md-4">
+                    <div class="col-lg-4">
                         <!--/.prof card-->
                         <!--Rotating card-->
                         <div class="card-wrapper animated fadeInUp">
@@ -647,7 +678,6 @@
 
                         </div>
                         </section>
-
                         <!-- Sliding Card -->
                     </div>
                     <!-- Right Side Bar -->
@@ -859,107 +889,9 @@
                 </div>
                 <!--Add Comment 2-->
 
-                <!--Footer-->
-                <footer class="page-footer center-on-small-only">
-
-                    <!--Footer Links-->
-                    <div class="container-fluid">
-                        <div class="row">
-
-                            <!--First column-->
-                            <div class="col-md-3 offset-md-1">
-                                <h5 class="title">Footer Content</h5>
-                                <p>Here you can use rows and columns here to organize your footer content.</p>
-                            </div>
-                            <!--/.First column-->
-
-                            <hr class="hidden-md-up">
-
-                            <!--Second column-->
-                            <div class="col-md-2 offset-md-1">
-                                <h5 class="title">Links</h5>
-                                <ul>
-                                    <li><a href="#!">Link 1</a></li>
-                                    <li><a href="#!">Link 2</a></li>
-                                    <li><a href="#!">Link 3</a></li>
-                                    <li><a href="#!">Link 4</a></li>
-                                </ul>
-                            </div>
-                            <!--/.Second column-->
-
-                            <hr class="hidden-md-up">
-
-                            <!--Third column-->
-                            <div class="col-md-2">
-                                <h5 class="title">Links</h5>
-                                <ul>
-                                    <li><a href="#!">Link 1</a></li>
-                                    <li><a href="#!">Link 2</a></li>
-                                    <li><a href="#!">Link 3</a></li>
-                                    <li><a href="#!">Link 4</a></li>
-                                </ul>
-                            </div>
-                            <!--/.Third column-->
-
-                            <hr class="hidden-md-up">
-
-                            <!--Fourth column-->
-                            <div class="col-md-2">
-                                <h5 class="title">Links</h5>
-                                <ul>
-                                    <li><a href="#!">Link 1</a></li>
-                                    <li><a href="#!">Link 2</a></li>
-                                    <li><a href="#!">Link 3</a></li>
-                                    <li><a href="#!">Link 4</a></li>
-                                </ul>
-                            </div>
-                            <!--/.Fourth column-->
-
-                        </div>
-                    </div>
-                    <!--/.Footer Links-->
-
-                    <hr>
-
-                    <!--Call to action-->
-                    <div class="call-to-action">
-                        <ul>
-                            <li>
-                                <h5>Register for free</h5></li>
-                            <li><a href="" class="btn btn-danger">Sign up!</a></li>
-                        </ul>
-                    </div>
-                    <!--/.Call to action-->
-
-                    <hr>
-
-                    <!--Social buttons-->
-                    <div class="social-section">
-                        <ul>
-                            <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"> </i></a></li>
-                            <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="btn-floating btn-small btn-tw"><i class="fa fa-twitter"> </i></a></li>
-                            <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"> </i></a></li>
-                            <li><a href="https://www.linkedin.com/in/dawid-adach-97435534/pl" target="_blank" class="btn-floating btn-small btn-li"><i class="fa fa-linkedin"> </i></a></li>
-                            <li><a class="btn-floating btn-small btn-git"><i class="fa fa-github"> </i></a></li>
-                            <li><a href="https://pl.pinterest.com/materialdesignf/" target="_blank" class="btn-floating btn-small btn-pin"><i class="fa fa-pinterest"> </i></a></li>
-                            <li><a href="https://www.instagram.com/material_design_for_bootstrap/" target="_blank" class="btn-floating btn-small btn-ins"><i class="fa fa-instagram"> </i></a></li>
-                        </ul>
-                    </div>
-                    <!--/.Social buttons-->
-
-                    <!--Copyright-->
-                    <div class="footer-copyright">
-                        <div class="container-fluid">
-                            © 2015 Copyright: <a href="http://www.MDBootstrap.com"> MDBootstrap.com </a>
-
-                        </div>
-                    </div>
-                    <!--/.Copyright-->
-
-                </footer>
-                <!--/.Footer-->
-
             </div>
+            </div>
+
         </div>
     </div>
 </main>
@@ -968,16 +900,16 @@
 <!-- SCRIPTS -->
 
 <!-- JQuery -->
-<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
 
 <!-- Tooltips -->
-<script type="text/javascript" src="../js/tether.min.js"></script>
+<script type="text/javascript" src="../../js/tether.min.js"></script>
 
 <!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="../js/mdb.min.js"></script>
+<script type="text/javascript" src="../../js/mdb.min.js"></script>
 
 <script>
     // SideNav init

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Video Gallery</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../../css/mdb.min.css" rel="stylesheet">
+
+    <!-- Style for Read more / Read less -->
+    <style type="text/css">
+        .read-more-state {
+            display: none;
+        }
+
+        .read-more-target {
+            opacity: 0;
+            max-height: 0;
+            font-size: 0;
+            transition: .25s ease;
+        }
+
+        .read-more-state:checked ~ .read-more-wrap .read-more-target {
+            opacity: 1;
+            font-size: inherit;
+            max-height: 999em;
+        }
+
+        .read-more-state ~ .read-more-trigger:before {
+            content: 'Show more';
+        }
+
+        .read-more-state:checked ~ .read-more-trigger:before {
+            content: 'Show less';
+        }
+
+        .read-more-trigger {
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 .5em;
+            color: #666;
+            font-size: .9em;
+            line-height: 2;
+            border: 1px solid #ddd;
+            border-radius: .25em;
+        }
+    </style>
+    <!-- Style for Read more / Read less -->
+
+    <style type="text/css">
+        div.stars {
+            width: 270px;
+            display: inline-block;
+        }
+
+        input.star { display: none; }
+
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 36px;
+            color: #444;
+            transition: all .2s;
+        }
+
+        input.star:checked ~ label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+
+        input.star-5:checked ~ label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input.star-1:checked ~ label.star:before { color: #F62; }
+
+        label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+    </style>
+
+    <!-- media query  -->
+    <style>
+
+        #sideNavEdited {
+            position:fixed;
+            width: 270px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #sideNavEdited {
+                position: static;
+                width: auto;
+                display: none;
+            }
+
+            #linkSlidingBar {
+                pointer-events: visible;
+                cursor: default;
+            }
+        }
+
+       
+
+        @media only screen and (max-width: 600px) {
+             .section-heading{
+                padding-top: 30px;
+             }
+        }
+
+        @media only screen and (max-width: 380px) {
+             .section-heading{
+                padding-top: 60px;
+             }
+        }
+
+
+
+        @media only screen and (min-width: 768px) {
+
+            #linkSlidingBar{
+                pointer-events: none; cursor: default; display: none;
+            }
+
+            #pageContent{
+                /*width: calc(100% - 330px);*/
+                margin-right: 20px;
+                margin-left:  20px;
+                position:absolute; left:270px;
+            }
+
+        }
+
+    </style>
+    <!-- media query  -->
+</head>
+
+
+
+<body class="fixed-sn purple-skin">
+
+<!--Double navigation-->
+<header>
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav fixed custom-scrollbar">
+
+        <!-- Logo -->
+        <li>
+            <div class="logo-wrapper waves-light">
+                <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
+            </div>
+        </li>
+        <!--/. Logo -->
+
+        <!--Social-->
+        <li>
+            <ul class="social">
+                <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
+                <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
+                <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+            </ul>
+        </li>
+        <!--/Social-->
+
+        <!-- Side navigation links -->
+        <ul class="collapsible collapsible-accordion">
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-cutlery"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Breakfast</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Sandwiches</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Lunch</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Dessert</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Snacks</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Soups</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Workshops<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">How it looks?</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Cooking workshops</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-thumbs-o-up"></i> Collaboration<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">My past collaborations</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Write me your idea</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-photo"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Photos</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Videos</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-newspaper-o"></i> Publications<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Media</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Books</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="#" class="waves-effect">Why this blog?</a>
+                        </li>
+                        <li><a href="#" class="waves-effect">Something about me</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!--/. Side navigation links -->
+    </ul>
+    <!--/.Sidebar navigation -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
+
+        <!-- SideNav slide-out button -->
+        <div class="float-xs-left">
+            <a id="linkSlidingBar" href="#" data-activates="slide-out" class="button-collapse waves-effect" ><i class="fa fa-bars" ></i></a>
+        </div>
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>TVM</p>
+        </div>
+
+        <div class="float-xs-left">
+            <form class="form-inline">
+                <input class="form-control" type="text" style="color: white !important;width: 500px; margin-left=50px; " placeholder="Search">
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav float-xs-right">
+
+            <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-plus-circle fa-lg"></i> <span class="hidden-sm-down"></span></a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-plane fa-lg"></i> <span class="hidden-sm-down"></span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-envelope fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-commenting fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                </div>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plane"></i> <span class="hidden-sm-down">My Trips</span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                </div>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">My account</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+
+                </div>
+            </li>
+            <!-- <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-cogs"></i> <span class="hidden-sm-down">Settings</span></a>
+            </li> -->
+
+            <li class="nav-item">
+                <div class="float-xs-right">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-cogs"></i></a>
+                </div>
+
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+</header>
+<!--/Double navigation-->
+
+<!--Main layout-->
+<main style="margin-left: 0; margin-right: 0; padding-top: 60px;">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div  style="padding-left: 0;">
+                <!-- Side Navbar column -->
+                <div id="sideNavEdited" class="side-nav fixed card"
+                     style="
+                          transform:none;
+                          /*transform:translateX(10px);*/
+                          transform:translateY(-20px);
+                          padding-top: 20px;
+
+                          left: auto;
+                          top: auto;
+
+                          margin: auto;
+
+                          height: 100%;
+                          height: calc(100%);
+                          height: -moz-calc(100%);
+
+                          padding-bottom: auto;
+                          background-color: #fff;
+                          z-index: 0;
+                          backface-visibility: hidden;
+                          overflow-y: auto;
+                          will-change: transform;
+                          backface-visibility: hidden;
+                          color: #fff;
+                          @media {
+
+                          }
+
+                        ">
+                    <!-- Logo -->
+                    <li>
+                        <div class="logo-wrapper waves-light">
+                            <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
+                        </div>
+                    </li>
+                    <!--/. Logo -->
+
+
+                    <!--Social-->
+                    <li>
+                        <ul class="social">
+                            <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                            <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
+                            <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
+                            <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+                        </ul>
+                    </li>
+                    <!--/Social-->
+
+                    <ul class="collapsible collapsible-accordion">
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
+                                    </li>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
+                                    </li>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                        </li>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">Why this blog?</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Something about me</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Side Navbar column -->
+            </div>
+
+            <div id="pageContent" align="center">
+            <div  class="">
+                <div  class="" style="padding-top: 30px">
+
+                <h1 class="section-heading font-weight-normal" style="margin-bottom:20px;">Video Gallery</h1>
+
+                <div class="col-lg-4 col-sm-6">
+                    <!--Card-->
+                    <div class="card card-cascade" style="width:100%;">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            
+                            <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner" role="listbox">
+                                    <!-- First slide -->
+                                    <div class="carousel-item active">
+                                        <!--Mask color-->
+                                        <div class="view hm-black-light"  >
+                                            <!--Video source-->
+                                            <video class="video-fluid" autoplay loop muted> 
+                                                <source src="videoStore/KawuduluWawa.mp4" type="video/mp4" />
+                                            </video>
+                                           <!--  <div class="full-bg-img"></div> -->
+                                        </div>
+
+                                        <!--Caption-->
+                                        <div class="carousel-caption">
+                                            <div class="animated fadeInDown">
+                                                <h1 class="h3-responsive"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></h1>
+                                            </div>
+                                        </div>
+                                        <!--Caption-->
+                                    </div>
+                                    <!-- /.First slide -->
+                                </div>
+                                <!--/.Slides-->
+                            </div>
+                            <a href="videoStore/KawuduluWawa.mp4">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title"><strong>Kawudulu Wawa</strong></h4>
+                            <h5>Yakalla</h5>
+
+                            <p class="card-text">Around Kawudulu Wawa
+                            </p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+
+                <div class="col-lg-4 col-sm-6">
+                    <!--Card-->
+                    <div class="card card-cascade" style="width:100%;">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight" >
+                            
+                            <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner" role="listbox">
+                                    <!-- First slide -->
+                                    <div class="carousel-item active">
+                                        <!--Mask color-->
+                                        <div class="view hm-black-light">
+                                            <!--Video source-->
+                                            <video class="video-fluid" autoplay loop muted>
+                                                <source src="/mnt/14C27891C27878B6/HUAWEI Storage 2016-10-06/SD/DCIM/Camera/VID_20160916_162317.mp4#t=1,3" type="video/mp4" />
+                                            </video>
+                                            <div class="full-bg-img"></div>
+                                        </div>
+
+                                        <!--Caption-->
+                                        <div class="carousel-caption">
+                                            <div class="animated fadeInDown">
+                                                <h1 class="h3-responsive"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></h1>
+                                            </div>
+                                        </div>
+                                        <!--Caption-->
+                                    </div>
+                                    <!-- /.First slide -->
+                                </div>
+                                <!--/.Slides-->
+                            </div>
+                            <a href="/mnt/14C27891C27878B6/HUAWEI Storage 2016-10-06/SD/DCIM/Camera/VID_20160916_162317.mp4">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title"><strong>Elephant</strong></h4>
+                            <h5>Minneriya</h5>
+
+                            <p class="card-text">Jeep Safari in Minneriya
+                            </p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+                
+                <div class="col-lg-4 col-sm-6">
+                    <!--Card-->
+                    <div class="card card-cascade" style="width:100%;">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight" >
+                            
+                            <div id="video-carousel-example" class="carousel slide carousel-fade" data-ride="carousel">
+                                <!--Slides-->
+                                <div class="carousel-inner" role="listbox">
+                                    <!-- First slide -->
+                                    <div class="carousel-item active">
+                                        <!--Mask color-->
+                                        <div class="view hm-black-light">
+                                            <!--Video source-->
+                                            <video class="video-fluid" autoplay loop muted>
+                                                <source src="/mnt/14C27891C27878B6/HUAWEI Storage 2016-10-06/SD/DCIM/Camera/VID_20160916_110335.mp4" type="video/mp4" />
+                                            </video>
+                                            <div class="full-bg-img"></div>
+                                        </div>
+
+                                        <!--Caption-->
+                                        <div class="carousel-caption">
+                                            <div class="animated fadeInDown">
+                                                <h1 class="h3-responsive"><i class="fa fa-play-circle fa-2x" aria-hidden="true"></i></h1>
+                                            </div>
+                                        </div>
+                                        <!--Caption-->
+                                    </div>
+                                    <!-- /.First slide -->
+                                </div>
+                                <!--/.Slides-->
+                            </div>
+                            <a href="/mnt/14C27891C27878B6/HUAWEI Storage 2016-10-06/SD/DCIM/Camera/VID_20160916_110335.mp4">
+                                <div class="mask waves-effect waves-light"></div>
+                            </a>
+
+                        </div>
+                        <!--/.Card image-->
+                        <!--Card content-->
+                        <div class="card-block text-center">
+                            <!--Title-->
+                            <h4 class="card-title"><strong>Tiwanka Pilima Geya</strong></h4>
+                            <h5>Polonnaruwa</h5>
+
+                            <p class="card-text">Description Of Tiwanka Pilima Geya
+                            </p>
+                        </div>
+                        <!--/.Card content-->
+                    </div>
+                    <!--/.Card-->
+                </div>
+
+                </div>
+                
+
+            </div>
+            </div>
+
+        </div>
+    </div><!-- container fluid -->
+</main>
+<!--/Main layout-->
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+
+<!-- Tooltips -->
+<script type="text/javascript" src="../../js/tether.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../js/mdb.min.js"></script>
+
+<script type="text/javascript" src="../../js/modules(optional)/lightbox.js"></script>
+
+<script>
+    // SideNav init
+    $(".button-collapse").sideNav();
+    var el = document.querySelector('.custom-scrollbar');
+    Ps.initialize(el);
+
+    $(function () {
+        $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+    });
+</script>
+
+<script>
+    new WOW().init();
+</script>
+
+<!-- 16:9 video ratio -->
+<script>
+    var a=document.getElementsByClassName('video-fluid');
+        var i;
+    for (i = 0; i < a.length; i++) {
+        a[i].style.height=(a[i].offsetWidth)*9/16+'px';
+    }
+    
+    window.onresize=function resizeit(){
+    var a=document.getElementsByClassName('video-fluid');
+    var i;
+    for (i = 0; i < a.length; i++) {
+        a[i].style.height=a[i].offsetWidth*9/16+'px';
+    }
+        };
+</script>
+<!-- 16:9 video ratio -->
+
+</body>
+
+</html>
