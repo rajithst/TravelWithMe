@@ -11,7 +11,7 @@ const schema = mongoose.Schema;
 
 var businesspageSchema = new schema({
 
-    useerid:{type:Number},
+    userid:{type:Number},
     pagename:{type:String},
     businesstype:{type:String},
     pageimage:{type:String},
@@ -36,7 +36,7 @@ module.exports.getUserByemail = function (email,callback) {
 module.exports.addBpagedata = function (BusinessPage,callback) {
 
     BusinessPage.save(callback);
-}
+};
 
 
 /*

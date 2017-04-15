@@ -20,6 +20,7 @@ router.post('/createpage',function (req,res,next) {
 
     var BusinessPage = new Bpage({
 
+        userid:req.body.id,
         pagename:req.body.pagename,
         businesstype:req.body.businesstype,
         pageimage:req.body.pageimage,

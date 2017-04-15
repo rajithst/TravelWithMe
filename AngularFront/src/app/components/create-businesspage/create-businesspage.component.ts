@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinesspageService } from '../../services/businesspage.service';
-/*import { FlashMessagesService } from 'angular2-flash-messages';*/
-import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
-import { MapsAPILoader } from 'angular2-google-maps/core';
+import { Router,ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-create-businesspage',
@@ -20,13 +19,15 @@ export class CreateBusinesspageComponent implements OnInit {
   public latitude: number;
   public longitude: number;
   public zoom: number;
-
+  private sub:any;
+  private id:any;
 
   constructor(
     private bservices:BusinesspageService,
-    /*private flashMessage:FlashMessagesService,*/
     private route:Router,
-    private authService:AuthService
+    private acroute: ActivatedRoute
+
+
 
   ) { }
 
@@ -36,15 +37,13 @@ export class CreateBusinesspageComponent implements OnInit {
     this.latitude = 7.7505019;
     this.longitude = 80.1652569;
 
-    /*this.authService.getProfile().subscribe(profile=>{
-        this.user = profile.user;
+    this.sub = this.acroute.params.subscribe(params => {
+      this.id = +params['me'];
 
-      },
 
-      err=>{
-        return false;
+    });
 
-      })*/
+
   }
 
 
@@ -52,7 +51,7 @@ export class CreateBusinesspageComponent implements OnInit {
 
    const user = {
 
-      id:this.user._id,
+      id:this.id,
       pagename: this.pagename,
       businesstype: this.businesstype,
       pageimage:'test',
@@ -61,12 +60,13 @@ export class CreateBusinesspageComponent implements OnInit {
     this.bservices.submitPagedata(user).subscribe(data=>{
 
       if(data.success){
-        /*this.flashMessage.show('New Page created',{cssClass:'alert-success',timeout:3000});*/
+       console.log("done");
         this.route.navigate(['/profile'])
       }else{
 
-        /*this.flashMessage.show('something went wrong',{cssClass:'alert-danger',timeout:3000});*/
-        this.route.navigate(['/profile'])
+        console.log("error")
+        //this.flashMessage.show('something went wrong',{cssClass:'alert-danger',timeout:3000});
+        //this.route.navigate(['/profile'])
 
       }
 
