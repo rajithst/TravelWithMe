@@ -41,12 +41,11 @@ export class AuthService {
 
   }
 
-  loadToken(){
+loadToken(){
 
     const token = localStorage.getItem('id_token');
     this.authToken = token;
   }
-
   storeData(token, user){
 
     localStorage.setItem('id_token', token);
@@ -62,6 +61,7 @@ export class AuthService {
     this.user = null;
     localStorage.clear();
   }
+
   loggedIn(){
 
     return tokenNotExpired();
@@ -69,7 +69,7 @@ export class AuthService {
 
 
   checkId(data){
-  
+
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/users/checkid', data, {headers: headers}).map(res => res.json());

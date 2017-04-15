@@ -29,7 +29,7 @@ import { GooglemapsService } from './services/googlemaps.service';
 import { BlogServiceService } from './services/blog-service.service';
 import { Auth0Service } from './services/auth0.service';
 import { FacebookService } from './services/facebook.service';
-;
+
 
 
 
@@ -39,7 +39,7 @@ const appRoute: Routes = [
   {path: '' , component: HomeComponent} ,
   {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
-  {path: 'profile/create/:id/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
+  {path: 'profile/create/:me/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
   {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]},
@@ -72,6 +72,7 @@ const appRoute: Routes = [
     /*FlashMessagesModule,*/
     RouterModule.forRoot(appRoute),
 
+
   ],
   providers: [
     ValidateService,
@@ -82,6 +83,7 @@ const appRoute: Routes = [
     BlogServiceService,
     Auth0Service,
     FacebookService
+
 
   ],
   bootstrap: [AppComponent]

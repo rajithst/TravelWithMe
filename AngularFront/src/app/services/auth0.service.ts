@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 
+
 declare const Auth0Lock: any;
 
 const  options = {
@@ -30,6 +31,9 @@ export class Auth0Service {
 
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('profile', JSON.stringify(profile));
+
+
+
 
       });
     });
