@@ -35,11 +35,11 @@ export class ProfileComponent implements OnInit {
     })*/
 
       this.profile = JSON.parse(localStorage.getItem('profile'));
-      const data = {
-        id: this.profile.identities[0].user_id,
-        provider: this.profile.identities[0].provider,
-        userid: this.profile.user_id
-      };
+            const data = {
+              id: this.profile.identities[0].user_id,
+              provider: this.profile.identities[0].provider,
+              userid: this.profile.user_id
+            };
 
       this.authService.checkId(data).subscribe(res => {
         this.user = JSON.parse(res.data);
