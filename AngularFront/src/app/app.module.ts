@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
-/*import { FlashMessagesModule } from 'angular2-flash-messages';*/
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 
 
@@ -71,6 +71,9 @@ const appRoute: Routes = [
     HttpModule,
     /*FlashMessagesModule,*/
     RouterModule.forRoot(appRoute),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyApfFMVtKyXv_OxrFhP4mT31yPzw_J8Eqs'
+    })
 
 
   ],

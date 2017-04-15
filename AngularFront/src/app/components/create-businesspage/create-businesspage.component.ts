@@ -3,12 +3,12 @@ import { BusinesspageService } from '../../services/businesspage.service';
 /*import { FlashMessagesService } from 'angular2-flash-messages';*/
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-
+import { MapsAPILoader } from 'angular2-google-maps/core';
 
 @Component({
   selector: 'app-create-businesspage',
   templateUrl: './create-businesspage.component.html',
-  styleUrls: ['./create-businesspage.component.css']
+  styleUrls: ['./create-businesspage.component.css'],
 })
 export class CreateBusinesspageComponent implements OnInit {
 
@@ -17,6 +17,10 @@ export class CreateBusinesspageComponent implements OnInit {
   businesstype:Number;
   pageimage:String;
   targetareas:String;
+  public latitude: number;
+  public longitude: number;
+  public zoom: number;
+
 
   constructor(
     private bservices:BusinesspageService,
@@ -27,6 +31,10 @@ export class CreateBusinesspageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.zoom = 2;
+    this.latitude = 7.7505019;
+    this.longitude = 80.1652569;
 
     /*this.authService.getProfile().subscribe(profile=>{
         this.user = profile.user;
