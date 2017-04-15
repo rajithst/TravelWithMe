@@ -19,6 +19,8 @@ import { CreateBusinesspageComponent } from './components/create-businesspage/cr
 import { BlogComponent } from './components/blog/blog.component';
 import { ProfilesettingsComponent } from './components/profilesettings/profilesettings.component';
 import { ViewpostComponent } from './components/viewpost/viewpost.component';
+import { NewsfeedComponent } from './components/newsfeed/newsfeed.component';
+
 
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -27,6 +29,7 @@ import { GooglemapsService } from './services/googlemaps.service';
 import { BlogServiceService } from './services/blog-service.service';
 import { Auth0Service } from './services/auth0.service';
 import { FacebookService } from './services/facebook.service';
+;
 
 
 
@@ -39,7 +42,8 @@ const appRoute: Routes = [
   {path: 'profile/create/:id/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
-  {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]}
+  {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]},
+  {path: 'profile/newsfeed' , component: NewsfeedComponent , canActivate: [AuthGuard]},
 
 ];
 
@@ -57,6 +61,7 @@ const appRoute: Routes = [
     BlogComponent,
     ProfilesettingsComponent,
     ViewpostComponent,
+    NewsfeedComponent,
 
 
   ],
