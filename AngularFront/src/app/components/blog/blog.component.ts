@@ -6,10 +6,18 @@ import { BlogServiceService } from '../../services/blog-service.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.css'],
+  styleUrls: [
+    './css/froala_editor.pkgd.min.css',
+    './css/froala_style.min.css'
+
+  ],
   encapsulation: ViewEncapsulation.None
 })
 export class BlogComponent implements OnInit {
+
+
+  private js1 = require('./js/froala_editor.pkgd.min.js');
+  private js2 = require('./js/page.js');
 
 
 
