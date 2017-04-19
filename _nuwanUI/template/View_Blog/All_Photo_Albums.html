@@ -19,7 +19,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.css" rel="stylesheet">
 
     <!-- Style for Read more / Read less -->
     <style type="text/css">
@@ -101,42 +101,13 @@
     <!-- media query  -->
     <style>
 
-        #sideNavEdited {
-            position:fixed;
-            width: 270px;
-        }
-
         @media only screen and (max-width: 768px) {
-            #sideNavEdited {
-                position: static;
-                width: auto;
-                display: none;
-            }
-
-            #linkSlidingBar {
-                pointer-events: visible;
-                cursor: default;
-            }
-
-            #pageContent{
-                margin-top: 50px;
-
-            }
 
         }
 
         @media only screen and (min-width: 768px) {
 
-            #linkSlidingBar{
-                pointer-events: none; cursor: default; display: none;
-            }
-
-            #pageContent{
-                margin-right: 20px;
-                margin-left:  20px;
-                position:absolute; left:270px;
-            }
-
+            
         }
 
     </style>
@@ -172,75 +143,46 @@
 
         <!-- Side navigation links -->
         <ul class="collapsible collapsible-accordion">
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-cutlery"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Breakfast</a>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
+                                    </li>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Sandwiches</a>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
+                                    </li>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Lunch</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Dessert</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Snacks</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Soups</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Workshops<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">How it looks?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Cooking workshops</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-thumbs-o-up"></i> Collaboration<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">My past collaborations</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Write me your idea</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-photo"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Photos</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Videos</a>
+
+                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                       </li>
+                       
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">Why this blog?</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Something about me</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-newspaper-o"></i> Publications<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Media</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Books</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Why this blog?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Something about me</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
         <!--/. Side navigation links -->
     </ul>
     <!--/.Sidebar navigation -->
@@ -336,381 +278,271 @@
 <!--/Double navigation-->
 
 <!--Main layout-->
-<main style="margin-left: 0; margin-right: 0; padding-top: 60px;">
-    <div class="container-fluid">
+<main class="myMain">
+    <div class="container-fluid row">
 
-        <div class="row">
-            <div  style="padding-left: 0;">
-                <!-- Side Navbar column -->
-                <div id="sideNavEdited" class="side-nav fixed card"
-                     style="
-                          transform:none;
-                          /*transform:translateX(10px);*/
-                          transform:translateY(-20px);
-                          padding-top: 20px;
+        <h1 class="section-heading font-weight-normal" style="margin-bottom:20px; margin-top:10px;">All Photo Albums</h1>
 
-                          left: auto;
-                          top: auto;
+        <div class="col-lg-4 col-sm-6">
+            <!--Card-->
+            <div class="card card-cascade">
+                <!--Card image-->
+                <div class="view overlay hm-white-slight">
+                    <div class="col-md-12">
 
-                          margin: auto;
+                    <div id="mdb-lightbox-ui"></div>
 
-                          height: 100%;
-                          height: calc(100%);
-                          height: -moz-calc(100%);
-
-                          padding-bottom: auto;
-                          background-color: #fff;
-                          z-index: 0;
-                          backface-visibility: hidden;
-                          overflow-y: auto;
-                          will-change: transform;
-                          backface-visibility: hidden;
-                          color: #fff;
-                          @media {
-
-                          }
-
-                        ">
-                    <!-- Logo -->
-                    <li>
-                        <div class="logo-wrapper waves-light">
-                            <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
-                        </div>
-                    </li>
-                    <!--/. Logo -->
+                    <div class="mdb-lightbox no-margin">
 
 
-                    <!--Social-->
-                    <li>
-                        <ul class="social">
-                            <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                            <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
-                            <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
-                            <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                        </ul>
-                    </li>
-                    <!--/Social-->
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid">
+                            </a>
+                        </figure>
 
-                    <ul class="collapsible collapsible-accordion">
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
-                                    </li>
-                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Article 2</a>
-                                    </li>
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
-                                </ul>
-                            </div>
-                        </li>
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
-                                    </li>
-                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
-                                    </li>
-                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
-                       <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
-                       </li>
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">Why this blog?</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Something about me</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                    </div>
                 </div>
-                <!-- Side Navbar column -->
+                    <a href="Photo_Album_1.html">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <!--/.Card image-->
+                <!--Card content-->
+                <div class="card-block text-center">
+                    <!--Title-->
+                    <h4 class="card-title"><strong>My Album 1</strong></h4>
+                    <h5>Location</h5>
+
+                    <p class="card-text">Description.....
+                    </p>
+                </div>
+                <!--/.Card content-->
             </div>
-
-            <div id="pageContent" align="center">
-            <div  class="" style="padding-top: 30px">
-
-                <h1 class="section-heading font-weight-normal" style="margin-bottom:20px;">All Photo Albums</h1>
-
-                <div class="col-lg-4 col-sm-6">
-                    <!--Card-->
-                    <div class="card card-cascade">
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <div class="col-md-12">
-
-                            <div id="mdb-lightbox-ui"></div>
-
-                            <div class="mdb-lightbox no-margin">
-
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                            </div>
-                        </div>
-                            <a href="Photo_Album_1.html">
-                                <div class="mask waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block text-center">
-                            <!--Title-->
-                            <h4 class="card-title"><strong>My Album 1</strong></h4>
-                            <h5>Location</h5>
-
-                            <p class="card-text">Description.....
-                            </p>
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <!--Card-->
-                    <div class="card card-cascade">
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <div class="col-md-12">
-
-                            <div id="mdb-lightbox-ui"></div>
-
-                            <div class="mdb-lightbox no-margin" data-pswp-uid="1">
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(2).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(2).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(30).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(27).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(27).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(28).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(28).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(29).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(29).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(23).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(23).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(4).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(4).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(6).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(6).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(5).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(5).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                            </div>
-                        </div>
-                            <a href="Photo_Album_2.html">
-                                <div class="mask waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block text-center">
-                            <!--Title-->
-                            <h4 class="card-title"><strong>My Album 2</strong></h4>
-                            <h5>Location</h5>
-
-                            <p class="card-text">Description.....
-                            </p>
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <!--Card-->
-                    <div class="card card-cascade">
-                        <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <div class="col-md-12">
-
-                            <div id="mdb-lightbox-ui"></div>
-
-                            <div class="mdb-lightbox no-margin">
-
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid">
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                                <figure class="col-xs-4">
-                                    <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" />
-                                    </a>
-                                </figure>
-
-                            </div>
-                        </div>
-                            <a href="Photo_Album_2.html">
-                                <div class="mask waves-effect waves-light"></div>
-                            </a>
-                        </div>
-                        <!--/.Card image-->
-                        <!--Card content-->
-                        <div class="card-block text-center">
-                            <!--Title-->
-                            <h4 class="card-title"><strong><c>Album Name</c></strong></h4>
-                            <h5>Location</h5>
-
-                            <p class="card-text">Description.....
-                            </p>
-                        </div>
-                        <!--/.Card content-->
-                    </div>
-                    <!--/.Card-->
-                </div>
-              
-
-              
-        </div>
-            </div>
-
+            <!--/.Card-->
         </div>
 
+        <div class="col-lg-4 col-sm-6">
+            <!--Card-->
+            <div class="card card-cascade">
+                <!--Card image-->
+                <div class="view overlay hm-white-slight">
+                    <div class="col-md-12">
+
+                    <div id="mdb-lightbox-ui"></div>
+
+                    <div class="mdb-lightbox no-margin" data-pswp-uid="1">
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(2).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(2).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(30).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(27).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(27).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(28).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(28).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(29).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(29).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(23).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(23).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(4).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(4).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(6).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(6).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img//Photos/Lightbox/Original/img%20(5).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(5).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                    </div>
+                </div>
+                    <a href="Photo_Album_2.html">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <!--/.Card image-->
+                <!--Card content-->
+                <div class="card-block text-center">
+                    <!--Title-->
+                    <h4 class="card-title"><strong>My Album 2</strong></h4>
+                    <h5>Location</h5>
+
+                    <p class="card-text">Description.....
+                    </p>
+                </div>
+                <!--/.Card content-->
+            </div>
+            <!--/.Card-->
+        </div>
+
+        <div class="col-lg-4 col-sm-6">
+            <!--Card-->
+            <div class="card card-cascade">
+                <!--Card image-->
+                <div class="view overlay hm-white-slight">
+                    <div class="col-md-12">
+
+                    <div id="mdb-lightbox-ui"></div>
+
+                    <div class="mdb-lightbox no-margin">
+
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid">
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                        <figure class="col-xs-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" />
+                            </a>
+                        </figure>
+
+                    </div>
+                </div>
+                    <a href="Photo_Album_2.html">
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <!--/.Card image-->
+                <!--Card content-->
+                <div class="card-block text-center">
+                    <!--Title-->
+                    <h4 class="card-title"><strong><c>Album Name</c></strong></h4>
+                    <h5>Location</h5>
+
+                    <p class="card-text">Description.....
+                    </p>
+                </div>
+                <!--/.Card content-->
+            </div>
+            <!--/.Card-->
+        </div>
+    
     </div> <!-- Container fluid -->
 </main>
 <!--/Main layout-->
@@ -727,7 +559,7 @@
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="../../js/mdb.min.js"></script>
+<script type="text/javascript" src="../../js/mdb.js"></script>
 
 <script type="text/javascript" src="../../js/modules(optional)/lightbox.js"></script>
 
@@ -741,6 +573,25 @@
 <script>
     new WOW().init();
 </script>
+
+<!-- main width Responsive -->
+<script>
+
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+        
+    man[0].style.paddingTop=(nav[0].offsetHeight)+10+'px';
+    
+    
+    window.onresize=function resizeit(){
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+
+    man[0].style.paddingTop=nav[0].offsetHeight+10+'px';
+    };
+    
+</script>
+<!-- main width Responsive -->
 
 </body>
 

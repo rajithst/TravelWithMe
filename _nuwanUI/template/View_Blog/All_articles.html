@@ -17,7 +17,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.css" rel="stylesheet">
 
     <!-- Style for Read more / Read less -->
     <style type="text/css">
@@ -99,35 +99,14 @@
     <!-- media query  -->
     <style>
 
-        #sideNavEdited {
-            position:fixed;
-            width: 270px;
-        }
-
+        
         @media only screen and (max-width: 768px) {
-            #sideNavEdited {
-                position: static;
-                width: auto;
-                display: none;
-            }
-
-            #linkSlidingBar {
-                pointer-events: visible;
-                cursor: default;
-            }
+            
         }
 
         @media only screen and (min-width: 768px) {
 
-            #linkSlidingBar{
-                pointer-events: none; cursor: default; display: none;
-            }
-
-            #pageContent{
-                margin-right: 20px;
-                margin-left:  20px;
-                position:absolute; left:270px;
-            }
+            
 
         }
 
@@ -164,75 +143,46 @@
 
         <!-- Side navigation links -->
         <ul class="collapsible collapsible-accordion">
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-cutlery"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Breakfast</a>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
+                                    </li>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Sandwiches</a>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
+                                    </li>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Lunch</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Dessert</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Snacks</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Soups</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Workshops<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">How it looks?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Cooking workshops</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-thumbs-o-up"></i> Collaboration<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">My past collaborations</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Write me your idea</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-photo"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Photos</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Videos</a>
+
+                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                       </li>
+                       
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">Why this blog?</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Something about me</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-newspaper-o"></i> Publications<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Media</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Books</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Why this blog?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Something about me</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
         <!--/. Side navigation links -->
     </ul>
     <!--/.Sidebar navigation -->
@@ -328,184 +278,81 @@
 <!--/Double navigation-->
 
 <!--Main layout-->
-<main style="margin-left: 0; margin-right: 0; padding-top: 60px;">
-    <div class="container-fluid">
+<main class="myMain">
+    <div class="container-fluid row">
 
-        <div class="row">
-            <div  style="padding-left: 0;">
-                <!-- Side Navbar column -->
-                <div id="sideNavEdited" class="side-nav fixed card"
-                     style="
-                          transform:none;
-                          /*transform:translateX(10px);*/
-                          transform:translateY(-20px);
-                          padding-top: 20px;
+        <!--Section: Blog v.3-->
+        <section class="section extra-margins">
 
-                          left: auto;
-                          top: auto;
+            <!--Section heading-->
+            <h1 class="section-heading wow fadeIn" data-wow-delay="0.2s">All Articles</h1>
 
-                          margin: auto;
+            <!--First Article-->
+            <div class="row">
 
-                          height: 100%;
-                          height: calc(100%);
-                          height: -moz-calc(100%);
-
-                          padding-bottom: auto;
-                          background-color: #fff;
-                          z-index: 0;
-                          backface-visibility: hidden;
-                          overflow-y: auto;
-                          will-change: transform;
-                          backface-visibility: hidden;
-                          color: #fff;
-                          @media {
-
-                          }
-
-                        ">
-                    <!-- Logo -->
-                    <li>
-                        <div class="logo-wrapper waves-light">
-                            <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
-                        </div>
-                    </li>
-                    <!--/. Logo -->
-
-
-                    <!--Social-->
-                    <li>
-                        <ul class="social">
-                            <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                            <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
-                            <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
-                            <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                        </ul>
-                    </li>
-                    <!--/Social-->
-
-                    <ul class="collapsible collapsible-accordion">
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
-                                    </li>
-                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Article 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
-                                    </li>
-                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
-                                    </li>
-                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-
-                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
-                       </li>
-                       
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">Why this blog?</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Something about me</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+                <!--First column-->
+                <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
+                    <!--Featured image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="http://mdbootstrap.com/images/slides/slide%20(16).jpg">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
+                    </div>
                 </div>
-                <!-- Side Navbar column -->
+                <!--/First column-->
+
+                <!--Second column-->
+                <div class="col-md-7 mb-r">
+                    <!--Excerpt-->
+                    <h5 class="blue-text"><i class="fa fa-map "></i>Travels</h5>
+                    <h4>How I've started my adventure with surfing?</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ut tempore, cum minus perspiciatis,
+                        blanditiis tempora molestias dolorem pariatur deserunt laudantium, reprehenderit!
+                        Sed accusamus vitae qui, perferendis minus.</p>
+                    <p>by <a><strong>Maria Kate</strong></a>, 22.06.2016</p>
+                    <a href="View_Article_1.html" class="btn btn-primary " >Read more</a>
+                </div>
+                <!--/Second column-->
+
             </div>
+            <!--/First Article-->
+            <hr>
 
-            <div id="pageContent" align="center">
-            <div class="">
-                <!--Section: Blog v.3-->
-                <section class="section extra-margins">
+            <!--Second Article-->
+            <div class="row">
 
-                    <!--Section heading-->
-                    <h1 class="section-heading wow fadeIn" data-wow-delay="0.2s">All Articles</h1>
-
-                    <!--First Article-->
-                    <div class="row">
-
-                        <!--First column-->
-                        <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
-                            <!--Featured image-->
-                            <div class="view overlay hm-white-slight">
-                                <img src="http://mdbootstrap.com/images/slides/slide%20(16).jpg">
-                                <a>
-                                    <div class="mask"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <!--/First column-->
-
-                        <!--Second column-->
-                        <div class="col-md-7 mb-r">
-                            <!--Excerpt-->
-                            <h5 class="blue-text"><i class="fa fa-map "></i>Travels</h5>
-                            <h4>How I've started my adventure with surfing?</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos ut tempore, cum minus perspiciatis,
-                                blanditiis tempora molestias dolorem pariatur deserunt laudantium, reprehenderit!
-                                Sed accusamus vitae qui, perferendis minus.</p>
-                            <p>by <a><strong>Maria Kate</strong></a>, 22.06.2016</p>
-                            <a href="View_Article_1.html" class="btn btn-primary " >Read more</a>
-                        </div>
-                        <!--/Second column-->
-
+                <!--First column-->
+                <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
+                    <!--Featured image-->
+                    <div class="view overlay hm-white-slight">
+                        <img src="http://mdbootstrap.com/images/regular/city/img%20(25).jpg">
+                        <a>
+                            <div class="mask"></div>
+                        </a>
                     </div>
-                    <!--/First Article-->
-                    <hr>
+                </div>
+                <!--/First column-->
 
-                    <!--Second Article-->
-                    <div class="row">
-
-                        <!--First column-->
-                        <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
-                            <!--Featured image-->
-                            <div class="view overlay hm-white-slight">
-                                <img src="http://mdbootstrap.com/images/regular/city/img%20(25).jpg">
-                                <a>
-                                    <div class="mask"></div>
-                                </a>
-                            </div>
-                        </div>
-                        <!--/First column-->
-
-                        <!--Second column-->
-                        <div class="col-md-7 mb-r">
-                            <!--Excerpt-->
-                            <h5 class="blue-text"><i class="fa fa-map "></i>Travels</h5>
-                            <h4>6 reasons why you need to visit San Francisco.</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem maxime quidem minima incidunt vel impedit commodi ducimus eaque saepe sed sapiente totam omnis, eos nostrum recusandae fugit. Eos fuga, atque.</p>
-                            <p>by <a><strong>Maria Kate</strong></a>, 22.06.2016</p>
-                            <a class="btn btn-primary ">Read more</a>
-                        </div>
-                        <!--/Second column-->
-
-                    </div>
-                    <!--/Second Article-->
-                    <hr>
-
-
-                </section>
-                <!--/Section: Blog v.3-->
+                <!--Second column-->
+                <div class="col-md-7 mb-r">
+                    <!--Excerpt-->
+                    <h5 class="blue-text"><i class="fa fa-map "></i>Travels</h5>
+                    <h4>6 reasons why you need to visit San Francisco.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem maxime quidem minima incidunt vel impedit commodi ducimus eaque saepe sed sapiente totam omnis, eos nostrum recusandae fugit. Eos fuga, atque.</p>
+                    <p>by <a><strong>Maria Kate</strong></a>, 22.06.2016</p>
+                    <a class="btn btn-primary ">Read more</a>
+                </div>
+                <!--/Second column-->
 
             </div>
-            </div>
+            <!--/Second Article-->
+            <hr>
 
-        </div>
+
+        </section>
+        <!--/Section: Blog v.3-->
+
     </div>
 </main>
 <!--/Main layout-->
@@ -522,7 +369,7 @@
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="../../js/mdb.min.js"></script>
+<script type="text/javascript" src="../../js/mdb.js"></script>
 
 <script>
     // SideNav init
@@ -534,6 +381,25 @@
 <script>
     new WOW().init();
 </script>
+
+<!-- main width Responsive -->
+<script>
+
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+        
+    man[0].style.paddingTop=(nav[0].offsetHeight)+10+'px';
+    
+    
+    window.onresize=function resizeit(){
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+
+    man[0].style.paddingTop=nav[0].offsetHeight+10+'px';
+    };
+
+</script>
+<!-- main width Responsive -->
 
 </body>
 

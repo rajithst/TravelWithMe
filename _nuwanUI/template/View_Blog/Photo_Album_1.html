@@ -85,7 +85,7 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="../../css/mdb.min.css" rel="stylesheet">
+    <link href="../../css/mdb.css" rel="stylesheet">
 
     <!-- Style for Read more / Read less -->
     <style type="text/css">
@@ -164,51 +164,6 @@
         }
     </style>
 
-    <!-- media query  -->
-    <style>
-
-        #sideNavEdited {
-            position:fixed;
-            width: 270px;
-        }
-
-        @media only screen and (max-width: 768px) {
-            #sideNavEdited {
-                position: static;
-                width: auto;
-                display: none;
-            }
-
-            #linkSlidingBar {
-                pointer-events: visible;
-                cursor: default;
-            }
-
-            #pageContent{
-                padding-top: 50px;
-
-            }
-        }
-
-        @media only screen and (min-width: 768px) {
-
-            #linkSlidingBar{
-                pointer-events: none; cursor: default; display: none;
-            }
-
-            #pageContent{
-                margin-right: 20px;
-                margin-left:  20px;
-                position:absolute; left:270px;
-            }
-
-
-
-        }
-
-    </style>
-    <!-- media query  -->
-
 </head>
 
 <body class="fixed-sn purple-skin">
@@ -239,75 +194,46 @@
 
         <!-- Side navigation links -->
         <ul class="collapsible collapsible-accordion">
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-cutlery"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Breakfast</a>
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
+                                    </li>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Sandwiches</a>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
+                                    </li>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
-                        <li><a href="#" class="waves-effect">Lunch</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Dessert</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Snacks</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Soups</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-coffee"></i> Workshops<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">How it looks?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Cooking workshops</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-thumbs-o-up"></i> Collaboration<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">My past collaborations</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Write me your idea</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-photo"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Photos</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Videos</a>
+
+                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                       </li>
+                       
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">Why this blog?</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Something about me</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-newspaper-o"></i> Publications<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Media</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Books</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                    <ul>
-                        <li><a href="#" class="waves-effect">Why this blog?</a>
-                        </li>
-                        <li><a href="#" class="waves-effect">Something about me</a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
         <!--/. Side navigation links -->
     </ul>
     <!--/.Sidebar navigation -->
@@ -403,264 +329,157 @@
 <!--/Double navigation-->
 
 <!--Main layout-->
-<main style="margin-left: 0; margin-right: 0; padding-top: 60px;">
-    <div class="container-fluid">
+<main class="myMain">
+    <div class="container-fluid row">
 
-        <div class="row">
-            <div  style="padding-left: 0;">
-                <!-- Side Navbar column -->
-                <div id="sideNavEdited" class="side-nav fixed card"
-                     style="
-                          transform:none;
-                          /*transform:translateX(10px);*/
-                          transform:translateY(-20px);
-                          padding-top: 20px;
+        <!-- Light Box -->
+        <section class="section wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
 
-                          left: auto;
-                          top: auto;
+            <!--Section heading-->
+            <h1 class="section-heading font-weight-normal">My Album 1</h1>
 
-                          margin: auto;
+            <!--First row-->
+            <div class="row">
 
-                          height: 100%;
-                          height: calc(100%);
-                          height: -moz-calc(100%);
+                <!--First column-->
+                <div class="col-md-12">
 
-                          padding-bottom: auto;
-                          background-color: #fff;
-                          z-index: 0;
-                          backface-visibility: hidden;
-                          overflow-y: auto;
-                          will-change: transform;
-                          backface-visibility: hidden;
-                          color: #fff;
-                          @media {
+                    <div id="mdb-lightbox-ui "><!-- Root element of PhotoSwipe. Must have class pswp. -->
+                        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-                          }
+                            <!-- Background of PhotoSwipe.
+                                         It's a separate element, as animating opacity is faster than rgba(). -->
+                            <div class="pswp__bg"></div>
 
-                        ">
-                    <!-- Logo -->
-                    <li>
-                        <div class="logo-wrapper waves-light">
-                            <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center" style="pointer-events: none; cursor: default;"></a>
-                        </div>
-                    </li>
-                    <!--/. Logo -->
+                            <!-- Slides wrapper with overflow:hidden. -->
+                            <div class="pswp__scroll-wrap">
 
+                                <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                                <!-- don't modify these 3 pswp__item elements, data is added later on. -->
+                                <div class="pswp__container">
+                                    <div class="pswp__item"></div>
+                                    <div class="pswp__item"></div>
+                                    <div class="pswp__item"></div>
+                                </div>
 
-                    <!--Social-->
-                    <li>
-                        <ul class="social">
-                            <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
-                            <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
-                            <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
-                            <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
-                        </ul>
-                    </li>
-                    <!--/Social-->
+                                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                                <div class="pswp__ui pswp__ui--hidden">
 
-                    <ul class="collapsible collapsible-accordion">
+                                    <div class="pswp__top-bar">
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
-                                    </li>
-                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Article 2</a>
-                                    </li>
+                                        <!--  Controls are self-explanatory. Order can be changed. -->
 
+                                        <div class="pswp__counter"></div>
 
-                                </ul>
-                            </div>
-                        </li>
+                                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
-                                    </li>
-                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
-                                    </li>
-                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+                                        <!--<button class="pswp__button pswp__button--share" title="Share"></button>-->
 
-                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
-                        </li>
+                                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
-                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
-                            <div class="collapsible-body">
-                                <ul>
-                                    <li><a href="#" class="waves-effect">Why this blog?</a>
-                                    </li>
-                                    <li><a href="#" class="waves-effect">Something about me</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Side Navbar column -->
-            </div>
+                                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
-            <div id="pageContent" align="center">
-                <div  class="">
-
-                    <!-- Light Box -->
-                    <section class="section wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-                        <!--Section heading-->
-                        <h1 class="section-heading font-weight-normal">My Album 1</h1>
-
-                        <!--First row-->
-                        <div class="row">
-
-                            <!--First column-->
-                            <div class="col-md-12">
-
-                                <div id="mdb-lightbox-ui "><!-- Root element of PhotoSwipe. Must have class pswp. -->
-                                    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-                                        <!-- Background of PhotoSwipe.
-                                                     It's a separate element, as animating opacity is faster than rgba(). -->
-                                        <div class="pswp__bg"></div>
-
-                                        <!-- Slides wrapper with overflow:hidden. -->
-                                        <div class="pswp__scroll-wrap">
-
-                                            <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
-                                            <!-- don't modify these 3 pswp__item elements, data is added later on. -->
-                                            <div class="pswp__container">
-                                                <div class="pswp__item"></div>
-                                                <div class="pswp__item"></div>
-                                                <div class="pswp__item"></div>
-                                            </div>
-
-                                            <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                                            <div class="pswp__ui pswp__ui--hidden">
-
-                                                <div class="pswp__top-bar">
-
-                                                    <!--  Controls are self-explanatory. Order can be changed. -->
-
-                                                    <div class="pswp__counter"></div>
-
-                                                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-
-                                                    <!--<button class="pswp__button pswp__button--share" title="Share"></button>-->
-
-                                                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-
-                                                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                                                    <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                                                    <!-- element will get class pswp__preloader--active when preloader is running -->
-                                                    <div class="pswp__preloader">
-                                                        <div class="pswp__preloader__icn">
-                                                            <div class="pswp__preloader__cut">
-                                                                <div class="pswp__preloader__donut"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                                        <!-- element will get class pswp__preloader--active when preloader is running -->
+                                        <div class="pswp__preloader">
+                                            <div class="pswp__preloader__icn">
+                                                <div class="pswp__preloader__cut">
+                                                    <div class="pswp__preloader__donut"></div>
                                                 </div>
-
-                                                <!--
-                                                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                                                            <div class="pswp__share-tooltip"></div>
-                                                        </div>
-                                                           -->
-
-                                                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                                                </button>
-
-                                                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                                                </button>
-
-                                                <div class="pswp__caption">
-                                                    <div class="pswp__caption__center"></div>
-                                                </div>
-
                                             </div>
-
                                         </div>
+                                    </div>
 
-                                    </div></div>
+                                    <!--
+                                            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                                <div class="pswp__share-tooltip"></div>
+                                            </div>
+                                               -->
 
-                                <div class="mdb-lightbox " data-pswp-uid="1">
+                                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                                    </button>
 
+                                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                                    </button>
 
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid" alt="LightBox gallery image 1">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" alt="Gallery image 2">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" alt="Gallery image 3">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" alt="Gallery image 4">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" alt="Gallery image 5">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" alt="Gallery image 6">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" alt="Gallery image 7">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" alt="Gallery image 8">
-                                        </a>
-                                    </figure>
-
-                                    <figure class="col-md-4">
-                                        <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
-                                            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" alt="Gallery image 9">
-                                        </a>
-                                    </figure>
+                                    <div class="pswp__caption">
+                                        <div class="pswp__caption__center"></div>
+                                    </div>
 
                                 </div>
 
                             </div>
-                            <!--/First column-->
 
-                        </div>
-                        <!--/First row-->
+                        </div></div>
 
-                    </section>
-                    <!-- Light Box -->
+                    <div class="mdb-lightbox " data-pswp-uid="1">
+
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(111).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(111).jpg" class="img-fluid" alt="LightBox gallery image 1">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(112).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(112).jpg" class="img-fluid" alt="Gallery image 2">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(66).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(66).jpg" class="img-fluid" alt="Gallery image 3">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(5).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(5).jpg" class="img-fluid" alt="Gallery image 4">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(46).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(46).jpg" class="img-fluid" alt="Gallery image 5">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(113).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(113).jpg" class="img-fluid" alt="Gallery image 6">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(51).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(51).jpg" class="img-fluid" alt="Gallery image 7">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(9).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(9).jpg" class="img-fluid" alt="Gallery image 8">
+                            </a>
+                        </figure>
+
+                        <figure class="col-md-4">
+                            <a href="https://mdbootstrap.com/img/Photos/Horizontal/Nature/12-col/img%20(11).jpg" data-size="1600x1067">
+                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(11).jpg" class="img-fluid" alt="Gallery image 9">
+                            </a>
+                        </figure>
+
+                    </div>
 
                 </div>
-            </div><!-- page content -->
+                <!--/First column-->
 
-    </div><!-- row -->
+            </div>
+            <!--/First row-->
+
+        </section>
+        <!-- Light Box -->
+
     </div><!-- container fluid -->
 </main>
 <!--/Main layout-->
@@ -677,7 +496,7 @@
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<script type="text/javascript" src="../../js/mdb.min.js"></script>
+<script type="text/javascript" src="../../js/mdb.js"></script>
 
 <script type="text/javascript" src="../../js/modules(optional)/lightbox.js"></script>
 
@@ -713,6 +532,25 @@
 <script>
     new WOW().init();
 </script>
+
+<!-- main width Responsive -->
+<script>
+
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+        
+    man[0].style.paddingTop=(nav[0].offsetHeight)+10+'px';
+    
+    
+    window.onresize=function resizeit(){
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+
+    man[0].style.paddingTop=nav[0].offsetHeight+10+'px';
+    };
+    
+</script>
+<!-- main width Responsive -->
 
 </body>
 
