@@ -70,6 +70,7 @@ loadToken(){
 
   checkId(data){
 
+
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/users/checkid', data, {headers: headers}).map(res => res.json());

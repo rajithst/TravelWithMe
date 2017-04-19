@@ -6,7 +6,6 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const request = require("request");
-const fbgraph = require('fbgraphapi');
 
 const User = require('../models/users');
 const SM = require('../models/socialmedia');
@@ -79,6 +78,8 @@ router.post('/authenticate',function (req,res) {
 
 router.post('/checkid',function (req,res) {
 
+
+
     SM.checkId(req.body.id,req.body.provider,function (err,match) {
         if (err) throw err;
         if (match){
@@ -102,7 +103,19 @@ router.post('/checkid',function (req,res) {
                 };
 
                 request(opts, function(error, response, body){
-                    res.json({success:true,data:body});
+
+                    body = JSON.parse(body);
+                    mydata = {
+
+                        city: body.hometown.name,
+                        location:body.location.name,
+                        accesstoken:body.identities[0].access_token,
+                        userid:body.identities[0].user_id,
+                        name:body.name,
+                        picture:body.picture,
+                        email:body.email
+                    };
+                    res.json({success:true,data:mydata});
 
             });
 

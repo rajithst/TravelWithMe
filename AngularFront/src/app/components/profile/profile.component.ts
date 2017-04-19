@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
 
 
 
+
    /* this.authService.getProfile().subscribe(profile=>{
       this.user = profile.user;
     },
@@ -36,7 +37,7 @@ export class ProfileComponent implements OnInit {
       return false;
 
     })*/
-    let count=0;
+
       this.profile = JSON.parse(localStorage.getItem('profile'));
             const data = {
               id: this.profile.identities[0].user_id,
@@ -45,18 +46,10 @@ export class ProfileComponent implements OnInit {
             };
 
         this.authService.checkId(data).subscribe(res => {
-          this.user = JSON.parse(res.data);
-          this.user.me = this.user.identities[0].user_id;
+          this.user = res.data;
+           /*this.user.me = this.user.identities[0].user_id;*!/*/
 
           console.log(this.user)
-/*
-          const actoken = this.user.identities[0].access_token;
-          const userid = this.user.identities[0].user_id;
-
-          this.FbService.placesLiked(actoken, userid).subscribe(places => {
-
-          })*/
-
         });
 
       }
