@@ -1,76 +1,39 @@
 
-
-
-<!--Navbar-->
 <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
 
+  <!-- SideNav slide-out button -->
+  <div class="float-xs-left">
+    <a data-activates="slide-out" class="button-collapse waves-effect"><i class="fa fa-bars"></i></a>
+  </div>
 
   <!-- Breadcrumb-->
   <div class="breadcrumb-dn">
-    <p>TVM</p>
+    <p>MDB Blog Home Page</p>
   </div>
 
-  <div class="float-xs-left">
-    <form class="form-inline">
-      <input class="form-control" type="text" placeholder="Search">
-    </form>
-  </div>
 
-  <ul class="nav navbar-nav float-xs-right">
-
-
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true} " *ngIf="!authService.loggedIn()" ><a class="nav-link" [routerLink]="['']">home</a></li>
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true} " *ngIf="authService.loggedIn()" ><a class="nav-link" [routerLink]="['/dashboard']">dashboard</a>
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="authService.loggedIn() "><a CLASS="nav-link" [routerLink]="['/profile']" >profile</a></li>
-      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="!authService.loggedIn()" (click)="auth.login()"><a class="nav-link">login</a></li>
-      <li class="nav-item" *ngIf="authService.loggedIn()"><a  class="nav-link" href="#" (click)="logoutClick() || auth.logout()">logout</a></li>
-
-
+  <ul class="nav navbar-nav float-xs-right ">
 
     <li class="nav-item ">
-      <a class="nav-link"><i class="fa fa-plus-circle fa-lg"></i> <span class="hidden-sm-down"></span></a>
+      <a class="nav-link"> <span class="tag red z-depth-1">2</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Cart</span></a>
     </li>
-
     <li class="nav-item ">
-      <a class="nav-link"><i class="fa fa-plane fa-lg"></i> <span class="hidden-sm-down"></span></a>
+      <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
     </li>
-
+    <li class="nav-item ">
+      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Support</span></a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link waves-effect"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Register</span></a>
+    </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-envelope fa-lg"></i> <span class="hidden-sm-down"></span></a>
-      <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+      <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
+      <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+        <a class="dropdown-item waves-effect" href="#">Logout</a>
+        <a class="dropdown-item waves-effect" href="#">My account</a>
       </div>
     </li>
-
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-commenting fa-lg"></i> <span class="hidden-sm-down"></span></a>
-      <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-        <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
-      </div>
-    </li>
-
-
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> <span class="hidden-sm-down"></span></a>
-      <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
-        <a class="dropdown-item" href="#">My account</a>
-        <a class="dropdown-item" href="#">Logout</a>
-
-      </div>
-    </li>
-
-
   </ul>
 
 </nav>
+<!--/.Navbar-->
