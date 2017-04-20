@@ -1,8 +1,17 @@
-<header><app-navbar></app-navbar></header>
+<script>
+  // SideNav init
+  $(".button-collapse").sideNav();
+  var el = document.querySelector('.custom-scrollbar');
+  Ps.initialize(el);
+</script>
+
+<script>
+  new WOW().init();
+</script>
 <app-sideview>
 
 </app-sideview>
-
+<app-navbar></app-navbar>
 
 
 <div>
@@ -16,11 +25,9 @@
   </div>-->
 
   <div *ngIf="user">
-    <img src="{{ user.picture}}" alt="" style="width: 20%; height: 300px;">
+    <img src="{{ user.picture_large}}" alt="" style="width: 20%; height: 300px;">
     <div classs="page-header"><h1>{{user.name}}</h1></div>
-
-
-      {{user.city}}
+      {{ user.identities[0].user_id }}
     <ul class="list-group">
       <li class="list-group-items"></li>
       <li class="list-group-items"></li>
@@ -31,10 +38,10 @@
 
   <li><a [routerLink]="['create/blog']">blog</a></li>
   <li><a [routerLink]="['newsfeed']">NewsFeed</a></li>
-  <li><a [routerLink]="['create/'+user.userid+'/businesspage']">create new business page</a></li>
-  <li><a [routerLink]="['create/'+user.userid+'/blog']">create new blogpost</a></li>
-  <li><a [routerLink]="['settings/'+user.userid]">Profile Settings</a></li>
-  <li><a [routerLink]="['view/'+user.userid]">View your business</a></li>
+  <li><a [routerLink]="['create/'+user.me+'/businesspage']">create new business page</a></li>
+  <li><a [routerLink]="['create/'+user.me+'/blog']">create new blogpost</a></li>
+  <li><a [routerLink]="['settings/'+user.me]">Profile Settings</a></li>
+  <li><a [routerLink]="['view/'+user.me]">View your business</a></li>
   <li><button class="btn btn-success">Follow</button></li>
 </ul>
 </div>

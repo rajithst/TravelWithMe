@@ -68,3 +68,28 @@ label.star:before {
   content: '\f006';
   font-family: FontAwesome;
 }
+.side-nav fixed card{
+transform:none;
+/*transform:translateX(10px);*/
+
+
+position:static;
+left: auto;
+top: auto;
+
+margin: auto;
+
+width: auto;
+height: 100%;
+height: calc(100%);
+height: -moz-calc(100%);
+
+padding-bottom: auto;
+background-color: #fff;
+z-index: auto;
+backface-visibility: hidden;
+overflow-y: auto;
+will-change: transform;
+backface-visibility: hidden;
+color: #fff;
+}
