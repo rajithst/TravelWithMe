@@ -46,8 +46,8 @@ export class ProfileComponent implements OnInit {
             };
 
         this.authService.checkId(data).subscribe(res => {
-          this.user = res.data;
-           /*this.user.me = this.user.identities[0].user_id;*!/*/
+          this.user = JSON.parse(res.data);
+          this.user.me = this.user.identities[0].user_id;
 
           console.log(this.user)
         });
