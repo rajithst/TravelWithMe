@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { AgmCoreModule } from 'angular2-google-maps/core';
-
-
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -30,6 +30,7 @@ import { BlogServiceService } from './services/blog-service.service';
 import { Auth0Service } from './services/auth0.service';
 import { FacebookService } from './services/facebook.service';
 import { SideviewComponent } from './components/sideview/sideview.component';
+import { TripComponent } from './components/trip/trip.component';
 
 
 
@@ -45,7 +46,7 @@ const appRoute: Routes = [
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
   {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]},
   {path: 'profile/newsfeed' , component: NewsfeedComponent , canActivate: [AuthGuard]},
-
+  {path: 'profile/profile/create/trip' , component: TripComponent , canActivate: [AuthGuard]},
 ];
 
 
@@ -64,6 +65,7 @@ const appRoute: Routes = [
     ViewpostComponent,
     NewsfeedComponent,
     SideviewComponent,
+    TripComponent,
 
 
   ],
@@ -71,6 +73,8 @@ const appRoute: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    MdButtonModule,
+    MdCheckboxModule,
     /*FlashMessagesModule,*/
     RouterModule.forRoot(appRoute),
     AgmCoreModule.forRoot({
