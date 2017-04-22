@@ -104,7 +104,7 @@ router.post('/checkid',function (req,res) {
 
                 request(opts, function(error, response, body){
 
-                    body = JSON.parse(body);
+                   /* body = JSON.parse(body);
                     mydata = {
 
                         city: body.hometown.name,
@@ -114,8 +114,8 @@ router.post('/checkid',function (req,res) {
                         name:body.name,
                         picture:body.picture,
                         email:body.email
-                    };
-                    res.json({success:true,data:mydata});
+                    };*/
+                    res.json({success:true,data:body});
 
             });
 
