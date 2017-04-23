@@ -1,0 +1,22 @@
+import { Injectable } from '@angular/core';
+import {  Http, Headers } from '@angular/http';
+
+@Injectable()
+export class GoogleAPIService {
+
+  constructor( private http:Http) { }
+
+  getTopSights(city:any){
+
+    let places:Array<string> = ["visiting places","tourist places","top sights","tourist attraction",city];
+    var item = Math.floor(Math.random() * 4) + 1;
+    var keyword = places[item];
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Headers','*');
+    headers.append('Access-Control-Allow-Origin','*');
+    return this.http.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+keyword+"+city+top+sights&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E",{headers:headers}).map(res=>res.json());
+
+
+  }
+
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FacebookService } from '../../services/facebook.service';
+import { GoogleAPIService } from '../../services/google-api.service';
+import {THIS_EXPR} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'body',
@@ -15,14 +17,17 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
   user: any;
   profile: any;
-  actoken: any;
   userid:any;
   bodyClasses:string = "fixed-sn blue-skin";
+  friends:any;
+  hometown:any;
+  results:any;
 
 
   constructor(
     private authService: AuthService,
-    private FbService: FacebookService
+    private FbService: FacebookService,
+    private PlaceAPI:GoogleAPIService
 
   ) { }
 
@@ -54,8 +59,18 @@ export class ProfileComponent implements OnInit,OnDestroy {
           this.user = JSON.parse(res.data);
           this.user.me = this.user.identities[0].user_id;
 
-          console.log(this.user)
+          this.friends = this.user.context.mutual_friends.data;
+          this.hometown = this.user.hometown.name;
+
+
+          this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
+            this.results = res.results;
+            console.log(this.results)
+          })
         });
+
+
+
 
       }
 

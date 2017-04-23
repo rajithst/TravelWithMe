@@ -44,6 +44,31 @@
   <li><a [routerLink]="['view/'+user.me]">View your business</a></li>
   <li><button class="btn btn-success">Follow</button></li>
 </ul>
+
+  <ul *ngIf="user">
+    <h2>Follow your friends on Facebook</h2>
+      <li *ngFor="let mutual of friends">
+        <h3>{{mutual.name}}</h3>
+        <button class="btn btn-success">Follow</button>
+      </li>
+
+
+  </ul>
+
+
+
+  <ul *ngIf="results">
+    <h2>Have you checkd these area nearby {{hometown}}</h2>
+
+    <li *ngFor="let nearby of results">
+      <h3>{{nearby.name}}</h3>
+
+
+    </li>
+
+  </ul>
+
+
 </div>
 
 </main>
