@@ -1,32 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FacebookService } from '../../services/facebook.service';
 
 @Component({
-  selector: 'app-profile',
+  selector: 'body',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+
+
+
+
+export class ProfileComponent implements OnInit,OnDestroy {
 
   user: any;
   profile: any;
   actoken: any;
   userid:any;
-
+  bodyClasses:string = "fixed-sn blue-skin";
 
 
   constructor(
     private authService: AuthService,
-
     private FbService: FacebookService
 
   ) { }
 
+
+
   ngOnInit() {
 
 
-
+    $('body').addClass(this.bodyClasses);
 
    /* this.authService.getProfile().subscribe(profile=>{
       this.user = profile.user;
@@ -53,6 +58,10 @@ export class ProfileComponent implements OnInit {
         });
 
       }
+
+   ngOnDestroy() {
+    $('body').removeClass();
+  }
 
 
 }
