@@ -6,9 +6,17 @@ import { Router } from '@angular/router'
 declare const Auth0Lock: any;
 
 const  options = {
-  languageDictionary: {
-    title: 'Log to Travel'
+
+
+  socialButtonStyle: 'small',
+  theme: {
+    logo: 'https://example.com/logo.png',
+    primaryColor: '#31324F'
   },
+  languageDictionary: {
+    title: "Log me in"
+  },
+
 };
 
 @Injectable()
@@ -32,10 +40,6 @@ export class Auth0Service {
 
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('profile', JSON.stringify(profile));
-
-        this.router.navigateByUrl('/profile');
-
-
 
       });
     });
