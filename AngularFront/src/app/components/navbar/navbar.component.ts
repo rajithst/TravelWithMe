@@ -12,7 +12,9 @@ import {Auth0Service} from '../../services/auth0.service'
 })
 export class NavbarComponent implements OnInit {
 
-
+  profile: any;
+  actoken: any;
+  userid:any;
   constructor(
     /*private flashMessage:FlashMessagesService,*/
     private route:Router,
@@ -21,6 +23,12 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+    const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id
+    };
   }
 
   logoutClick(){

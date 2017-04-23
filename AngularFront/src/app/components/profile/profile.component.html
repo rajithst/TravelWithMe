@@ -13,7 +13,78 @@
 </app-sideview>
 <app-navbar></app-navbar>
 
-<main>
+<!--Main layout-->
+<main class="myMain">
+  <div class="container-fluid row">
+
+    <!--Cover-->
+    <div class=" mb-r wow fadeIn" data-wow-delay="0.4s" >
+      <!--Card-->
+      <div  *ngIf="user" class="card testimonial-card">
+
+        <!--Background color-->
+        <div class="card-up deep-purple accent-4">
+        </div>
+
+        <!--Avatar-->
+        <div class="avatar"><img  src="{{ user.picture_large}}">
+        </div>
+
+        <div class="card-block" style="padding-left: 0; padding-right: 0;">
+          <!--Name-->
+          <h4 class="card-title">{{user.name}}</h4>
+          <hr>
+          <!-- Nav tabs -->
+          <div class="tabs-wrapper">
+            <ul class="nav classic-tabs deep-purple accent-4" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link waves-light waves-effect waves-light active" data-toggle="tab" href="#panel51" role="tab" aria-expanded="true">Timeline</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel52" role="tab" aria-expanded="false">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel53" role="tab" aria-expanded="false">Friends (12 mutual)</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Nav tabs -->
+        </div>
+
+      </div>
+      <!--/.Card-->
+    </div>
+    <!--Cover-->
+
+    <!-- Tab panels -->
+    <div class="tab-content card">
+
+      <!--Panel 1 Timeline-->
+      <div class="tab-pane fade in active show" id="panel51" role="tabpanel" aria-expanded="true">
+        <!--Content of Timeline included from timeline.html-->
+      </div>
+      <!--/.Panel 1-->
+
+      <!--Panel 2 About-->
+      <div class="tab-pane fade" id="panel52" role="tabpanel" aria-expanded="false">
+        <!--Content of About included from about.html-->
+      </div>
+      <!--/.Panel 2-->
+
+      <!--Panel 3 Friends-->
+      <div class="tab-pane fade" id="panel53" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;"">
+      <!--Content of Friends included from friends.html-->
+    </div>
+    <!--/.Panel 3-->
+
+
+  </div>
+  <!-- Tab panels -->
+
+
+
+<!--/Main layout-->
+
 <div>
 <!--  <div *ngIf="user">
 <div classs="page-header"><h1>{{user.name}}</h1></div>

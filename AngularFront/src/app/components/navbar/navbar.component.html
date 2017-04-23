@@ -7,25 +7,26 @@
   </div>
 
   <!-- Breadcrumb-->
-  <div class="breadcrumb-dn">
+<!--  <div class="breadcrumb-dn">
     <p>MDB Blog Home Page</p>
-  </div>
+  </div>-->
 
 
-  <ul class="nav navbar-nav float-xs-right ">
+
+
+  <ul class="nav navbar-nav float-xs-right " >
+
 
     <li class="nav-item ">
-      <a class="nav-link"> <span class="tag red z-depth-1">2</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Cart</span></a>
+      <a class="nav-link" data-toggle="modal" data-target="#myModal" > <span class="tag red z-depth-1">2</span> <i class="fa fa-shopping-cart"></i> <span class="hidden-sm-down">Create</span></a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link waves-effect"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Contact</span></a>
+      <a class="nav-link waves-effect" [routerLink]="['newsfeed']"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Home</span></a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down">Support</span></a>
+      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i> <span class="hidden-sm-down" >Message</span></a><!--[mdl-badge]="badgeCount"-->
     </li>
-    <li class="nav-item ">
-      <a class="nav-link waves-effect"><i class="fa fa-sign-in"></i> <span class="hidden-sm-down">Register</span></a>
-    </li>
+
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
       <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
@@ -33,7 +34,52 @@
         <li *ngIf="authService.loggedIn()"><a class="dropdown-item waves-effect" >My account</a></li>
       </div>
     </li>
+
   </ul>
 
 </nav>
 <!--/.Navbar-->
+
+<!-- Modal -->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-smll" role="document">
+    <div class="modal-content">
+      <div class="modal-header  text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <form action="#">
+            <div class="form-group col-md-12">
+            <div class = "row">
+              <div class ="col-md-4 col-sm-4 text-center card " mdl-shadow="2">
+                <i class="fa fa-globe fa-5x" style = "color: cornflowerblue ;align:center;"></i>
+                <h3>Travel</h3>
+                <h6>Small Description about travel what it can do </h6>
+                <button  class="btn btn-default waves-effect waves-light">Create</button>
+              </div>
+
+              <div class ="col-md-4  col-sm-4 card" mdl-shadow="2">
+                <i class="fa fa-book fa-5x" style = "color: cornflowerblue"></i>
+                <h3>Blog</h3>
+                <h6>Small Description about travel what it can do </h6>
+                <button  class="btn btn-default waves-effect waves-light">Create</button>
+              </div>
+
+              <div class ="col-md-4 col-sm-4 card" mdl-shadow="2">
+                <i class="fa fa-briefcase fa-5x" style = "color: cornflowerblue"></i>
+                <h3>Business</h3>
+                <h6>Small Description about travel what it can do </h6>
+                <button  class="btn btn-default waves-effect waves-light">Create</button>
+              </div>
+
+            </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
