@@ -72,8 +72,24 @@
       <!--/.Panel 2-->
 
       <!--Panel 3 Friends-->
-      <div class="tab-pane fade" id="panel53" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;"">
+      <div class="tab-pane fade " id="panel53" role="tabpanel" aria-expanded="false" style="margin-top: -2rem; padding: 2rem;">
       <!--Content of Friends included from friends.html-->
+        <div class = "row">
+          <div class = "col-lg-6 card" >
+            <h3>Facebook Mutual Friends</h3>
+        <mdl-list *ngFor="let mutual of friends">
+          <mdl-list-item>
+            <mdl-list-item-primary-content>
+              <mdl-icon mdl-list-item-avatar>person</mdl-icon>
+              <span>{{mutual.name}}</span>
+            </mdl-list-item-primary-content>
+            <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" >Follow</button>
+          </mdl-list-item>
+
+        </mdl-list>
+          </div>
+        </div>
+
     </div>
     <!--/.Panel 3-->
 
@@ -105,27 +121,7 @@
     </ul>
   </div>
 
-<ul *ngIf="user">
 
-  <li><a [routerLink]="['create/blog']">blog</a></li>
-  <li><a [routerLink]="['newsfeed']">NewsFeed</a></li>
-  <li><a [routerLink]="['create/'+user.me+'/businesspage']">create new business page</a></li>
-  <li><a [routerLink]="['create/'+user.me+'/blog']">create new blogpost</a></li>
-  <li><a [routerLink]="['settings/'+user.me]">Profile Settings</a></li>
-  <li><a [routerLink]="['view/'+user.me]">View your business</a></li>
-  <li><button class="btn btn-success">Follow</button></li>
-</ul>
-
-  <ul *ngIf="user">
-    <h2>Follow your friends on Facebook</h2>
-      <li *ngFor="let mutual of friends">
-        <h3>{{mutual.name}}</h3>
-        <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" >Follow</button>
-
-      </li>
-
-
-  </ul>
 
 
 
@@ -142,5 +138,5 @@
 
 
 </div>
-
+  </div>
 </main>
