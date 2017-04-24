@@ -3,13 +3,25 @@
  */
 const express = require('express');
 const router = express.Router();
-const User = require('../models/users');
+const SM = require('../models/socialmedia');
 
 
 router.post('/FollowOption',function (req,res) {
 
-    console.log(req.body);
-    res.json({msg:1})
+    const myid = req.body.myid;
+    const followersId = req.body.followid;
+
+    SM.followOption(myid,followersId,function (err,docs) {
+        if (err) throw err;
+
+        if (docs){
+
+            res.json(docs)
+        }
+
+
+
+    });
 
 });
 

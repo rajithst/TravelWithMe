@@ -103,6 +103,8 @@ export class ProfileComponent implements OnInit,OnDestroy {
     };
     this.UserServie.ChangeOption(userdata).subscribe(res=>{
 
+      console.log(res)
+
      })
 
   }

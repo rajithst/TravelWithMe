@@ -46,24 +46,15 @@ module.exports.checkId = function (id,provider,callback) {
 };
 
 module.exports.followOption = function (myid,followersId,callback) {
-    const query = {id:id,provider:provider};
-    SM.findOne(query,function (err,docs) {
+
+
+    SM.findOneAndUpdate({id: myid},{$set:{followeusers:followersId}},function (err,docs) {
         if (err) throw err;
 
         if (docs){
             callback(null,docs);
         }
-        if (!docs){
 
-            newentry = new SM(query);
-            newentry.save(function (err,docs) {
-
-                if (err) throw err;
-                if (docs){
-                    callback(null,docs);
-                }
-            })
-        }
 
     });
 

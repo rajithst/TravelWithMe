@@ -120,8 +120,8 @@
     <h2>Follow your friends on Facebook</h2>
       <li *ngFor="let mutual of friends">
         <h3>{{mutual.name}}</h3>
-        <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" *ngIf="mutual.follow==0">Follow</button>
-        <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" *ngIf="mutual.follow==1">Following</button>
+        <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" >Follow</button>
+
       </li>
 
 
