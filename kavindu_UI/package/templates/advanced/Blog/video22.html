@@ -1,0 +1,180 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+<title>Travel With Me</title>
+        <meta name="description" content="A simple HTML5 media player with custom controls and WebVTT captions.">
+        <meta name="author" content="Sam Potts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+				
+		<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
+		
+        <!-- Styles -->
+        <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/plyr.css">
+
+        <!-- Docs styles -->
+ <!--        <link rel="stylesheet" href="https://cdn.plyr.io/2.0.12/demo.css"> -->
+   
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../../../css/mdb.min.css" rel="stylesheet">
+    <!-- Template styles -->
+    <style rel="stylesheet">
+    
+            .icon-button {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        outline: none;
+        border: 0;
+        background: transparent;
+        margin:0.6em;
+        margin-left: 0.5em;
+    }
+    
+        /* TEMPLATE STYLES */
+        
+        main {
+            margin-top: 3rem;
+        }
+        
+        main .card {
+            margin-bottom: 2rem;
+        }
+        
+        @media only screen and (max-width: 768px) {
+            .read-more {
+                text-align: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <!--Navbar-->
+        <nav class="navbar navbar-dark primary-color-dark">
+
+            <!-- Collapse button-->
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
+            <i class="fa fa-bars"></i>
+        </button>
+
+            <div class="container">
+
+                <!--Collapse content-->
+                <div class="collapse navbar-toggleable-xs" id="collapseEx">
+                    <!--Navbar Brand-->
+                    <a class="navbar-brand" href="http://mdbootstrap.com/material-design-for-bootstrap/" target="_blank">MDB</a>
+                    <!--Links-->
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <!--Search form-->
+                    <form class="form-inline">
+                        <input class="form-control" type="text" placeholder="Search">
+                    </form>
+                </div>
+                <!--/.Collapse content-->
+
+            </div>
+
+        </nav>
+        <!--/.Navbar-->
+    </header>
+
+    <main>
+
+<div class="container">
+<div class="row">
+        <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-inverse">
+                <div class="col-xs-3">
+                        <!--Card image-->
+                       
+                            <img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid" alt="" width="100px" height="100px">
+                            
+                        
+                        <!--/.Card image-->
+                </div>
+                <h3>Video Type <small class="text-muted">Secondary text</small></h3>
+                    <h6>Posted by <a href="">John Doe</a>, 30.04.2016</h6>
+            </div>
+ <!--            <div class="card-block"> -->
+                
+                <div class="col-md-12">
+                        <!--Card image-->
+                        <div class="view overlay hm-white-slight">
+                            <video width="auto" controls>
+                              <source src="intro.mp4" type="video/mp4">
+                              <source src="intro.ogg" type="video/ogg">
+                               <track kind="captions" label="English" srclang="en" src="https://www.youtube.com/embed/Dkx4LYeFnVY?rel=0&showinfo=0" default>
+                            </video>
+                            </a>
+                        </div>
+                        <!--/.Card image-->
+						
+						<!-- <div class="video "><iframe class="embed-responsive-item img-fluid" src="https://www.youtube.com/embed/Dkx4LYeFnVY?rel=0&showinfo=0" frameborder="0" allowfullscreen></iframe></div>
+						 -->
+                </div>
+            
+
+            
+<!--             </div> -->
+                                    
+            <div class="card-footer">
+            <div class="btn-group row">
+            <button class="icon-button"><span class="fa fa-thumbs-up"></span></button>
+            <button class="icon-button"><span class="fa fa-share-alt" ></span></button>
+            <button class="icon-button "><span class="fa fa-commenting pull-right" ></span></button>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+            <!--/.Pagination-->
+            <hr>
+        </div>
+        <!--/.Main layout-->
+    </main>
+
+        <!-- Plyr core script -->
+        <script src="https://cdn.plyr.io/2.0.12/plyr.js"></script>
+
+        <!-- Docs script -->
+        <script src="https://cdn.plyr.io/2.0.12/demo.js"></script>
+
+        <!-- Rangetouch to fix <input type="range"> on touch devices (see https://rangetouch.com) -->
+        <script src="https://cdn.rangetouch.com/0.0.9/rangetouch.js" async></script>
+
+        <!-- Sharing libary (https://shr.one) -->
+        <script src="https://cdn.shr.one/0.1.9/shr.js"></script>
+        <script>if(window.shr) { window.shr.setup({ count: { classname: 'btn__count' } }); }</script>
+    </body>
+</html>
