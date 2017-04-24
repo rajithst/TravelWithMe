@@ -104,17 +104,6 @@ router.post('/checkid',function (req,res) {
 
                 request(opts, function(error, response, body){
 
-                   /* body = JSON.parse(body);
-                    mydata = {
-
-                        city: body.hometown.name,
-                        location:body.location.name,
-                        accesstoken:body.identities[0].access_token,
-                        userid:body.identities[0].user_id,
-                        name:body.name,
-                        picture:body.picture,
-                        email:body.email
-                    };*/
                     res.json({success:true,data:body});
 
             });

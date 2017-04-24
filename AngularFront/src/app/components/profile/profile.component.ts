@@ -2,8 +2,7 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FacebookService } from '../../services/facebook.service';
 import { GoogleAPIService } from '../../services/google-api.service';
-import {THIS_EXPR} from "@angular/compiler/src/output/output_ast";
-import {isUndefined} from "util";
+import {  UserServicesService } from '../../services/user-services.service';
 
 @Component({
   selector: 'body',
@@ -26,10 +25,12 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
 
 
+
   constructor(
     private authService: AuthService,
     private FbService: FacebookService,
-    private PlaceAPI:GoogleAPIService
+    private PlaceAPI:GoogleAPIService,
+    private UserServie:UserServicesService
 
   ) { }
 
@@ -60,13 +61,19 @@ export class ProfileComponent implements OnInit,OnDestroy {
         this.authService.checkId(data).subscribe(res => {
           this.user = JSON.parse(res.data);
           this.user.me = this.user.identities[0].user_id;
+
+          /*friends object*/
           this.friends = this.user.context.mutual_friends.data;
+          this.friends[0].follow = 0;
+          this.friends[1].follow = 1;
+
+          /*home town object*/
           this.hometown = this.user.hometown.name;
+          //console.log(this.friends)
 
 
           this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
             this.results = res.results;
-
 
          /*   for (var i = 0;i<this.results.length;i++) {
               if (this.results[i].photos != undefined) {
@@ -79,20 +86,25 @@ export class ProfileComponent implements OnInit,OnDestroy {
             }*/
                  });
 
-
-
-
           });
-
-
-
-
-
-
         };
 
    ngOnDestroy() {
     $('body').removeClass();
+  }
+
+
+  FollowUser(followerid:any,action:number){
+
+    const userdata:any = {
+      myid:JSON.parse(localStorage.getItem('profile')).identities[0].user_id,
+      followid:followerid
+
+    };
+    this.UserServie.ChangeOption(userdata).subscribe(res=>{
+
+     })
+
   }
 
 

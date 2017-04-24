@@ -9,7 +9,9 @@ const schema = mongoose.Schema;
 var socialMeadia = new schema({
 
     id:{type:String},
-    provider:{type:String}
+    provider:{type:String},
+    followeusers:{type:String},
+    followpages:{typ:String}
 });
 
 
@@ -40,5 +42,29 @@ module.exports.checkId = function (id,provider,callback) {
              }
 
          });
+
+};
+
+module.exports.followOption = function (myid,followersId,callback) {
+    const query = {id:id,provider:provider};
+    SM.findOne(query,function (err,docs) {
+        if (err) throw err;
+
+        if (docs){
+            callback(null,docs);
+        }
+        if (!docs){
+
+            newentry = new SM(query);
+            newentry.save(function (err,docs) {
+
+                if (err) throw err;
+                if (docs){
+                    callback(null,docs);
+                }
+            })
+        }
+
+    });
 
 };

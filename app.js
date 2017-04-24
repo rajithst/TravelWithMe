@@ -17,6 +17,7 @@ const port = process.env.PORT || 3000;
 const users = require('./routes/users');
 const profile = require('./routes/profile');
 const blog = require('./routes/blog');
+const UserOption = require('./routes/userOptions');
 
 
 const config = require('./config/database');
@@ -43,6 +44,7 @@ app.use(passport.session());
 require('./config/passport')(passport);
 //routes
 app.use('/users',users);
+app.use('/users/option',UserOption);
 app.use('/profile',profile);
 app.use('/blog',blog);
 
