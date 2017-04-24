@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FacebookService } from '../../services/facebook.service';
 import { GoogleAPIService } from '../../services/google-api.service';
 import {THIS_EXPR} from "@angular/compiler/src/output/output_ast";
+import {isUndefined} from "util";
 
 @Component({
   selector: 'body',
@@ -22,6 +23,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   friends:any;
   hometown:any;
   results:any;
+
 
 
   constructor(
@@ -58,21 +60,36 @@ export class ProfileComponent implements OnInit,OnDestroy {
         this.authService.checkId(data).subscribe(res => {
           this.user = JSON.parse(res.data);
           this.user.me = this.user.identities[0].user_id;
-
           this.friends = this.user.context.mutual_friends.data;
           this.hometown = this.user.hometown.name;
 
 
           this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
             this.results = res.results;
-            console.log(this.results)
-          })
-        });
+
+
+         /*   for (var i = 0;i<this.results.length;i++) {
+              if (this.results[i].photos != undefined) {
+                const place_ref = this.results[i].photos[0].photo_reference;
+                console.log(place_ref)
+                this.PlaceAPI.getPhotos(place_ref).subscribe(res=>{
+                  console.log(res)
+                 });
+              }
+            }*/
+                 });
 
 
 
 
-      }
+          });
+
+
+
+
+
+
+        };
 
    ngOnDestroy() {
     $('body').removeClass();

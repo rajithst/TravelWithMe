@@ -14,9 +14,17 @@ export class GoogleAPIService {
     let headers = new Headers();
     headers.append('Access-Control-Allow-Headers','*');
     headers.append('Access-Control-Allow-Origin','*');
-    return this.http.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+keyword+"+city+top+sights&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E",{headers:headers}).map(res=>res.json());
+    return this.http.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+city+keyword+"+&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E",{headers:headers}).map(res=>res.json());
 
 
   }
+
+ /* getPhotos(refKey:any){
+    console.log(refKey);
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Headers','*');
+    headers.append('Access-Control-Allow-Origin','*');
+    return this.http.get("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+refKey+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E",{headers:headers}).map(res=>res.json());
+  }*/
 
 }
