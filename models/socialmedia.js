@@ -10,8 +10,8 @@ var socialMeadia = new schema({
 
     id:{type:String},
     provider:{type:String},
-    followeusers:{type:String},
-    followpages:{typ:String}
+    followeusers:{type:Array},
+    followpages:{typ:Array}
 });
 
 
@@ -48,7 +48,7 @@ module.exports.checkId = function (id,provider,callback) {
 module.exports.followOption = function (myid,followersId,callback) {
 
 
-    SM.findOneAndUpdate({id: myid},{$set:{followeusers:followersId}},function (err,docs) {
+    SM.findOneAndUpdate({id: myid},{$push:{followeusers:followersId}},function (err,docs) {
         if (err) throw err;
 
         if (docs){

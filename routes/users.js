@@ -84,6 +84,7 @@ router.post('/checkid',function (req,res) {
         if (err) throw err;
         if (match){
 
+
             var options = { method: 'POST',
                 url: 'https://travelproject.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
@@ -104,7 +105,12 @@ router.post('/checkid',function (req,res) {
 
                 request(opts, function(error, response, body){
 
-                    res.json({success:true,data:body});
+                    console.log(typeof (body));
+
+                    const databody = JSON.parse(body);
+                    databody.personal = match;
+
+                    res.json({success:true,data:databody    });
 
             });
 

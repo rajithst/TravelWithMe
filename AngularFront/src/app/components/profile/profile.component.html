@@ -77,16 +77,16 @@
         <div class = "row">
           <div class = "col-lg-6 card" >
             <h3>Facebook Mutual Friends</h3>
-        <mdl-list *ngFor="let mutual of friends">
-          <mdl-list-item>
-            <mdl-list-item-primary-content>
-              <mdl-icon mdl-list-item-avatar>person</mdl-icon>
-              <span>{{mutual.name}}</span>
-            </mdl-list-item-primary-content>
-            <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" >Follow</button>
-          </mdl-list-item>
+              <mdl-list *ngFor="let mutual of friends">
+                <mdl-list-item>
+                  <mdl-list-item-primary-content>
+                    <mdl-icon mdl-list-item-avatar>person</mdl-icon>
+                    <span>{{mutual.name}}</span>
+                  </mdl-list-item-primary-content>
+                  <button class="btn btn-success" (click)="FollowUser(mutual.id,mutual.follow)" >Follow</button>
+                </mdl-list-item>
 
-        </mdl-list>
+              </mdl-list>
           </div>
         </div>
 

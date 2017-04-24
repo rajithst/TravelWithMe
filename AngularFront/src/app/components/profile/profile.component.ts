@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   friends:any;
   hometown:any;
   results:any;
+  followers:any;
 
 
 
@@ -59,13 +60,13 @@ export class ProfileComponent implements OnInit,OnDestroy {
             };
 
         this.authService.checkId(data).subscribe(res => {
-          this.user = JSON.parse(res.data);
+          this.user = res.data;
           this.user.me = this.user.identities[0].user_id;
-
+          console.log(this.user);
           /*friends object*/
           this.friends = this.user.context.mutual_friends.data;
-          this.friends[0].follow = 0;
-          this.friends[1].follow = 1;
+          this.friends.followers = this.user.personal.followeusers;
+          console.log(this.friends);
 
           /*home town object*/
           this.hometown = this.user.hometown.name;
@@ -75,15 +76,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
           this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
             this.results = res.results;
 
-         /*   for (var i = 0;i<this.results.length;i++) {
-              if (this.results[i].photos != undefined) {
-                const place_ref = this.results[i].photos[0].photo_reference;
-                console.log(place_ref)
-                this.PlaceAPI.getPhotos(place_ref).subscribe(res=>{
-                  console.log(res)
-                 });
-              }
-            }*/
                  });
 
           });
