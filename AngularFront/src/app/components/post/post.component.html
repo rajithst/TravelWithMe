@@ -1,21 +1,77 @@
 
 <mdl-card class="mdlcard" mdl-shadow="2" >
 
+  
+  
   <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+
+<!--<div class="ssk-group">
+    <a href="" class="ssk ssk-facebook"></a>
+    <a href="" class="ssk ssk-twitter"></a>
+    <a href="" class="ssk ssk-google-plus"></a>
+    <a href="" class="ssk ssk-pinterest"></a>
+    <a href="" class="ssk ssk-tumblr"></a>
+</div>-->
+
 <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
-   <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
-   <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+   <mdl-menu-item mdl-ripple (click)="action()">Save Post</mdl-menu-item>
+   <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
+   <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
    <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
-   <mdl-menu-item>Yet Another Action</mdl-menu-item>
+   <mdl-menu-item>Unfollow</mdl-menu-item>
+   <mdl-menu-item>Turn on notifications</mdl-menu-item>
 </mdl-menu>
+
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  
+  
+</nav>
+
+
+<!-- filters -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+          
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
+
+
+<!-- filters -->
+
+
     <mdl-card-title>
-      <h2 mdl-card-title-text>Welcome</h2>
+      <h2 mdl-card-title-text>Temple of Tooth</h2>
     </mdl-card-title>
-    <img class="img-responsive img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Khb_logo.svg/2000px-Khb_logo.svg.png">
+    <img class="img-responsive img-fluid" src="https://c1.staticflickr.com/7/6196/6131715817_86ed8d94be_b.jpg">
         <li>
     <div>
       <a href="#">
-        <img src="http://mdbootstrap.com/images/avatars/img%20(8)" class="rounded-circle">
+        <img src="http://mdbootstrap.com/images/avatars/img%20(8)" class="rounded-circle" id="post-circle">
       </a>
     </div>
   </li>
@@ -26,19 +82,93 @@
     <mdl-card-actions mdl-card-border>
       <button mdl-button mdl-colored mdl-ripple>View More</button>
 
-      <div class="btn-group">
-            <button class="icon-button"><span class="fa fa-thumbs-up"></span></button>
-            <button class="icon-button"><span class="fa fa-share-alt" ></span></button>
-			<button class="icon-button"><span class="fa fa-commenting pull-right" ></span></button>
+          <div class="btn-group">
+            <button class="icon-button"><a><span class="fa fa-commenting pull-right" ></span></a></button>
                 
-            </div>
+          </div>
+          
     </mdl-card-actions>
     <mdl-card-menu>
-      <button mdl-button mdl-button-type="icon" mdl-ripple>
-        <mdl-icon>share</mdl-icon>
-      </button>
+
+<!--<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-cog"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-ellipsis-h"></i> </a>
+  
+</nav>-->
+
+
+<!-- filters -->
+<!--<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+          
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>-->
+      
+      
     </mdl-card-menu>
   </mdl-card>
 
 
   
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+  
+  <a href="#" class="menu-item"> <i class="fa fa-bar-chart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-plus"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-heart"></i> </a>
+  <a href="#" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  
+  
+</nav>
+
+
+<!-- filters -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+          
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
