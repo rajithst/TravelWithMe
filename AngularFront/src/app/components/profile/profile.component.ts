@@ -82,7 +82,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
         };
 
    ngOnDestroy() {
-    $('body').removeClass();
+    // $('body').removeClass();
   }
 
 

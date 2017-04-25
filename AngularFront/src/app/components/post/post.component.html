@@ -1,0 +1,44 @@
+
+<mdl-card class="mdlcard" mdl-shadow="2" >
+
+  <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+<mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
+   <mdl-menu-item mdl-ripple (click)="action()">Some Action</mdl-menu-item>
+   <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Another Action</mdl-menu-item>
+   <mdl-menu-item mdl-ripple disabled>Disabled Action</mdl-menu-item>
+   <mdl-menu-item>Yet Another Action</mdl-menu-item>
+</mdl-menu>
+    <mdl-card-title>
+      <h2 mdl-card-title-text>Welcome</h2>
+    </mdl-card-title>
+    <img class="img-responsive img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Khb_logo.svg/2000px-Khb_logo.svg.png">
+        <li>
+    <div>
+      <a href="#">
+        <img src="http://mdbootstrap.com/images/avatars/img%20(8)" class="rounded-circle">
+      </a>
+    </div>
+  </li>
+    <mdl-card-supporting-text >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Mauris sagittis pellentesque lacus eleifend lacinia...
+    </mdl-card-supporting-text>
+    <mdl-card-actions mdl-card-border>
+      <button mdl-button mdl-colored mdl-ripple>View More</button>
+
+      <div class="btn-group">
+            <button class="icon-button"><span class="fa fa-thumbs-up"></span></button>
+            <button class="icon-button"><span class="fa fa-share-alt" ></span></button>
+			<button class="icon-button"><span class="fa fa-commenting pull-right" ></span></button>
+                
+            </div>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>
+    </mdl-card-menu>
+  </mdl-card>
+
+
+  

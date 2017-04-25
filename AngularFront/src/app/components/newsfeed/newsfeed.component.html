@@ -2,72 +2,17 @@
 
 <app-sideview></app-sideview>
 <app-navbar></app-navbar>
-<main>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header card-inverse">
-            <div class="col-xs-3 avatar img-responsive">
-              <!--Card image-->
-
-              <img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid" alt="" width="100px" height="100px">
-
-
-              <!--/.Card image-->
-            </div>
-            <h3>Article Type <small class="text-muted">Secondary text</small></h3>
-            <h6>Written by <a href="">John Doe</a>, 30.04.2016</h6>
-          </div>
-          <div class="card-block">
-
-            <div class="col-md-6">
-              <!--Card image-->
-              <div class="view overlay hm-white-slight">
-                <img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid" alt="">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-              <!--/.Card image-->
-            </div>
-
-            <div class="col-md-6">
-              <!--Card content-->
-              <div class="card-block">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">2Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="read-more">
-                  <a href="#!" class="btn btn-primary">Read more</a>
-
-                </div>
-
-              </div>
-              <!--/.Card content-->
-            </div>
-
-          </div>
-
-          <div class="card-footer">
-            <div class="btn-group">
-              <button class="icon-button"><span class="fa fa-thumbs-up"></span></button>
-              <button class="icon-button"><span class="fa fa-share-alt" ></span></button>
-              <button class="icon-button"><span class="fa fa-commenting pull-right" ></span></button>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <!--/.Pagination-->
-  <hr>
+<main class="Mymain">
   <!--/.Main layout-->
+  <div class="row">
+  <div class="col-lg-5">
+    <app-post></app-post>
+  </div>
+    <div class="col-lg-5">
+    <app-post></app-post>
+  </div>
+  </div>
+ 
 </main>
 
 <!--Footer-->
