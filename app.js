@@ -18,6 +18,7 @@ const users = require('./routes/users');
 const profile = require('./routes/profile');
 const blog = require('./routes/blog');
 const UserOption = require('./routes/userOptions');
+const googleService = require('./routes/googelService');
 
 
 const config = require('./config/database');
@@ -42,12 +43,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./config/passport')(passport);
+
 //routes
 app.use('/users',users);
 app.use('/users/option',UserOption);
 app.use('/profile',profile);
 app.use('/blog',blog);
-
+app.use('/googleAPI',googleService);
 
 app.get('/',function(req,res){
    res.send('index page');
