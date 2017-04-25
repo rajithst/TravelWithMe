@@ -1,73 +1,47 @@
-<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58b8620ce277b100120ae651&product=inline-share-buttons"></script>
+<app-sideview>
 
-<app-sideview></app-sideview>
+</app-sideview>
 <app-navbar></app-navbar>
-<main>
+<main class="Mymain">
+  <div class = "row">
+    <div class ="col-lg-8">
+  <mdl-card mdl-shadow="2" >
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="card">
-          <div class="card-header card-inverse">
-            <div class="col-xs-3 avatar img-responsive">
-              <!--Card image-->
+    <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+    <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
+      <mdl-menu-item mdl-ripple (click)="action()">Hide</mdl-menu-item>
+      <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Bookmark</mdl-menu-item>
+      <mdl-menu-item mdl-ripple disabled>Report</mdl-menu-item>
+      <mdl-menu-item>Yet Another Action</mdl-menu-item>
+    </mdl-menu>
+    <img src="http://www.craiglotter.co.za/wp-content/uploads/2015/06/sri-lanka-kandy-buddha-temple-sri-dalada-maligawa-temple-of-the-tooth-2.jpg">
 
-              <img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid" alt="" width="100px" height="100px">
+    <mdl-card-title>
+      <h2 mdl-card-title-text>Article Title</h2>
+    </mdl-card-title>
 
+    <mdl-card-supporting-text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Mauris sagittis pellentesque lacus eleifend lacinia...
+    </mdl-card-supporting-text>
 
-              <!--/.Card image-->
-            </div>
-            <h3>Article Type <small class="text-muted">Secondary text</small></h3>
-            <h6>Written by <a href="">John Doe</a>, 30.04.2016</h6>
-          </div>
-          <div class="card-block">
-
-            <div class="col-md-6">
-              <!--Card image-->
-              <div class="view overlay hm-white-slight">
-                <img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid" alt="">
-                <a href="#!">
-                  <div class="mask"></div>
-                </a>
-              </div>
-              <!--/.Card image-->
-            </div>
-
-            <div class="col-md-6">
-              <!--Card content-->
-              <div class="card-block">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <p class="card-text">2Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <div class="read-more">
-                  <a href="#!" class="btn btn-primary">Read more</a>
-
-                </div>
-
-              </div>
-              <!--/.Card content-->
-            </div>
-
-          </div>
-
-          <div class="card-footer">
-            <div class="btn-group">
-              <button class="icon-button"><span class="fa fa-thumbs-up"></span></button>
-              <button class="icon-button"><span class="fa fa-share-alt" ></span></button>
-              <button class="icon-button"><span class="fa fa-commenting pull-right" ></span></button>
-
-            </div>
-          </div>
-        </div>
-      </div>
+    <mdl-card-actions mdl-card-border>
+      <button mdl-button mdl-colored mdl-ripple>Read More</button>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>
+    </mdl-card-menu>
+  </mdl-card>
+    </div>
+    <div class = "col-lg-4">
+      <!--Friend Suggestions-->
+<div class="card">
+  ytseeff
+</div>
     </div>
   </div>
 
 
-  <!--/.Pagination-->
-  <hr>
-  <!--/.Main layout-->
 </main>
-
-<!--Footer-->
