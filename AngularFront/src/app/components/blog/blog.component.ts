@@ -11,12 +11,13 @@ import { BlogServiceService } from '../../services/blog-service.service';
     './css/froala_style.min.css'
 
   ],
+
   encapsulation: ViewEncapsulation.None
 })
 export class BlogComponent implements OnInit {
 
 
-  private js1 = require('./js/froala_editor.pkgd.min.js');
+  public js1 = require('./js/froala_editor.pkgd.min.js');
   private js2 = require('./js/page.js');
 
 

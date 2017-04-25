@@ -31,7 +31,7 @@
       <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
       <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
         <li *ngIf="authService.loggedIn()" (click)="authService.logout()"><a class="dropdown-item waves-effect">Logout</a></li>
-        <li *ngIf="authService.loggedIn()"><a class="dropdown-item waves-effect" >My account</a></li>
+        <li *ngIf="authService.loggedIn()"><a class="dropdown-item waves-effect" [routerLink]="['../']">My account</a></li>
       </div>
     </li>
 

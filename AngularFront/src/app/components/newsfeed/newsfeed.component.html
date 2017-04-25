@@ -1,18 +1,47 @@
-<script type="text/javascript" src="//platform-api.sharethis.com/js/sharethis.js#property=58b8620ce277b100120ae651&product=inline-share-buttons"></script>
+<app-sideview>
 
-<app-sideview></app-sideview>
+</app-sideview>
 <app-navbar></app-navbar>
 <main class="Mymain">
-  <!--/.Main layout-->
-  <div class="row">
-  <div class="col-lg-5">
-    <app-post></app-post>
-  </div>
-    <div class="col-lg-5">
-    <app-post></app-post>
-  </div>
-  </div>
- 
-</main>
+  <div class = "row">
+    <div class ="col-lg-8">
+  <mdl-card mdl-shadow="2" >
 
-<!--Footer-->
+    <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+    <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-left">
+      <mdl-menu-item mdl-ripple (click)="action()">Hide</mdl-menu-item>
+      <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Bookmark</mdl-menu-item>
+      <mdl-menu-item mdl-ripple disabled>Report</mdl-menu-item>
+      <mdl-menu-item>Yet Another Action</mdl-menu-item>
+    </mdl-menu>
+    <img src="http://www.craiglotter.co.za/wp-content/uploads/2015/06/sri-lanka-kandy-buddha-temple-sri-dalada-maligawa-temple-of-the-tooth-2.jpg">
+
+    <mdl-card-title>
+      <h2 mdl-card-title-text>Article Title</h2>
+    </mdl-card-title>
+
+    <mdl-card-supporting-text>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Mauris sagittis pellentesque lacus eleifend lacinia...
+    </mdl-card-supporting-text>
+
+    <mdl-card-actions mdl-card-border>
+      <button mdl-button mdl-colored mdl-ripple>Read More</button>
+    </mdl-card-actions>
+    <mdl-card-menu>
+      <button mdl-button mdl-button-type="icon" mdl-ripple>
+        <mdl-icon>share</mdl-icon>
+      </button>
+    </mdl-card-menu>
+  </mdl-card>
+    </div>
+    <div class = "col-lg-4">
+      <!--Friend Suggestions-->
+<div class="card">
+  ytseeff
+</div>
+    </div>
+  </div>
+
+
+</main>
