@@ -10,7 +10,7 @@ const  options = {
 
   socialButtonStyle: 'small',
   theme: {
-    logo: 'https://example.com/logo.png',
+    logo: 'https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png',
     primaryColor: '#31324F'
   },
   languageDictionary: {
@@ -35,8 +35,6 @@ export class Auth0Service {
           throw new Error(error);
         }
 
-        console.log(authResult.idToken);
-        console.log(profile);
 
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('profile', JSON.stringify(profile));
@@ -61,9 +59,12 @@ public authenticated() {
 }
 
 public logout() {
-  // Remove token from localStorage
+
+
   localStorage.removeItem('id_token');
   localStorage.removeItem('profile');
+  localStorage.clear();
+
 }
 
 

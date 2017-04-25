@@ -5,7 +5,7 @@ import { GoogleAPIService } from '../../services/google-api.service';
 import {  UserServicesService } from '../../services/user-services.service';
 
 @Component({
-  selector: 'body',
+  selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })

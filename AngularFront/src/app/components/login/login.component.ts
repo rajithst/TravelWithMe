@@ -31,19 +31,19 @@ export class LoginComponent implements OnInit {
     password:this.password
   };
 
-  this.authService.loginUser(user).subscribe(data =>{
+/*  this.authService.loginUser(user).subscribe(data =>{
 
     if(data.success){
       this.authService.storeData(data.token,data.user);
-      /*this.flashMessage.show("Logged in",{cssClass:'alert-success',timeout:5000});*/
+      /!*this.flashMessage.show("Logged in",{cssClass:'alert-success',timeout:5000});*!/
       this.route.navigate(['/profile']);
     }else{
 
-      /*this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:5000});*/
+      /!*this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout:5000});*!/
       this.route.navigate(['login']);
 
     }
-  })
+  })*/
 
 
 }

@@ -1,7 +1,6 @@
 
 
 import { Component, OnInit , ViewEncapsulation } from '@angular/core';
-import {AuthService} from '../../services/auth.service';
 import {Auth0Service} from '../../services/auth0.service';
 
 @Component({
@@ -13,7 +12,7 @@ import {Auth0Service} from '../../services/auth0.service';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private authService: AuthService,
+
     private auth: Auth0Service
 
   ) { }
