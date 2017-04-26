@@ -7,6 +7,13 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const request = require("request");
 
+// rest client
+
+const Client = require('node-rest-client').Client;
+const client = new Client();
+
+
+
 const User = require('../models/users');
 const SM = require('../models/socialmedia');
 const config = require('../config/database');
@@ -105,12 +112,26 @@ router.post('/checkid',function (req,res) {
 
                 request(opts, function(error, response, body){
 
-                    console.log(typeof (body));
+
 
                     const databody = JSON.parse(body);
                     databody.personal = match;
 
-                    res.json({success:true,data:databody    });
+                    let hometown = databody.hometown.name;
+                    let places = ["visiting places","tourist places","top sights","tourist attraction"];
+                    let item = Math.floor(Math.random() * 3) + 1;
+                    let keyword = places[item];
+                    console.log(keyword);
+
+                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ hometown+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+
+                        databody.nearby = data;
+                        res.json({success:true,data:databody});
+                           
+                        });
+
+
+
 
             });
 

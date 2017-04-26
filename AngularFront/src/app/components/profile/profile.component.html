@@ -82,30 +82,25 @@
               </div>
             </div>
             </div>
-            <div class="row">
+
+          </div>
+
+        <div class="row" *ngIf="nearby">
+          <div class="row" *ngFor="let places of nearby">
             <div class="col-lg-8 fade in wow">
               <div class="card card-block pageshowpad">
                 <!--Title-->
-                <h4 class="card-title">Page title</h4>
+                <h4 class="card-title">{{places.name}}</h4>
                 <!--Text-->
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                <a href="#" class="btn btn-default">   Go to Page </a>
-              </div>
-            </div>
-            </div>
-          <div class="row">
-            <div class="col-lg-8 fade in wow">
-              <div class="card card-block pageshowpad">
-                <!--Title-->
-                <h4 class="card-title">Page title</h4>
-                <!--Text-->
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <p class="card-text">{{ places.formatted_address}}</p>
                 <a href="#" class="btn btn-default">   Go to Page </a>
               </div>
             </div>
           </div>
 
-          </div>
+        </div>
+
+
 
 
         <!--Content of Timeline included from timeline.html-->
@@ -201,16 +196,7 @@
 
 
 
-  <ul *ngIf="results">
-    <h2>Have you checkd these area nearby {{hometown}}</h2>
 
-    <li *ngFor="let nearby of results">
-      <h3>{{nearby.name}}</h3>
-
-
-    </li>
-
-  </ul>
 
 
 </div>
