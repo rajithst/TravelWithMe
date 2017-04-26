@@ -4,6 +4,6 @@
 
 module.exports = {
 
-    database:"mongodb://localhost:27017/travelbook",
+    database:"mongodb://rajith:root@ds121091.mlab.com:21091/travelbook",
     secret:"travelbooksecretkey"
 };
