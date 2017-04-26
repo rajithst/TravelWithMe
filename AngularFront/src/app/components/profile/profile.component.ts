@@ -21,7 +21,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
   userid:any;
   bodyClasses:string = "fixed-sn blue-skin";
   friends:any;
-  hometown:any;
+  nearby:any;
   results:any;
   followers:any;
 
@@ -64,20 +64,17 @@ export class ProfileComponent implements OnInit,OnDestroy {
           this.user = res.data;
           this.user.me = this.user.identities[0].user_id;
           console.log(this.user);
+
+
           /*friends object*/
           this.friends = this.user.context.mutual_friends.data;
           this.friends.followers = this.user.personal.followeusers;
-          console.log(this.friends);
 
-          /*home town object*/
-          this.hometown = this.user.hometown.name;
-          //console.log(this.friends)
+          /*places*/
 
+          this.nearby = this.user.nearby.results;
+          console.log(this.nearby)
 
-          // this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
-          //   this.results = res.results;
-
-          //        });
 
           });
         };

@@ -116,16 +116,22 @@ router.post('/checkid',function (req,res) {
 
                     const databody = JSON.parse(body);
                     databody.personal = match;
-                   
-                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=kandy&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
-                            // parsed response body as js object 
-                            console.log(data);
-                            // raw response 
+
+                    let hometown = databody.hometown.name;
+                    let places = ["visiting places","tourist places","top sights","tourist attraction"];
+                    let item = Math.floor(Math.random() * 3) + 1;
+                    let keyword = places[item];
+                    console.log(keyword);
+
+                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+ hometown+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+
+                        databody.nearby = data;
+                        res.json({success:true,data:databody});
                            
                         });
 
 
-                    res.json({success:true,data:databody});
+
 
             });
 
