@@ -54,16 +54,6 @@ export class ProfileComponent implements OnInit {
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
 
-   /* this.authService.getProfile().subscribe(profile=>{
-      this.user = profile.user;
-    },
-
-    err=>{
-      console.log(err);
-      return false;
-
-    })*/
-
       this.profile = JSON.parse(localStorage.getItem('profile'));
             const data = {
               id: this.profile.identities[0].user_id,
@@ -80,7 +70,7 @@ export class ProfileComponent implements OnInit {
 
           /*friends object*/
           this.friends = this.user.context.mutual_friends.data;
-          this.friends.followers = this.user.personal.followeusers;
+          //this.friends.followers = this.user.personal.followeusers;
 
           /*places*/
 

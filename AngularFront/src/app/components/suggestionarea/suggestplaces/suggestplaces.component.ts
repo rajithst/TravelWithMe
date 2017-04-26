@@ -36,9 +36,6 @@ export class SuggestplacesComponent implements OnInit {
       console.log(this.user);
 
 
-      /*friends object*/
-      this.friends = this.user.context.mutual_friends.data;
-      this.friends.followers = this.user.personal.followeusers;
 
       /*places*/
 
