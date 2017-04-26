@@ -2,3 +2,11 @@
   max-height: 2rem;
   max-width: 4rem;
 }
+.demo{
+ color: black !important;
+  max-height: 2rem !important;
+}
+demo>h4{
+  color: white!important;
+
+}
