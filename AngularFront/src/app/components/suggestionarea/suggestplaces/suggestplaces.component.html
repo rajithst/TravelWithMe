@@ -1,8 +1,9 @@
 <!--Slides-->
-<!--<div class="carousel-inner" role="listbox" *ngIf="nearby">-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel" *ngIf="nearby">
+<div class="carousel-inner" role="listbox" >
 
   <!--First slide-->
-  <div class="carousel-item"  *ngFor="let places of nearby">
+  <div class="carousel-item active"  *ngFor="let places of nearby">
     <div class="card card-cascade wider">
       <!--Card image-->
       <div class="view overlay hm-white-slight wow fadeInDown" data-wow-delay="0.2s">
@@ -24,10 +25,15 @@
       <!--/.Card content-->
     </div>
   </div>
-  <!--/.First slide-->
+</div>
+  <div class="controls-top">
+    <a class="btn-floating btn-small waves-effect waves-light" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+    <a class="btn-floating btn-small waves-effect waves-light" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+  </div>
 
+  <!--/.First slide-->
+</div>
 
 
 <!--</div>-->
 <!--/.Slides-->
-
