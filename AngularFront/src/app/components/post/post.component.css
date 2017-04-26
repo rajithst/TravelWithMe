@@ -1,3 +1,8 @@
+.mdlcard{
+  margin: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .icon-button {
         appearance: none;
         -webkit-appearance: none;
@@ -6,18 +11,18 @@
         border: 0;
         background: transparent;
     }
-	
-	
+
+
         /* TEMPLATE STYLES */
-        
+
         main {
             margin-top: 3rem;
         }
-        
+
         main .card {
             margin-bottom: 2rem;
         }
-        
+
         @media only screen and (max-width: 768px) {
             .read-more {
                 text-align: center;
@@ -34,7 +39,7 @@
             right: 20px;
         }
 
- 
+
 .menu {
   -webkit-filter: url("#shadowed-goo");
           filter: url("#shadowed-goo");
