@@ -121,11 +121,15 @@ router.post('/checkid',function (req,res) {
                     console.log(hometown)
                     if(hometown == undefined){
 
+                        let district = ["kandy",'Galle','Rathnapura','Kegalle','Mathara','Colombo','Badulla'];
+                        let districtitem = Math.floor(Math.random() * 5) + 1;
+                        let disname = districtitem[item];
+
                         let places = ["visiting places","tourist places","top sights","tourist attraction"];
                             let item = Math.floor(Math.random() * 3) + 1;
                             let keyword = places[item];
                        
-                          client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Galle"+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+                          client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+disname+keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
 
                         databody.nearby = data;
                         res.json({success:true,data:databody});
