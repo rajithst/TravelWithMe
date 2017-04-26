@@ -74,10 +74,10 @@ export class ProfileComponent implements OnInit,OnDestroy {
           //console.log(this.friends)
 
 
-          this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
-            this.results = res.results;
+          // this.PlaceAPI.getTopSights(this.hometown).subscribe(res=>{
+          //   this.results = res.results;
 
-                 });
+          //        });
 
           });
         };

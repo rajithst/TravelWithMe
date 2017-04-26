@@ -18,7 +18,7 @@ const users = require('./routes/users');
 const profile = require('./routes/profile');
 const blog = require('./routes/blog');
 const UserOption = require('./routes/userOptions');
-const googleService = require('./routes/googelService');
+const googleService = require('./routes/googleService');
 
 
 const config = require('./config/database');
