@@ -4,9 +4,11 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
-  styleUrls: ['./newsfeed.component.css']
+  styleUrls: ['./newsfeed.component.css'],
+
 })
 export class NewsfeedComponent implements OnInit {
+  public scroller = require('./scrollcontent');
 
   constructor(private authService: AuthService,) { }
 

@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
 
 
   public js1 = require('./js/froala_editor.pkgd.min.js');
-  private js2 = require('./js/page.js');
+  public js2 = require('./js/page.js');
 
 
 

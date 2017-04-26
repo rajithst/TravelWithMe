@@ -2,17 +2,27 @@
 
 </app-sideview>
 <app-navbar></app-navbar>
-<main class="Mymain">
-  <div class = "col-lg-4">
-    <app-post>
-    </app-post>
-  </div>
-  <div class = "col-lg-4">
-    <app-post>
-    </app-post>
-  </div>
+<main>
 
-    <app-suggestionarea></app-suggestionarea>
+  <div class = "col-lg-4 col-md-3">
+    <app-post>
+    </app-post>
+
+
+    <app-post>
+    </app-post>
+
+
+    <app-post>
+    </app-post>
+  </div>
+    <div class="col-lg-4 col-md-3">
+      <app-suggestionarea></app-suggestionarea>
+    </div>
+    <div class="col-lg-4 col-md-3">
+      <app-suggestionarea></app-suggestionarea>
+    </div>
+
 
 
   <div class="row" *ngIf="nearby">
@@ -32,3 +42,4 @@
 
 
 </main>
+<script [src]="scroller"></script>

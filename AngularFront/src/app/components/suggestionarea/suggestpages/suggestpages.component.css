@@ -4,6 +4,8 @@
 }
 .demo{
  color: black !important;
+  background-color: white;
+
   max-height: 2rem !important;
 }
 demo>h4{
