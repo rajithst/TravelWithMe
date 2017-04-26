@@ -136,7 +136,7 @@ router.post('/checkid',function (req,res) {
                     let places = ["visiting places","tourist places","top sights","tourist attraction"];
                     let item = Math.floor(Math.random() * 3) + 1;
                     let keyword = places[item];
-                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=Galle"+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+hometown+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
 
                         databody.nearby = data;
                         res.json({success:true,data:databody});
