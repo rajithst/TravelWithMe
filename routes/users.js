@@ -87,7 +87,7 @@ router.post('/checkid',function (req,res) {
 
 
 
-    SM.checkId(req.body.id,req.body.provider,function (err,match) {
+    SM.checkId(req.body.id,req.body.provider,req.body.profilepic,function (err,match) {
         if (err) throw err;
         if (match){
 
