@@ -7,10 +7,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation:ViewEncapsulation.None
 })
 export class ViewpostComponent implements OnInit {
-
+  bodyClasses:string ="fixed-sn blue-skin";
   constructor() { }
 
   ngOnInit() {
+    $('body').addClass(this.bodyClasses);
+    $("body").css( 'background-color', '#ecf0f1');
+
   }
 
 }
