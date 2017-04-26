@@ -1,0 +1,10 @@
+
+#sidebar_right {
+  background-color:#eee;
+  height:100%;
+  position:fixed;
+  right:0;
+  z-index: 20;
+  margin-top: -4rem;
+}
+

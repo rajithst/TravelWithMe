@@ -43,6 +43,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
     $('body').addClass(this.bodyClasses);
 
+
    /* this.authService.getProfile().subscribe(profile=>{
       this.user = profile.user;
     },
@@ -80,7 +81,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
         };
 
    ngOnDestroy() {
-    $('body').removeClass();
+   /* $('body').removeClass();*/
   }
 
 
