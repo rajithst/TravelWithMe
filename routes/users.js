@@ -123,7 +123,7 @@ router.post('/checkid',function (req,res) {
 
                         let district = ["kandy",'Galle','Rathnapura','Kegalle','Mathara','Colombo','Badulla'];
                         let districtitem = Math.floor(Math.random() * 5) + 1;
-                        let disname = districtitem[item];
+                        let disname = district[districtitem];
 
                         let places = ["visiting places","tourist places","top sights","tourist attraction"];
                             let item = Math.floor(Math.random() * 3) + 1;
