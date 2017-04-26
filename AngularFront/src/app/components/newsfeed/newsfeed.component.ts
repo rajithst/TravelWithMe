@@ -7,7 +7,7 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./newsfeed.component.css'],
 
 })
-export class NewsfeedComponent implements OnInit {
+export class NewsfeedComponent implements OnInit{
   public scroller = require('./scrollcontent');
 
   constructor(private authService: AuthService,) { }
@@ -23,6 +23,9 @@ export class NewsfeedComponent implements OnInit {
 
 
   ngOnInit() {
+
+    $('body').addClass(this.bodyClasses);
+    $("body").css( 'background-color', '#ecf0f1');
 
     this.profile = JSON.parse(localStorage.getItem('profile'));
     const data = {
@@ -51,5 +54,9 @@ export class NewsfeedComponent implements OnInit {
 
 
   }
+
+
+
+
 
 }

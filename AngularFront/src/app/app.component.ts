@@ -10,6 +10,7 @@ export class AppComponent {
 
   constructor(private auth: Auth0Service) {}
 
+
   title = 'app works!';
 
 }

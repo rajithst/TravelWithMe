@@ -1,6 +1,7 @@
 
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
+
 import { FacebookService } from '../../services/facebook.service';
 import { GoogleAPIService } from '../../services/google-api.service';
 import {  UserServicesService } from '../../services/user-services.service';
@@ -8,18 +9,21 @@ import {  UserServicesService } from '../../services/user-services.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+
+
+
 })
 
 
 
 
-export class ProfileComponent implements OnInit,OnDestroy {
+export class ProfileComponent implements OnInit {
 
   user: any;
   profile: any;
   userid:any;
-  bodyClasses:string = "fixed-sn blue-skin";
+  bodyClasses:string ="fixed-sn blue-skin";
   friends:any;
   nearby:any;
   results:any;
@@ -30,11 +34,17 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
   constructor(
     private authService: AuthService,
+
     private FbService: FacebookService,
     private PlaceAPI:GoogleAPIService,
     private UserServie:UserServicesService
 
-  ) { }
+  ) {
+
+
+  }
+
+
 
 
 
@@ -42,7 +52,7 @@ export class ProfileComponent implements OnInit,OnDestroy {
 
 
     $('body').addClass(this.bodyClasses);
-
+    $("body").css( 'background-color', '#ecf0f1');
 
    /* this.authService.getProfile().subscribe(profile=>{
       this.user = profile.user;
@@ -80,9 +90,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
           });
         };
 
-   ngOnDestroy() {
-   /* $('body').removeClass();*/
-  }
 
 
   FollowUser(followerid:any,action:number){
