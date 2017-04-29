@@ -11,9 +11,9 @@
     <p>MDB Blog Home Page</p>
   </div>-->
 
-
-
-
+  <div class = "pull-left">
+  <mdl-textfield type="text" label="maxlength is 10" maxlength="10" placeholder="Seach" class="wave-effect wave-light"><span><i class="fa fa-search" ></i></span></mdl-textfield>
+  </div>
   <ul class="nav navbar-nav float-xs-right " >
 
 
@@ -21,18 +21,18 @@
       <a class="nav-link" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square" ></i><span class="hidden-sm-down">Create</span></a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link waves-effect" [routerLink]="['newsfeed']"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Home</span></a>
+      <a class="nav-link waves-effect" [routerLink]="['/profile/newsfeed']"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Home</span></a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i>  <span class="tag red z-depth-1">2</span><span class="hidden-sm-down" >Message</span></a><!--[mdl-badge]="badgeCount"-->
-    </li>
+    <!--<li class="nav-item ">
+      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i>  <span class="tag red z-depth-1">2</span><span class="hidden-sm-down" >Message</span></a>&lt;!&ndash;[mdl-badge]="badgeCount"&ndash;&gt;
+    </li>-->
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
       <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
         <li *ngIf="auth.authenticated()" (click)="logoutClick()"><a class="dropdown-item waves-effect">Logout</a></li>
-        <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" >My account</a></li>
+        <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" [routerLink]="['/profile']">My account</a></li>
 
       </div>
     </li>

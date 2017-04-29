@@ -1,5 +1,6 @@
 .side-nav{
   overflow-x:hidden !important;
+  width:15%;
 }
 ::-webkit-scrollbar {
   width: 7px;

@@ -31,4 +31,16 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+.mdl-textfield {
+  position: relative;
+  font-size: 16px;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  max-width: 100%;
+  margin: 0;
+  padding:  0 ;
+  color: white;
+  border-bottom-color: white;
 
+}

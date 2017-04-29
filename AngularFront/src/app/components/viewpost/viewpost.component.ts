@@ -11,6 +11,8 @@ export class ViewpostComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
 
