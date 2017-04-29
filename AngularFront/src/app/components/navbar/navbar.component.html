@@ -14,8 +14,11 @@
   <div class = "pull-left">
   <mdl-textfield type="text" label="maxlength is 10" maxlength="10" placeholder="Seach" class="wave-effect wave-light"><span><i class="fa fa-search" ></i></span></mdl-textfield>
   </div>
-  <ul class="nav navbar-nav float-xs-right " >
 
+  <ul class="nav navbar-nav float-xs-right " >
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="modal" data-target="#mytrip" ><i class="fa fa fa-plane" ></i><span class="hidden-sm-down">Plan A Trip</span></a>
+    </li>
 
     <li class="nav-item ">
       <a class="nav-link" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square" ></i><span class="hidden-sm-down">Create</span></a>
@@ -55,21 +58,14 @@
           <form action="#">
             <div class="form-group col-md-12">
             <div class = "row">
-              <div class ="col-md-4 col-sm-4 text-center card " mdl-shadow="2">
-                <i class="fa fa-globe fa-5x" style = "color: cornflowerblue ;align:center;"></i>
-                <h3>Travel</h3>
-                <h6>Small Description about travel what it can do </h6>
-                <button  class="btn btn-default waves-effect waves-light">Create</button>
-              </div>
-
-              <div class ="col-md-4  col-sm-4 card" mdl-shadow="2">
+              <div class ="col-md-6  col-sm-6 card" mdl-shadow="2">
                 <i class="fa fa-book fa-5x" style = "color: cornflowerblue"></i>
                 <h3>Blog</h3>
                 <h6>Small Description about travel what it can do </h6>
                 <button  class="btn btn-default waves-effect waves-light">Create</button>
               </div>
 
-              <div class ="col-md-4 col-sm-4 card" mdl-shadow="2">
+              <div class ="col-md-6 col-sm-6 card" mdl-shadow="2">
                 <i class="fa fa-briefcase fa-5x" style = "color: cornflowerblue"></i>
                 <h3>Business</h3>
                 <h6>Small Description about travel what it can do </h6>
@@ -84,4 +80,35 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="modal fade right" id="mytrip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-full-height modal-right" role="document">
+    <div class="modal-content">
+      <div class="modal-header  text-center">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <form action="#">
+
+
+                <!--Body-->
+                <div class = "row">
+                  <div class = "col-md-6">
+                  <mdl-textfield type="text" label="Text..."  placeholder="type a text" ></mdl-textfield>
+                  </div>
+                  <div class="col-md-6">
+                  <mdl-textfield type="text" label="Text..."  placeholder="type a text"></mdl-textfield>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-deep-orange" [routerLink]="['/profile/create/trip']"  data-dismiss="modal">Go Now</button>
+                </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

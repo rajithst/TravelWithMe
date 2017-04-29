@@ -1,8 +1,25 @@
 .mdl-card{
   width:10rem;
 }
+.btn-floating {
+  display: inline-block;
+  color: #fff;
+  position: absolute !important;
+
+}
+.friend_list{
+  height: 3% !important;
+  overflow-y:auto
+}
+.scrollable {
+
+  height: 69% !important;
+
+  overflow: auto;
+
+}
 .text-mid{
-  position: absolute;
+  position: absolute !important;
   top: 36%;
   font-size: 2.0em;
   width: 100%;
