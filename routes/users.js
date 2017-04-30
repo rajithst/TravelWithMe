@@ -91,7 +91,7 @@ router.post('/checkid',function (req,res) {
         if (err) throw err;
         if (match){
 
-
+            console.log(match)
             var options = { method: 'POST',
                 url: 'https://travelproject.auth0.com/oauth/token',
                 headers: { 'content-type': 'application/json' },
@@ -118,7 +118,7 @@ router.post('/checkid',function (req,res) {
                     databody.personal = match;
 
                     let hometown = databody.hometown;
-                    console.log(hometown)
+
                     if(hometown == undefined){
 
                         let district = ["kandy",'Galle','Rathnapura','Kegalle','Mathara','Colombo','Badulla'];
@@ -135,14 +135,16 @@ router.post('/checkid',function (req,res) {
                         res.json({success:true,data:databody});
                            
                         });
+
                     }else {
                     let hometown = databody.hometown.name;
                     let places = ["visiting places","tourist places","top sights","tourist attraction"];
                     let item = Math.floor(Math.random() * 3) + 1;
                     let keyword = places[item];
-                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+hometown+ keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=kandy&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
 
                         databody.nearby = data;
+                        console.log(data)
                         res.json({success:true,data:databody});
                            
                         });
