@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sideview.component.css']
 })
 export class SideviewComponent implements OnInit {
-
+  bodyClasses:string ="fixed-sn blue-skin";
   constructor() { }
 
   ngOnInit() {
+    $('body').addClass(this.bodyClasses);
+    $("body").css( 'background-color', '#ecf0f1');
   }
 
 }

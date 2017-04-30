@@ -11,28 +11,31 @@
     <p>MDB Blog Home Page</p>
   </div>-->
 
-
-
+  <div class = "pull-left">
+  <mdl-textfield type="text" label="maxlength is 10" maxlength="10" placeholder="Seach" class="wave-effect wave-light"><span><i class="fa fa-search" ></i></span></mdl-textfield>
+  </div>
 
   <ul class="nav navbar-nav float-xs-right " >
-
+    <li class="nav-item ">
+      <a class="nav-link" data-toggle="modal" data-target="#mytrip" ><i class="fa fa fa-plane" ></i><span class="hidden-sm-down">Plan A Trip</span></a>
+    </li>
 
     <li class="nav-item ">
       <a class="nav-link" data-toggle="modal" data-target="#myModal" ><i class="fa fa-plus-square" ></i><span class="hidden-sm-down">Create</span></a>
     </li>
     <li class="nav-item ">
-      <a class="nav-link waves-effect" [routerLink]="['newsfeed']"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Home</span></a>
+      <a class="nav-link waves-effect" [routerLink]="['/profile/newsfeed']"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">Home</span></a>
     </li>
-    <li class="nav-item ">
-      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i>  <span class="tag red z-depth-1">2</span><span class="hidden-sm-down" >Message</span></a><!--[mdl-badge]="badgeCount"-->
-    </li>
+    <!--<li class="nav-item ">
+      <a class="nav-link waves-effect"><i class="fa fa-comments-o"></i>  <span class="tag red z-depth-1">2</span><span class="hidden-sm-down" >Message</span></a>&lt;!&ndash;[mdl-badge]="badgeCount"&ndash;&gt;
+    </li>-->
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
       <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
 
         <li *ngIf="auth.authenticated()" (click)="logoutClick()"><a class="dropdown-item waves-effect">Logout</a></li>
-        <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" >My account</a></li>
+        <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" [routerLink]="['/profile']">My account</a></li>
 
       </div>
     </li>
@@ -55,21 +58,14 @@
           <form action="#">
             <div class="form-group col-md-12">
             <div class = "row">
-              <div class ="col-md-4 col-sm-4 text-center card " mdl-shadow="2">
-                <i class="fa fa-globe fa-5x" style = "color: cornflowerblue ;align:center;"></i>
-                <h3>Travel</h3>
-                <h6>Small Description about travel what it can do </h6>
-                <button  class="btn btn-default waves-effect waves-light">Create</button>
-              </div>
-
-              <div class ="col-md-4  col-sm-4 card" mdl-shadow="2">
+              <div class ="col-md-6  col-sm-6 card" mdl-shadow="2">
                 <i class="fa fa-book fa-5x" style = "color: cornflowerblue"></i>
                 <h3>Blog</h3>
                 <h6>Small Description about travel what it can do </h6>
                 <button  class="btn btn-default waves-effect waves-light">Create</button>
               </div>
 
-              <div class ="col-md-4 col-sm-4 card" mdl-shadow="2">
+              <div class ="col-md-6 col-sm-6 card" mdl-shadow="2">
                 <i class="fa fa-briefcase fa-5x" style = "color: cornflowerblue"></i>
                 <h3>Business</h3>
                 <h6>Small Description about travel what it can do </h6>
@@ -85,3 +81,58 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal animated bounceInLeft" id="mytrip" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close"
+                data-dismiss="modal">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">
+          Set Destinaion
+        </h4>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+
+            <div class="col-sm-10">
+              <mdl-textfield type="text" label="Text..." [(ngModel)]="text3" floating-label></mdl-textfield>
+            </div>
+          </div>
+          <div class="form-group">
+
+            <div class="col-sm-10">
+              <mdl-textfield type="text" label="Text..." [(ngModel)]="text3" floating-label></mdl-textfield>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default"
+                data-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">
+          Let's Go
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

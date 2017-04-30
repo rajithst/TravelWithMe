@@ -132,6 +132,7 @@ router.post('/checkid',function (req,res) {
                           client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+disname+keyword+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
 
                         databody.nearby = data;
+                        console.log(data)
                         res.json({success:true,data:databody});
                            
                         });
@@ -141,7 +142,11 @@ router.post('/checkid',function (req,res) {
                     let places = ["visiting places","tourist places","top sights","tourist attraction"];
                     let item = Math.floor(Math.random() * 3) + 1;
                     let keyword = places[item];
+<<<<<<< HEAD
                     client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query=kandy&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+=======
+                    client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+hometown+ keyword+"&key=AIzaSyBhvuK4j4q0eXP_CBxUmRFpW9Ki7N55Il4", function (data, response) {
+>>>>>>> d56e91078147e6021bb6d07390e2f985f69acbed
 
                         databody.nearby = data;
                         console.log(data)

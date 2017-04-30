@@ -10,6 +10,8 @@ export class TripComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
+
 
 }
