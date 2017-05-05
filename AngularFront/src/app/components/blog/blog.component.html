@@ -1,187 +1,37 @@
 
-<header>
-  <!-- Sidebar navigation -->
-  <!--Navbar-->
+<app-sideview>
 
-  <!--/.Navbar-->
-</header>
-<!--/Double navigation-->
+</app-sideview>
+<app-navbar></app-navbar>
+<div class="container">
+  <br><br><br><br>
+<div class="card-block">
 
-<!--Main layout-->
-<main class = "Mymain">
-  <app-sideview>
-
-  </app-sideview>
-  <app-navbar></app-navbar>
-
- <!-- <link rel="stylesheet" [href]="css1">
-  <link rel="stylesheet" [href]="css2">-->
-
-
-
-    <!--Section: Blog v.4-->
-    <section class="section section-blog-fw">
-
-      <!--First row-->
-      <div class="row">
-        <div class="col-md-8 wow fadeInUp center-on-small-only">
-          <!--Featured image-->
-          <div id="editablespace"></div>
-          <!--/.Social shares-->
-
-        </div>
-        <form>
-          <div class="col-md-4 wow fadeIn">
-            <!--Form without header-->
-            <!--Form without header-->
-            <div class="card">
-              <div class="card-block">
-
-                <!--Header-->
-                <div class="text-center">
-                  <h3><i class="fa fa-bullhorn"></i> About Article</h3>
-                  <hr class="mt-2 mb-2">
-                </div>
-
-                <!--Body-->
-                <div class="md-form">
-                  <i class="fa fa-book prefix"></i>
-                  <input type="text" id="form2" class="text-center form-control">
-                  <label for="form2">Article Name</label>
-                </div>
-
-                <div class="md-form">
-                  <i class="fa fa-plus-circle prefix"></i>
-                  <input  class="text-center" type="text" id="form4" class="form-control">
-                  <label for="form4">Tags</label>
-                </div>
-                <div class="md-form">
-                  <i class="fa fa-map-marker prefix"></i>
-                  <input  class="text-center" type="text" id="form5" class="form-control">
-                  <label for="form5">Location</label>
-                </div>
-
-              </div>
-
-              <!--Footer-->
-              <div class="modal-footer">
-                <div class="options">
-                  <div class="row">
-                    <div class="text-center col-md-4">
-                      <button class="btn btn-orange">Post</button>
-                    </div>
-                    <div class="text-center col-md-4">
-                      <button class="btn btn-cyan">Preview</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </form>
-
-      </div>
-
-  <!--/First row-->
-
-
-  </section>
-
-
-
-  <hr class="between-sections">
-
-  <div class="divider-new">
-    <h2 class="h2-responsive">See Also</h2>
-  </div>
-  <!--/Section: Blog v.3-->
-  <section class="section section-blog-fw">
-    <div class="row">
-      <div class="col-md-4">
-        <!--Card-->
-        <div class="card">
-
-          <!--Card image-->
-          <div class="view overlay hm-white-slight">
-            <img src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(19).jpg" class="img-fluid" alt="">
-            <a href="#">
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--/.Card image-->
-
-          <!--Card content-->
-          <div class="card-block">
-            <!--Title-->
-            <h4 class="card-title">Product title</h4>
-            <!--Text-->
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-            <a href="#" class="btn btn-primary">Buy now for 10$</a>
-          </div>
-          <!--/.Card content-->
-
-        </div>
-        <!--/.Card-->
-      </div>
-      <div class="col-md-4">
-        <!--Card-->
-        <div class="card">
-
-          <!--Card image-->
-          <div class="view overlay hm-white-slight">
-            <img src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(19).jpg" class="img-fluid" alt="">
-            <a href="#">
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--/.Card image-->
-
-          <!--Card content-->
-          <div class="card-block">
-            <!--Title-->
-            <h4 class="card-title">Product title</h4>
-            <!--Text-->
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-            <a href="#" class="btn btn-primary">Buy now for 10$</a>
-          </div>
-          <!--/.Card content-->
-
-        </div>
-        <!--/.Card-->
-      </div>
-      <div class="col-md-4">
-        <!--Card-->
-        <div class="card">
-
-          <!--Card image-->
-          <div class="view overlay hm-white-slight">
-            <img src="http://mdbootstrap.com/images/ecommerce/reg/reg%20(19).jpg" class="img-fluid" alt="">
-            <a href="#">
-              <div class="mask"></div>
-            </a>
-          </div>
-          <!--/.Card image-->
-
-          <!--Card content-->
-          <div class="card-block">
-            <!--Title-->
-            <h4 class="card-title">Product title</h4>
-            <!--Text-->
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-            <a href="#" class="btn btn-primary">Buy now for 10$</a>
-          </div>
-          <!--/.Card content-->
-
-        </div>
-        <!--/.Card-->
-      </div>
-
+  <!--Body-->
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Blog title</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="title" [(ngModel)]="name">
 
     </div>
-  </section>
 
 
-</main>
-<script [src]="js1"></script>
-<script [src]="js2"></script>
+    <div class="form-group">
+      <label for="exampleTextarea">Example textarea</label>
+      <textarea class="form-control" id="exampleTextarea" rows="3" name="body" [(ngModel)]="body"></textarea>
+    </div>
+
+
+    <div class="form-group">
+      <label for="exampleInputFile">Featured Image</label>
+      <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" (change)="fileChange($event)">
+      <button (click)="upload()" class="btn btn-lg upload-btn" type="button">Upload File</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+
+</div>
+
+</div>
