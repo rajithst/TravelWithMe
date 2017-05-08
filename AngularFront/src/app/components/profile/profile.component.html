@@ -38,13 +38,21 @@
           <div class="tabs-wrapper">
             <ul class="nav classic-tabs deep-purple accent-4 " role="tablist">
               <li class="nav-item tabpad">
-                <a class="nav-link waves-light waves-effect waves-light active tabpad" data-toggle="tab" href="#panel51" role="tab" aria-expanded="true">Dashbord</a>
+                <a class="nav-link waves-light waves-effect waves-light active tabpad" data-toggle="tab" href="#panel51" role="tab" aria-expanded="true">Time Line</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link waves-light waves-effect waves-light tabpad" data-toggle="tab" href="#panel52" role="tab" aria-expanded="false">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link waves-light waves-effect waves-light tabpad" data-toggle="tab" href="#panel53" role="tab" aria-expanded="false">Friends (3 mutual)</a>
+                <a class="nav-link waves-light waves-effect waves-light tabpad" data-toggle="tab" href="#panel53" role="tab" aria-expanded="false">Friends</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link waves-light waves-effect waves-light tabpad" data-toggle="tab" href="#panel54" role="tab" aria-expanded="false">Pages You Manage</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link waves-light waves-effect waves-light tabpad" data-toggle="tab" href="#panel55" role="tab" aria-expanded="false">Privacy Settings</a>
               </li>
             </ul>
           </div>
@@ -62,122 +70,15 @@
       <!--Panel 1 Timeline-->
       <div class="tab-pane fade in active show" id="panel51" role="tabpanel" aria-expanded="true">
         <div class="row padthis" >
-
-          <div class="col-lg-8"  >
-            <div class="list-group bluecc">
-              <h4 class="list-group-item bluecc active"><strong>Pages</strong> </h4>
-            </div>
-          </div>
+          <h3>timeline</h3>
         </div>
 
-        <div class="row">
-        <div class="card">
-          <!--First column-->
-          <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
-            <!--Featured image-->
-            <div class="view overlay hm-white-slight">
-              <img src="http://cdn.c.photoshelter.com/img-get/I0000HRADrIT1AeY/s/700/700/Panorama-photo-of-Kandy-Lake-and-the-Temple-of-the-Sacred-Tooth-Relic-Temple-of-the-Tooth-Sri-Dalada-Maligawa-at-sunrise-Kandy-Central-Province-Sri-Lanka-Asia.jpg">
-              <a>
-                <div class="mask"></div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4 mb-r">
-            <!--Excerpt-->
-
-            <h4>Accomadation in kandy</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. !
-              Sed accusamus vitae qui, perferendis minus.</p>
-
-            <a href="View_Article_1.html" class="btn btn-primary " >Go to Page</a>
-          </div>
-        </div>
-          <div class="card">
-            <!--First column-->
-            <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
-              <!--Featured image-->
-              <div class="view overlay hm-white-slight">
-                <img src="http://www.dubmagazine.com/home/media/k2/galleries/8748/Rebel-off-road-1.jpg">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4 mb-r">
-              <!--Excerpt-->
-
-              <h4>Offroad Jeeps</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. !
-                Sed accusamus vitae qui, perferendis minus.</p>
-
-              <a href="View_Article_1.html" class="btn btn-primary " >Go to Page</a>
-            </div>
-          </div>
-          </div>
-
-        <div class="row" *ngIf="nearby">
-          <div class="row" *ngFor="let places of nearby">
-            <div class="col-lg-8 fade in wow">
-              <div class="card card-block pageshowpad">
-                <!--Title-->
-                <h4 class="card-title">{{places.name}}</h4>
-                <!--Text-->
-                <p class="card-text">{{ places.formatted_address}}</p>
-                <a href="#" class="btn btn-default">   Go to Page </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-
-
-
-        <!--Content of Timeline included from timeline.html-->
       </div>
       <!--/.Panel 1-->
 
       <!--Panel 2 About-->
       <div class="tab-pane fade" id="panel52" role="tabpanel" aria-expanded="false">
-        <!--Content of About included from about.html-->
-        <div class="text-center">
-          <h4><strong>Personal Info</strong></h4>
-
-          <p><strong>Name</strong>:Rajith Thennakoon</p>
-          <p><strong>Country</strong>: Sri Lanka</p>
-          <p><strong>City</strong>: Kandy</p>
-          <p><strong>Age</strong>: 23</p>
-
-          <hr>
-          <h4><strong>Introducing Myself</strong></h4>
-
-          <p>My name is Rajith. I'm a social guy with a big smile and 3 passions:People, Travel and Social Media.
-            January 2013 I decided to combine my passions and started a unique social travel project around the world.</p>
-
-          <hr>
-          <h4><strong>Why I Travel</strong></h4>
-
-          <p>To see new places, adventures, different cultures, local foods, music, habits ... meet new peoples and much more.</p>
-
-          <hr>
-          <h4><strong>I like to Do</strong></h4>
-
-          <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Hiking</p>
-          <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Camping</p>
-          <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Drafting</p>
-
-          <hr>
-          <h4><strong>Social Media Links</strong></h4>
-
-          <a href="https://www.facebook.com/nuwantharaka.manchanayaka" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"></i> </a>
-          <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i> </a>
-          <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i> </a>
-          <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i> </a>
-          <a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i> </a>
-          <a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i> </a>
-          <a class="icons-sm email-ic"><i class="fa fa-envelope-o"> </i> </a>
-
-        </div>
+        <h3>Me</h3>
       </div>
       <!--/.Panel 2-->
 
@@ -185,8 +86,8 @@
       <div class="tab-pane fade " id="panel53" role="tabpanel" aria-expanded="false" style="margin-top: -2rem; padding: 2rem;">
       <!--Content of Friends included from friends.html-->
         <div class = "row">
-          <div class = "col-lg-6 card" >
-            <h3>Facebook Mutual Friends</h3>
+          <div class = "col-lg-6" >
+            <h3>Friends</h3>
               <mdl-list *ngFor="let mutual of friends">
                 <mdl-list-item>
                   <mdl-list-item-primary-content>
@@ -198,32 +99,79 @@
 
               </mdl-list>
           </div>
+
+          <div class="col-lg-6">
+
+            <h3>Places you have reacently tagged</h3>
+
+
+          </div>
+
         </div>
 
     </div>
-    <!--/.Panel 3-->
 
 
-  </div>
-  <!-- Tab panels -->
+      <div class="tab-pane fade " id="panel54" role="tabpanel" aria-expanded="false" style="margin-top: -2rem; padding: 2rem;">
+        <!--Content of Friends included from friends.html-->
+        <div class = "row">
+
+            <h3>Pages you Manage</h3>
+            <div class="card">
+              <!--First column-->
+              <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
+                <!--Featured image-->
+                <div class="view overlay hm-white-slight">
+                  <img src="http://cdn.c.photoshelter.com/img-get/I0000HRADrIT1AeY/s/700/700/Panorama-photo-of-Kandy-Lake-and-the-Temple-of-the-Sacred-Tooth-Relic-Temple-of-the-Tooth-Sri-Dalada-Maligawa-at-sunrise-Kandy-Central-Province-Sri-Lanka-Asia.jpg">
+                  <a>
+                    <div class="mask"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4 mb-r">
+                <!--Excerpt-->
+
+                <h4>Accomadation in kandy</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. !
+                  Sed accusamus vitae qui, perferendis minus.</p>
+
+                <a href="View_Article_1.html" class="btn btn-primary " >Go to Page</a>
+              </div>
+            </div>
+            <div class="card">
+              <!--First column-->
+              <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
+                <!--Featured image-->
+                <div class="view overlay hm-white-slight">
+                  <img src="http://www.dubmagazine.com/home/media/k2/galleries/8748/Rebel-off-road-1.jpg">
+                  <a>
+                    <div class="mask"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-4 mb-r">
+                <!--Excerpt-->
+
+                <h4>Offroad Jeeps</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. !
+                  Sed accusamus vitae qui, perferendis minus.</p>
+
+                <a href="View_Article_1.html" class="btn btn-primary " >Go to Page</a>
+              </div>
+            </div>
 
 
+        </div>
 
-<!--/Main layout-->
+      </div>
 
+      <div class="tab-pane fade" id="panel55" role="tabpanel" aria-expanded="false">
+        <h3>Privacy settings</h3>
+      </div>
+
+
+    </div>
 <div>
-<!--  <div *ngIf="user">
-<div classs="page-header"><h1>{{user.name}}</h1></div>
-
-<ul class="list-group">
-  <li class="list-group-items">{{user.email}}</li>
-   <li class="list-group-items">{{user.username}}</li>
-</ul>
-  </div>-->
-
-
-
-
 
 
 
