@@ -21,7 +21,8 @@
       "styles": [
 
         ".././node_modules/bootstrap/dist/css/bootstrap.css",
-        ".././node_modules/mdbootstrap/css/mdb.css"
+        ".././node_modules/mdbootstrap/css/mdb.css",
+        ".././node_modules/froala-editor/css/froala_editor.pkgd.min.css"
 
 
       ],
@@ -29,7 +30,8 @@
         ".././node_modules/jquery/dist/jquery.min.js",
         ".././node_modules/mdbootstrap/js/tether.js",
         ".././node_modules/bootstrap/dist/js/bootstrap.js",
-        ".././node_modules/mdbootstrap/js/mdb.js"
+        ".././node_modules/mdbootstrap/js/mdb.js",
+        ".././node_modules/froala-editor/js/froala_editor.pkgd.min.js"
 
       ],
       "environmentSource": "environments/environment.ts",
