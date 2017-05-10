@@ -3,8 +3,10 @@
  */
 const express = require('express');
 const router = express.Router();
+
 var multer = require('multer');
 const config = require('../config/database');
+const Blogpost = require('../models/blog');
 
 
 
@@ -23,15 +25,34 @@ var upload = multer({ //multer settings
 }).single('file');
 
 router.post('/submitpost',function (req,res) {
+    
+    const blogpost = new Blogpost({
+        
+        userid:req.body.id,
+        postTile:req.body.title,
+        body:req.body.postBody,
+        featuredImage:'../uploads/fimage_'+req.body.userid,
+        dateAdded: Date()
+    });
+    
+    Blogpost.addBlogpost(blogpost,(err,callback)=>{
 
-    console.log(req.body);
+        if (err){
+            res.json({success:false,msg:"Failed"});
+        }else{
+            res.json({success:true,msg:"Saved your blog post"});
+        }
+
+    })
+    
+    
 });
 
 
-router.post('/uploadFile',(req,res)=>{
+/*router.post('/uploadFile',(req,res)=>{
     console.log(req);
 
     res.json({msg:true})
-})
+})*/
 
 module.exports = router;
