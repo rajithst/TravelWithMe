@@ -1,55 +1,82 @@
+<app-sideview>
 
+</app-sideview>
 <app-navbar></app-navbar>
-<div class="container">
-	<div class="row">
-		<form class="form-horizontal" (submit)="pageCreate()">
-            <fieldset>
-                <!-- Form Name -->
-                <legend>Form Name</legend>
-                <!-- Text input-->
+
+<main class="Mymain">
+<div class="row">
+  <div class="col-md-8">
+
+    <h2>Create page</h2>
+    <div class="card-block">
+
+      <!--Header-->
+      <div class="text-center">
+        <h3><i class="fa fa-envelope"></i> Write to us:</h3>
+        <hr class="mt-2 mb-2">
+      </div>
+
+      <!--Body-->
+      <p>We'll write rarely, but only the best content.</p>
+      <br>
+
+      <!--Body-->
+      <div class="md-form">
+        <i class="fa fa-user prefix"></i>
+        <input type="text" id="form3" class="form-control">
+        <label for="form3">Paage Name</label>
+      </div>
 
 
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">page Name</label>
-                    <div class="col-md-6">
-                        <input id="textinput"  [(ngModel)]="pagename" name="pagename" type="text" placeholder="placeholder" class="form-control input-md">
-                    </div>
-                </div>
+      <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Category</button>
 
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="notifymode">buisness type</label>
-                    <div class="col-md-6">
-                        <select id="notifymode" class="form-control" [(ngModel)]="businesstype" name="businesstype">
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Large scale Hotels</a>
+          <a class="dropdown-item" href="#">Medium scale Hotels</a>
+          <a class="dropdown-item" href="#">Single person business</a>
+          <a class="dropdown-item" href="#">Service providers</a>
+        </div>
+      </div>
 
-                            <option value="1">Local business</option>
-                            <option value="2">Company,Organization</option>
-                            <option value="3">Brand or Products</option>
-                        </select>
-                    </div>
-                </div>
 
-              <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">page image</label>
-                    <div class="col-md-6">
-                        <input type="file" class="form-control" id="images" name="images[]" />
-                    </div>
-                </div>
+      <div class="md-form">
+        <i class="fa fa-tag prefix"></i>
+        <input type="text" id="form32" class="form-control">
+        <label for="form34">Subject</label>
+      </div>
 
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="textinput">Target Areas</label>
-                    <div class="col-md-6">
+      <div class="md-form">
+        <i class="fa fa-pencil prefix"></i>
+        <textarea type="text" id="form8" class="md-textarea"></textarea>
+        <label for="form8">Icon Prefix</label>
+      </div>
 
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="submitButton"></label>
-                    <div class="col-md-8">
-                        <button id="submitButton" name="submitButton" class="btn btn-success" type="submit">Save</button>
-                        <button id="cancel" name="cancel" class="btn btn-inverse" type="reset">Cancel</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-	</div>
+      <div class="text-center">
+        <button class="btn btn-default">Submit</button>
+
+        <div class="call">
+          <br>
+          <p>Or would you prefer to call?
+            <br>
+            <span><i class="fa fa-phone"> </i></span> + 01 234 565 280</p>
+        </div>
+      </div>
+
+    </div>
+
+
+    </div>
+
+  <div class="col-md-4">
+
+    <h2>info</h2>
+
+  </div>
 </div>
+</main>
+
+
+
+
 
