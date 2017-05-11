@@ -41,6 +41,8 @@ export class Auth0Service {
         localStorage.setItem('profile', JSON.stringify(profile));
 
 
+
+
       });
     });
 

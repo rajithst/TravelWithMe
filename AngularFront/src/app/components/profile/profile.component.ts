@@ -5,6 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { FacebookService } from '../../services/facebook.service';
 import { GoogleAPIService } from '../../services/google-api.service';
 import {  UserServicesService } from '../../services/user-services.service';
+import * as GlobalData  from '../Global.component';
 
 @Component({
   selector: 'app-profile',
@@ -53,15 +54,15 @@ export class ProfileComponent implements OnInit {
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
 
-      this.profile = JSON.parse(localStorage.getItem('profile'));
+  /*    this.profile = JSON.parse(localStorage.getItem('profile'));
             const data = {
               id: this.profile.identities[0].user_id,
               provider: this.profile.identities[0].provider,
               userid: this.profile.user_id,
               profilepic :this.profile.picture_large
-            };
+            };*/
 
-        this.authService.checkId(data).subscribe(res => {
+        this.authService.checkId(GlobalData.data).subscribe(res => {
           this.user = res.data;
           this.user.me = this.user.identities[0].user_id;
           console.log(this.user);
@@ -85,7 +86,7 @@ export class ProfileComponent implements OnInit {
   FollowUser(followerid:any,action:number){
 
     const userdata:any = {
-      myid:JSON.parse(localStorage.getItem('profile')).identities[0].user_id,
+      myid:GlobalData.data.id,
       followid:followerid
 
     };

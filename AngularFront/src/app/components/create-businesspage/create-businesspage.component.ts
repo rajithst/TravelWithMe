@@ -39,7 +39,7 @@ export class CreateBusinesspageComponent implements OnInit {
 
     this.sub = this.acroute.params.subscribe(params => {
       this.id = +params['me'];
-
+      console.log(this.id)
 
     });
 

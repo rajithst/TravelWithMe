@@ -9,7 +9,7 @@ const schema = mongoose.Schema;
 
 var blogSchema = new schema({
 
-    userid:{type:Number},
+    userid:{type:String},
     postTtile:{type:String},
     body:{type:String},
     dateAdded:{type:String}

@@ -3,6 +3,9 @@ import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
 import { Http,Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
+import * as GlobalData  from '../Global.component';
+
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -15,7 +18,7 @@ export class BlogComponent implements OnInit {
   places:Object;
   val:String;
   id:string;
-
+  profile: any;
 
   postTitle:String;
   body:String;
@@ -29,17 +32,26 @@ export class BlogComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+
+    console.log(GlobalData.userid);
+
+  }
+
+  onEvent(event) {
+    event.preventDefault();
   }
 
   submitBlogpost(){
-    const blogdata = {
 
-      userid:'a',
+
+   const blogdata = {
+
+      user_id:'a  ',
       title:this.postTitle,
       postBody:this.body
 
     };
-
 
     this.blogService.addBlogpost(blogdata).subscribe(res=>{
 

@@ -13,16 +13,16 @@ const Blogpost = require('../models/blog');
 
 
 router.post('/submitpost',function (req,res) {
-    
     const blogpost = new Blogpost({
-        
-        userid:req.body.id,
-        postTile:req.body.title,
-        body:req.body.postBody,
+
+        userid: req.body.user_id,
+        postTtile: req.body.title,
+        body: req.body.postBody,
         dateAdded: Date()
     });
 
-    console.log(blogpost)
+    console.log(blogpost);
+    res.json({success:false,msg:"Failed"});
     
   /*  Blogpost.addBlogpost(blogpost,(err,callback)=>{
 
