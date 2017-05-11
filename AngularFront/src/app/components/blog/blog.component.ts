@@ -11,18 +11,13 @@ import {Observable} from 'rxjs/Rx';
 })
 export class BlogComponent implements OnInit {
 
-
-
-
   place:String;
   places:Object;
   val:String;
   id:string;
 
 
-  name:String;
-  tags:String;
-  geo:String;
+  postTitle:String;
   body:String;
 
 
@@ -39,11 +34,12 @@ export class BlogComponent implements OnInit {
   submitBlogpost(){
     const blogdata = {
 
-      name:this.name,
-      tags:this.tags,
-      geo:this.geo,
-      body:this.body
+      userid:'a',
+      title:this.postTitle,
+      postBody:this.body
+
     };
+
 
     this.blogService.addBlogpost(blogdata).subscribe(res=>{
 

@@ -12,7 +12,6 @@ var blogSchema = new schema({
     userid:{type:Number},
     postTtile:{type:String},
     body:{type:String},
-    featuredImage:{type:String},
     dateAdded:{type:String}
 });
 
