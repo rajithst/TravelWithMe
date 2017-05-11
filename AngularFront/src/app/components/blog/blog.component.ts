@@ -34,8 +34,6 @@ export class BlogComponent implements OnInit {
   ngOnInit() {
 
 
-    console.log(GlobalData.userid);
-
   }
 
   onEvent(event) {
@@ -47,7 +45,7 @@ export class BlogComponent implements OnInit {
 
    const blogdata = {
 
-      user_id:'a  ',
+      user_id:GlobalData.userid,
       title:this.postTitle,
       postBody:this.body
 

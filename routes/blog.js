@@ -21,10 +21,8 @@ router.post('/submitpost',function (req,res) {
         dateAdded: Date()
     });
 
-    console.log(blogpost);
-    res.json({success:false,msg:"Failed"});
     
-  /*  Blogpost.addBlogpost(blogpost,(err,callback)=>{
+    Blogpost.addBlogpost(blogpost,(err,callback)=>{
 
         if (err){
             res.json({success:false,msg:"Failed"});
@@ -32,7 +30,7 @@ router.post('/submitpost',function (req,res) {
             res.json({success:true,msg:"Saved your blog post"});
         }
 
-    })*/
+    })
     
     
 });

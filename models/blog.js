@@ -21,5 +21,5 @@ const Blogtab =  module.exports = mongoose.model('Blogtab',blogSchema);
 
 module.exports.addBlogpost = function (blogdata,callback) {
    
-    Blogtab.save(callback);
+    blogdata.save(callback);
 };
