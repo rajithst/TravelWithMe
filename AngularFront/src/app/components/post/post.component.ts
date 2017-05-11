@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
@@ -8,9 +10,16 @@ import { Router } from '@angular/router';
 })
 export class PostComponent implements OnInit {
 
-  constructor(private rourer:Router) { }
+  constructor(
+    private rourer:Router,
+
+  ) { }
 
   ngOnInit() {
+
+
+
+
   }
 
 }

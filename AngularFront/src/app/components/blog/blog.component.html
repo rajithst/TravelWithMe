@@ -12,8 +12,8 @@
         <label for="">title</label>
         <input type="text" name="postTitle" [(ngModel)]="postTitle">
 
-        <!--<div [froalaEditor] [(ngModel)]="body" name="body">Hello, Froala!</div>-->
-        <input type="text" name="body" [(ngModel)]="body">
+        <div [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
+
         <button type="button" (click)="submitBlogpost()"> submit</button>
 
       </form>

@@ -54,13 +54,6 @@ export class ProfileComponent implements OnInit {
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
 
-  /*    this.profile = JSON.parse(localStorage.getItem('profile'));
-            const data = {
-              id: this.profile.identities[0].user_id,
-              provider: this.profile.identities[0].provider,
-              userid: this.profile.user_id,
-              profilepic :this.profile.picture_large
-            };*/
 
         this.authService.checkId(GlobalData.data).subscribe(res => {
           this.user = res.data;

@@ -35,6 +35,12 @@ router.post('/submitpost',function (req,res) {
     
 });
 
+router.get('/getPosts/:id',(req,res)=>{
+    console.log(req.params.id);
+   res.json({success:false,msg:"Failed"})
+
+});
+
 
 
 module.exports = router;

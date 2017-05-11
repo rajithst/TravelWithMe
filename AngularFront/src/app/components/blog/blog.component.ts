@@ -5,7 +5,6 @@ import { Http,Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import * as GlobalData  from '../Global.component';
 
-
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -28,20 +27,13 @@ export class BlogComponent implements OnInit {
   constructor(
     private mapService:GooglemapsService,
     private blogService:BlogServiceService,
-    private http:Http
+    private http:Http,
+
   ) { }
 
-  ngOnInit() {
-
-
-  }
-
-  onEvent(event) {
-    event.preventDefault();
-  }
+  ngOnInit() {}
 
   submitBlogpost(){
-
 
    const blogdata = {
 
