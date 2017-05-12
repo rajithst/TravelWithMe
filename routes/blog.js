@@ -3,26 +3,36 @@
  */
 const express = require('express');
 const router = express.Router();
-
-
-var multer = require('multer');
 const config = require('../config/database');
 const Blogpost = require('../models/blog');
+
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'uploads/')
+    },
+    filename: function (req, file, cb) {
+        cb(null, file.fieldname + '-' + Date.now() + '.jpg')
+    }
+});
 
 
 
 
 router.post('/submitpost',function (req,res) {
-    const blogpost = new Blogpost({
+
+
+   /* const blogpost = new Blogpost({
 
         userid: req.body.user_id,
         postTtile: req.body.title,
         body: req.body.postBody,
         dateAdded: Date()
-    });
+    });*/
 
     
-    Blogpost.addBlogpost(blogpost,(err,callback)=>{
+    Blogpost.addBlogpost(req.body,(err,callback)=>{
 
         if (err){
             res.json({success:false,msg:"Failed"});

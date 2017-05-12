@@ -12,6 +12,12 @@
         <label for="">title</label>
         <input type="text" name="postTitle" [(ngModel)]="postTitle">
 
+        <label for="">image</label>
+        <input type="file" name="student_img" required (change)="fileChange(input)" #input />
+        <div>
+          <img [attr.src]='file_srcs[0]' alt=""/>
+        </div>
+
         <div [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
 
         <button type="button" (click)="submitBlogpost()"> submit</button>
