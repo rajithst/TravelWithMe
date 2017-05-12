@@ -15,7 +15,7 @@ export class BlogServiceService {
 
   addBlogpost(data:any){
 
-    console.log(data)
+    console.log(data);
     let body=JSON.stringify(data);
     let header=new Headers({'Content-Type':'application/json'});
     let res=new RequestOptions({headers:header});

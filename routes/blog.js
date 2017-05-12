@@ -23,16 +23,17 @@ const storage = multer.diskStorage({
 router.post('/submitpost',function (req,res) {
 
 
-   /* const blogpost = new Blogpost({
+   const blogpost = new Blogpost({
 
-        userid: req.body.user_id,
-        postTtile: req.body.title,
-        body: req.body.postBody,
+        userid: req.body.userid,
+        postTtile: req.body.postTtile,
+        body: req.body.body,
+       featured_img:'',
         dateAdded: Date()
-    });*/
+    });
 
     
-    Blogpost.addBlogpost(req.body,(err,callback)=>{
+    Blogpost.addBlogpost(blogpost,(err,callback)=>{
 
         if (err){
             res.json({success:false,msg:"Failed"});
