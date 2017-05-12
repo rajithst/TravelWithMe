@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http,Headers} from '@angular/http';
+import { Http,Headers,RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -15,18 +15,14 @@ export class BlogServiceService {
 
   addBlogpost(data:any){
 
-
-    let headers = new Headers();
-    headers.append('Content-Type','application/json');
-    return this.http.post('http://localhost:3000/blog/submitpost',data,{headers:headers}).map(res=>res.json());
+    console.log(data);
+    let body=JSON.stringify(data);
+    let header=new Headers({'Content-Type':'application/json'});
+    let res=new RequestOptions({headers:header});
+    return this.http.post('http://localhost:3000/blog/submitpost',body,res).map(res=>res.json());
   }
 
-  uploadFile(formData){
-    let headers = new Headers();
-    headers.append('Accept', 'application/json');
-    return this.http.post('http://localhost:3000/blog/uploadFile', formData,{ headers: headers }).map(res => res.json());
 
-  }
 
 
   getPosts(id:any){
