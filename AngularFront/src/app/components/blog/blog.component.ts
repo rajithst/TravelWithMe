@@ -4,6 +4,7 @@ import { BlogServiceService } from '../../services/blog-service.service';
 import { Http,Headers, RequestOptions} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import * as GlobalData  from '../Global.component';
+import './js1.js';
 
 @Component({
   selector: 'app-blog',
@@ -28,7 +29,7 @@ export class BlogComponent implements OnInit {
     private mapService:GooglemapsService,
     private blogService:BlogServiceService,
     private http:Http,
-
+    private script:['js1.js'],
   ) { }
 
   ngOnInit() {}

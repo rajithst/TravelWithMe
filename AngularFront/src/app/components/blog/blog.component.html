@@ -5,30 +5,72 @@
 <app-navbar></app-navbar>
 <main class="Mymain">
   <div class="row">
+    <form (submit)="submitBlogpost()">
     <div class="col-md-8">
 
-      <form (submit)="submitBlogpost()">
 
-        <label for="">title</label>
-        <input type="text" name="postTitle" [(ngModel)]="postTitle">
+        <mdl-textfield
+          type="text"
+          label="Title"
+          name="postTitle"
+          [(ngModel)]="postTitle"
+          placeholder="Enter Your Post Title Here"
+          autofocus
+          ></mdl-textfield>
 
-        <div [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
 
-        <button type="button" (click)="submitBlogpost()"> submit</button>
+        <div  [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
 
-      </form>
+
+
 
 
 
 
     </div>
     <div class="col-md-4">
+      <mdl-card mdl-shadow="2">
+        <mdl-card-title>
+          <h2 mdl-card-title-text>Post Details</h2>
+        </mdl-card-title>
+        <mdl-card-supporting-text>
+          <mdl-textfield type="text" label="Location"  floating-label ></mdl-textfield>
+          <div class="chips chips-initial"></div>
+          <div class="col-md-12">
 
+            <div class="md-form">
+              <textarea type="text" id="form76" class="md-textarea"></textarea>
+              <label for="form76">Description about blog post</label>
+            </div>
+
+          </div>
+          <br>
+          <div class="file-field">
+            <div class="btn btn-primary btn-sm">
+              <span>Choose file</span>
+              <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload your file">
+            </div>
+          </div>
+          <mdl-textfield type="text" label="Text..."  floating-label></mdl-textfield>
+
+        </mdl-card-supporting-text>
+        <mdl-card-actions mdl-card-border>
+          <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>Preview</button>
+          <button class="text-center" center (click)="submitBlogpost()" mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
+            Post
+          </button>
+        </mdl-card-actions>
+
+      </mdl-card>
     </div>
+    </form>
   </div>
 
 
 
-
+<script [src]="js1.js"></script>
 
 </main>
