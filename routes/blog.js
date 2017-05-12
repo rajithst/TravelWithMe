@@ -28,7 +28,7 @@ router.post('/submitpost',function (req,res) {
         userid: req.body.userid,
         postTtile: req.body.postTtile,
         body: req.body.body,
-       featured_img:'',
+        featured_img:req.body.featured_img,
         dateAdded: Date()
     });
 
