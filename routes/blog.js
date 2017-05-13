@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 const config = require('../config/database');
 const Blogpost = require('../models/blog');
-
+const SM = require('../models/socialmedia');
 const multer = require('multer');
 
 const storage = multer.diskStorage({
@@ -47,8 +47,23 @@ router.post('/submitpost',function (req,res) {
 });
 
 router.get('/getPosts/:id',(req,res)=>{
-    console.log(req.params.id);
-   res.json({success:false,msg:"Failed"})
+
+    SM.getFollowers(req.params.id,(err,callback)=>{
+
+        if (err){
+            res.json({success:false,msg:"Failed"});
+        }else{
+
+            const usersArray = callback[0].followeusers;
+            Blogpost.getFollowersPosts(usersArray,(err,callback)=>{
+
+
+
+            })
+        }
+
+    })
+
 
 });
 

@@ -63,3 +63,18 @@ module.exports.followOption = function (myid,followersId,callback) {
     });
 
 };
+
+module.exports.getFollowers = function (myid,callback) {
+
+    console.log(myid)
+    SM.find({id: myid},{ followeusers: 1, profilepicture: 1 },function (err,docs) {
+        if (err) throw err;
+
+        if (docs){
+            callback(null,docs);
+        }
+
+
+    });
+
+};

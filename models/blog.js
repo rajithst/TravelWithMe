@@ -40,3 +40,23 @@ module.exports.addBlogpost = function (PostData,callback) {
     PostData.featured_img = "../uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
     PostData.save(callback);
 };
+
+
+module.exports.getFollowersPosts = (usersArray,callbacl)=>{
+
+    for(var i=0; i<=usersArray.length; i++){
+
+        Blogtab.find({userid:usersArray[i]})
+                .sort({'dateAdded': -1})
+                 .exec(function(err,docs){
+
+            if(err) {
+                return console.log(err);
+            }
+            console.log(docs)
+        });
+
+    }
+
+
+}

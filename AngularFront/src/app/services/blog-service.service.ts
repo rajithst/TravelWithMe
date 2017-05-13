@@ -29,7 +29,7 @@ export class BlogServiceService {
 
     let headers = new Headers();
     headers.append('Accept', 'application/json');
-    return this.http.get('http://localhost:3000/blog/getPosts/:'+id).map(res => res.json());
+    return this.http.get('http://localhost:3000/blog/getPosts/'+id).map(res => res.json());
 
   }
 
