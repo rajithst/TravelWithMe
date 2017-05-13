@@ -40,7 +40,6 @@ export class BlogComponent implements OnInit {
     // private http:Http,
 
 
-
   ) { }
 
   ngOnInit() {}
