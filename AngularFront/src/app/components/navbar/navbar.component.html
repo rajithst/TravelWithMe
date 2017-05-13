@@ -33,11 +33,10 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle waves-effect" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i> <span class="hidden-sm-down">Profile</span></a>
       <div class="dropdown-menu dropdown-primary dd-right" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+       <li *ngIf="auth.authenticated()" (click)="logoutClick()"><a class="dropdown-item waves-effect">Logout</a></li>
+        <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" [routerLink]="['/profile']">My account</a></li>
 
-    <li *ngIf="auth.authenticated()" (click)="logoutClick()"><a class="dropdown-item waves-effect">Logout</a></li>
-    <li *ngIf="auth.authenticated()"><a class="dropdown-item waves-effect" [routerLink]="['/profile']">My account</a></li>
-
-    </div>
+       </div>
     </li>
 
   </ul>
@@ -47,25 +46,25 @@
 
 <!-- Modal -->
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-smll" role="document">
-    <div class="modal-content">
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+
       <div class="modal-header  text-center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
       </div>
-      <div class="modal-body">
+
         <div class="row">
-          <form action="#">
+
             <div class="form-group col-md-12">
               <div class = "row">
-                <div class ="col-md-6  col-sm-6 card" mdl-shadow="2">
+                <div class ="col-md-6  col-sm-12 card" mdl-shadow="2">
                   <i class="fa fa-book fa-5x" style = "color: cornflowerblue"></i>
                   <h3>Blog</h3>
                   <h6>Small Description about travel what it can do </h6>
                   <button data-dismiss="modal"   class="btn btn-default waves-effect waves-light" [routerLink]="['/profile/create/blog']">Create</button>
                 </div>
 
-                <div class ="col-md-6 col-sm-6 card" mdl-shadow="2">
+                <div class ="col-md-6 col-sm-12 card" mdl-shadow="2">
                   <i class="fa fa-briefcase fa-5x" style = "color: cornflowerblue"></i>
                   <h3>Business</h3>
                   <h6>Small Description about travel what it can do </h6>
@@ -74,11 +73,8 @@
 
               </div>
             </div>
-
-          </form>
         </div>
-      </div>
-    </div>
+
   </div>
 </div>
 
@@ -118,7 +114,7 @@
             </div>
           </div>
         </div>
-     
+
       <div class="col-md-6">
         <div class="container-fluid">
           <img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">
