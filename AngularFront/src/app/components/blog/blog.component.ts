@@ -2,6 +2,7 @@ import { Component, OnInit ,ViewEncapsulation,ChangeDetectorRef } from '@angular
 import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
 import * as GlobalData  from '../Global.component';
+import './js1.js';
 
 @Component({
   selector: 'app-blog',
@@ -34,8 +35,13 @@ export class BlogComponent implements OnInit {
   constructor(
     private mapService:GooglemapsService,
     private blogService:BlogServiceService,
+<<<<<<< HEAD
     private changeDetectorRef: ChangeDetectorRef
 
+=======
+    private http:Http,
+    private script:['js1.js'],
+>>>>>>> d3ad578dc10283c4f0d6db94f90ff1633a6d375f
   ) { }
 
   ngOnInit() {}
