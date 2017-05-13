@@ -1,4 +1,4 @@
-
+<script [src]="javascript1"></script>
 <app-sideview>
 
 </app-sideview>
@@ -21,13 +21,9 @@
 
         <div  [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
 
-        <label for="">image</label>
-        <input type="file" name="student_img" required (change)="fileChange(input)" #input />
-        <div>
-          <img [attr.src]='file_srcs[0]' alt=""/>
-        </div>
 
-        <div [froalaEditor] [(ngModel)]="body" name="body" class="blogbody"></div>
+
+
 
 
 
@@ -50,18 +46,20 @@
               <textarea type="text" id="form76" class="md-textarea"></textarea>
               <label for="form76">Description about blog post</label>
             </div>
+            <div class="md-form">
+              <div class="btn btn-primary btn-sm">
+                <span>Choose file</span>
 
+              <input id="file" class="file-path validate" type="file" name="student_img" required (change)="fileChange(input)" #input   />
+              <div>
+              </div>
+
+              </div>
+              <img [attr.src]='file_srcs[0]' alt=""/>
+            </div>
           </div>
           <br>
-          <div class="file-field">
-            <div class="btn btn-primary btn-sm">
-              <span>Choose file</span>
-              <input type="file">
-            </div>
-            <div class="file-path-wrapper">
-              <input class="file-path validate" type="text" placeholder="Upload your file">
-            </div>
-          </div>
+
           <mdl-textfield type="text" label="Text..."  floating-label></mdl-textfield>
 
         </mdl-card-supporting-text>
@@ -79,6 +77,6 @@
 
 
 
-<script [src]="javascript1"></script>
+
 
 </main>

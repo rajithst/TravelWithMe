@@ -7,11 +7,98 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Component, ViewEncapsulation } from '@angular/core';
-import { Headers, RequestOptions } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Component, ViewEncapsulation, ChangeDetectorRef } from '@angular/core';
+import { GooglemapsService } from '../../services/googlemaps.service';
+import { BlogServiceService } from '../../services/blog-service.service';
 import * as GlobalData from '../Global.component';
+import './js1.js';
 export let BlogComponent = class BlogComponent {
+    constructor(mapService, blogService, changeDetectorRef) {
+        this.mapService = mapService;
+        this.blogService = blogService;
+        this.changeDetectorRef = changeDetectorRef;
+        this.javascript1 = require('./js1');
+        this.model = { userid: "", postTitle: "", body: "", featured_img: "" };
+        this.path = '';
+        this.file_srcs = [];
+        this.debug_size_before = [];
+        this.debug_size_after = [];
+    }
+    ngOnInit() { }
+    fileChange(input) {
+        this.file_srcs = [];
+        this.readFiles(input.files);
+    }
+    readFile(file, reader, callback) {
+        reader.onload = () => {
+            callback(reader.result);
+            this.model.featured_img = reader.result;
+        };
+        reader.readAsDataURL(file);
+    }
+    readFiles(files, index = 0) {
+        let reader = new FileReader();
+        if (index in files) {
+            this.readFile(files[index], reader, (result) => {
+                var img = document.createElement("img");
+                img.src = result;
+                this.resize(img, 250, 250, (resized_jpeg, before, after) => {
+                    this.debug_size_before.push(before);
+                    this.debug_size_after.push(after);
+                    this.file_srcs.push(resized_jpeg);
+                });
+            });
+        }
+        else {
+            this.changeDetectorRef.detectChanges();
+        }
+    }
+    resize(img, MAX_WIDTH, MAX_HEIGHT, callback) {
+        return img.onload = () => {
+            var width = img.width;
+            var height = img.height;
+            if (width > height) {
+                if (width > MAX_WIDTH) {
+                    height *= MAX_WIDTH / width;
+                    width = MAX_WIDTH;
+                }
+            }
+            else {
+                if (height > MAX_HEIGHT) {
+                    width *= MAX_HEIGHT / height;
+                    height = MAX_HEIGHT;
+                }
+            }
+            var canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, width, height);
+            var dataUrl = canvas.toDataURL('image/jpeg');
+            callback(dataUrl, img.src.length, dataUrl.length);
+        };
+    }
+    submitBlogpost() {
+        this.model.userid = GlobalData.userid;
+        this.model.postTitle = this.postTitle;
+        this.model.body = this.body;
+        this.blogService.addBlogpost(this.model).subscribe(res => {
+            console.log(res);
+        });
+    }
+    placeSearch() {
+        console.log(this.place);
+        this.mapService.getLocations(this.place).subscribe(res => {
+            this.places = res.results;
+            console.log(this.places);
+        });
+    }
+    addTotag(event) {
+        let target = event.target || event.srcElement || event.currentTarget;
+        let idAttr = target.attributes.id;
+        let id = idAttr.nodeValue;
+        /*this.val = id;*/
+    }
 };
 BlogComponent = __decorate([
     Component({
@@ -19,53 +106,6 @@ BlogComponent = __decorate([
         templateUrl: './blog.component.html',
         encapsulation: ViewEncapsulation.None
     }), 
-    __metadata('design:paramtypes', [])
+    __metadata('design:paramtypes', [GooglemapsService, BlogServiceService, ChangeDetectorRef])
 ], BlogComponent);
-{ }
-ngOnInit();
-{ }
-submitBlogpost();
-{
-    const blogdata = {
-        user_id: GlobalData.userid,
-        title: this.postTitle,
-        postBody: this.body
-    };
-    this.blogService.addBlogpost(blogdata).subscribe(res => {
-        console.log(res);
-    });
-}
-// end of upload
-fileChange(event);
-{
-    let fileList = event.target.files;
-    if (fileList.length > 0) {
-        let file = fileList[0];
-        let formData = new FormData();
-        formData.append('uploadFile', file, file.name);
-        let headers = new Headers();
-        headers.append('enctype', 'multipart/form-data');
-        headers.append('Accept', 'application/json');
-        let options = new RequestOptions({ headers: headers });
-        this.http.post('http://localhost:3000/blog/uploadFile', formData, options)
-            .map(res => res.json())
-            .catch(error => Observable.throw(error))
-            .subscribe(data => console.log('success'), error => console.log(error));
-    }
-}
-placeSearch();
-{
-    console.log(this.place);
-    this.mapService.getLocations(this.place).subscribe(res => {
-        this.places = res.results;
-        console.log(this.places);
-    });
-}
-addTotag(event);
-{
-    let target = event.target || event.srcElement || event.currentTarget;
-    let idAttr = target.attributes.id;
-    let id = idAttr.nodeValue;
-    this.val = id;
-}
 //# sourceMappingURL=E:/3rd Year Project/webapp/TravelwithMe/AngularFront/src/app/components/blog/blog.component.js.map

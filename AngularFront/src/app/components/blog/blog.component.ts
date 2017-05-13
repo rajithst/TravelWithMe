@@ -36,7 +36,9 @@ export class BlogComponent implements OnInit {
   constructor(
     private mapService:GooglemapsService,
     private blogService:BlogServiceService,
-    private changeDetectorRef: ChangeDetectorRef
+    private changeDetectorRef: ChangeDetectorRef,
+    // private http:Http,
+
 
 
   ) { }
@@ -156,7 +158,6 @@ export class BlogComponent implements OnInit {
     /*this.val = id;*/
 
   }
-
 
 
 

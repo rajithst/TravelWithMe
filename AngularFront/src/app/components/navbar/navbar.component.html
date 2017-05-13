@@ -103,20 +103,32 @@
       <!-- Modal Body -->
       <div class="modal-body">
 
-        <form class="form-horizontal" role="form">
-          <div class="form-group">
 
-            <div class="col-sm-10">
-              <mdl-textfield type="text" label="Text..." [(ngModel)]="text3" [ngModelOptions]="{standalone: true}" floating-label></mdl-textfield>
+          <div class="col-md-6">
+            <div class="container-fluid">
+
+              <div class="row">
+                <div class="md-form">
+                  <input placeholder="From" type="text" id="From" class="form-control" required="">
+
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="md-form">
+                  <input placeholder="To" type="text" id="to" class="form-control" required="">
+
+                </div>
+              </div>
             </div>
           </div>
-          <div class="form-group">
+        <div class="col-md-6">
+          <div class="container-fluid">
 
-            <div class="col-sm-10">
-              <mdl-textfield type="text" label="Text..." [(ngModel)]="text3" [ngModelOptions]="{standalone: true}" floating-label></mdl-textfield>
-            </div>
+          <img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">
           </div>
-        </form>
+        </div>
       </div>
 
       <!-- Modal Footer -->
