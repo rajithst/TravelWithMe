@@ -12,6 +12,7 @@ import './js1.js';
 })
 export class BlogComponent implements OnInit {
 
+    private javascript1 = require('./js1');
 
   model = {userid:"",postTitle:"",body:"",featured_img:""};
 
@@ -35,13 +36,9 @@ export class BlogComponent implements OnInit {
   constructor(
     private mapService:GooglemapsService,
     private blogService:BlogServiceService,
-<<<<<<< HEAD
     private changeDetectorRef: ChangeDetectorRef
 
-=======
-    private http:Http,
-    private script:['js1.js'],
->>>>>>> d3ad578dc10283c4f0d6db94f90ff1633a6d375f
+
   ) { }
 
   ngOnInit() {}
