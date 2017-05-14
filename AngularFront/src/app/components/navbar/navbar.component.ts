@@ -2,7 +2,8 @@ import { Component, OnInit,Input } from '@angular/core';
 import { GoogleAPIService } from '../../services/google-api.service';
 import { Router } from '@angular/router';
 import {Auth0Service} from '../../services/auth0.service'
-import { CompleterService, CompleterData } from 'ng2-completer';
+import {LocationPassService} from '../../shared/location-pass.service'
+
 
 @Component({
   selector: 'app-navbar',
@@ -32,7 +33,7 @@ export class NavbarComponent implements OnInit {
     private route:Router,
     private auth: Auth0Service,
     private googleApi:GoogleAPIService,
-    private completerService: CompleterService
+    private locationService:LocationPassService
   ) { }
 
   ngOnInit() {
@@ -93,6 +94,10 @@ export class NavbarComponent implements OnInit {
     return false;
 
 
+  }
+
+  callLocationPass(){
+    this.locationService.shareLocations(this.dataArray)
   }
 
 

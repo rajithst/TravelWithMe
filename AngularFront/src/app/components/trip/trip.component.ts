@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LocationPassService} from '../../shared/location-pass.service';
 
 @Component({
   selector: 'app-trip',
@@ -8,11 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TripComponent implements OnInit {
 
-  constructor() { }
+  constructor(private locationService:LocationPassService) { }
 
   ngOnInit() {
 
-  console.log(this.dataArray)
+    this.locationService.finalLocations.subscribe(
+      data=>console.log(data)
+
+    )
   }
 
 
