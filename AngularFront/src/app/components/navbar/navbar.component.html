@@ -105,10 +105,24 @@
         <div class="col-md-6">
           <div id="set_dest">
             <div class="row">
-                <input placeholder="From" type="text" id="From" class="form-control" required="">
+                <input placeholder="From" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation">
             </div>
+            <div class="row" *ngIf="Fresult">
+
+              <li *ngFor="let place of Fresult">{{ place.description}}</li>
+
+
+            </div>
+
             <div class="row">
-              <input placeholder="To" type="text" id="to" class="form-control" required="">
+              <input placeholder="To" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()" name="tlocation" [(ngModel)]="tlocation">
+            </div>
+
+            <div class="row" *ngIf="Tresult">
+
+              <li *ngFor="let place of Tresult">{{ place.description}}</li>
+
+
             </div>
           </div>
         </div>

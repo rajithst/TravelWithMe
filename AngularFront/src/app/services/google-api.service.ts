@@ -27,4 +27,14 @@ export class GoogleAPIService {
     return this.http.get("https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference="+refKey+"&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E",{headers:headers}).map(res=>res.json());
   }*/
 
+
+
+  getPlaces(key:any){
+
+    let headers = new Headers();
+    headers.append('Access-Control-Allow-Headers','*');
+    headers.append('Access-Control-Allow-Origin','*');
+    return this.http.get("http://localhost:3000/googleAPI/getplaces/"+key,{headers:headers}).map(res=>res.json());
+  }
+
 }

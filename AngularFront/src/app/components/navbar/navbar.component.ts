@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-/*import { FlashMessagesService } from 'angular2-flash-messages';*/
+import { GoogleAPIService } from '../../services/google-api.service';
 import { Router } from '@angular/router';
 import {Auth0Service} from '../../services/auth0.service'
 
@@ -11,13 +11,18 @@ import {Auth0Service} from '../../services/auth0.service'
 })
 export class NavbarComponent implements OnInit {
 
+  flocation:any;
+  tlocation:any;
   profile: any;
   actoken: any;
   userid:any;
+  Fresult:any;
+  Tresult:any;
   constructor(
     /*private flashMessage:FlashMessagesService,*/
     private route:Router,
-    private auth: Auth0Service
+    private auth: Auth0Service,
+    private googleApi:GoogleAPIService
   ) { }
 
   ngOnInit() {
@@ -37,7 +42,23 @@ export class NavbarComponent implements OnInit {
     return false;
 
     }
-    /*this.flashMessage.show(" Youre logged Out",{cssClass:'alert-success',timeout:5000});*/
+
+  getFromLocation(){
+
+    this.googleApi.getPlaces(this.flocation).subscribe(res=>{
+      this.Fresult = res.data.predictions;
+
+    })
+
+  }
+
+  getToLocation(){
+
+    this.googleApi.getPlaces(this.tlocation).subscribe(res=>{
+      this.Tresult = res.data.predictions;
+    })
+
+  }
 
 
 
