@@ -3,7 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-trip',
   templateUrl: './trip.component.html',
-  styleUrls: ['./trip.component.css']
+  styleUrls: ['./trip.component.css'],
+  inputs:['dataArray']
 })
 export class TripComponent implements OnInit {
 
@@ -11,6 +12,7 @@ export class TripComponent implements OnInit {
 
   ngOnInit() {
 
+  console.log(this.dataArray)
   }
 
 

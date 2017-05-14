@@ -119,7 +119,7 @@
             </div>
             <div class="row" *ngIf="Fresult">
 
-              <li *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event.target.innerText);false">{{ place.description}}</a></li>
+              <li *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
 
 
             </div>
@@ -130,7 +130,7 @@
 
             <div class="row" *ngIf="Tresult">
               <div class="col-md-8">
-              <li *ngFor="let place of Tresult"><a (click)="addToTagto($event.target.innerText);false">{{ place.description}}</a></li>
+              <li *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
               </div>
 
 

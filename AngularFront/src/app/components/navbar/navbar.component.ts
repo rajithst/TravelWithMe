@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { GoogleAPIService } from '../../services/google-api.service';
 import { Router } from '@angular/router';
 import {Auth0Service} from '../../services/auth0.service'
@@ -11,6 +11,9 @@ import { CompleterService, CompleterData } from 'ng2-completer';
 })
 export class NavbarComponent implements OnInit {
 
+
+  @Input() dataArray:any;
+
   flocation:any;
   fautoplace:any;
   tautoplace:any;
@@ -20,6 +23,10 @@ export class NavbarComponent implements OnInit {
   userid:any;
   Fresult:any;
   Tresult:any;
+
+
+
+
   constructor(
     /*private flashMessage:FlashMessagesService,*/
     private route:Router,
@@ -31,6 +38,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.fautoplace='';
     this.tautoplace='';
+    this.dataArray = [];
 
 
     this.profile = JSON.parse(localStorage.getItem('profile'));
@@ -54,7 +62,7 @@ export class NavbarComponent implements OnInit {
 
     this.googleApi.getPlaces(this.flocation).subscribe(res=>{
       this.Fresult = res.data.predictions;
-
+      console.log(this.Fresult)
     })
 
   }
@@ -63,12 +71,14 @@ export class NavbarComponent implements OnInit {
 
     this.googleApi.getPlaces(this.tlocation).subscribe(res=>{
       this.Tresult = res.data.predictions;
+      console.log(this.Tresult)
     })
 
   }
 
   addToTagfrom(e){
-    this.fautoplace = e;
+    this.dataArray[0] = e.target.id;
+    this.fautoplace = e.target.innerText;
     this.Fresult = '';
     this.flocation = '';
     return false;
@@ -76,10 +86,13 @@ export class NavbarComponent implements OnInit {
 
 
   addToTagto(e){
-    this.tautoplace = e;
+    this.dataArray[1] = e.target.id;
+    this.tautoplace = e.target.innerText;
     this.Tresult = '';
     this.tlocation = '';
     return false;
+
+
   }
 
 
