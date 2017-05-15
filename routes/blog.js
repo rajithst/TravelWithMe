@@ -53,13 +53,13 @@ router.get('/getPosts/:id',(req,res)=>{
         if (err){
             res.json({success:false,msg:"Failed"});
         }else{
+            console.log(callback)
+           // const usersArray = callback[0].followeusers;
+           /* Blogpost.getFollowersPosts(usersArray,(err,callback)=>{
 
-            const usersArray = callback[0].followeusers;
-            Blogpost.getFollowersPosts(usersArray,(err,callback)=>{
 
 
-
-            })
+            })*/
         }
 
     })

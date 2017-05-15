@@ -1,7 +1,7 @@
 import { Component, OnInit ,ViewEncapsulation,ChangeDetectorRef } from '@angular/core';
 import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
-import * as GlobalData  from '../Global.component';
+
 import './js1.js';
 
 @Component({
@@ -123,7 +123,16 @@ export class BlogComponent implements OnInit {
 
   submitBlogpost(){
 
-    this.model.userid = GlobalData.userid;
+
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+    const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id,
+      profilepic :this.profile.picture_large
+    };
+
+    this.model.userid = data.userid;
     this.model.postTitle = this.postTitle;
     this.model.body = this.body;
 
