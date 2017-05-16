@@ -5,22 +5,18 @@
 <main class="Mymain">
 <div class="row">
   <div class="col-md-8">
-    <div class="col-md-6">
-      <app-post>
-      </app-post>
+    <div [ngGrid]="{'resizeable': true, 'margins': [5, 10]}">
+
+      <div class="col-md-6">
+        <app-post>
+        </app-post>
+      </div>
+      <div class="col-md-6">
+        <app-post>
+        </app-post>
+      </div>
     </div>
-    <div class="col-md-6">
-      <app-post>
-      </app-post>
-    </div>
-    <div class="col-md-6">
-      <app-post>
-      </app-post>
-    </div>
-    <div class="col-md-6">
-      <app-post>
-      </app-post>
-    </div>
+
   </div>
   <div class="col-md-4">
       <app-suggestionarea></app-suggestionarea>
