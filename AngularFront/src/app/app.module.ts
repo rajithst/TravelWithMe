@@ -47,6 +47,7 @@ import { FacebookService } from './services/facebook.service';
 import { GoogleAPIService } from './services/google-api.service';
 import { UserServicesService } from './services/user-services.service';
 import { LocationPassService } from './shared/location-pass.service';
+import { BusinessPostComponent } from './components/business-post/business-post.component';
 
 
 
@@ -69,7 +70,7 @@ const appRoute: Routes = [
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/business-page' , component: BusinessPageComponent , canActivate: [AuthGuard]},
-
+  {path: 'profile/business-post' , component: BusinessPostComponent , canActivate: [AuthGuard]},
 
 
 ];
@@ -94,7 +95,7 @@ const appRoute: Routes = [
     SideviewComponent,
     TripComponent,
     PostComponent,
-    PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent,
+    PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, BusinessPostComponent,
   ],
 
   imports: [
