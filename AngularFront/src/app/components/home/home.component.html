@@ -19,10 +19,10 @@
           <a class="nav-link waves-effect waves-light" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#register">Register</a>
+          <a class="nav-link waves-effect waves-light" href="#register">Post Adverticement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#">Pricing</a>
+          <a class="nav-link waves-effect waves-light" href="#">Create Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link waves-effect waves-light" href="#">About</a>
@@ -38,10 +38,7 @@
 
         </li>
       </ul>
-      <!--Search form-->
-      <form  id="homesearch">
-        <mdl-textfield type="text" class="waves-effect waves-light" icon="search"></mdl-textfield>
-      </form>
+
 
       <form class="form-inline" id="loginform" style = "display:none">
         <input class="form-control animated slideInRight" type="text" placeholder="User Name">
@@ -55,7 +52,19 @@
   </div>
 
 </nav>
-
+<div class="row centered" >
+  <!--<h2 style="color: inherit">Search Anything</h2>-->
+  <div id="custom-search-input">
+    <div class="input-group col-md-12">
+      <input style="  background-color:whitesmoke!important;" type="search" class="  search-query form-control" placeholder="Type :Place/Blog/Person/item anything" />
+      <span class="input-group-btn">
+        <button class="btn" type="button" data-toggle="modal" data-target="#myModal">
+          <i class="fa fa-search" ></i>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
 
 <div id="carousel-example-1" class="carousel slide carousel-fade" data-ride="carousel" >
 
@@ -171,19 +180,7 @@
       <div class="col-lg-6 wow fadeInDown" data-wow-delay="0.2s">
         <!--Form-->
         <div>
-          <div class="row centered">
-            <!--<h2 style="color: inherit">Search Anything</h2>-->
-            <div id="custom-search-input">
-              <div class="input-group col-md-12">
-                <input style="  background-color:whitesmoke!important;" type="search" class="  search-query form-control" placeholder="Type :Place/Blog/Person/item anything" />
-                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <i class="fa fa-search" ></i>
-                                    </button>
-                                </span>
-              </div>
-            </div>
-          </div>
+
         </div>
         <!--/.Form-->
       </div>
@@ -202,3 +199,13 @@
 <section>
   <div class="col-12"> <app-typewidjet></app-typewidjet></div>
 </section>
+<div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+
+    <app-search>
+      TEST
+    </app-search>
+
+  </div>
+</div>
+

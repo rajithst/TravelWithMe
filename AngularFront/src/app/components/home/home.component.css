@@ -1,9 +1,10 @@
 .centered {
-  position: fixed; /* or absolute */
+  position: absolute; /* or absolute */
   top: 20%;
   left: 50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%);
+  z-index: 52;
 }
 
 
