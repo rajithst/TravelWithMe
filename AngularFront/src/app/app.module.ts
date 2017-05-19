@@ -40,6 +40,7 @@ import { BusinessPageComponent } from './components/business-page/business-page.
 import { BusinessPostComponent } from './components/business-post/business-post.component';
 
 
+
 /*Services */
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -54,7 +55,6 @@ import { LocationPassService } from './shared/location-pass.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-chart.component';
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
-
 
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
 
@@ -72,6 +72,10 @@ const appRoute: Routes = [
   {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
+
+
+
+  {path: 'profile/my/businesspage' , component: BusinessPageComponent , canActivate: [AuthGuard]} ,
 
 
   {path: 'profile/my/businesspage' , component: BusinessPageComponent , canActivate: [AuthGuard]} ,
@@ -111,11 +115,16 @@ const appRoute: Routes = [
     TripComponent,
     PostComponent,
 
+
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent,
 
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
   BusinessPostComponent
   
+
+   
+
+
 
   ],
 
