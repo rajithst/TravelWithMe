@@ -34,11 +34,11 @@ import { SuggestpagesComponent } from './components/suggestionarea/suggestpages/
 import { SuggestblogsComponent } from './components/suggestionarea/suggestblogs/suggestblogs.component';
 import { SearchComponent } from './components/search/search.component';
 import { BusinessPageComponent } from './components/business-page/business-page.component';
-<<<<<<< HEAD
 
-=======
+
+
 import { BusinessPostComponent } from './components/business-post/business-post.component';
->>>>>>> bbd39139f8ce1605049ad0c863e08b2dfe6eaae4
+
 
 /*Services */
 import { ValidateService } from './services/validate.service';
@@ -54,10 +54,10 @@ import { LocationPassService } from './shared/location-pass.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-chart.component';
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
-<<<<<<< HEAD
-=======
+
+
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
->>>>>>> bbd39139f8ce1605049ad0c863e08b2dfe6eaae4
+
 
 
 
@@ -72,10 +72,10 @@ const appRoute: Routes = [
   {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
-<<<<<<< HEAD
-=======
+
+
   {path: 'profile/my/businesspage' , component: BusinessPageComponent , canActivate: [AuthGuard]} ,
->>>>>>> bbd39139f8ce1605049ad0c863e08b2dfe6eaae4
+
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
   {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]},
@@ -110,13 +110,13 @@ const appRoute: Routes = [
     SideviewComponent,
     TripComponent,
     PostComponent,
-<<<<<<< HEAD
+
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent,
-=======
+
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
   BusinessPostComponent
   
->>>>>>> bbd39139f8ce1605049ad0c863e08b2dfe6eaae4
+
   ],
 
   imports: [
