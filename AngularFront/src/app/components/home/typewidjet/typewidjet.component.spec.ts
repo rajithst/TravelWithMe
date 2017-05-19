@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BusinessPostComponent } from './business-post.component';
+import { TypewidjetComponent } from './typewidjet.component';
 
-describe('BusinessPostComponent', () => {
-  let component: BusinessPostComponent;
-  let fixture: ComponentFixture<BusinessPostComponent>;
+describe('TypewidjetComponent', () => {
+  let component: TypewidjetComponent;
+  let fixture: ComponentFixture<TypewidjetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BusinessPostComponent ]
+      declarations: [ TypewidjetComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BusinessPostComponent);
+    fixture = TestBed.createComponent(TypewidjetComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
