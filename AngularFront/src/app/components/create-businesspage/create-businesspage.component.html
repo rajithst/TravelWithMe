@@ -5,19 +5,19 @@
 
 <main class="Mymain">
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
 
-    <h2>Create page</h2>
+    <h2>Create Business Page</h2>
     <div class="card-block">
 
       <!--Header-->
-      <div class="text-center">
+     <!-- <div class="text-center">
         <h3><i class="fa fa-envelope"></i> Write to us:</h3>
         <hr class="mt-2 mb-2">
-      </div>
+      </div>-->
 
       <!--Body-->
-      <p>We'll write rarely, but only the best content.</p>
+      <h4>Fill details here</h4>
       <br>
 
       <!--Body-->
@@ -37,6 +37,27 @@
       </div>
 
       <div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Web Site</label>
+      </div>
+
+      <div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Email Address</label>
+      </div>    
+
+      <div class="group">
+        <input type="text" required>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Telephone Number</label>
+      </div>  
+
+      <div class="group">
         <input type="file" name="fileToUpload" id="fileToUpload">
         <span class="highlight"></span>
         <span class="bar"></span>
@@ -50,14 +71,16 @@
         <label>Album</label>
       </div>
 
-      
-    </form>
        <div class="group">      
         <input type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Targetting Area</label>
+        <label>Targetting Location</label>
       </div>
+
+      
+    </form>
+      
       <!--</div>-->
 
 
@@ -101,11 +124,11 @@
 
     </div>
 
-  <div class="col-md-4">
+  <!--<div class="col-md-4">
 
     <h2>info</h2>
 
-  </div>
+  </div>-->
 </div>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
