@@ -83,9 +83,12 @@
 
       <div class="group">
         <div style="float:right">
-          <input type="radio" name="gender" value="male"> Male<br>
-          <input type="radio" name="gender" value="female"> Female<br>
+          <input type="radio" name="gender" value="male"> Male
+          <input type="radio" name="gender" value="female"> Female
           <input type="radio" name="gender" value="other"> Other
+           <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Album</label>
         </div>    
 
         <div>
@@ -94,14 +97,25 @@
           <span class="bar"></span>
           <label>Telephone Number</label>
         </div> 
-       </div> 
+      </div>
 
-       <div class="group">      
-        <input type="text" required>
+      <div class="group">
+        <div style="float:right">
+          <input type="file" name="img" id="imgsToUpload" multiple>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Targetting People</label>
+        </div>
+
+        <div>
+          <input type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Targetting Location</label>
-      </div>
+        </div>
+      </div> 
+
+       
 
       <div class="btn-group">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Category</button>
