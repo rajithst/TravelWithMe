@@ -77,7 +77,20 @@
         </div>
       </div>  
 
-     
+      <div class="group">
+        <div style="float:right">
+          <input type="checkbox" name="chk_group" value="value1" />Value 1<br />
+<input type="checkbox" name="chk_group" value="value2" />Value 2<br />
+<input type="checkbox" name="chk_group" value="value3" />Value 3<br />
+        </div>    
+
+        <div>
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Telephone Number</label>
+        </div> 
+       </div> 
 
        <div class="group">      
         <input type="text" required>
@@ -149,6 +162,19 @@
   Select images: <input type="file" name="img" multiple>
   <input type="submit">
 </form>
+
+<form action="/action_page.php" method="get">
+  <input type="checkbox" name="vehicle" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle" value="Car" checked="checked"> I have a car<br>
+  <input type="submit" value="Submit">
+</form>
+<form action="">
+  <input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other
+</form>
+
+
 
 
 </main>
