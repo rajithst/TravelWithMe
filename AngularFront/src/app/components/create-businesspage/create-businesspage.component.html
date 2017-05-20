@@ -21,6 +21,7 @@
       <br>
 
       <!--Body-->
+    <form>
       <div class="group">
         <input type="text" required>
         <span class="highlight"></span>
@@ -35,12 +36,29 @@
         <label>Address</label>
       </div>
 
+      <div class="group">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Cover Photo</label>
+      </div>
+
+      <div class="group">
+        <input type="file" name="img" id="imgsToUpload" multiple>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Album</label>
+      </div>
+
+      
+    </form>
        <div class="group">      
         <input type="text" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Targetting Area</label>
       </div>
+      <!--</div>-->
 
 
       <div class="btn-group">
@@ -89,6 +107,19 @@
 
   </div>
 </div>
+
+<form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+<form action="/action_page.php">
+  Select images: <input type="file" name="img" multiple>
+  <input type="submit">
+</form>
+
+
 </main>
 
 
