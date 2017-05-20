@@ -5,7 +5,7 @@
 
 <main class="Mymain">
 <div class="row">
-  <div class="col-md-12">
+  <div class="col-md-10">
 
     <h2>Create Business Page</h2>
     <div class="card-block">
@@ -29,47 +29,55 @@
         <label>Name of the business place</label>
       </div>  
 
-      <div class="group">      
-        <input type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Address</label>
+      <div class="group">
+        <div style="float:right">      
+          <input type="text" required>
+          <span class="highlight" style="float:right"></span>
+          <span class="bar"></span>
+          <label>Address</label>
+        </div>
+
+        <div>
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Web Site</label>
+        </div>
       </div>
 
       <div class="group">
-        <input type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Web Site</label>
-      </div>
+        <div style="float:right">
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Email Address</label>
+        </div>    
+
+        <div>
+          <input type="text" required>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Telephone Number</label>
+        </div> 
+       </div>   
 
       <div class="group">
-        <input type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Email Address</label>
-      </div>    
+        <div style="float:right">
+          <input type="file" name="img" id="imgsToUpload" multiple>
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Album</label>
+        </div>
 
-      <div class="group">
-        <input type="text" required>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Telephone Number</label>
+        <div>
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Cover Photo</label>
+        </div>
       </div>  
 
-      <div class="group">
-        <input type="file" name="fileToUpload" id="fileToUpload">
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Cover Photo</label>
-      </div>
-
-      <div class="group">
-        <input type="file" name="img" id="imgsToUpload" multiple>
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label>Album</label>
-      </div>
+     
 
        <div class="group">      
         <input type="text" required>
