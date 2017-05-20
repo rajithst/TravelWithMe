@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rent Items</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="../../css/mdb.css" rel="stylesheet">
+
+    <!-- Style for Read more / Read less -->
+    <style type="text/css">
+        .read-more-state {
+            display: none;
+        }
+
+        .read-more-target {
+            opacity: 0;
+            max-height: 0;
+            font-size: 0;
+            transition: .25s ease;
+        }
+
+        .read-more-state:checked ~ .read-more-wrap .read-more-target {
+            opacity: 1;
+            font-size: inherit;
+            max-height: 999em;
+        }
+
+        .read-more-state ~ .read-more-trigger:before {
+            content: 'Show more';
+        }
+
+        .read-more-state:checked ~ .read-more-trigger:before {
+            content: 'Show less';
+        }
+
+        .read-more-trigger {
+            cursor: pointer;
+            display: inline-block;
+            padding: 0 .5em;
+            color: #666;
+            font-size: .9em;
+            line-height: 2;
+            border: 1px solid #ddd;
+            border-radius: .25em;
+        }
+    </style>
+    <!-- Style for Read more / Read less -->
+
+    <style type="text/css">
+        div.stars {
+            width: 270px;
+            display: inline-block;
+        }
+
+        input.star { display: none; }
+
+        label.star {
+            float: right;
+            padding: 10px;
+            font-size: 36px;
+            color: #444;
+            transition: all .2s;
+        }
+
+        input.star:checked ~ label.star:before {
+            content: '\f005';
+            color: #FD4;
+            transition: all .25s;
+        }
+
+        input.star-5:checked ~ label.star:before {
+            color: #FE7;
+            text-shadow: 0 0 20px #952;
+        }
+
+        input.star-1:checked ~ label.star:before { color: #F62; }
+
+        label.star:hover { transform: rotate(-15deg) scale(1.3); }
+
+        label.star:before {
+            content: '\f006';
+            font-family: FontAwesome;
+        }
+    </style>
+
+    <!-- media query  -->
+    <style>
+
+        
+        @media only screen and (max-width: 768px) {
+            
+        }
+
+        @media only screen and (min-width: 768px) {
+
+            
+
+        }
+
+    </style>
+    <!-- media query  -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script> 
+        $(function(){
+        $("#panel51").load("home.html");
+        $("#panel53").load("items.html");
+        $("#panel55").load("gallery.html");
+        $("#panel56").load("aboutUs.html");
+        $("#panel57").load("contactUs.html");
+        });
+    </script>
+
+</head>
+
+<body class="fixed-sn purple-skin">
+
+<!--Double navigation-->
+<header>
+    <!-- Sidebar navigation -->
+    <ul id="slide-out" class="side-nav fixed custom-scrollbar">
+
+        <!-- Logo -->
+        <li>
+            <div class="logo-wrapper waves-light">
+                <a href="#"><img src="http://mdbootstrap.com/wp-content/uploads/2015/12/mdb-white2.png" class="img-fluid flex-center"></a>
+            </div>
+        </li>
+        <!--/. Logo -->
+
+        <!--Social-->
+        <li>
+            <ul class="social">
+                <li><a href="https://www.facebook.com/mdbootstrap" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+                <li><a href="https://www.linkedin.com/in/michal-szymanski-9228918a" target="_blank" class="icons-sm li-ic"><i class="fa fa-linkedin"> </i></a></li>
+                <li><a href="https://twitter.com/MDBootstrap" target="_blank" class="icons-sm"><i class="fa fa-twitter"> </i></a></li>
+                <li><a href="https://plus.google.com/u/0/+Mdbootstrap" target="_blank" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+            </ul>
+        </li>
+        <!--/Social-->
+
+        <!-- Side navigation links -->
+        <ul class="collapsible collapsible-accordion">
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-file-text-o"></i> Articles<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_articles.html" class="waves-effect">All Articles</a>
+                                    </li>
+                                    <li><a href="View_Article_1.html" class="waves-effect">Article 1</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Article 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera"></i> Photo Albums<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="All_Photo_Albums.html" class="waves-effect">All Albums</a>
+                                    </li>
+                                    <li><a href="Photo_Album_1.html" class="waves-effect">Album 1</a>
+                                    </li>
+                                    <li><a href="Photo_Album_2.html" class="waves-effect">Album 2</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li><a href="Video_Gallery.html" class="waves-effect"><i class="fa fa-video-camera"></i>Video Gallery</a>
+                       </li>
+                       
+                        <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-heart"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#" class="waves-effect">Why this blog?</a>
+                                    </li>
+                                    <li><a href="#" class="waves-effect">Something about me</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+        <!--/. Side navigation links -->
+    </ul>
+    <!--/.Sidebar navigation -->
+
+    <!--Navbar-->
+    <nav class="navbar navbar-fixed-top scrolling-navbar double-nav">
+
+        <!-- SideNav slide-out button -->
+        <div class="float-xs-left">
+            <a id="linkSlidingBar" href="#" data-activates="slide-out" class="button-collapse waves-effect" ><i class="fa fa-bars" ></i></a>
+        </div>
+
+        <!-- Breadcrumb-->
+        <div class="breadcrumb-dn">
+            <p>TVM</p>
+        </div>
+
+        <div class="float-xs-left">
+            <form class="form-inline">
+                <input class="form-control" type="text" style="color: white !important;width: 500px; margin-left=50px; " placeholder="Search">
+            </form>
+        </div>
+
+        <ul class="nav navbar-nav float-xs-right">
+
+            <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-plus-circle fa-lg"></i> <span class="hidden-sm-down"></span></a>
+            </li>
+
+            <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-plane fa-lg"></i> <span class="hidden-sm-down"></span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-envelope fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="tag red z-depth-1">3</span><i class="fa fa-commenting fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;width: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                    <a class="dropdown-item" href="#"><img src="http://mdbootstrap.com/images/regular/nature/img%20(10).jpg" class="img-fluid-inline" alt="" width="40px" height="30px">    msg 1 dwhjgdygdwqgdyuwqgd</a>
+                </div>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plane"></i> <span class="hidden-sm-down">My Trips</span></a>
+                <div class="dropdown-menu dropdown-primary" style="height: 200px;overflow-y: scroll;webkit-scrollbar" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                    <a class="dropdown-item" href="#">New Trip</a>
+                    <a class="dropdown-item" href="#">Planned Trips</a>
+                    <a class="dropdown-item" href="#">Ended Trips</a>
+                </div>
+            </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-lg"></i> <span class="hidden-sm-down"></span></a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="dropdownMenu1" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <a class="dropdown-item" href="#">My account</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+
+                </div>
+            </li>
+            <!-- <li class="nav-item ">
+                <a class="nav-link"><i class="fa fa-cogs"></i> <span class="hidden-sm-down">Settings</span></a>
+            </li> -->
+
+            <li class="nav-item">
+                <div class="float-xs-right">
+                    <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-cogs"></i></a>
+                </div>
+
+            </li>
+        </ul>
+
+    </nav>
+    <!--/.Navbar-->
+</header>
+<!--/Double navigation-->
+
+<!--Main layout-->
+<main class="myMain">
+    <div class="container-fluid row">
+
+        <!--Cover-->
+        <div class=" mb-r wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+            <!--Card-->
+            <div class="card testimonial-card">
+
+                <!--Background color-->
+                <div style="border-style: solid; border-color:#6200ea;" >
+                    <img src="cover.jpg" class="video-fluid">
+                    
+                </div>
+
+                 <!--Name-->
+                 <br>
+                <h4 class="card-title">&nbsp;99x Travel Enterpirses</h4>
+
+                <div class="card-block" style="padding-left: 0; padding-right: 0;">
+                   
+                    <!-- Nav tabs -->
+                    <div class="tabs-wrapper"> 
+                        <ul class="nav classic-tabs deep-purple accent-4" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link waves-light waves-effect waves-light active" data-toggle="tab" href="#panel51" role="tab" aria-expanded="true">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel53" role="tab" aria-expanded="false">Items</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel55" role="tab" aria-expanded="false">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel56" role="tab" aria-expanded="false">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link waves-light waves-effect waves-light" data-toggle="tab" href="#panel57" role="tab" aria-expanded="false">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Nav tabs -->
+                </div>
+
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Cover-->
+
+        <!-- Tab panels -->
+        <div class="tab-content card">
+
+            <!--Panel 1 home-->
+            <div class="tab-pane fade in active show" id="panel51" role="tabpanel" aria-expanded="true">
+                <!--Content of Home included from home.html-->
+            </div>
+            <!--/.Panel 1-->
+
+            <!--Panel 3 Items-->
+            <div class="tab-pane fade" id="panel53" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;">
+                <!--Content of Items included from item.html-->
+            </div>
+            <!--/.Panel 3-->
+
+            <!--Panel 5 Gallery-->
+            <div class="tab-pane fade" id="panel55" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;">
+                <!--Content of Gallery included from gallery.html-->
+            </div>
+            <!--/.Panel 5-->
+
+            <!--Panel 6 About Us-->
+            <div class="tab-pane fade" id="panel56" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;">
+                <!--Content of About Us included from aboutUs.html-->
+            </div>
+            <!--/.Panel 6-->
+
+            <!--Panel 7 Contact Us-->
+            <div class="tab-pane fade" id="panel57" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;">
+                <!--Content of Contact Us included from contactUs.html-->
+            </div>
+            <!--/.Panel 7-->
+
+
+        </div>
+        <!-- Tab panels -->
+        
+    </div>
+</main>
+<!--/Main layout-->
+
+<!-- SCRIPTS -->
+
+<!-- JQuery -->
+<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+
+<!-- Tooltips -->
+<script type="text/javascript" src="../../js/tether.min.js"></script>
+
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../../js/mdb.js"></script>
+
+<script>
+    // SideNav init
+    $(".button-collapse").sideNav();
+    var el = document.querySelector('.custom-scrollbar');
+    Ps.initialize(el);
+</script>
+
+<!-- script photo album -->
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- script photo album -->
+
+<script>
+    new WOW().init();
+</script>
+
+<!-- 16:9 video ratio -->
+<script>
+    var a=document.getElementsByClassName('video-fluid');
+        var i;
+    for (i = 0; i < a.length; i++) {
+        a[i].style.height=(a[i].offsetWidth)*5/16+'px';
+    }
+    
+    window.onresize=function resizeit(){
+    var a=document.getElementsByClassName('video-fluid');
+    var i;
+    for (i = 0; i < a.length; i++) {
+        a[i].style.height=a[i].offsetWidth*5/16+'px';
+    }
+        };
+</script>
+<!-- 16:9 video ratio -->
+
+<!-- main width Responsive -->
+<script>
+
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+        
+    man[0].style.paddingTop=(nav[0].offsetHeight)+10+'px';
+    
+    
+    window.onresize=function resizeit(){
+    var nav=document.getElementsByClassName('navbar');
+    var man=document.getElementsByClassName('myMain');
+
+    man[0].style.paddingTop=nav[0].offsetHeight+10+'px';
+    };
+
+</script>
+<!-- main width Responsive -->
+
+
+
+
+</body>
+
+</html>
