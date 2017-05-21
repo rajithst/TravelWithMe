@@ -31,6 +31,12 @@ export class CreateBusinesspageComponent implements OnInit {
 
   ) { }
 
+
+
+
+
+  
+
   ngOnInit() {
 
     this.zoom = 2;
@@ -78,3 +84,4 @@ export class CreateBusinesspageComponent implements OnInit {
 
 
 }
+
