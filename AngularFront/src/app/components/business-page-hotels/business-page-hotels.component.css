@@ -1,4 +1,8 @@
 
+        .icons-sm{
+        white-space: nowrap;
+    }
+
         .read-more-state {
             display: none;
         }
