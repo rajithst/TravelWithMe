@@ -59,6 +59,7 @@ import { UsersMapComponent } from './components/admin/users-map/users-map.compon
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
 import { BusinessPageHotelsComponent } from './components/business-page-hotels/business-page-hotels.component';
 import { HotelHomeComponent } from './components/hotel-home/hotel-home.component';
+import { HotelFoodComponent } from './components/hotel-food/hotel-food.component';
 
 
 
@@ -124,7 +125,8 @@ const appRoute: Routes = [
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
   BusinessPostComponent,
   BusinessPageHotelsComponent,
-  HotelHomeComponent
+  HotelHomeComponent,
+  HotelFoodComponent
   
 
    
