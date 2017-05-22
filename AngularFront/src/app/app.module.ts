@@ -57,6 +57,9 @@ import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
 
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
+import { BusinessPageHotelsComponent } from './components/business-page-hotels/business-page-hotels.component';
+import { HotelHomeComponent } from './components/hotel-home/hotel-home.component';
+import { HotelFoodComponent } from './components/hotel-food/hotel-food.component';
 
 
 
@@ -88,7 +91,8 @@ const appRoute: Routes = [
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
-
+  {path: 'profile/business-page-hotels' , component: BusinessPageHotelsComponent },
+  {path: 'profile/hotel-home' , component: HotelHomeComponent },  
 
 
 
@@ -119,7 +123,10 @@ const appRoute: Routes = [
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent,
 
     PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
-  BusinessPostComponent
+  BusinessPostComponent,
+  BusinessPageHotelsComponent,
+  HotelHomeComponent,
+  HotelFoodComponent
   
 
    
