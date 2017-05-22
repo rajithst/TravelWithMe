@@ -13,3 +13,11 @@ export class RentItemsComponent implements OnInit {
   }
 
 }
+
+ $(function(){
+        $("#panel51").load("home.html");
+        $("#panel53").load("items.html");
+        $("#panel55").load("gallery.html");
+        $("#panel56").load("aboutUs.html");
+        $("#panel57").load("contactUs.html");
+        });
