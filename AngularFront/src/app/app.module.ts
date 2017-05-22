@@ -60,6 +60,7 @@ import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.com
 import { BusinessPageHotelsComponent } from './components/business-page-hotels/business-page-hotels.component';
 import { HotelHomeComponent } from './components/hotel-home/hotel-home.component';
 import { HotelFoodComponent } from './components/hotel-food/hotel-food.component';
+import { RentItemsComponent } from './components/rent-items/rent-items.component';
 
 
 
@@ -93,7 +94,7 @@ const appRoute: Routes = [
   {path: 'profile/admin' , component: AdminComponent },
   {path: 'profile/business-page-hotels' , component: BusinessPageHotelsComponent },
   {path: 'profile/hotel-home' , component: HotelHomeComponent },  
-
+  {path: 'profile/rent-items' , component: RentItemsComponent },
 
 
 ];
@@ -126,7 +127,8 @@ const appRoute: Routes = [
   BusinessPostComponent,
   BusinessPageHotelsComponent,
   HotelHomeComponent,
-  HotelFoodComponent
+  HotelFoodComponent,
+  RentItemsComponent
   
 
    
