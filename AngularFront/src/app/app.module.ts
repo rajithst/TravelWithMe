@@ -61,6 +61,7 @@ import { BusinessPageHotelsComponent } from './components/business-page-hotels/b
 import { HotelHomeComponent } from './components/hotel-home/hotel-home.component';
 import { HotelFoodComponent } from './components/hotel-food/hotel-food.component';
 import { RentItemsComponent } from './components/rent-items/rent-items.component';
+import { RentItemsItemsComponent } from './components/rent-items-items/rent-items-items.component';
 
 
 
@@ -95,6 +96,7 @@ const appRoute: Routes = [
   {path: 'profile/business-page-hotels' , component: BusinessPageHotelsComponent },
   {path: 'profile/hotel-home' , component: HotelHomeComponent },  
   {path: 'profile/rent-items' , component: RentItemsComponent },
+  {path: 'profile/rent-items-items' , component: RentItemsItemsComponent },
 
 
 ];
@@ -128,7 +130,8 @@ const appRoute: Routes = [
   BusinessPageHotelsComponent,
   HotelHomeComponent,
   HotelFoodComponent,
-  RentItemsComponent
+  RentItemsComponent,
+  RentItemsItemsComponent
   
 
    
