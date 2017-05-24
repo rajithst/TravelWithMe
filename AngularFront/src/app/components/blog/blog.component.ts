@@ -31,6 +31,7 @@ export class BlogComponent implements OnInit {
   postTitle:string;
   body:string;
   featured_img:String;
+  alert:string;
 
 
   constructor(
@@ -136,14 +137,12 @@ export class BlogComponent implements OnInit {
     this.model.postTitle = this.postTitle;
     this.model.body = this.body;
 
+
+
     this.blogService.addBlogpost(this.model).subscribe(res=>{
 
-      console.log(res);
-
+      this.alert = res;
     })
-
-
-
   }
 
 

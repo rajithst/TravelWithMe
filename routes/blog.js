@@ -26,19 +26,20 @@ router.post('/submitpost',function (req,res) {
    const blogpost = new Blogpost({
 
         userid: req.body.userid,
-        postTtile: req.body.postTtile,
+        postTtile: req.body.postTitle,
         body: req.body.body,
         featured_img:req.body.featured_img,
         dateAdded: Date()
     });
+    
 
     
     Blogpost.addBlogpost(blogpost,(err,callback)=>{
 
         if (err){
-            res.json({success:false,msg:"Failed"});
+            res.json({alert:"btn btn-danger",msg:"Failed to submit the post"});
         }else{
-            res.json({success:true,msg:"Saved your blog post"});
+            res.json({alert:"btn btn-success",msg:"Saved your blog post"});
         }
 
     })
