@@ -61,6 +61,9 @@ import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.com
 
 
 import { HotelPageComponent } from './components/hotel-page/hotel-page.component';
+import { HotelPageHomeComponent } from './components/hotel-page-home/hotel-page-home.component';
+import { HotelPageGalleryComponent } from './components/hotel-page-gallery/hotel-page-gallery.component';
+import { HotelPageContactComponent } from './components/hotel-page-contact/hotel-page-contact.component';
 
 
 
@@ -121,12 +124,27 @@ const appRoute: Routes = [
 
     PagestatusComponent, SuggestionareaComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent,  AdminComponent, TrafficChartComponent, UsersMapComponent,
 
-    PagemanagerComponent, PagestatusComponent, SuggestplacesComponent, SuggestblogsComponent, SearchComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
+    PagemanagerComponent, SuggestplacesComponent, SearchComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
  
   
   
  
-  HotelPageComponent
+  HotelPageComponent,
+ 
+  
+  
+ 
+  HotelPageHomeComponent,
+ 
+  
+  
+ 
+  HotelPageGalleryComponent,
+ 
+  
+  
+ 
+  HotelPageContactComponent
   
 
    

@@ -16,3 +16,8 @@ export class HotelPageComponent implements OnInit {
 import {enableProdMode} from '@angular/core';
 
 enableProdMode();
+
+
+    
+    
+      
