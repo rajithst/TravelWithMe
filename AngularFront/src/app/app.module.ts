@@ -64,6 +64,7 @@ import { HotelPageComponent } from './components/hotel-page/hotel-page.component
 import { HotelPageHomeComponent } from './components/hotel-page-home/hotel-page-home.component';
 import { HotelPageGalleryComponent } from './components/hotel-page-gallery/hotel-page-gallery.component';
 import { HotelPageContactComponent } from './components/hotel-page-contact/hotel-page-contact.component';
+import { RentingPageComponent } from './components/renting-page/renting-page.component';
 
 
 
@@ -97,6 +98,7 @@ const appRoute: Routes = [
   
   
   {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
+  {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 
 ];
 
@@ -144,7 +146,12 @@ const appRoute: Routes = [
   
   
  
-  HotelPageContactComponent
+  HotelPageContactComponent,
+ 
+  
+  
+ 
+  RentingPageComponent
   
 
    
