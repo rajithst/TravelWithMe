@@ -65,6 +65,11 @@ import { HotelPageHomeComponent } from './components/hotel-page-home/hotel-page-
 import { HotelPageGalleryComponent } from './components/hotel-page-gallery/hotel-page-gallery.component';
 import { HotelPageContactComponent } from './components/hotel-page-contact/hotel-page-contact.component';
 import { RentingPageComponent } from './components/renting-page/renting-page.component';
+import { RentingPageHomeComponent } from './components/renting-page-home/renting-page-home.component';
+import { RentingPageItemsComponent } from './components/renting-page-items/renting-page-items.component';
+import { RentingPageGalleryComponent } from './components/renting-page-gallery/renting-page-gallery.component';
+
+import { RentingPageContactComponent } from './components/renting-page-contact/renting-page-contact.component';
 
 
 
@@ -151,7 +156,32 @@ const appRoute: Routes = [
   
   
  
-  RentingPageComponent
+  RentingPageComponent,
+ 
+  
+  
+ 
+  RentingPageHomeComponent,
+ 
+  
+  
+ 
+  RentingPageItemsComponent,
+ 
+  
+  
+ 
+  RentingPageGalleryComponent,
+ 
+  
+  
+ 
+ 
+ 
+  
+  
+ 
+  RentingPageContactComponent
   
 
    
