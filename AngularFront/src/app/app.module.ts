@@ -33,11 +33,11 @@ import { SuggestplacesComponent } from './components/suggestionarea/suggestplace
 import { SuggestpagesComponent } from './components/suggestionarea/suggestpages/suggestpages.component';
 import { SuggestblogsComponent } from './components/suggestionarea/suggestblogs/suggestblogs.component';
 import { SearchComponent } from './components/search/search.component';
-import { BusinessPageComponent } from './components/business-page/business-page.component';
 
 
 
-import { BusinessPostComponent } from './components/business-post/business-post.component';
+
+
 
 
 
@@ -57,11 +57,19 @@ import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
 
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
-import { BusinessPageHotelsComponent } from './components/business-page-hotels/business-page-hotels.component';
-import { HotelHomeComponent } from './components/hotel-home/hotel-home.component';
-import { HotelFoodComponent } from './components/hotel-food/hotel-food.component';
-import { RentItemsComponent } from './components/rent-items/rent-items.component';
-import { RentItemsItemsComponent } from './components/rent-items-items/rent-items-items.component';
+
+
+
+import { HotelPageComponent } from './components/hotel-page/hotel-page.component';
+import { HotelPageHomeComponent } from './components/hotel-page-home/hotel-page-home.component';
+import { HotelPageGalleryComponent } from './components/hotel-page-gallery/hotel-page-gallery.component';
+import { HotelPageContactComponent } from './components/hotel-page-contact/hotel-page-contact.component';
+import { RentingPageComponent } from './components/renting-page/renting-page.component';
+import { RentingPageHomeComponent } from './components/renting-page-home/renting-page-home.component';
+import { RentingPageItemsComponent } from './components/renting-page-items/renting-page-items.component';
+import { RentingPageGalleryComponent } from './components/renting-page-gallery/renting-page-gallery.component';
+
+import { RentingPageContactComponent } from './components/renting-page-contact/renting-page-contact.component';
 
 
 
@@ -80,10 +88,7 @@ const appRoute: Routes = [
 
 
 
-  {path: 'profile/my/businesspage' , component: BusinessPageComponent , canActivate: [AuthGuard]} ,
-
-
-  {path: 'profile/my/businesspage' , component: BusinessPageComponent , canActivate: [AuthGuard]} ,
+  
 
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
@@ -93,11 +98,12 @@ const appRoute: Routes = [
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
-  {path: 'profile/business-page-hotels' , component: BusinessPageHotelsComponent },
-  {path: 'profile/hotel-home' , component: HotelHomeComponent },  
-  {path: 'profile/rent-items' , component: RentItemsComponent },
-  {path: 'profile/rent-items-items' , component: RentItemsItemsComponent },
-
+  
+   
+  
+  
+  {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
+  {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 
 ];
 
@@ -123,15 +129,59 @@ const appRoute: Routes = [
     PostComponent,
 
 
-    PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent,
+    PagestatusComponent, SuggestionareaComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent,  AdminComponent, TrafficChartComponent, UsersMapComponent,
 
-    PagemanagerComponent, PagestatusComponent, SuggestionareaComponent, SuggestplacesComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent, BusinessPageComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
-  BusinessPostComponent,
-  BusinessPageHotelsComponent,
-  HotelHomeComponent,
-  HotelFoodComponent,
-  RentItemsComponent,
-  RentItemsItemsComponent
+    PagemanagerComponent, SuggestplacesComponent, SearchComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
+ 
+  
+  
+ 
+  HotelPageComponent,
+ 
+  
+  
+ 
+  HotelPageHomeComponent,
+ 
+  
+  
+ 
+  HotelPageGalleryComponent,
+ 
+  
+  
+ 
+  HotelPageContactComponent,
+ 
+  
+  
+ 
+  RentingPageComponent,
+ 
+  
+  
+ 
+  RentingPageHomeComponent,
+ 
+  
+  
+ 
+  RentingPageItemsComponent,
+ 
+  
+  
+ 
+  RentingPageGalleryComponent,
+ 
+  
+  
+ 
+ 
+ 
+  
+  
+ 
+  RentingPageContactComponent
   
 
    
