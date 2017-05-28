@@ -49,18 +49,28 @@ router.post('/submitpost',function (req,res) {
 
 router.get('/getPosts/:id',(req,res)=>{
 
+
+
     SM.getFollowers(req.params.id,(err,callback)=>{
 
         if (err){
             res.json({success:false,msg:"Failed"});
         }else{
-            console.log(callback)
-           // const usersArray = callback[0].followeusers;
-           /* Blogpost.getFollowersPosts(usersArray,(err,callback)=>{
 
 
+            const usersArray = callback[0].followeusers;
+            Blogpost.getFollowersPosts(usersArray,(err,docs)=>{
 
-            })*/
+                if (err){
+                    throw err
+                }
+
+                if (docs){
+
+                     res.json({msg:true,data:docs})
+                }
+
+            })
         }
 
     })

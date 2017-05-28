@@ -37,12 +37,12 @@ export class NewsfeedComponent implements OnInit{
       profilepic :this.profile.picture_large
     };
 
-    const Userdata = {id:data.userid};
+    const Userdata = {id:data.id};
 
     this.BlogService.getPosts(Userdata.id).subscribe(res=>{
       console.log(res)
 
-    })
+    });
 
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');

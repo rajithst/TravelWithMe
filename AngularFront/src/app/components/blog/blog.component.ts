@@ -133,7 +133,8 @@ export class BlogComponent implements OnInit {
       profilepic :this.profile.picture_large
     };
 
-    this.model.userid = data.userid;
+    /*this.model.userid = data.userid;*/
+    this.model.userid = '820503218103311';
     this.model.postTitle = this.postTitle;
     this.model.body = this.body;
 

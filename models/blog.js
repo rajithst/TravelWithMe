@@ -44,8 +44,12 @@ module.exports.addBlogpost = function (PostData,callback) {
 
 module.exports.getFollowersPosts = (usersArray,callbacl)=>{
 
-    for(var i=0; i<=usersArray.length; i++){
+    let arr = [];
+    var arr3 = [];
 
+    for(var i=0; i<usersArray.length; i++){
+
+        console.log(usersArray[i])
         Blogtab.find({userid:usersArray[i]})
                 .sort({'dateAdded': -1})
                  .exec(function(err,docs){
@@ -53,10 +57,22 @@ module.exports.getFollowersPosts = (usersArray,callbacl)=>{
             if(err) {
                 return console.log(err);
             }
-            console.log(docs)
+            if (docs){
+
+
+                 var arr3 = arr.concat(docs);
+                 var arr = arr3;
+                 console.log(arr)
+
+
+            }
+
         });
+
+
 
     }
 
-
+    console.log("out"+arr)
+    callbacl(null,arr)
 }
