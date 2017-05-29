@@ -12,7 +12,7 @@
     <form (submit)="submitBlogpost()">
       <div class="col-md-8">
 
-
+<div class="row">
         <mdl-textfield
           type="text"
           label="Title"
@@ -27,6 +27,58 @@
 
 
 
+      </div>
+
+      <div class="row">
+        <mdl-card mdl-shadow="2" style="width: auto">
+          <mdl-card-title>
+            <h2 mdl-card-title-text>Recently visited places</h2>
+          </mdl-card-title>
+          <mdl-card-supporting-text>
+            <div class="col-md-4">
+              <!--Card image-->
+              <div class="card-overlay" style="background-image: url('http://static.panoramio.com/photos/large/16856289.jpg')">
+
+                <!--Content-->
+                <div class="white-text text-center">
+                  <div class="card-block">
+                    <h3>Galle </h3>
+
+                    <a class="btn btn-lg btn-info"><i class="fa fa-clone left"></i> Create a Blog</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-md-4">
+              <!--Card image-->
+              <div class="card-overlay" style=" background-image: url('http://elitetours.lk/images/slide-06.jpg')">
+
+                <!--Content-->
+                <div class="white-text text-center">
+                  <div class="card-block">
+                    <h3>Pasikuda</h3>
+
+                    <a class="btn btn-lg btn-info"><i class="fa fa-clone left"></i> Create a Blog</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+
+          </mdl-card-supporting-text>
+          <mdl-card-actions mdl-card-border>
+            <button mdl-button mdl-colored mdl-ripple>More Places</button>
+          </mdl-card-actions>
+          <mdl-card-menu>
+          </mdl-card-menu>
+        </mdl-card>
+      </div>
+       <!-- end of row-->
       </div>
       <div class="col-md-4">
         <mdl-card mdl-shadow="2">
