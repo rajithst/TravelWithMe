@@ -35,7 +35,10 @@
           </mdl-card-title>
           <mdl-card-supporting-text>
             <mdl-textfield type="text" label="Location"  floating-label ></mdl-textfield>
-            <!--<div class="chips chips-initial"></div>-->
+            <div class="col-md-12">
+              <label for="chips">Tags</label>
+              <div class="chips chips-initial" id="chips"></div>
+            </div>
             <div class="col-md-12">
 
               <div class="md-form">
@@ -65,10 +68,20 @@
 
           </mdl-card-supporting-text>
           <mdl-card-actions mdl-card-border>
+            <label for="privacy">Privacy Settings</label>
+            <select id="privacy"class="privacy-select">
+              <option value="" disabled selected>Choose your option</option>
+              <option value="1">Public</option>
+              <option value="2">Friends</option>
+              <option value="3">Only Me</option>
+            </select>
+
             <button mdl-button mdl-button-type="raised" mdl-colored="accent" mdl-ripple>Preview</button>
             <button class="text-center" center mdl-button mdl-button-type="raised" mdl-colored="primary" mdl-ripple>
               Post
             </button>
+
+
           </mdl-card-actions>
 
         </mdl-card>
