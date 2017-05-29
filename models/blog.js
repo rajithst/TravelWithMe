@@ -6,6 +6,7 @@
 const  mongoose = require('mongoose');
 const config = require('../config/database');
 const schema = mongoose.Schema;
+var async = require('async');
 var fs = require('fs');
 var blogSchema = new schema({
 
@@ -44,35 +45,29 @@ module.exports.addBlogpost = function (PostData,callback) {
 
 module.exports.getFollowersPosts = (usersArray,callbacl)=>{
 
-    let arr = [];
-    var arr3 = [];
+    var results = [];
 
-    for(var i=0; i<usersArray.length; i++){
+    async.each(usersArray,function (item,callback) {
 
-        console.log(usersArray[i])
-        Blogtab.find({userid:usersArray[i]})
+          Blogtab.find({userid:item})
                 .sort({'dateAdded': -1})
                  .exec(function(err,docs){
 
-            if(err) {
-                return console.log(err);
-            }
             if (docs){
 
+                  results.push(docs);
+                  callback();
 
-                 var arr3 = arr.concat(docs);
-                 var arr = arr3;
-                 console.log(arr)
-
-
+            }else{
+                callback();
             }
 
         });
 
+    }, function(err){
 
+        console.log(results);
+        callbacl(null,results)
+    });
 
-    }
-
-    console.log("out"+arr)
-    callbacl(null,arr)
-}
+};

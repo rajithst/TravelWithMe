@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgGridModule } from 'angular2-grid';
 import { BlogServiceService } from  '../../services/blog-service.service';
-
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-newsfeed',
   templateUrl: './newsfeed.component.html',
@@ -13,7 +13,8 @@ export class NewsfeedComponent implements OnInit{
   public scroller = require('./scrollcontent');
 
   constructor(
-    private BlogService:BlogServiceService
+    private BlogService:BlogServiceService,
+    private authService: AuthService,
 
   ) { }
 
@@ -25,27 +26,54 @@ export class NewsfeedComponent implements OnInit{
   nearby:any;
   results:any;
   followers:any;
+  posts:any;
 
 
   ngOnInit() {
+
+    console.log("done")
+
+    $('body').addClass(this.bodyClasses);
+    $("body").css( 'background-color', '#ecf0f1');
 
     this.profile = JSON.parse(localStorage.getItem('profile'));
     const data = {
       id: this.profile.identities[0].user_id,
       provider: this.profile.identities[0].provider,
       userid: this.profile.user_id,
-      profilepic :this.profile.picture_large
+      profilepic :this.profile.picture_large,
+      name :this.profile.name
     };
 
-    const Userdata = {id:data.id};
 
-    this.BlogService.getPosts(Userdata.id).subscribe(res=>{
-      console.log(res)
+
+    this.authService.checkId(data).subscribe(res => {
+      this.user = res.data;
+
+
+
+      const follow = this.user.personal.followeusers;
+
+      if (follow.length>0){
+
+        const Userdata = {id:data.id};
+
+        this.BlogService.getPosts(Userdata.id).subscribe(res=>{
+          this.posts = res.data[ res.data.length-1]
+          console.log(this.posts)
+
+        });
+      }else{
+
+
+      }
 
     });
 
-    $('body').addClass(this.bodyClasses);
-    $("body").css( 'background-color', '#ecf0f1');
+
+
+
+
 
 
 

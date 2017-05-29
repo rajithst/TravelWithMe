@@ -34,13 +34,6 @@ import { SuggestpagesComponent } from './components/suggestionarea/suggestpages/
 import { SuggestblogsComponent } from './components/suggestionarea/suggestblogs/suggestblogs.component';
 import { SearchComponent } from './components/search/search.component';
 
-
-
-
-
-
-
-
 /*Services */
 import { ValidateService } from './services/validate.service';
 import { AuthService } from './services/auth.service';
@@ -57,7 +50,6 @@ import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
 
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
-
 
 
 import { HotelPageComponent } from './components/hotel-page/hotel-page.component';
@@ -88,7 +80,7 @@ const appRoute: Routes = [
 
 
 
-  
+
 
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
@@ -98,10 +90,10 @@ const appRoute: Routes = [
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
-  
-   
-  
-  
+
+
+
+
   {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
   {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 
@@ -132,59 +124,59 @@ const appRoute: Routes = [
     PagestatusComponent, SuggestionareaComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent,  AdminComponent, TrafficChartComponent, UsersMapComponent,
 
     PagemanagerComponent, SuggestplacesComponent, SearchComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
- 
-  
-  
- 
-  HotelPageComponent,
- 
-  
-  
- 
-  HotelPageHomeComponent,
- 
-  
-  
- 
-  HotelPageGalleryComponent,
- 
-  
-  
- 
-  HotelPageContactComponent,
- 
-  
-  
- 
-  RentingPageComponent,
- 
-  
-  
- 
-  RentingPageHomeComponent,
- 
-  
-  
- 
-  RentingPageItemsComponent,
- 
-  
-  
- 
-  RentingPageGalleryComponent,
- 
-  
-  
- 
- 
- 
-  
-  
- 
-  RentingPageContactComponent
-  
 
-   
+
+
+
+  HotelPageComponent,
+
+
+
+
+  HotelPageHomeComponent,
+
+
+
+
+  HotelPageGalleryComponent,
+
+
+
+
+  HotelPageContactComponent,
+
+
+
+
+  RentingPageComponent,
+
+
+
+
+  RentingPageHomeComponent,
+
+
+
+
+  RentingPageItemsComponent,
+
+
+
+
+  RentingPageGalleryComponent,
+
+
+
+
+
+
+
+
+
+  RentingPageContactComponent
+
+
+
 
 
 

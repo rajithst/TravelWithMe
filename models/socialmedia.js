@@ -12,7 +12,8 @@ var socialMeadia = new schema({
     provider:{type:String},
     followeusers:{type:Array},
     followpages:{type:Array},
-    profilepicture:{type:String}
+    profilepicture:{type:String},
+    name:{type:String}
 });
 
 
@@ -22,11 +23,12 @@ const SM =  module.exports = mongoose.model('SM',socialMeadia);
 
 
 
-module.exports.checkId = function (id,provider,pic,callback) {
+module.exports.checkId = function (id,provider,pic,name,callback) {
 
     const query1 = {id:id,provider:provider};
-    const query = {id:id,provider:provider,profilepicture:pic};
+    const query = {id:id,provider:provider,profilepicture:pic,name:name};
 
+        console.log(query);
 
     SM.findOne(query1,function (err,docs) {
              if (err) throw err;

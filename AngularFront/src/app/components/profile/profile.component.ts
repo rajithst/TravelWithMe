@@ -58,13 +58,14 @@ export class ProfileComponent implements OnInit {
             id: this.profile.identities[0].user_id,
             provider: this.profile.identities[0].provider,
             userid: this.profile.user_id,
-            profilepic :this.profile.picture_large
+            profilepic :this.profile.picture_large,
+             name :this.profile.name
           };
 
         this.authService.checkId(data).subscribe(res => {
           this.user = res.data;
           this.user.me = this.user.identities[0].user_id;
-          console.log(this.user);
+          console.log("profile");
 
 
           /*friends object*/
