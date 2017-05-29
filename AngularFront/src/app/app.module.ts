@@ -33,29 +33,9 @@ import { SuggestplacesComponent } from './components/suggestionarea/suggestplace
 import { SuggestpagesComponent } from './components/suggestionarea/suggestpages/suggestpages.component';
 import { SuggestblogsComponent } from './components/suggestionarea/suggestblogs/suggestblogs.component';
 import { SearchComponent } from './components/search/search.component';
-
-
-
-
-
-
-
-
-/*Services */
-import { ValidateService } from './services/validate.service';
-import { AuthService } from './services/auth.service';
-import { BusinesspageService } from './services/businesspage.service';
-import { GooglemapsService } from './services/googlemaps.service';
-import { BlogServiceService } from './services/blog-service.service';
-import { Auth0Service } from './services/auth0.service';
-import { FacebookService } from './services/facebook.service';
-import { GoogleAPIService } from './services/google-api.service';
-import { UserServicesService } from './services/user-services.service';
-import { LocationPassService } from './shared/location-pass.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { TrafficChartComponent } from './components/admin/traffic-chart/traffic-chart.component';
 import { UsersMapComponent } from './components/admin/users-map/users-map.component';
-
 import { TypewidjetComponent } from './components/home/typewidjet/typewidjet.component';
 
 
@@ -78,6 +58,25 @@ import { RentingPageContactComponent } from './components/renting-page-contact/r
 
 
 
+/*Services */
+import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
+import { BusinesspageService } from './services/businesspage.service';
+import { GooglemapsService } from './services/googlemaps.service';
+import { BlogServiceService } from './services/blog-service.service';
+import { Auth0Service } from './services/auth0.service';
+import { FacebookService } from './services/facebook.service';
+import { GoogleAPIService } from './services/google-api.service';
+import { UserServicesService } from './services/user-services.service';
+import { LocationPassService } from './shared/location-pass.service';
+
+
+
+
+
+
+
+
 /*Routes*/
 const appRoute: Routes = [
 
@@ -88,7 +87,7 @@ const appRoute: Routes = [
 
 
 
-  
+
 
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
@@ -98,10 +97,10 @@ const appRoute: Routes = [
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
-  
-   
-  
-  
+
+
+
+
   {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
   {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 
@@ -128,63 +127,31 @@ const appRoute: Routes = [
     TripComponent,
     PostComponent,
 
-
-    PagestatusComponent, SuggestionareaComponent, SuggestpagesComponent, SuggestblogsComponent, SearchComponent,  AdminComponent, TrafficChartComponent, UsersMapComponent,
-
-    PagemanagerComponent, SuggestplacesComponent, SearchComponent, AdminComponent, TrafficChartComponent, UsersMapComponent, TypewidjetComponent,
- 
-  
-  
- 
-  HotelPageComponent,
- 
-  
-  
- 
-  HotelPageHomeComponent,
- 
-  
-  
- 
+    PagestatusComponent,
+    SuggestionareaComponent,
+    SuggestpagesComponent,
+    SuggestblogsComponent,
+    SearchComponent,
+    AdminComponent,
+    TrafficChartComponent,
+    UsersMapComponent,
+    PagemanagerComponent,
+    SuggestplacesComponent,
+    SearchComponent,
+    AdminComponent,
+    TrafficChartComponent,
+    UsersMapComponent,
+    TypewidjetComponent,
+    HotelPageComponent,
+    HotelPageHomeComponent,
   HotelPageGalleryComponent,
- 
-  
-  
- 
   HotelPageContactComponent,
- 
-  
-  
- 
   RentingPageComponent,
- 
-  
-  
- 
-  RentingPageHomeComponent,
- 
-  
-  
- 
-  RentingPageItemsComponent,
- 
-  
-  
- 
-  RentingPageGalleryComponent,
- 
-  
-  
- 
- 
- 
-  
-  
- 
-  RentingPageContactComponent
-  
+    RentingPageHomeComponent,
+    RentingPageItemsComponent,
+    RentingPageGalleryComponent,
+    RentingPageContactComponent
 
-   
 
 
 

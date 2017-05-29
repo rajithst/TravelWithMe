@@ -100,21 +100,20 @@
       <div class="modal-body">
 
         <div class="row">
-          <div class="col-md-6">From - {{this.fautoplace}}</div>
-          <div class="col-md-6"> To - {{this.tautoplace}}</div>
-        </div>
 
-        <div class="col-md-6">
-          <div id="set_dest">
-            <div class="row">
-              <div class="col-md-8">
-
-                <input placeholder="From" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation">
-              </div>
-
-              <!--<ng2-completer (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation" [datasource]="Fresult" [minSearchLength]="0"></ng2-completer>-->
-
+          <div class="col-md-6">
+          <div class="md-form">
+            <input placeholder="{{this.fautoplace}}" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation">
+            <label for="From" class="">From</label>
+          </div>
+          </div>
+          <div class="col-md-6">
+            <div class="md-form">
+              <input placeholder=" {{this.tautoplace}}" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()" name="tlocation" [(ngModel)]="tlocation" #origin>
+              <label for="to" class="">To</label>
             </div>
+          </div>
+          <div class="col-md-6">
             <div class="row" *ngIf="Fresult">
 
               <li *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
@@ -122,13 +121,11 @@
 
             </div>
 
-            <div class="row">
-              <input placeholder="To" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()" name="tlocation" [(ngModel)]="tlocation" #origin>
-            </div>
-
+          </div>
+          <div class="col-md-6">
             <div class="row" *ngIf="Tresult">
-              <div class="col-md-8">
-              <li *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
+              <div class="col-md-6">
+                <li *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
               </div>
 
 
@@ -136,11 +133,21 @@
           </div>
         </div>
 
-      <div class="col-md-6">
-        <div class="container-fluid">
-          <img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">
+        <div class="col-md-6">
+          <div id="set_dest">
+
+
+
+
+
+          </div>
         </div>
-      </div>
+
+      <!--<div class="col-md-6">-->
+        <!--<div class="container-fluid">-->
+          <!--<img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
 
     <!-- Modal Footer -->
