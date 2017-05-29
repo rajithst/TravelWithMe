@@ -1,7 +1,8 @@
 
 
 <nav class="navbar navbar-dark navbar-fixed-top scrolling-navbar">
-
+<script [src] = lclscrolljs></script>
+<script [src] = scrollTojs></script>
   <!-- Collapse button-->
   <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx">
     <i class="fa fa-bars"></i>
@@ -22,10 +23,13 @@
           <a class="nav-link waves-effect waves-light" href="#register">Post Adverticement</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#">Create Blog</a>
+          <a class="nav-link waves-effect waves-light" href="#site">About Site</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link waves-effect waves-light" href="#">About</a>
+          <a class="nav-link waves-effect waves-light"  href="#mobile">Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-effect waves-light"  href="#team">Our Team</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link waves-effect" [routerLink]="['/profile/newsfeed']" *ngIf="auth.authenticated()"><i class="fa fa-envelope"></i> <span class="hidden-sm-down">News Feed</span></a>
@@ -180,7 +184,7 @@
       <div class="col-lg-6 wow fadeInDown" data-wow-delay="0.2s">
         <!--Form-->
         <div>
-
+            
         </div>
         <!--/.Form-->
       </div>
@@ -196,9 +200,6 @@
   <!--/First row-->
 </section>
 
-<section>
-  <div class="col-12"> <app-typewidjet></app-typewidjet></div>
-</section>
 <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
 
@@ -209,3 +210,344 @@
   </div>
 </div>
 
+<!--Section: About site-->
+
+<!--style="background: url('');-->
+<section class="section feature-box" id="site" style=" padding:10px;">
+    <!--Section heading-->
+    <h1 class="section-heading">What this site do..</h1>
+    <!--Section sescription-->
+    <p class="section-description lead">We allow you to blogging, We allow you to publish your businesses, We allow you plan trip. </p>
+
+    <!--First row-->
+    <div class="row features-big">
+        <!--First column-->
+        <div class="col-md-4 mb-r">
+            <i class="fa fa-pencil-square-o blue-text"></i>
+            <h4 class="feature-title">Blogging</h4>
+            <p class="grey-text">You can create your own blog and publish articles related to your travels.</p>
+        </div>
+        <!--/First column-->
+
+        <!--Second column-->
+        <div class="col-md-4 mb-r">
+            <i class="fa fa-newspaper-o green-text"></i>
+            <h4 class="feature-title">Business Pages</h4>
+            <p class="grey-text">You can promote your Business using our 'Business Page Feature' and you can advertise here.</p>
+        </div>
+        <!--/Second column-->
+
+        <!--Third column-->
+        <div class="col-md-4 mb-r">
+            <i class="fa fa-car red-text"></i>
+            <h4 class="feature-title">Planning Trip</h4>
+            <p class="grey-text">You can plan awesome trip with us.</p>
+        </div>
+        <!--/Third column-->
+    </div>
+    <!--/First row-->
+
+</section>
+<!--/Section: About site-->
+
+<!--Section: About Mobile App-->
+<section class="section feature-box" id="mobile" style="padding:10px;">
+
+    <!--Section heading-->
+    <h1 class="section-heading">Our Mobile Application</h1>
+    <!--Section sescription-->
+    <p class="section-description lead">We have an amazing mobile application to ease your work. We provide lot of features through this app.</p>
+
+    <!--First row-->
+    <div class="row features-small" style="margin:0;">
+
+        <!--First column-->
+        <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-flag-checkered indigo-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">International</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-flask blue-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">Experimental</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-glass cyan-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">Relaxing</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/Third row-->
+        </div>
+        <!--/First column-->
+
+        <!--Second column-->
+        <div class="col-md-4 mb-r center-on-small-only flex-center">
+            <img src="https://mdbootstrap.com/img/Mockups/Transparent/Small/iphone3.jpg" alt="" class="z-depth-0">
+        </div>
+        <!--/Second column-->
+
+        <!--Third column-->
+        <div class="col-md-4">
+            <!--First row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-heart red-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">Beloved</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/First row-->
+
+            <!--Second row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-flash orange-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">Rapid</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/Second row-->
+
+            <!--Third row-->
+            <div class="row">
+                <div class="col-2">
+                    <i class="fa fa-magic lime-text"></i>
+                </div>
+                <div class="col-10">
+                    <h4 class="feature-title">Magical</h4>
+                    <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda deleniti hic.</p>
+                    <div style="height:30px"></div>
+                </div>
+            </div>
+            <!--/Third row-->
+        </div>
+        <!--/Third column-->
+    </div>
+    <!--/First row-->
+
+</section>
+<!--/Section: About Mobile App-->
+
+<!--Section: Our Team-->
+<section class="section" id="team" style=" padding:10px;">
+    
+    <!--Section heading-->
+    <h1 class="section-heading" >OUR TEAM</h1>
+    
+    <div class="row">
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel testimonial-carousel slide carousel-multi-item wow fadeIn" data-ride="carousel">
+
+            <!--Controls-->
+            <div class="controls-top">
+                <a class="btn-floating btn-small mdb-color" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                <a class="btn-floating btn-small mdb-color" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+            </div>
+            <!--/.Controls-->
+
+            <!--Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active mdb-color"></li>
+                <li data-target="#multi-item-example" data-slide-to="1" class="mdb-color"></li>
+            </ol>
+            <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox">
+
+                <!--First slide-->
+                <div class="carousel-item active">
+                    <!--First column-->
+                    <div class="col-md-4">
+
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/rajith.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Rajith</h4>
+                            <h5>Back-end Developer</h5>
+                            <p><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star-half-full"> </i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-4 hidden-sm-down">
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/madura.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Madhura</h4>
+                            <h5>Mobile Developer</h5>
+                            <p><i class="fa fa-quote-left"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
+
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Second column-->
+                    
+                    <!--Third column-->
+                    <div class="col-md-4 hidden-sm-down">
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/anjalee.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Anjalee</h4>
+                            <h5>Business Analysis</h5>
+                            <p><i class="fa fa-quote-left"></i> Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum.</p>
+                            
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star-o"> </i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Third column-->
+
+                </div>
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <!--First column-->
+                    <div class="col-md-4 hidden-sm-down">
+
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/nuwan.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Nuwan</h4>
+                            <h5>Front-end Developer</h5>
+                            <p><i class="fa fa-quote-left"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid.</p>
+
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star-half-full"> </i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--/First column-->
+
+                    <!--Second column-->
+                    <div class="col-md-4 hidden-sm-down">
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/kavindu.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Kavindu</h4>
+                            <h5>Front-end developer</h5>
+                            <p><i class="fa fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab.</p>
+
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Second column-->
+
+                    <!--Third column-->
+                    <div class="col-md-4 hidden-sm-down">
+                        <div class="testimonial">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <img src="assets/img/team/dinesh.jpg" class="rounded-circle img-fluid">
+                            </div>
+                            <!--Content-->
+                            <h4>Dinesh</h4>
+                            <h5>Web Developer</h5>
+                            <p><i class="fa fa-quote-left"></i> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+
+                            <!--Review-->
+                            <div class="orange-text">
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star"> </i>
+                                <i class="fa fa-star-o"> </i>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Third column-->
+
+                </div>
+                <!--/.Second slide-->
+
+            </div>
+            <!--/.Slides-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+    </div>
+</section>
+<!--/Section: Our Team-->
