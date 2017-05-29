@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent implements OnInit {
-
+private lclscrolljs = require('./jquery.localscroll.js');
+private scrollTojs = require('./jquery.scrollTo.js');
   constructor(
 
     private auth: Auth0Service,

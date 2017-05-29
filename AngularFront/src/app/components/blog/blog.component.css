@@ -14,3 +14,83 @@ input#file {
   border-radius: 20px;
   background-size: 150px 100px;
 }
+
+
+/*-----------------------------------------------------------------------------------*/
+
+.mdl-card{
+  width:10rem;
+}
+.btn-floating {
+  display: inline-block;
+  color: orangered;
+  position: absolute !important;
+
+}
+
+.text-mid{
+  position: absolute !important;
+  top: 36%;
+  font-size: 2.0em;
+  width: 100%;
+  font-weight: bold;
+  color: #fff;
+}
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+@-o-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+@-webkit-keyframes FadeInFromBottom {
+  0% {
+    height: 0;
+    padding-top: 84px;
+    background-color: white;
+    color: white; }
+  25% {
+    color: white; } }
+@-moz-keyframes FadeInFromBottom {
+  0% {
+    height: 0;
+    padding-top: 84px;
+    background-color: white;
+    color: white; }
+  25% {
+    color: white; } }
+@-o-keyframes FadeInFromBottom {
+  0% {
+    height: 0;
+    padding-top: 84px;
+    background-color: white;
+    color: white; }
+  25% {
+    color: white; } }
+@keyframes FadeInFromBottom {
+  0% {
+    height: 0;
+    padding-top: 84px;
+    background-color: white;
+    color: white; }
+  25% {
+    color: white; } }
+.card-overlay{
+background: linear-gradient(
+rgba(20,20,20, .5),
+rgba(20,20,20, .5))!important;
+
+}

@@ -31,85 +31,15 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-.mdl-textfield {
-  position: relative;
-  font-size: 16px;
-  display: inline-block;
-  box-sizing: border-box;
-  width: 300px;
-  max-width: 100%;
-  margin: 0;
-  padding:  1px ;
-  color: black;
-  border-bottom-color: white;
-  background-color:whitesmoke;
 
-
-}
 
 .sebm-google-map-container {
   height: 300px;
 }
-h1, input::-webkit-input-placeholder, button {
-  font-family: 'roboto', sans-serif;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
 
-h1 {
-  height: 100px;
-  width: 100%;
-  font-size: 18px;
-  background: #18aa8d;
-  color: white;
-  line-height: 150%;
-  border-radius: 3px 3px 0 0;
-  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
-}
 
-form {
-  box-sizing: border-box;
-  width: 260px;
-  margin: 100px auto 0;
-  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
-  padding-bottom: 40px;
-  border-radius: 3px;
-}
-form h1 {
-  box-sizing: border-box;
-  padding: 20px;
-}
-#set_dest{
-  margin-top: 50px;
-}
-input {
 
-  width: 200px;
-  display: block;
-  border: none;
-  padding: 10px 0;
-  border-bottom: solid 1px #1abc9c;
-  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
-  background-position: -200px 0;
-  background-size: 200px 100%;
-  background-repeat: no-repeat;
-  color: #0e6252;
-}
-input:focus, input:valid {
-  box-shadow: none;
-  outline: none;
-  background-position: 0 0;
-}
-input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
-  color: #1abc9c;
-  font-size: 11px;
-  -webkit-transform: translateY(-20px);
-  transform: translateY(-20px);
-  visibility: visible !important;
-}
+
 
 .sebm-google-map-container {
   height: 300px;
@@ -119,96 +49,11 @@ input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
   position:relative;
   margin-bottom:45px;
 }
-input 				{
-  font-size:18px;
-  padding:10px 10px 10px 5px;
-  display:block;
-  width:300px;
+input{
   border:none;
   border-bottom:1px solid #757575;
   background: transparent;
-
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
 }
 input:focus 		{ outline:none; }
-
-/* LABEL ======================================= */
-label 				 {
-  color:#999;
-  font-size:18px;
-  font-weight:normal;
-  position:absolute;
-  pointer-events:none;
-  left:5px;
-  top:10px;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
-}
-
-/* active state */
-input:focus ~ label, input:valid ~ label 		{
-  top:-20px;
-  font-size:14px;
-  color:#5264AE;
-}
-
-/* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:300px; }
-.bar:before, .bar:after 	{
-  content:'';
-  height:2px;
-  width:0;
-  bottom:1px;
-  position:absolute;
-  background:#5264AE;
-  transition:0.2s ease all;
-  -moz-transition:0.2s ease all;
-  -webkit-transition:0.2s ease all;
-}
-.bar:before {
-  left:50%;
-}
-.bar:after {
-  right:50%;
-}
-
-/* active state */
-input:focus ~ .bar:before, input:focus ~ .bar:after {
-  width:50%;
-}
-
-/* HIGHLIGHTER ================================== */
-.highlight {
-  position:absolute;
-  height:60%;
-  width:100px;
-  top:25%;
-  left:0;
-  pointer-events:none;
-  opacity:0.5;
-}
-
-/* active state */
-input:focus ~ .highlight {
-  -webkit-animation:inputHighlighter 0.3s ease;
-  -moz-animation:inputHighlighter 0.3s ease;
-  animation:inputHighlighter 0.3s ease;
-}
-
-/* ANIMATIONS ================ */
-@-webkit-keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@-moz-keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-@keyframes inputHighlighter {
-  from { background:#5264AE; }
-  to 	{ width:0; background:transparent; }
-}
-
-.input{
-  margin: 0px !important;
-}
