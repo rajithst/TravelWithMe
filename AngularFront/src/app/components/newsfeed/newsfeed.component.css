@@ -26,9 +26,10 @@
 /* TEMPLATE STYLES */
 
 main {
-  margin-top: 0.5rem;
+  margin-top: -15px;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  
 }
 
 main .card {

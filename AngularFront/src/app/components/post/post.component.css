@@ -1,5 +1,5 @@
 .mdlcard{
-  margin: 1rem;
+  /*margin: 1rem;*/
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -17,31 +17,43 @@
   margin: -23px 20px;
   float: right;
   background-color: #4B515D;
+   
   height: 3rem !important;
   width: 3rem !important;
   line-height: 0;
 }
 
 #profile-circle{
-        /*max-height:100px;
-        max-width:100px;*/
-        border-radius: 50%;
+        border-radius:100px; 
+        height:50px;
+        width:50px;
+        
 }
 
 .card {
  
-  
-  width:350px;
+  background-color: #B6B6B4;
+  width:375px;
   margin-left: 0px;
   margin-right: 0px;
+  height:565px; 
 }
 
 #card-header{
-  background-color: #ffffff;
-  
+  background-color: #B6B6B4;
+   height:70px;
 }
 
 #div-name{
    margin-left: 0px;
   margin-right: 0px;
+}
+
+.btn{
+  height: 30px;
+  width:160px;
+  padding: 10px;
+  justify-content: center;
+  
+  
 }
