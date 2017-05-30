@@ -28,11 +28,12 @@
 main {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  margin-right: 0.1rem;
+  margin-right: 0.5rem;
 }
 
 main .card {
   margin-bottom: 2rem;
+ 
 }
 
 @media only screen and (max-width: 768px) {
