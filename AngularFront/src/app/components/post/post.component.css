@@ -32,7 +32,8 @@
 
 .card {
  
-  background-color: #B6B6B4;
+  /*background-color: #B6B6B4;*/
+  background-color: #ffffff;
   width:790px;
   margin-left: 0px;
   margin-right: 0px;
@@ -41,16 +42,16 @@
 }
 
 #card-header{
-  background-color: #B6B6B4;
+  background-color: #ffffff;
    height:70px;
    border-radius: 10px 10px 0 0;
 }
 
-#div-name{
-   margin-left: 0px;
-  margin-right: 0px;
+.mdl-button{
+  margin-left: 60%;
   
 }
+
 
 
 
@@ -59,7 +60,7 @@
   width:160px;
   padding: 10px;
   justify-content: center;
-   border-radius: 10px;
+   /*border-radius: 10px;*/
    margin-left: 50%;
   
 }

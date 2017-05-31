@@ -1,21 +1,25 @@
 
-<div class="card" mdl-shadow="0">
+<div class="card" mdl-shadow="2">
   <!--Card image-->
   <div class="card-header" id="card-header">
 
-       <div class="col-md-3">
+       <div class="col-md-2">
         <img id="profile-circle" src="http://mdbootstrap.com/images/avatars/img%20(8)">
       </div>
       
-      <div class="col-md-7" id="div-name">
+      <div class="col-md-8" id="div-name">
           
          <h6><a href="">Kavindu Edirisinghe</a></h6>
          <h6>May 28 at 9.59 am</h6>
       </div>
 
+      
+
+        
+
       <div class="col-md-2" id="div-name">
           <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-          <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right">
+          <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
             <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
             <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
             <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
