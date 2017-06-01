@@ -13,3 +13,7 @@ export class RatingComponent implements OnInit {
   }
 
 }
+
+
+
+
