@@ -62,6 +62,7 @@ import { FacebookService } from './services/facebook.service';
 import { GoogleAPIService } from './services/google-api.service';
 import { UserServicesService } from './services/user-services.service';
 import { LocationPassService } from './shared/location-pass.service';
+import { RatingComponent } from './components/rating/rating.component';
 
 
 
@@ -143,7 +144,8 @@ const appRoute: Routes = [
     RentingPageHomeComponent,
     RentingPageItemsComponent,
     RentingPageGalleryComponent,
-    RentingPageContactComponent
+    RentingPageContactComponent,
+    RatingComponent
 
 
 
