@@ -28,7 +28,6 @@ module.exports.checkId = function (id,provider,pic,name,callback) {
     const query1 = {id:id,provider:provider};
     const query = {id:id,provider:provider,profilepicture:pic,name:name};
 
-        console.log(query);
 
     SM.findOne(query1,function (err,docs) {
              if (err) throw err;

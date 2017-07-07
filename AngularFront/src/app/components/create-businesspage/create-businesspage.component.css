@@ -95,3 +95,11 @@ input:focus ~ .highlight {
   from { background:#5264AE; }
   to 	{ width:0; background:transparent; }
 }
+
+#border{
+  border-style: solid;
+    border-color:#85929E;
+    background-color:#d6ddd6;
+    border-top: 6px solid #85929E;
+    border-radius: 15px;
+}

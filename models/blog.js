@@ -11,6 +11,8 @@ var fs = require('fs');
 var blogSchema = new schema({
 
     userid:{type:String},
+    username:{type:String},
+    img:{type:String},
     postTtile:{type:String},
     body:{type:String},
     featured_img:{type:String},
@@ -28,7 +30,7 @@ module.exports.addBlogpost = function (PostData,callback) {
     var pos=PostData.featured_img.indexOf(",");
 
     var base64d=PostData.featured_img.substring(pos+1);
-    var path="./uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
+    var path="AngularFront/src/assets/uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
 
     fs.writeFile(path,base64d,'base64',function(err){
         if(err) {
@@ -38,7 +40,7 @@ module.exports.addBlogpost = function (PostData,callback) {
     });
 
 
-    PostData.featured_img = "../uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
+    PostData.featured_img = "assets/uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
     PostData.save(callback);
 };
 

@@ -26,11 +26,15 @@ router.post('/submitpost',function (req,res) {
    const blogpost = new Blogpost({
 
         userid: req.body.userid,
+        username:req.body.username,
+        img:req.body.img,
         postTtile: req.body.postTitle,
         body: req.body.body,
         featured_img:req.body.featured_img,
         dateAdded: Date()
     });
+
+   console.log(blogpost)
     
 
     

@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.fautoplace='';
     this.tautoplace='';
-    this.dataArray = [];
+    this.dataArray = {};
 
 
     this.profile = JSON.parse(localStorage.getItem('profile'));
@@ -52,7 +52,6 @@ export class NavbarComponent implements OnInit {
 
   logoutClick(){
 
-    console.log("ss")
     this.auth.logout();
     this.route.navigate([""]);
     return false;
@@ -78,7 +77,7 @@ export class NavbarComponent implements OnInit {
   }
 
   addToTagfrom(e){
-    this.dataArray[0] = e.target.id;
+    this.dataArray.first = e.target.id;
     this.fautoplace = e.target.innerText;
     this.Fresult = '';
     this.flocation = '';
@@ -87,7 +86,7 @@ export class NavbarComponent implements OnInit {
 
 
   addToTagto(e){
-    this.dataArray[1] = e.target.id;
+    this.dataArray.last = e.target.id;
     this.tautoplace = e.target.innerText;
     this.Tresult = '';
     this.tlocation = '';
@@ -96,7 +95,8 @@ export class NavbarComponent implements OnInit {
 
   }
 
-  callLocationPass(){
+  callLocationPass():void {
+
     this.locationService.shareLocations(this.dataArray)
   }
 

@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
 
     private javascript1 = require('./js1');
 
-  model = {userid:"",postTitle:"",body:"",featured_img:""};
+  model = {userid:" ",username:" ",img:" ",postTitle:" ",body:" ",featured_img:" "};
 
 
   path='';
@@ -130,11 +130,14 @@ export class BlogComponent implements OnInit {
       id: this.profile.identities[0].user_id,
       provider: this.profile.identities[0].provider,
       userid: this.profile.user_id,
-      profilepic :this.profile.picture_large
+      profilepic :this.profile.picture_large,
+      name :this.profile.name
     };
 
     /*this.model.userid = data.userid;*/
     this.model.userid = '820503218103311';
+    this.model.username = data.name,
+    this.model.img = data.profilepic,
     this.model.postTitle = this.postTitle;
     this.model.body = this.body;
 
@@ -142,7 +145,7 @@ export class BlogComponent implements OnInit {
 
     this.blogService.addBlogpost(this.model).subscribe(res=>{
 
-      this.alert = res;
+      //this.alert = res;
     })
   }
 

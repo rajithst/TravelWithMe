@@ -9,6 +9,7 @@ export class LocationPassService {
   constructor() { }
 
   shareLocations(data:any){
+    console.log(data)
     this.finalLocations.next(data);
   }
 
