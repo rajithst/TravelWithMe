@@ -3,7 +3,7 @@ import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
 
 import './js1.js';
-var dataArray = require('./js1');
+
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
 
     private javascript1 = require('./js1');
 
-  model = {userid:" ",username:" ",img:" ",postTitle:" ",body:" ",featured_img:" ",tags:[]};
+  model = {userid:" ",username:" ",img:" ",postTitle:" ",body:" ",featured_img:" "};
 
 
   path='';
@@ -43,9 +43,7 @@ export class BlogComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
 
   fileChange(input){
@@ -144,6 +142,7 @@ export class BlogComponent implements OnInit {
     this.model.body = this.body;
 
 
+
     this.blogService.addBlogpost(this.model).subscribe(res=>{
 
       //this.alert = res;
@@ -169,9 +168,7 @@ export class BlogComponent implements OnInit {
     let id = idAttr.nodeValue;
     /*this.val = id;*/
 
-
   }
-
 
 
 
