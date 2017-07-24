@@ -75,3 +75,17 @@ module.exports.getFollowersPosts = (usersArray,callbacl)=>{
     });
 
 };
+
+module.exports.getpostData = (id,callback)=>{
+
+    Blogtab.find({_id:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+}

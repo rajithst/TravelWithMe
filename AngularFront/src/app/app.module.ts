@@ -79,23 +79,14 @@ const appRoute: Routes = [
   {path: 'profile' , component: ProfileComponent , canActivate: [AuthGuard]} ,
   {path: 'dashboard' , component: DashboardComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/create/businesspage' , component: CreateBusinesspageComponent , canActivate: [AuthGuard]} ,
-
-
-
-
-
   {path: 'profile/create/blog' , component: BlogComponent , canActivate: [AuthGuard]} ,
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
-  {path: 'profile/viewpost' , component: ViewpostComponent , canActivate: [AuthGuard]},
+  {path: 'profile/viewpost/:id' , component: ViewpostComponent , canActivate: [AuthGuard]},
   {path: 'profile/newsfeed' , component: NewsfeedComponent , canActivate: [AuthGuard]},
   {path: 'profile/create/trip' , component: TripComponent , canActivate: [AuthGuard]},
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
-
-
-
-
   {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
   {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 

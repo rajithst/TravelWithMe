@@ -82,6 +82,22 @@ router.get('/getPosts/:id',(req,res)=>{
 
 });
 
+router.get('/getPostdata/:id',(req,res)=>{
+
+            Blogpost.getpostData(req.params.id,(err,docs)=>{
+
+                if (err){
+                    throw err
+                }
+
+                if (docs){
+
+                     res.json({msg:true,data:docs})
+                }
+
+            })
+        });
+
 
 
 module.exports = router;
