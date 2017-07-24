@@ -79,3 +79,37 @@ module.exports.getFollowers = function (myid,callback) {
     });
 
 };
+
+module.exports.getresults = function (section,text,callback){
+
+    if(section ==="profile"){
+
+        var regex= '/'+text+'/i';
+        console.log(regex)
+        var q = {name:regex}
+        console.log(q);
+        SM.find({name:regex},function(err,docs){
+
+            if (err) throw err;
+
+        if (docs){
+            console.log(docs)
+            callback(null,docs);
+        }
+
+        })
+
+
+
+    }else if(section==="blogs"){
+
+    }else if(section==="places"){
+
+    }else if(section==="more"){
+
+
+    }
+
+
+
+}

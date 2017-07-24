@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http,Headers,Response } from '@angular/http';
 
 @Component({
   selector: 'app-search',
@@ -7,15 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  section:any;
+  constructor(private http:Http) { }
 
   ngOnInit() {
   }
 
   getSection(e){
 
-    const section = e.target.id;
-    console.log(section)
+    this.section = e.target.id;
+  
+
+
+  }
+
+  searchData(e){
+
+    this.http.get("http://localhost:3000/users/option/search/"+this.section+"/"+e.target.value).subscribe((res:Response)=>{
+      console.log(res.json)
+    })
 
 
   }
