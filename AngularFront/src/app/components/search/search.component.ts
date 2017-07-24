@@ -12,4 +12,12 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSection(e){
+
+    const section = e.target.id;
+    console.log(section)
+
+
+  }
+
 }
