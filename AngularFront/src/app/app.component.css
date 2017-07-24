@@ -6,3 +6,7 @@ input{
   margin: 10px;
 }
 input:focus 		{ outline:none; }
+
+section {
+  background: white !important;
+}
