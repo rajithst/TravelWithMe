@@ -26,21 +26,23 @@ const Blogtab =  module.exports = mongoose.model('Blogtab',blogSchema);
 module.exports.addBlogpost = function (PostData,callback) {
 
     var dt=new Date();
-    var text = "featured_image_";
+    var text = "f";
     var pos=PostData.featured_img.indexOf(",");
 
     var base64d=PostData.featured_img.substring(pos+1);
-    var path="AngularFront/src/assets/uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
+    var path="AngularFront/src/assets/uploads/images/blog/"+text+"_"+PostData.userid+"_"+dt+".png";
 
     fs.writeFile(path,base64d,'base64',function(err){
         if(err) {
             return console.log(err);
+        }else{
+            console.log("done")
         }
 
     });
 
 
-    PostData.featured_img = "assets/uploads/images/blog/featured/"+text+"_"+PostData.userid+"_"+dt+".png";
+    PostData.featured_img = "assets/uploads/images/blog/"+text+"_"+PostData.userid+"_"+dt+".png";
     PostData.save(callback);
 };
 
