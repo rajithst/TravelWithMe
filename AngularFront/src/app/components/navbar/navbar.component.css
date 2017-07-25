@@ -49,6 +49,19 @@
   position:relative;
   margin-bottom:45px;
 }
+#search{
+  border:none;
+  border-bottom:1px solid #757575;
+  background-color: white !important;
+  border-radius: 6px ;
+  padding: 0!important;
+  margin: 0 !important;
+}
+
+#searchlist{
+  color: black !important;
+}
+
 input{
   border:none;
   border-bottom:1px solid #757575;
