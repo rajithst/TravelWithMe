@@ -49,13 +49,24 @@
   position:relative;
   margin-bottom:45px;
 }
-input{
+#search{
   border:none;
   border-bottom:1px solid #757575;
   background-color: white !important;
   border-radius: 6px ;
+  padding: 0!important;
+  margin: 0 !important;
 }
 
 #searchlist{
   color: black !important;
 }
+
+input{
+  border:none;
+  border-bottom:1px solid #757575;
+  background: transparent;
+  padding: 10px 10px 10px 10px;
+  margin: 10px;
+}
+input:focus 		{ outline:none; }
