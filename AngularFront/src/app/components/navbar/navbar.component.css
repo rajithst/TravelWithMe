@@ -52,8 +52,10 @@
 input{
   border:none;
   border-bottom:1px solid #757575;
-  background: transparent;
-  padding: 10px 10px 10px 10px;
-  margin: 10px;
+  background-color: white !important;
+  border-radius: 6px ;
 }
-input:focus 		{ outline:none; }
+
+#searchlist{
+  color: black !important;
+}
