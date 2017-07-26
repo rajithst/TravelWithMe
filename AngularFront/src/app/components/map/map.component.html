@@ -21,10 +21,10 @@
 
 
           </div>
-          <div class="form-group">
-
-            <input  placeholder="Enter source  location" required="required" class="form" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
-            <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupOutput [formControl]="destinationOutput" />
+          <div class="card" padding >
+            <h3>Fill Here</h3>
+            <input  placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
+            <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" />
             <input placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #waypoint [formControl]="waypointOutput" />
           </div>
           <!-- Nav tabs -->
@@ -276,44 +276,44 @@
           <!--/.Card-->
         </div>
 
-        <div class="col-md-12">
-          <div class="weather-card one">
-            <div class="top">
-              <div class="wrapper mask waves-effect waves-light">
-                <div class="mynav">
-                  <a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>
-                  <a href="javascript:;"><span class="lnr lnr-cog"></span></a>
-                </div>
-                <h1 class="heading">Clear night</h1>
-                <h3 class="location">Dhaka, Bangladesh</h3>
-                <p class="temp">
-                  <span class="temp-value">20</span>
-                  <span class="deg">0</span>
-                  <a href="javascript:;"><span class="temp-type">C</span></a>
-                </p>
-              </div>
-            </div>
-            <div class="bottom">
-              <div class="wrapper">
-                <ul class="forecast">
-                  <a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>
-                  <li class="active">
-                    <span class="date">Yesterday</span>
-                    <span class="lnr lnr-sun condition">
-									<span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>
-								</span>
-                  </li>
-                  <li>
-                    <span class="date">Tomorrow</span>
-                    <span class="lnr lnr-cloud condition">
-									<span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>
-								</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!--<div class="col-md-12">-->
+          <!--<div class="weather-card one">-->
+            <!--<div class="top">-->
+              <!--<div class="wrapper mask waves-effect waves-light">-->
+                <!--<div class="mynav">-->
+                  <!--<a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>-->
+                  <!--<a href="javascript:;"><span class="lnr lnr-cog"></span></a>-->
+                <!--</div>-->
+                <!--<h1 class="heading">Clear night</h1>-->
+                <!--<h3 class="location">Dhaka, Bangladesh</h3>-->
+                <!--<p class="temp">-->
+                  <!--<span class="temp-value">20</span>-->
+                  <!--<span class="deg">0</span>-->
+                  <!--<a href="javascript:;"><span class="temp-type">C</span></a>-->
+                <!--</p>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="bottom">-->
+              <!--<div class="wrapper">-->
+                <!--<ul class="forecast">-->
+                  <!--<a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>-->
+                  <!--<li class="active">-->
+                    <!--<span class="date">Yesterday</span>-->
+                    <!--<span class="lnr lnr-sun condition">-->
+									<!--<span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>-->
+								<!--</span>-->
+                  <!--</li>-->
+                  <!--<li>-->
+                    <!--<span class="date">Tomorrow</span>-->
+                    <!--<span class="lnr lnr-cloud condition">-->
+									<!--<span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>-->
+								<!--</span>-->
+                  <!--</li>-->
+                <!--</ul>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
 
         <div class="col-md-12 card scrollable">
           <br>
@@ -369,6 +369,85 @@
       </div>
 
     </div>
+
+
+  </div>
+  <div class="modal animated bounceInLeft" id="tripcreate" tabindex="-1" role="dialog"
+       aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <button type="button" class="close"
+                  data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            Set Destinaion
+          </h4>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="md-form">
+                <input placeholder="{{this.fautoplace}}" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation">
+                <label for="From" class="">From</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="md-form">
+                <input placeholder=" {{this.tautoplace}}" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()" name="tlocation" [(ngModel)]="tlocation" #origin>
+                <label for="to" class="">To</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row  list-group" *ngIf="Fresult">
+
+                <li class="list-group-item list-group-item-action" *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
+
+
+              </div>
+
+            </div>
+            <div class="col-md-6">
+              <div class="row list-group" *ngIf="Tresult">
+
+                <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div id="set_dest">
+
+            </div>
+          </div>
+
+          <!--<div class="col-md-6">-->
+          <!--<div class="container-fluid">-->
+          <!--<img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">-->
+          <!--</div>-->
+          <!--</div>-->
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"
+                  data-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary"  data-dismiss="modal"  [routerLink]="['/profile/create/trip']" (click)="callLocationPass()">
+            Let's Go
+          </button>
+        </div>
+      </div>
+    </div>
+
 
 
   </div>

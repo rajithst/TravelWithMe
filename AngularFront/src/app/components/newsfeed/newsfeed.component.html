@@ -8,40 +8,37 @@
     <div class="col-md-8">
       <div [ngGrid]="{'resizeable': true, 'margins': [5, 10]}">
 
+
         <div class="col-md-12" *ngFor="let item of posts">
 
 
           <div class="card" mdl-shadow="2"  >
             <!--Card image-->
             <div class="card-header" id="card-header">
+              <div class="row">
+                <div class="colmd-3 pull-left">
+                  <div class="avatar">
+                    <img id="profile-circle" class="img-responsive" [src]="item.img">
+                  </div>
+                  <div id="div-name">
 
-              <div class="col-md-2">
-                <img id="profile-circle" [src]="item.img">
+                    <h6><a href="" class="pull-left">{{item.username}}</a></h6>
+
+                  </div>
+                </div>
+                <div class="col pull-right">
+                  <div class="col-md-2" id="div-name">
+                    <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+                    <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
+                      <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
+                      <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
+                      <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
+                      <mdl-menu-item>Turn off Notifications</mdl-menu-item>
+                    </mdl-menu>
+                  </div>
+                </div>
               </div>
 
-              <div class="col-md-4" id="div-name">
-
-                <h6><a href="">{{item.username}}</a></h6>
-
-              </div>
-
-
-
-
-
-
-
-
-
-              <div class="col-md-2" id="div-name">
-                <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-                <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
-                  <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
-                  <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
-                  <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
-                  <mdl-menu-item>Turn off Notifications</mdl-menu-item>
-                </mdl-menu>
-              </div>
 
 
 
@@ -70,6 +67,25 @@
                 <h4 class="card-title">{{ item.postTtile}}</h4>
                 <hr>
                 <!--Text-->
+                <div >
+                  <tr>
+                    <td><i class="fa fa-map-marker" style="font-size: 44px; color: red" aria-hidden="true"></i></td>
+                    <td>{{item.location}}</td>
+                    <td>Location </td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-tags" style="font-size: 30px; color: blueviolet" aria-hidden="true"></i></td>
+                    <td>{{item.tags}}</td>
+                    <td>94</td>
+
+                  </tr>
+                  <tr>
+                    <td><a type="button" class="btn-floating btn-small btn-fb"><i class="fa fa-facebook"></i></a></td>
+                    <td><a type="button" class="btn-floating btn-small btn-gplus"><i class="fa fa-google-plus"></i></a></td>
+
+
+                  </tr>
+                </div>
                 <p class="card-text limitedtext" [innerHTML]="item.body"></p>
                 <div class="text-center" style="padding-bottom:30px">
                   <a class="btn btn-primary waves-effect waves-light" [routerLink]="['/profile/viewpost',item._id]">Read more</a>
@@ -77,17 +93,17 @@
 
 
                 <!--Social buttons-->
-                <div class="card-share col-lg-12">
+        <!--        <div class="card-share col-lg-12">
                   <div class="social-reveal">
-                    <!--Facebook-->
+                    &lt;!&ndash;Facebook&ndash;&gt;
                     <a type="button" class="btn-sm btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>
-                    <!--Twitter-->
+                    &lt;!&ndash;Twitter&ndash;&gt;
                     <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>
-                    <!--Google -->
+                    &lt;!&ndash;Google &ndash;&gt;
                     <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
                   </div>
                   <a class=" btn-sm btn-floating btn-action share-toggle primary-color-dark float-right waves-effect waves-light"><i class="fa fa-share-alt"></i></a>
-                </div>
+                </div>-->
                 <!--/Social buttons-->
               </div>
 

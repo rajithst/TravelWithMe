@@ -135,7 +135,7 @@
           </div>
           <div class="col-md-6">
             <div class="row list-group" *ngIf="Tresult">
-             
+
                 <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
               </div>
           </div>
@@ -169,3 +169,4 @@
 
 
 
+</div>

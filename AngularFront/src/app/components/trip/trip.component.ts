@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LocationPassService} from '../../shared/location-pass.service';
+declare var $: any;
 declare var google: any;
 
 @Component({
@@ -12,9 +13,17 @@ export class TripComponent implements OnInit {
 
   ids:{};
   constructor(private locationService:LocationPassService) { }
-
+  ngAfterViewInit(){
+    $(document).ready(function(){
+      $("#mytrip").modal('show');
+    });
+  }
+  pushmodal(){
+    console.log("wedanane");
+    $("#mytrip").modal('show');
+  }
   ngOnInit() {
-
+    $("#mytrip").modal('show');
     this.locationService.finalLocations.subscribe(
       data=> console.log(data)
     )
@@ -25,13 +34,13 @@ export class TripComponent implements OnInit {
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({draggable: true,
      panel: document.getElementById('right-panel')});
-     
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 7,
       center: {lat: 7.25, lng: 80.65}
     });
     directionsDisplay.setMap(map);
-    
+
 /*    calculateAndDisplayRoute(directionsService, directionsDisplay);
 
     function calculateAndDisplayRoute(directionsService, directionsDisplay) {
