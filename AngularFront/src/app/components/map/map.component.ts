@@ -13,14 +13,13 @@ declare var jQuery:any;
     .sebm-google-map-container {
        height: 500px;
      },
-     
-  `],
-  templateUrl:"./app.component.html",
- 
+   `],
+  templateUrl:"./map.component.html",
+
  providers : [ GoogleMapsAPIWrapper ]
 })
 
-export class AppComponent implements OnInit {
+export class MapComponent implements OnInit {
     public latitude: number;
     public longitude: number;
     public destinationInput: FormControl;
@@ -55,12 +54,12 @@ export class AppComponent implements OnInit {
       private _elementRef : ElementRef
     ) {
     }
-    
+
     ngOnInit() {
       //set google maps defaults
-      this.zoom = 4;
-      this.latitude = 39.8282;
-      this.longitude = -98.5795;
+      this.zoom = 8;
+      this.latitude = 7.25;
+      this.longitude = 80.5795;
       //this.iconurl = '../image/map-icon.png';
       this.iconurl = '../image/map-icon.png';
 
@@ -71,30 +70,30 @@ export class AppComponent implements OnInit {
       this.waypointOutput = new FormControl();
       //set current position
       this.setCurrentPosition();
-      
+
       //load Places Autocomplete
       this.mapsAPILoader.load().then(() => {
           let autocompleteInput = new google.maps.places.Autocomplete(this.pickupInputElementRef.nativeElement, {
-            types: ["address"]
+            types: ["geocode"]
           });
 
           let autocompleteOutput = new google.maps.places.Autocomplete(this.pickupOutputElementRef.nativeElement, {
-            types: ["address"]
+            types: ["geocode"]
           });
           let autocompleteWaypoint = new google.maps.places.Autocomplete(this.waypointOutputElementRef.nativeElement, {
             types:["address"]
           });
-        
+
                 this.setupPlaceChangedListener(autocompleteInput, 'ORG');
                 this.setupPlaceChangedListener(autocompleteOutput, 'DES');
                 this.setupPlaceChangedListener(autocompleteWaypoint,'WAY');
       });
     }
-    
+
     private setupPlaceChangedListener(autocomplete: any, mode: any ) {
       autocomplete.addListener("place_changed", () => {
             this.ngZone.run(() => {
-              
+
               //get the place result
               let place: google.maps.places.PlaceResult = autocomplete.getPlace();
               //verify result
@@ -102,23 +101,23 @@ export class AppComponent implements OnInit {
                 return;
               }
               if (mode === 'ORG') {
-                  this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; 
+                  this.vc.origin = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() };
                   this.vc.originPlaceId = place.place_id;
-              } 
+              }
               else if(mode==='WAY'){
                 this.vc.waypoints = place.place_id;
               }
-              
+
               else {
                   this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
                   this.vc.destinationPlaceId = place.place_id;
               }
-  
-              if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => { 
+
+              if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => {
                     this.vc.directionsDisplay = new google.maps.DirectionsRenderer;
-                  }); 
+                  });
             }
-          
+
               //Update the directions
               this.vc.updateDirections();
               this.zoom = 12;

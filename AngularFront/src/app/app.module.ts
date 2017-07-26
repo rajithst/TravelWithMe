@@ -152,7 +152,7 @@ const appRoute: Routes = [
   ],
 
   imports: [
-    
+
     AgmCoreModule.forRoot({
      		 	apiKey: "AIzaSyCuDoqzSKey934tYg_7x-qLSSbrnAm8Kps",
      		 	libraries: ["places"]
