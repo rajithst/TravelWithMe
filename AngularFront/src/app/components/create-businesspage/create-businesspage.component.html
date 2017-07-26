@@ -36,44 +36,19 @@
           <input type="email" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
           <!-- Subject -->
           <div class="form-inline">
-            <label><h6>Business Type</h6></label><br>
+
             <div class="btn-group">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Business Type</button>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="">Action</a>
-                <a class="dropdown-item" href="">Another action</a>
-                <a class="dropdown-item" href="">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="">Separated link</a>
+                <a class="dropdown-item"  [(ngModel)]="hotel">Hotel</a>
+                <a class="dropdown-item" [(ngModel)]="restaurant">Resturent</a>
+                <a class="dropdown-item" [(ngModel)]="traveleq">Travel Accessaries</a>
+                <div class="dropdown-divider" [(ngModel)]="guide"></div>
+                <a class="dropdown-item" [(ngModel)]="other">Separated link</a>
               </div>
             </div>
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio11" checked="checked"  name="hotel" [(ngModel)]="hotel">
-              <label for="radio11">Hotel</label>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="restaurant" [(ngModel)]="restaurant">
-              <label for="radio21">Resturent</label>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="traveleq" [(ngModel)]="traveleq">
-              <label for="radio21">Travel Accessaries</label>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="guide" [(ngModel)]="guide">
-              <label for="radio21">Guidence</label>
-            </fieldset>
-
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio31" name="other" [(ngModel)]="other">
-              <label for="radio31">Other</label>
-            </fieldset>
           </div>
         </div><!-- End Left Inputs -->
         <!-- Right Inputs -->
