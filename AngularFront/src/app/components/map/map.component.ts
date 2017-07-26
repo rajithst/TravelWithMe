@@ -3,7 +3,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './google-map.directive';
-
+declare var $: any;
 declare var google:any;
 declare var jQuery:any;
 
@@ -53,6 +53,7 @@ export class MapComponent implements OnInit {
     }
 
     ngOnInit() {
+      $("#tripcreate").modal('show');
       //set google maps defaults
       this.zoom = 8;
       this.latitude = 7.25;

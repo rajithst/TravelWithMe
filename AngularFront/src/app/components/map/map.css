@@ -86,8 +86,7 @@ center{
   margin-top:330px;
 }
 input {
-  position: relative;
-  z-index: 9999;
+
 }
 
 .sebm-google-map-container {

@@ -8,22 +8,37 @@
     <div class="col-md-8">
       <div [ngGrid]="{'resizeable': true, 'margins': [5, 10]}">
 
+
         <div class="col-md-12" *ngFor="let item of posts">
 
 
           <div class="card" mdl-shadow="2"  >
             <!--Card image-->
             <div class="card-header" id="card-header">
+              <div class="row">
+                <div class="colmd-3 pull-left">
+                  <div class="avatar">
+                    <img id="profile-circle" class="img-responsive" [src]="item.img">
+                  </div>
+                  <div id="div-name">
 
-              <div class="col-md-2">
-                <img id="profile-circle" [src]="item.img">
+                    <h6><a href="" class="pull-left">{{item.username}}</a></h6>
+
+                  </div>
+                </div>
+                <div class="col pull-right">
+                  <div class="col-md-2" id="div-name">
+                    <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+                    <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
+                      <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
+                      <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
+                      <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
+                      <mdl-menu-item>Turn off Notifications</mdl-menu-item>
+                    </mdl-menu>
+                  </div>
+                </div>
               </div>
 
-              <div class="col-md-4" id="div-name">
-
-                <h6><a href="">{{item.username}}</a></h6>
-
-              </div>
 
 
 
@@ -33,15 +48,9 @@
 
 
 
-              <div class="col-md-2" id="div-name">
-                <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
-                <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
-                  <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
-                  <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
-                  <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
-                  <mdl-menu-item>Turn off Notifications</mdl-menu-item>
-                </mdl-menu>
-              </div>
+
+
+
 
 
 
