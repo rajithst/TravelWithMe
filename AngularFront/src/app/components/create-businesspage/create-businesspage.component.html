@@ -25,15 +25,15 @@
         <!-- Left Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Name -->
-          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" />
+          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" / [(ngModel)]="cname">
           <!-- Email -->
           <div class="col-md-6">
-          <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" />
+          <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" [(ngModel)]="email" />
           </div>
           <div class="col-md-6">
-          <input type="email" name="mail" id="tel" required="required" class="form" placeholder="Telephone" />
+          <input type="email" name="mail" id="tel" required="required" class="form" placeholder="Telephone" [(ngModel)]="telephone" />
           </div>
-          <input type="email" name="mail" id="web" required="required" class="form" placeholder="Web Site" />
+          <input type="email" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
           <!-- Subject -->
           <div class="form-inline">
             <label><h6>Business Type</h6></label><br>

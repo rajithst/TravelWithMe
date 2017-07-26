@@ -17,7 +17,7 @@ export class SearchComponent implements OnInit {
   getSection(e){
 
     this.section = e.target.id;
-  
+    console.log(this.section)
 
 
   }

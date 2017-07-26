@@ -10,8 +10,6 @@ input:focus 		{ outline:none; }
 section {
   background: white !important;
 }
-<<<<<<< HEAD
-=======
 /* Input Styles */
 
 .form{
@@ -105,4 +103,3 @@ input {
   z-index: 9999;
 }
 
->>>>>>> 8fe5dfbcec1d1efe432d4f7cf1a233013407ac25
