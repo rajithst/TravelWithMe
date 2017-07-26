@@ -53,7 +53,7 @@ export class MapComponent implements OnInit {
     }
 
     ngOnInit() {
-      $("#tripcreate").modal('show');
+      // $("#tripcreate").modal('show');
       //set google maps defaults
       this.zoom = 8;
       this.latitude = 7.25;
