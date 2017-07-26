@@ -46,6 +46,11 @@ export class CreateBusinesspageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+      if (window.location.href.indexOf('reload')==-1) {
+        window.location.replace(window.location.href+'?reload');
+      }
+
     this.fautoplace='';
     this.zoom = 2;
     this.latitude = 7.7505019;
@@ -83,8 +88,8 @@ export class CreateBusinesspageComponent implements OnInit {
     this.bservices.submitPagedata(bpage).subscribe(data=>{
 
       if(data.success){
-        
-        let navextras: NavigationExtras={            
+
+        let navextras: NavigationExtras={
            queryParams:{"message":JSON.stringify(data.msg._id)}
          };
 

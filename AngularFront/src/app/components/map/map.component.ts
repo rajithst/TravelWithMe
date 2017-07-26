@@ -53,6 +53,11 @@ export class MapComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        if (window.location.href.indexOf('reload')==-1) {
+          window.location.replace(window.location.href+'?reload');
+        }
+
       // $("#tripcreate").modal('show');
       //set google maps defaults
       this.zoom = 8;
