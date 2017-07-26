@@ -12,11 +12,10 @@ export class BusinesspageService {
 
   ) { }
 
-  submitPagedata(user){
-
+  submitPagedata(bpage){
     let headers = new Headers();
     headers.append('Content-Type','application/json');
-    return this.http.post("http://localhost:3000/profile/createpage",user,{headers:headers}).map(res=>res.json());
+    return this.http.post("http://localhost:3000/profile/createpage",bpage,{headers:headers}).map(res=>res.json());
 
   }
 

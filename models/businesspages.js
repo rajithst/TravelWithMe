@@ -13,9 +13,12 @@ var businesspageSchema = new schema({
 
     userid:{type:Number},
     pagename:{type:String},
+    email:{type:String},
+    telephone:{type:String},
+    website:{type:String},
     businesstype:{type:String},
-    pageimage:{type:String},
-    targetareas:{type:String}
+    description:{type:String},
+    location:{type:String}
 });
 
 

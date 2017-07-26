@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-hotel-page',
   templateUrl: './hotel-page.component.html',
@@ -7,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelPageComponent implements OnInit {
 
-  constructor() { }
+  public message:any;
+    constructor(private route: ActivatedRoute) {
+        this.route.queryParams.subscribe(params => {
+        this.message = params["message"];
+        console.log(this.message);
+      
+         });
+    }
 
   ngOnInit() {
   }

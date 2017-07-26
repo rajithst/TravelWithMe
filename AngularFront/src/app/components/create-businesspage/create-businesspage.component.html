@@ -21,7 +21,7 @@
     <!-- Form Area -->
     <div class="contact-form">
       <!-- Form -->
-      <form id="contact-us" method="post" action="#" (submit)="pageCreate()">
+      <form id="contact-us" method="post" action="#" >
         <!-- Left Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Name -->
@@ -31,49 +31,21 @@
           <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" [(ngModel)]="email" />
           </div>
           <div class="col-md-6">
-          <input type="email" name="mail" id="tel" required="required" class="form" placeholder="Telephone" [(ngModel)]="telephone" />
+          <input type="text" name="mail" id="tel" required="required" class="form" placeholder="Telephone" [(ngModel)]="telephone" />
           </div>
-          <input type="email" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
+          <input type="text" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
           <!-- Subject -->
           <div class="form-inline">
             <label><h6>Business Type</h6></label><br>
-            <div class="btn-group">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basic dropdown</button>
 
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="">Action</a>
-                <a class="dropdown-item" href="">Another action</a>
-                <a class="dropdown-item" href="">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="">Separated link</a>
-              </div>
-            </div>
+            <select name="businesstype" [(ngModel)]="businesstype" id=""  class="mdb-select">
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio11" checked="checked"  name="hotel" [(ngModel)]="hotel">
-              <label for="radio11">Hotel</label>
-            </fieldset>
+              <option value="hotel">Hotel</option>
+              <option value="guidence">Guide</option>
+              <option value="equ">Equipments</option>
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="restaurant" [(ngModel)]="restaurant">
-              <label for="radio21">Resturent</label>
-            </fieldset>
+            </select>
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="traveleq" [(ngModel)]="traveleq">
-              <label for="radio21">Travel Accessaries</label>
-            </fieldset>
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21" name="guide" [(ngModel)]="guide">
-              <label for="radio21">Guidence</label>
-            </fieldset>
-
-
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio31" name="other" [(ngModel)]="other">
-              <label for="radio31">Other</label>
-            </fieldset>
           </div>
         </div><!-- End Left Inputs -->
         <!-- Right Inputs -->
@@ -85,17 +57,12 @@
           <div class="col-md-6">
             <div class="row  list-group" >
 
-              <li class="list-group-item list-group-item-action" *ngFor="let place of result"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
+              <li class="list-group-item list-group-item-action" *ngFor="let place of result"><a  (click)="addToTagfrom($event);false">{{ place.description}}</a></li>
 
 
             </div>
 
           </div>
-
-          <ul class="list-group" *ngIf="Fresult">
-
-            <li class="list-group-item" *ngFor="let place of result"><a id="{{place.place_id}}">{{ place.description}}</a></li>
-          </ul>
         </div><!-- End Right Inputs -->
 
   <div class="row">
@@ -105,7 +72,7 @@
         <!-- Bottom Submit -->
         <div class="relative fullwidth col-xs-12">
           <!-- Send Button -->
-          <button type="submit" id="submit" name="submit" class="form-btn semibold" [routerLink]="['/profile/hotel-page']">Create Page</button>
+          <button type="submit" id="submit" name="submit" class="form-btn semibold" (click)="pageCreate(); false">Create Page</button>
         </div><!-- End Bottom Submit -->
         <!-- Clear -->
         <div class="clear"></div>

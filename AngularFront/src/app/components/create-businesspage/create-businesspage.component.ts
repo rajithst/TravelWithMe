@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinesspageService } from '../../services/businesspage.service';
-import { Router,ActivatedRoute } from '@angular/router';
+import { Router,ActivatedRoute,NavigationExtras } from '@angular/router';
 import { GoogleAPIService } from '../../services/google-api.service';
 
 
@@ -23,6 +23,12 @@ export class CreateBusinesspageComponent implements OnInit {
   result:String;
   fautoplace:any;
   profile: any;
+  desc: any;
+  data: any;
+  uid:any;
+
+
+
   public latitude: number;
   public longitude: number;
   public zoom: number;
@@ -38,12 +44,6 @@ export class CreateBusinesspageComponent implements OnInit {
 
 
   ) { }
-
-
-
-
-
-
 
   ngOnInit() {
     this.fautoplace='';
@@ -61,26 +61,35 @@ export class CreateBusinesspageComponent implements OnInit {
     };
 
 
+    console.log(data)
+
   }
 
 
   pageCreate(){
 
-   const user = {
+   const bpage = {
 
-      id:this.id,
+       uid:"1298367140244041",
       pagename: this.pagename,
       email: this.email,
       telephone: this.telephone,
       website: this.website,
-      businesstype: this.businesstype,
+      businesstype: 'hotels',
+      description: this.desc,
+      location: this.location,
 
     };
-    this.bservices.submitPagedata(user).subscribe(data=>{
+    this.bservices.submitPagedata(bpage).subscribe(data=>{
 
       if(data.success){
-       console.log("done");
-        this.route.navigate(['/profile'])
+        
+        let navextras: NavigationExtras={            
+           queryParams:{"message":JSON.stringify(data.msg.userid)}
+         };
+
+
+        this.route.navigate(['/profile/hotel-page'],navextras)
       }else{
 
         console.log("error")
@@ -105,8 +114,6 @@ export class CreateBusinesspageComponent implements OnInit {
   addToTagfrom(e){
     console.log(e.target.innerText)
     this.fautoplace = e.target.innerText;
-    this.result = "";
-    this.location = "";
     return false;
   }
 
