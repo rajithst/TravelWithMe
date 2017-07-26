@@ -9,11 +9,8 @@ declare var jQuery:any;
 
 @Component({
   selector: 'app-root',
-   styles: [`
-    .sebm-google-map-container {
-       height: 500px;
-     },
-   `],
+  styleUrls: ['./map.css'],
+
   templateUrl:"./map.component.html",
 
  providers : [ GoogleMapsAPIWrapper ]
