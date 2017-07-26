@@ -19,6 +19,7 @@ const profile = require('./routes/profile');
 const blog = require('./routes/blog');
 const UserOption = require('./routes/userOptions');
 const googleService = require('./routes/googleService');
+const hotel = require('./routes/hotel');
 //dinesh
 const trip = require ('./routes/trip');
 
@@ -56,12 +57,11 @@ app.use('/profile',profile);
 app.use('/blog',blog);
 app.use('/googleAPI',googleService);
 app.use('/trip',trip);
-
+app.use('/hotel',hotel);
 app.get('/',function(req,res){
    res.send('index page');
 
 });
-
 
 app.listen(port, function(){
     console.log("server started on port"+port);

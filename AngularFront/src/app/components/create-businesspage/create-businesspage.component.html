@@ -25,7 +25,7 @@
         <!-- Left Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Name -->
-          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" [(ngModel)]="cname">
+          <input type="text" name="cname" id="name" required="required" class="form" placeholder="Company Name" [(ngModel)]="cname">
           <!-- Email -->
           <div class="col-md-6">
           <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" [(ngModel)]="email" />
@@ -38,14 +38,14 @@
           <div class="form-inline">
 
             <div class="btn-group">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Business Type</button>
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng>Business Type</button>
 
               <div class="dropdown-menu">
-                <a class="dropdown-item"  [(ngModel)]="hotel">Hotel</a>
-                <a class="dropdown-item" [(ngModel)]="restaurant">Resturent</a>
-                <a class="dropdown-item" [(ngModel)]="traveleq">Travel Accessaries</a>
-                <a class="dropdown-item" [(ngModel)]="guide">Guide</a>
-                <a class="dropdown-item" [(ngModel)]="other">Other</a>
+                <a class="dropdown-item"   name="hotel" >Hotel</a>
+                <a class="dropdown-item"  name="restaurant">Resturent</a>
+                <a class="dropdown-item"  name="traveleq" >Travel Accessaries</a>
+                <a class="dropdown-item" name="guide" >Guide</a>
+                <a class="dropdown-item"  name="other">Other</a>
               </div>
             </div>
 

@@ -30,3 +30,16 @@ module.exports.addBpagedata = function (BusinessPage,callback) {
     BusinessPage.save(callback);
 };
 
+module.exports.getpagedata = function (id,callback) {
+
+    Bpage.find({_id:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+};

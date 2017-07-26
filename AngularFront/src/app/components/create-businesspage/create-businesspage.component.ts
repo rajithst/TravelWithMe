@@ -12,7 +12,7 @@ import { GoogleAPIService } from '../../services/google-api.service';
 export class CreateBusinesspageComponent implements OnInit {
 
   user:any;
-  pagename:String;
+  cname:String;
   businesstype:Number;
   pageimage:String;
   targetareas:String;
@@ -71,7 +71,7 @@ export class CreateBusinesspageComponent implements OnInit {
    const bpage = {
 
        uid:"1298367140244041",
-      pagename: this.pagename,
+      pagename: this.cname,
       email: this.email,
       telephone: this.telephone,
       website: this.website,
@@ -85,7 +85,7 @@ export class CreateBusinesspageComponent implements OnInit {
       if(data.success){
         
         let navextras: NavigationExtras={            
-           queryParams:{"message":JSON.stringify(data.msg.userid)}
+           queryParams:{"message":JSON.stringify(data.msg._id)}
          };
 
 
