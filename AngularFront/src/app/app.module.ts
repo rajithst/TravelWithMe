@@ -9,8 +9,13 @@ import {MdlModule} from 'angular2-mdl';
 import { FroalaEditorModule, FroalaViewModule } from 'angular2-froala-wysiwyg';
 import { NgGridModule } from 'angular2-grid';
 import { ChartsModule } from 'ng2-charts';
+//dinesh
+import { AgmCoreModule } from "angular2-google-maps/core";
+import { FormControl, ReactiveFormsModule } from "@angular/forms";
+// import { MapComponent} from './components/map/map.component';
 /* components */
 import { AppComponent } from './app.component';
+import { MapComponent} from './components/map/map.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -63,7 +68,7 @@ import { GoogleAPIService } from './services/google-api.service';
 import { UserServicesService } from './services/user-services.service';
 import { LocationPassService } from './shared/location-pass.service';
 import { RatingComponent } from './components/rating/rating.component';
-
+import { DirectionsMapDirective } from './components/map/google-map.directive';
 
 
 
@@ -83,10 +88,11 @@ const appRoute: Routes = [
   {path: 'profile/settings/:id' , component: ProfilesettingsComponent , canActivate: [AuthGuard]},
   {path: 'profile/viewpost/:id' , component: ViewpostComponent , canActivate: [AuthGuard]},
   {path: 'profile/newsfeed' , component: NewsfeedComponent , canActivate: [AuthGuard]},
-  {path: 'profile/create/trip' , component: TripComponent , canActivate: [AuthGuard]},
+  {path: 'profile/create/trip' , component: MapComponent },
   {path: 'profile/pagemanager' , component: PagemanagerComponent },
   {path: 'profile/search' , component: SearchComponent },
   {path: 'profile/admin' , component: AdminComponent },
+  {path: 'profile/map', component:MapComponent},
   {path: 'profile/hotel-page' , component: HotelPageComponent , canActivate: [AuthGuard]},
   {path: 'profile/renting-page' , component:  RentingPageComponent , canActivate: [AuthGuard]},
 
@@ -136,8 +142,9 @@ const appRoute: Routes = [
     RentingPageItemsComponent,
     RentingPageGalleryComponent,
     RentingPageContactComponent,
-    RatingComponent
-
+    RatingComponent,
+    DirectionsMapDirective,
+    MapComponent
 
 
 
@@ -145,6 +152,11 @@ const appRoute: Routes = [
   ],
 
   imports: [
+
+    AgmCoreModule.forRoot({
+     		 	apiKey: "AIzaSyCuDoqzSKey934tYg_7x-qLSSbrnAm8Kps",
+     		 	libraries: ["places"]
+    			}),
 
     BrowserModule,
     FormsModule,
@@ -155,7 +167,8 @@ const appRoute: Routes = [
     /*FlashMessagesModule,*/
     RouterModule.forRoot(appRoute, { useHash: false }),
     FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    FroalaViewModule.forRoot(),
+    ReactiveFormsModule
 
 
 

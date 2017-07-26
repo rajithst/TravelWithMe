@@ -19,6 +19,8 @@ const profile = require('./routes/profile');
 const blog = require('./routes/blog');
 const UserOption = require('./routes/userOptions');
 const googleService = require('./routes/googleService');
+//dinesh
+const trip = require ('./routes/trip');
 
 
 const config = require('./config/database');
@@ -53,6 +55,7 @@ app.use('/users/option',UserOption);
 app.use('/profile',profile);
 app.use('/blog',blog);
 app.use('/googleAPI',googleService);
+app.use('/trip',trip);
 
 app.get('/',function(req,res){
    res.send('index page');

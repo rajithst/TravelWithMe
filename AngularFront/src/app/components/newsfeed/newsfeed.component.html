@@ -49,8 +49,6 @@
           </form>
         </div>-->
 
-              <!--</div>-->
-              <!--/Post data-->
 
 
 
@@ -89,7 +87,6 @@
   <!--/Social buttons-->
 
 
-  </div>
 
   <div class="card-block">
     <!--Title-->
@@ -103,20 +100,65 @@
     </div>
 
 
-              <!--Social buttons-->
-            <div class="card-share col-lg-12">
-              <div class="social-reveal">
-                <!--Facebook-->
-                <a type="button" class="btn-sm btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>
-                <!--Twitter-->
-                <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>
-                <!--Google -->
-                <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
-              </div>
-              <a class=" btn-sm btn-floating btn-action share-toggle primary-color-dark float-right waves-effect waves-light"><i class="fa fa-share-alt"></i></a>
+
+
+            <div class="col-md-2" id="div-name">
+              <button mdl-button #btn1="mdlButton" (click)="m1.toggle($event, btn1)" mdl-button-type="icon" mdl-ripple><mdl-icon>more_vert</mdl-icon></button>
+              <mdl-menu #m1="mdlMenu" mdl-menu-position="bottom-right" id="mdl">
+                <mdl-menu-item mdl-ripple (click)="action()">Hide Post</mdl-menu-item>
+                <mdl-menu-item mdl-ripple mdl-menu-item-full-bleed-divider>Report Post</mdl-menu-item>
+                <mdl-menu-item mdl-ripple disabled>Delete Post</mdl-menu-item>
+                <mdl-menu-item>Turn off Notifications</mdl-menu-item>
+              </mdl-menu>
             </div>
-            <!--/Social buttons-->
-  </div>
+
+
+
+
+
+          </div>
+          <div>
+
+            <div class="view overlay hm-white-slight col-lg-6">
+              <img src="{{ items.featured_img}}" class="img-fluid" alt="">
+              <br>
+
+              <a>
+                <div class="mask waves-effect waves-light"></div>
+              </a>
+
+              <!--Social buttons-->
+
+              <!--/Social buttons-->
+
+
+            </div>
+
+            <div class="card-block">
+              <!--Title-->
+              <h4 class="card-title">{{items.title}}</h4>
+              <hr>
+              <!--Text-->
+              <p class="card-text" [innerHTML]=" items.body"></p>
+              <div class="text-center" style="padding-bottom:30px">
+                <a class="btn btn-primary waves-effect waves-light" [routerLink]="['/profile/viewpost',items._id]">Read more</a>
+              </div>
+
+
+              <!--Social buttons-->
+              <div class="card-share col-lg-12">
+                <div class="social-reveal">
+                  <!--Facebook-->
+                  <a type="button" class="btn-sm btn-floating btn-fb waves-effect waves-light"><i class="fa fa-facebook"></i></a>
+                  <!--Twitter-->
+                  <a type="button" class="btn-floating btn-tw waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+                  <!--Google -->
+                  <a type="button" class="btn-floating btn-gplus waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+                </div>
+                <a class=" btn-sm btn-floating btn-action share-toggle primary-color-dark float-right waves-effect waves-light"><i class="fa fa-share-alt"></i></a>
+              </div>
+              <!--/Social buttons-->
+            </div>
 
   </div>
   <!--/.Card image-->
@@ -128,8 +170,18 @@
   <!--/.Card content-->
 </div>
 
+          <!--/Social buttons-->
+          <!--Card content-->
+
+          <!--/.Card content-->
+        </div>
+      </div>
 
 
+
+      <div class="col-md-12">
+        <app-post>
+        </app-post>
       </div>
 
 

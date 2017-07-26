@@ -84,11 +84,9 @@ module.exports.getresults = function (section,text,callback){
 
     if(section ==="profile"){
 
-        var regex= '/'+text+'/i';
-        console.log(regex)
-        var q = {name:regex}
+        var q = {name:new RegExp(text)};
         console.log(q);
-        SM.find({name:regex},function(err,docs){
+        SM.find(q,function(err,docs){
 
             if (err) throw err;
 

@@ -28,7 +28,7 @@
 
   <ul class="nav navbar-nav float-xs-right " >
     <li class="nav-item ">
-      <a class="nav-link" data-toggle="modal" data-target="#mytrip" ><i class="fa fa fa-plane" ></i><span class="hidden-sm-down">Plan A Trip</span></a>
+      <a class="nav-link" [routerLink]="['/profile/create/trip']"  ><i class="fa fa fa-plane" ></i><span class="hidden-sm-down">Plan A Trip</span></a>
     </li>
 
     <li class="nav-item ">
@@ -125,31 +125,24 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="row" *ngIf="Fresult">
+            <div class="row  list-group" *ngIf="Fresult">
 
-              <li *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
+              <li class="list-group-item list-group-item-action" *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
 
 
             </div>
 
           </div>
           <div class="col-md-6">
-            <div class="row" *ngIf="Tresult">
-              <div class="col-md-6">
-                <li *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
+            <div class="row list-group" *ngIf="Tresult">
+             
+                <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
               </div>
-
-
-            </div>
           </div>
         </div>
 
         <div class="col-md-6">
           <div id="set_dest">
-
-
-
-
 
           </div>
         </div>
