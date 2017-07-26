@@ -72,10 +72,16 @@ export class CreateBusinesspageComponent implements OnInit {
 
 
   pageCreate(){
+     const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id,
+      profilepic :this.profile.picture_large
+    };
 
    const bpage = {
 
-       uid:"1298367140244041",
+       uid:data.id,
       pagename: this.cname,
       email: this.email,
       telephone: this.telephone,
