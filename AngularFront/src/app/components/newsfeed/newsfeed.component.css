@@ -298,4 +298,11 @@ label.star:before {
 /*star rating*/
 
 
-
+.limitedtext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20em;     /* fallback */
+  max-height: 10em;      /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
