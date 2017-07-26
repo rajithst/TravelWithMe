@@ -43,3 +43,18 @@ module.exports.getpagedata = function (id,callback) {
 
     })
 };
+
+module.exports.getpages = function (id,callback) {
+
+    console.log({userid:id})
+    Bpage.find({userid:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+};
