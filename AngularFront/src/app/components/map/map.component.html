@@ -1,0 +1,22 @@
+ <app-sideview>
+
+</app-sideview>
+<app-navbar></app-navbar>
+<main class="Mymain">"
+ <div class="container">
+      <h1>Angular 2 Google Map Direction Display</h1>
+      <div class="form-group">
+        <input placeholder="Enter source location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupInput [formControl]="destinationInput">
+        <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
+        <input placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #waypoint [formControl]="waypointOutput" >
+      </div>
+       <sebm-google-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom" [styles]="mapCustomStyles">
+                <!-- <sebm-google-map-marker [latitude]="latitude" [longitude]="longitude" [iconUrl]="iconurl">
+                    <sebm-google-map-info-window>
+                        <strong>InfoWindow content</strong>
+                    </sebm-google-map-info-window>
+                </sebm-google-map-marker> -->
+                <sebm-google-map-directions [origin]="origin" [destination]="destination"  [waypoints] = "waypoints"></sebm-google-map-directions>
+              </sebm-google-map>
+    </div>
+</main>
