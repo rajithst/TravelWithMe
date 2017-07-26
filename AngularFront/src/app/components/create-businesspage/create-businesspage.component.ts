@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinesspageService } from '../../services/businesspage.service';
 import { Router,ActivatedRoute } from '@angular/router';
-
+import { GoogleAPIService } from '../../services/google-api.service';
 
 
 @Component({
@@ -16,6 +16,13 @@ export class CreateBusinesspageComponent implements OnInit {
   businesstype:Number;
   pageimage:String;
   targetareas:String;
+  email:String;
+  telephone:String;
+  website:String;
+  location:String;
+  result:String;
+  fautoplace:any;
+  profile: any;
   public latitude: number;
   public longitude: number;
   public zoom: number;
@@ -25,7 +32,8 @@ export class CreateBusinesspageComponent implements OnInit {
   constructor(
     private bservices:BusinesspageService,
     private route:Router,
-    private acroute: ActivatedRoute
+    private acroute: ActivatedRoute,
+    private googleApi:GoogleAPIService,
 
 
 
@@ -35,19 +43,22 @@ export class CreateBusinesspageComponent implements OnInit {
 
 
 
-  
+
 
   ngOnInit() {
-
+    this.fautoplace='';
     this.zoom = 2;
     this.latitude = 7.7505019;
     this.longitude = 80.1652569;
 
-    this.sub = this.acroute.params.subscribe(params => {
-      this.id = +params['me'];
-      console.log(this.id)
-
-    });
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+    const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id,
+      profilepic :this.profile.picture_large,
+      name :this.profile.name
+    };
 
 
   }
@@ -59,9 +70,11 @@ export class CreateBusinesspageComponent implements OnInit {
 
       id:this.id,
       pagename: this.pagename,
+      email: this.email,
+      telephone: this.telephone,
+      website: this.website,
       businesstype: this.businesstype,
-      pageimage:'test',
-      targetareas:"1,2,3,4"
+
     };
     this.bservices.submitPagedata(user).subscribe(data=>{
 
@@ -78,6 +91,23 @@ export class CreateBusinesspageComponent implements OnInit {
 
     });
 
+  }
+
+  getLocation(){
+
+    this.googleApi.getPlaces(this.location).subscribe(res=>{
+      this.result = res.data.predictions;
+      console.log(this.result)
+    })
+
+  }
+
+  addToTagfrom(e){
+    console.log(e.target.innerText)
+    this.fautoplace = e.target.innerText;
+    this.result = "";
+    this.location = "";
+    return false;
   }
 
 

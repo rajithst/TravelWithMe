@@ -21,11 +21,11 @@
     <!-- Form Area -->
     <div class="contact-form">
       <!-- Form -->
-      <form id="contact-us" method="post" action="#">
+      <form id="contact-us" method="post" action="#" (submit)="pageCreate()">
         <!-- Left Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Name -->
-          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" / [(ngModel)]="cname">
+          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" [(ngModel)]="cname">
           <!-- Email -->
           <div class="col-md-6">
           <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" [(ngModel)]="email" />
@@ -38,17 +38,28 @@
           <div class="form-inline">
             <label><h6>Business Type</h6></label><br>
             <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio11" checked="checked">
+              <input name="group1" type="radio" id="radio11" checked="checked"  name="hotel" [(ngModel)]="hotel">
               <label for="radio11">Hotel</label>
             </fieldset>
 
             <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21">
+              <input name="group1" type="radio" id="radio21" name="restaurant" [(ngModel)]="restaurant">
               <label for="radio21">Resturent</label>
             </fieldset>
 
             <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio31">
+              <input name="group1" type="radio" id="radio21" name="traveleq" [(ngModel)]="traveleq">
+              <label for="radio21">Travel Accessaries</label>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <input name="group1" type="radio" id="radio21" name="guide" [(ngModel)]="guide">
+              <label for="radio21">Guidence</label>
+            </fieldset>
+
+
+            <fieldset class="form-group">
+              <input name="group1" type="radio" id="radio31" name="other" [(ngModel)]="other">
               <label for="radio31">Other</label>
             </fieldset>
           </div>
@@ -56,15 +67,22 @@
         <!-- Right Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Message -->
-          <textarea name="message" id="message" class="form textarea"  placeholder="Description"></textarea>
-          <input type="email" name="mail" id="location" required="required" class="form" placeholder="Location" />
-          <ul class="list-group" *ngshow>
+          <textarea name="message" id="message" class="form textarea"  placeholder="Description" name="desc" [(ngModel)]="desc"></textarea>
+          <input placeholder="location" type="text" name="mail" id="location" required="required" class="form" placeholder="Location" (keyup)="getLocation()" [(ngModel)]="location" [value]="fautoplace" />
 
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+          <div class="col-md-6">
+            <div class="row  list-group" >
+
+              <li class="list-group-item list-group-item-action" *ngFor="let place of result"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
+
+
+            </div>
+
+          </div>
+
+          <ul class="list-group" *ngIf="Fresult">
+
+            <li class="list-group-item" *ngFor="let place of result"><a id="{{place.place_id}}">{{ place.description}}</a></li>
           </ul>
         </div><!-- End Right Inputs -->
 
