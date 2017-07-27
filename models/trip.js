@@ -4,25 +4,26 @@ const schema = mongoose.Schema;
 var async = require('async');
 var fs = require('fs');
 var TripSchema = new schema({
- 
-    waypoints:{type:Array},
+    name:{type:String},
+    waypoints:{type:String},
     from:{type:String},
-    To : {type:String}
+    to : {type:String}
+     
 
 });
 
 
 
-const Triptab =  module.exports = mongoose.model('Triptab',blogSchema);
+const Triptab =  module.exports = mongoose.model('Triptab',TripSchema);
 
 module.exports.addTrip = function (newTrip,callback) {
 
-     newTrip.save()
+     Triptab.create(newTrip,callback);
 
 }
 
 
-module.exports.getTrip = function (id,callback) {
-
-    Triptab.find(id,callback);
+module.exports.getTrip = function (callback) {
+     
+    Triptab.find(callback);
 };
