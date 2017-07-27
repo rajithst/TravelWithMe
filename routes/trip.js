@@ -12,6 +12,7 @@ router.get('/', function(req,res){
 
 router.post('/addtrips', function(req,res){
     var newTrip = {
+        name: req.body.name,
         waypoints : req.body.waypoints,
         from : req.body.from,
         to : req.body.to

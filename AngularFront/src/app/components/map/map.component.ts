@@ -4,7 +4,10 @@ import { BrowserModule } from "@angular/platform-browser";
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './google-map.directive';
 import { Http,Headers,RequestOptions,Response} from '@angular/http';
-declare var $: any;
+import {Trip} from '../class/trip.class';
+import {TripService} from '../../services/trip.service';
+import {ActivatedRoute,Params,Router} from '@angular/router';
+
 declare var google:any;
 declare var jQuery:any;
 
@@ -54,7 +57,11 @@ export class MapComponent implements OnInit {
       private ngZone: NgZone,
       private gmapsApi: GoogleMapsAPIWrapper,
       private _elementRef : ElementRef,
-      private http:Http
+      private http:Http,
+      public tripservice : TripService,
+      public route:ActivatedRoute,
+      public router:Router
+
     ) {
     }
 
@@ -88,15 +95,27 @@ export class MapComponent implements OnInit {
 
           let autocompleteOutput = new google.maps.places.Autocomplete(this.pickupOutputElementRef.nativeElement, {
             types: ["geocode"]
+             
           });
           let autocompleteWaypoint = new google.maps.places.Autocomplete(this.waypointOutputElementRef.nativeElement, {
             types:["address"]
           });
-
+                 
                 this.setupPlaceChangedListener(autocompleteInput, 'ORG');
                 this.setupPlaceChangedListener(autocompleteOutput, 'DES');
                 this.setupPlaceChangedListener(autocompleteWaypoint,'WAY');
       });
+     
+    }
+
+    model = new Trip();
+    addTrip(){
+      this.tripservice.addTrip(this.model)
+      .subscribe(()=>this.goback() )
+    }
+
+    goback(){
+      this.router.navigate(['/profile/create/trip'])
     }
 
     private setupPlaceChangedListener(autocomplete: any, mode: any ) {

@@ -65,8 +65,8 @@ export class DirectionsMapDirective {
 
   }
 
-  private getcomputeDistance(latLngA: any , latLngB: any ) 
+  private getcomputeDistance(latLngA: any , latLngC: any ) 
   {
-    return (google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngB) / 1000).toFixed(2);
+    return (google.maps.geometry.spherical.computeDistanceBetween(latLngA, latLngC) / 1000).toFixed(2);
   }
 }

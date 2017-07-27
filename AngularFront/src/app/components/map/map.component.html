@@ -1,4 +1,3 @@
-
 <app-sideview>
 
 </app-sideview>
@@ -16,7 +15,7 @@
                       <strong>InfoWindow content</strong>
                   </sebm-google-map-info-window>
               </sebm-google-map-marker> -->
-              <sebm-google-map-directions [origin]="origin" [destination]="destination"  [waypoints] = "waypoints"></sebm-google-map-directions>
+              <sebm-google-map-directions [origin]="origin" [destination]="destination" [waypoints]="waypoints"></sebm-google-map-directions>
             </sebm-google-map>
 
 
@@ -52,7 +51,8 @@
                     <div class="col-md-6" *ngFor="let item of roomsdata">
                       <div class="card animated fadeIn">
                         <a class="btn-floating btn-small blue pull-right waves-effect waves-light"><i class="fa fa-plus"></i></a>
-                        <img class="img-fluid" src="https://s-media-cache-ak0.pinimg.com/originals/fa/94/a5/fa94a5d7235d1c883a1adea1e3f7dd5e.jpg" alt="Card image cap">
+                        <img class="img-fluid" src="https://s-media-cache-ak0.pinimg.com/originals/fa/94/a5/fa94a5d7235d1c883a1adea1e3f7dd5e.jpg"
+                          alt="Card image cap">
                         <div class="card-block">
                           <h4 class="card-title">{{item.pagename}}</h4>
                           <p class="card-text">{{item.description}} </p>
@@ -79,7 +79,8 @@
                     <div class="col-md-6" *ngFor="let item of roomsdata">
                       <div class="card animated fadeIn">
                         <a class="btn-floating btn-small blue pull-right waves-effect waves-light"><i class="fa fa-plus"></i></a>
-                        <img class="img-fluid" src="https://s-media-cache-ak0.pinimg.com/originals/fa/94/a5/fa94a5d7235d1c883a1adea1e3f7dd5e.jpg" alt="Card image cap">
+                        <img class="img-fluid" src="https://s-media-cache-ak0.pinimg.com/originals/fa/94/a5/fa94a5d7235d1c883a1adea1e3f7dd5e.jpg"
+                          alt="Card image cap">
 
                         <div class="card-block">
                           <h4 class="card-title">{{item.pagename}}</h4>
@@ -112,7 +113,7 @@
                   <img [src]="items.icon">
 
                 </div>
-              
+
 
 
               </div>
@@ -121,7 +122,9 @@
             <!--Panel 3-->
             <div class="tab-pane fade " id="panel7" role="tabpanel">
               <br>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima, soluta doloribus reiciendis
+                molestiae placeat unde eos molestias. Quisquam aperiam, pariatur. Tempora, placeat ratione porro voluptate
+                odit minima.</p>
             </div>
             <!--/.Panel 3-->
           </div>
@@ -142,7 +145,7 @@
             <!--/First column-->
 
             <!--Second column-->
-            <div class="col-md-7 m-b-r wow fadeIn" data-wow-delay="0.2s" >
+            <div class="col-md-7 m-b-r wow fadeIn" data-wow-delay="0.2s">
               <!--Excerpt-->
               <h5 class="teal-text "><i class="fa fa-money "></i>Blogs</h5>
               <h4>{{item.postTtile}}</h4>
@@ -174,7 +177,8 @@
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia
+                  maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
               </div>
             </div>
 
@@ -192,7 +196,8 @@
                   <li><i class="fa fa-star amber-text"></i></li>
                   <li><i class="fa fa-star amber-text"></i></li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia
+                  maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
               </div>
             </div>
 
@@ -210,7 +215,8 @@
                   <li><i class="fa fa-star amber-text"></i></li>
                   <li><i class="fa fa-star"></i></li>
                 </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia
+                  maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
               </div>
             </div>
 
@@ -236,20 +242,26 @@
             <div class="card-block text-center">
               <!--Title-->
               <h4 class="card-title"><strong>Create Trip Here</strong></h4>
+              <form (submit)="addTrip()">
+                <label for="tripname">Trip Name</label>
+                <input id="tripname" placeholder="Trip Name" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off"
+                  spellcheck="off" type="text" class="form-control form" [(ngModel)]="model.name" name="name" />
+                <label for="start">Start Point</label>
+                <input id="start" placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off"
+                  spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" [(ngModel)]="model.from"
+                  name="form" />
+                <label for="end">End Point</label>
+                <input id="end" placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form"
+                  #pickupOutput [formControl]="destinationOutput" (keyup)="getDestinationLocation($event)" [(ngModel)]="model.to"
+                  name="to" /><br>
+                <label for="waypoint">Wayoints</label>
+                <input id="waypoint" placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form"
+                  #waypoint [formControl]="waypointOutput" [(ngModel)]="model.waypoints" name="waypoints" />
+                <div class="text-center">
+                  <button class="btn btn-outline-info btn-rounded waves-effect" type="submit" >Create</button>
+                </div>
 
-              <label for="tripname">Trip Name</label>
-              <input id="tripname"  placeholder="Trip Name" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form"  />
-              <label  for="start">Start Point</label>
-              <input  id="start" placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
-              <label for="end">End Point</label>
-              <input id="end" placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" (keyup)="getDestinationLocation($event)" /><br>
-              <label  for="waypoint">Wayoints</label>
-              <input id="waypoint" placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #waypoint [formControl]="waypointOutput" />
-              <div class="text-center">
-                <a class="btn btn-outline-info btn-rounded waves-effect">Create</a>
-              </div>
-
-
+              </form>
 
             </div>
             <!--/.Card content-->
@@ -259,42 +271,42 @@
         </div>
 
         <!--<div class="col-md-12">-->
-          <!--<div class="weather-card one">-->
-            <!--<div class="top">-->
-              <!--<div class="wrapper mask waves-effect waves-light">-->
-                <!--<div class="mynav">-->
-                  <!--<a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>-->
-                  <!--<a href="javascript:;"><span class="lnr lnr-cog"></span></a>-->
-                <!--</div>-->
-                <!--<h1 class="heading">Clear night</h1>-->
-                <!--<h3 class="location">Dhaka, Bangladesh</h3>-->
-                <!--<p class="temp">-->
-                  <!--<span class="temp-value">20</span>-->
-                  <!--<span class="deg">0</span>-->
-                  <!--<a href="javascript:;"><span class="temp-type">C</span></a>-->
-                <!--</p>-->
-              <!--</div>-->
-            <!--</div>-->
-            <!--<div class="bottom">-->
-              <!--<div class="wrapper">-->
-                <!--<ul class="forecast">-->
-                  <!--<a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>-->
-                  <!--<li class="active">-->
-                    <!--<span class="date">Yesterday</span>-->
-                    <!--<span class="lnr lnr-sun condition">-->
-									<!--<span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>-->
-								<!--</span>-->
-                  <!--</li>-->
-                  <!--<li>-->
-                    <!--<span class="date">Tomorrow</span>-->
-                    <!--<span class="lnr lnr-cloud condition">-->
-									<!--<span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>-->
-								<!--</span>-->
-                  <!--</li>-->
-                <!--</ul>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</div>-->
+        <!--<div class="weather-card one">-->
+        <!--<div class="top">-->
+        <!--<div class="wrapper mask waves-effect waves-light">-->
+        <!--<div class="mynav">-->
+        <!--<a href="javascript:;"><span class="lnr lnr-chevron-left"></span></a>-->
+        <!--<a href="javascript:;"><span class="lnr lnr-cog"></span></a>-->
+        <!--</div>-->
+        <!--<h1 class="heading">Clear night</h1>-->
+        <!--<h3 class="location">Dhaka, Bangladesh</h3>-->
+        <!--<p class="temp">-->
+        <!--<span class="temp-value">20</span>-->
+        <!--<span class="deg">0</span>-->
+        <!--<a href="javascript:;"><span class="temp-type">C</span></a>-->
+        <!--</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="bottom">-->
+        <!--<div class="wrapper">-->
+        <!--<ul class="forecast">-->
+        <!--<a href="javascript:;"><span class="lnr lnr-chevron-up go-up"></span></a>-->
+        <!--<li class="active">-->
+        <!--<span class="date">Yesterday</span>-->
+        <!--<span class="lnr lnr-sun condition">-->
+        <!--<span class="temp">23<span class="deg">0</span><span class="temp-type">C</span></span>-->
+        <!--</span>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<span class="date">Tomorrow</span>-->
+        <!--<span class="lnr lnr-cloud condition">-->
+        <!--<span class="temp">21<span class="deg">0</span><span class="temp-type">C</span></span>-->
+        <!--</span>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
 
         <div class="col-md-12 card scrollable">
@@ -308,7 +320,9 @@
                 <mdl-icon mdl-list-item-avatar>person</mdl-icon>
                 <span>Bryan Cranston</span>
               </mdl-list-item-primary-content>
-              <a href="#"><mdl-icon>star</mdl-icon></a>
+              <a href="#">
+                <mdl-icon>star</mdl-icon>
+              </a>
             </mdl-list-item>
 
             <mdl-list-item mdl-ripple>
@@ -316,7 +330,9 @@
                 <mdl-icon mdl-list-item-avatar>person</mdl-icon>
                 <span>Bryan Cranston</span>
               </mdl-list-item-primary-content>
-              <a href="#"><mdl-icon>star</mdl-icon></a>
+              <a href="#">
+                <mdl-icon>star</mdl-icon>
+              </a>
             </mdl-list-item>
 
             <mdl-list-item mdl-ripple>
@@ -324,7 +340,9 @@
                 <mdl-icon mdl-list-item-avatar>person</mdl-icon>
                 <span>Bryan Cranston</span>
               </mdl-list-item-primary-content>
-              <a href="#"><mdl-icon>star</mdl-icon></a>
+              <a href="#">
+                <mdl-icon>star</mdl-icon>
+              </a>
             </mdl-list-item>
 
             <mdl-list-item mdl-ripple>
@@ -332,7 +350,9 @@
                 <mdl-icon mdl-list-item-avatar>person</mdl-icon>
                 <span>Aaron Paul</span>
               </mdl-list-item-primary-content>
-              <a href="#"><mdl-icon>star</mdl-icon></a>
+              <a href="#">
+                <mdl-icon>star</mdl-icon>
+              </a>
             </mdl-list-item>
 
             <mdl-list-item mdl-ripple>
@@ -341,7 +361,9 @@
                 <span>Bob Odenkirk</span>
               </mdl-list-item-primary-content>
               <mdl-list-item-secondary-content>
-                <a href="#"><mdl-icon>star</mdl-icon></a>
+                <a href="#">
+                  <mdl-icon>star</mdl-icon>
+                </a>
               </mdl-list-item-secondary-content>
             </mdl-list-item>
           </mdl-list>
@@ -354,14 +376,12 @@
 
 
   </div>
-  <div class="modal animated bounceInLeft" id="tripcreate" tabindex="-1" role="dialog"
-       aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal animated bounceInLeft" id="tripcreate" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal Header -->
         <div class="modal-header">
-          <button type="button" class="close"
-                  data-dismiss="modal">
+          <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
             <span class="sr-only">Close</span>
           </button>
@@ -377,20 +397,22 @@
 
             <div class="col-md-6">
               <div class="md-form">
-                <input placeholder="{{this.fautoplace}}" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()" name="flocation" [(ngModel)]="flocation">
+                <input placeholder="{{this.fautoplace}}" type="text" id="From" class="form-control" required="" (keyup)="getFromLocation()"
+                  name="flocation" [(ngModel)]="flocation">
                 <label for="From" class="">From</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="md-form">
-                <input placeholder=" {{this.tautoplace}}" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()" name="tlocation" [(ngModel)]="tlocation" #origin>
+                <input placeholder=" {{this.tautoplace}}" type="text" id="to" class="form-control" required="" (keyup)="getToLocation()"
+                  name="tlocation" [(ngModel)]="tlocation" #origin>
                 <label for="to" class="">To</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="row  list-group" *ngIf="Fresult">
 
-                <li class="list-group-item list-group-item-action" *ngFor="let place of Fresult"><a  (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
+                <li class="list-group-item list-group-item-action" *ngFor="let place of Fresult"><a (click)="addToTagfrom($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
 
 
               </div>
@@ -399,7 +421,7 @@
             <div class="col-md-6">
               <div class="row list-group" *ngIf="Tresult">
 
-                <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}" >{{ place.description}}</a></li>
+                <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
               </div>
             </div>
           </div>
@@ -419,11 +441,10 @@
 
         <!-- Modal Footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-default"
-                  data-dismiss="modal">
+          <button type="button" class="btn btn-default" data-dismiss="modal">
             Close
           </button>
-          <button type="button" class="btn btn-primary"  data-dismiss="modal"  [routerLink]="['/profile/create/trip']" (click)="callLocationPass()">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/profile/create/trip']" (click)="callLocationPass()">
             Let's Go
           </button>
         </div>
