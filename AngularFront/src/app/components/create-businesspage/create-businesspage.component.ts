@@ -47,9 +47,7 @@ export class CreateBusinesspageComponent implements OnInit {
 
   ngOnInit() {
 
-      if (window.location.href.indexOf('reload')==-1) {
-        window.location.replace(window.location.href+'?reload');
-      }
+     
 
     this.fautoplace='';
     this.zoom = 2;

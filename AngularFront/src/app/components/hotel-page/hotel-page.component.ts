@@ -30,7 +30,7 @@ export class HotelPageComponent implements OnInit {
     var newstr = JSON.parse(str);
 
     this.http.get("http://localhost:3000/hotel/gethoteldata/"+newstr).subscribe(data=>{
-      this.hoteldata = data.json().docs[0];
+      this.hoteldata = data.json().docs;
       let user = "Rajith"
       console.log(this.hoteldata)
     })

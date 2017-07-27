@@ -32,9 +32,7 @@ export class NewsfeedComponent implements OnInit{
   ngOnInit() {
 
 
-      if (window.location.href.indexOf('reload')==-1) {
-        window.location.replace(window.location.href+'?reload');
-      }
+    
 
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
