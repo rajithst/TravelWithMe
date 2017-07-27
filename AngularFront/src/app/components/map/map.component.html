@@ -21,12 +21,7 @@
 
 
           </div>
-          <div class="card" padding >
-            <h3>Fill Here</h3>
-            <input  placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
-            <input placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" />
-            <input placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #waypoint [formControl]="waypointOutput" />
-          </div>
+
           <!-- Nav tabs -->
           <ul class="nav nav-tabs tabs-3 indigo" role="tablist">
             <li class="nav-item">
@@ -256,17 +251,20 @@
             <!--Card content-->
             <div class="card-block text-center">
               <!--Title-->
-              <h4 class="card-title"><strong>Pasikuda</strong></h4>
+              <h4 class="card-title"><strong>Create Trip Here</strong></h4>
 
-              <ul class="list-group">
-                <li class="list-group-item">Address</li>
-                <li class="list-group-item"> Ratings</li>
-                <li class="list-group-item"><div class="chip">
-                  <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-6.jpg" alt="Contact Person">Hiking
-                </div></li>
-                <li class="list-group-item"><a class="btn btn-default">Reviews</a></li>
-                <li class="list-group-item">Vestibulum at eros</li>
-              </ul>
+              <label for="tripname">Trip Name</label>
+              <input id="tripname"  placeholder="Trip Name" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
+              <label  for="start">Start Point</label>
+              <input  id="start" placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
+              <label for="end">End Point</label>
+              <input id="end" placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" /><br>
+              <label  for="waypoint">Wayoints</label>
+              <input id="waypoint" placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #waypoint [formControl]="waypointOutput" />
+              <div class="text-center">
+                <a class="btn btn-outline-info btn-rounded waves-effect">Create</a>
+              </div>
+
 
 
             </div>

@@ -33,25 +33,14 @@
                 <h2>{{postdata.postTtile}}</h2>
                 <p>Written by <a>{{postdata.username}}</a>, 26.03.2016</p>
                 <div class="chip pull-right">
-                  Tag 1
+                  Religious
                 </div>
                 <div class="chip pull-right">
                   Tag 2
                 </div>
 
                 <div class="stars">
-                  <form action="">
-                    <input class="star star-5" id="star-5" type="radio" name="star" style="visibility:hidden;" />
-                    <label class="star star-5" for="star-5"></label>
-                    <input class="star star-4" id="star-4" type="radio" name="star"/>
-                    <label class="star star-4" for="star-4"></label>
-                    <input class="star star-3" id="star-3" type="radio" name="star"/>
-                    <label class="star star-3" for="star-3"></label>
-                    <input class="star star-2" id="star-2" type="radio" name="star"/>
-                    <label class="star star-2" for="star-2"></label>
-                    <input class="star star-1" id="star-1" type="radio" name="star"/>
-                    <label class="star star-1" for="star-1"></label>
-                  </form>
+
                 </div>
 
               </div>
@@ -59,7 +48,7 @@
 
               <!--Post text-->
               <div class="post-text" [innerHTML]="postdata.body">
-              
+
               </div>
               <!--/Post text-->
 
@@ -89,7 +78,7 @@
       <div class="col-lg-4">
         <!--/.prof card-->
         <!--Rotating card-->
-        <div class="card-wrapper  ">
+        <div class="card-wrapper" *ngIf="postdata" >
           <div class="row">
           <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
             <div class="flipper">
@@ -101,8 +90,8 @@
                 <div class="avatar"><img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" class="rounded-circle img-responsive">
                 </div>
                 <!--Content-->
-                <div class="card-block" align="center">
-                  <h4>Kavindu Edirisinghe</h4>
+                <div class="card-block" align="center" >
+                  <h4>{{postdata.username}}</h4>
                   <p>Traveller</p>
                   <!--Triggering button-->
 
@@ -124,12 +113,12 @@
                   <li><a class="icons-sm dribbble-ic"><i class="fa fa-dribbble"></i></a></li>
                 </ul>
                 <!--Triggering button-->
-
+                <a class="btn btn-success btn-rounded waves-effect waves-light" >Subscribe</a>
                 <!-- back content -->
               </div>
             </div></div>
 
-            <div class="upmargin"   align="center"><a class="btn btn-default btn-rounded waves-effect waves-light"  >Subscribe</a></div>
+
 
 
           </div>
@@ -317,102 +306,100 @@
       <!--Section: Comments header-->
 
       <!--comments blocks-->
-      <div class="row">
-        <div>
-          <section>
-            <div class="comments-list row">
-              <!--First row-->
-              <div class="row col-md-5 card" style="margin: 20px 0px 0px 20px;">
-                <!--Image column-->
-                <div class="col-md-12 col-sm-2 col-xs-12">
-                  <img src="http://mdbootstrap.com/images/avatars/avatar-1.jpg">
-                </div>
-                <!--/.Image column-->
+      <div class="row ">
+        <div >
+          <div class="col-md-8" >
+            <!--First review-->
+            <div class="media mb-1">
+              <a class="media-left waves-light">
+                <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">John Doe</h4>
 
-                <!--Content column-->
-                <div class="col-md-12 col-sm-10 col-xs-12">
-                  <a><h3 class="user-name">Danny Johnson</h3></a>
-
-                  <div class="card-data">
-                    <ul>
-                      <li class="comment-date"><i class="fa fa-clock-o"></i> 05/10/2015</li>
-                    </ul>
-                  </div>
-
-                  <input type="checkbox" class="read-more-state" id="comment-1" />
-
-                  <label for="comment-1" class="read-more-trigger"></label>
-                  <p class="comment-text read-more-wrap">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<span class="read-more-target"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                                        sint occaecat cupidatat non proident.</span></p>
-
-                </div>
-                <!--/.Content column-->
-
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
               </div>
-              <!--/.First row-->
-
-              <!--Second row-->
-              <div class="row col-md-5 card" style="margin: 20px 0px 0px 20px;">
-                <!--Image column-->
-                <div class="col-md-12 col-sm-2 col-xs-12">
-                  <img src="http://mdbootstrap.com/images/avatars/avatar-2.jpg">
-                </div>
-                <!--/.Image column-->
-
-                <!--Content column-->
-                <div class="col-md-12 col-sm-10 col-xs-12">
-                  <a><h3 class="user-name">Marta Tev</h3></a>
-
-                  <div class="card-data">
-                    <ul>
-                      <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
-                    </ul>
-                  </div>
-                  <input type="checkbox" class="read-more-state" id="comment-2" />
-                  <p></p>
-                  <label for="comment-2" class="read-more-trigger"></label>
-                  <p class="comment-text  read-more-wrap">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,<span class="read-more-target"> totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur.</span></p>
-
-                </div>
-                <!--/.Content column-->
-
-              </div>
-              <!--/.Second row-->
-
-              <!--Third row-->
-              <div class="row col-md-5 card" style="margin: 20px 0px 0px 20px;">
-                <!--Image column-->
-                <div class="col-md-12 col-sm-2 col-xs-12">
-                  <img src="http://mdbootstrap.com/images/avatars/img%20(1).jpg">
-                </div>
-                <!--/.Image column-->
-
-                <!--Content column-->
-                <div class="col-md-12 col-sm-10 col-xs-12">
-                  <a><h3 class="user-name">Anna Maria</h3></a>
-
-                  <div class="card-data">
-                    <ul>
-                      <li class="comment-date"><i class="fa fa-clock-o"></i> 17/10/2015</li>
-                    </ul>
-                  </div>
-                  <input type="checkbox" class="read-more-state" id="comment-3" />
-                  <p></p>
-                  <label for="comment-3" class="read-more-trigger"></label>
-                  <p class="comment-text read-more-wrap">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque<span class="read-more-target"> corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt
-                                        in culpa qui officia.</span>
-                  </p>
-
-                </div>
-                <!--/.Content column-->
-
-              </div>
-              <!--/.Third row-->
-
             </div>
-          </section>
-          <!--/Section: Comments list-->
+
+            <!--Second review-->
+            <div class="media mb-1">
+              <a class="media-left waves-light">
+                <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-14.jpg" alt="Generic placeholder image">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Nathan Casie</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+              </div>
+            </div>
+
+            <!--Second review-->
+            <div class="media mb-1">
+              <a class="media-left waves-light">
+                <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-15.jpg" alt="Generic placeholder image">
+              </a>
+              <div class="media-body">
+                <h4 class="media-heading">Dave Snow</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi cupiditate temporibus iure soluta. Quasi mollitia maxime nemo quam accusamus possimus, voluptatum expedita assumenda. Earum sit id ullam eum vel delectus!</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-4">
+            <div class="contact-form">
+              <!-- Form -->
+              <form id="contact-us" method="post" action="#" >
+                <!-- Left Inputs -->
+                <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
+                  <!-- Name -->
+                  <input type="text" name="cname" id="name" required="required" class="form" placeholder="Company Name" [(ngModel)]="cname">
+                  <!-- Email -->
+                  <input type="text" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
+                  <!-- Subject -->
+
+                </div><!-- End Left Inputs -->
+                <!-- Right Inputs -->
+                <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
+                  <!-- Message -->
+                  <textarea name="message" id="message" class="form textarea"  placeholder="Description" name="desc" [(ngModel)]="desc"></textarea>
+                  <input placeholder="location" type="text" name="mail" id="location" required="required" class="form" placeholder="Location" (keyup)="getLocation()" [(ngModel)]="location" [value]="fautoplace" />
+
+                  <div class="col-md-6">
+                    <div class="row  list-group" >
+
+                      <li class="list-group-item list-group-item-action" *ngFor="let place of result"><a  (click)="addToTagfrom($event);false">{{ place.description}}</a></li>
+
+
+                    </div>
+
+                  </div>
+                </div><!-- End Right Inputs -->
+
+                <div class="row">
+
+
+                </div>
+                <!-- Bottom Submit -->
+                <div class="relative fullwidth col-xs-12">
+                  <!-- Send Button -->
+                  <button type="submit" id="submit" name="submit" class="form-btn semibold" (click)="pageCreate(); false">Create Page</button>
+                </div><!-- End Bottom Submit -->
+                <!-- Clear -->
+                <div class="clear"></div>
+
+              </form>
+
+              <!-- Your Mail Message -->
+              <div class="mail-message-area">
+                <!-- Message -->
+                <div class="alert gray-bg mail-message not-visible-message">
+                  <strong>Thank You !</strong> Your email has been delivered.
+                </div>
+              </div>
+
+            </div><!-- End Contact Form Area -->
+          </div>
         </div>
       </div>
       <!--comments blocks-->
