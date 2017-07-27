@@ -11,9 +11,9 @@ export class AppComponent {
   constructor(private auth: Auth0Service) {}
 
   ngOnInit(){
-    if (window.location.href.indexOf('reload')==-1) {
-      window.location.replace(window.location.href+'?reload');
-    }
+    // if (window.location.href.indexOf('reload')==-1) {
+    //   window.location.replace(window.location.href+'?reload');
+    // }
   }
 
   title = 'app works!';
