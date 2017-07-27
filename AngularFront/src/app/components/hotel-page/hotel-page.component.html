@@ -157,7 +157,7 @@
       <!--Footer-->
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" (click)="addRoom();false">Save changes</button>
       </div>
     </div>
     <!--/.Content-->
@@ -278,15 +278,15 @@
                                       <tbody>
 
                                           <!--First row-->
-                                          <tr>
+                                          <tr *ngFor="let room of sroomdata">
                                               <th scope="row">
                                                   <img src="assets/img/A1.jpg" alt="" class="img-fluid">
                                               </th>
                                               <td>
-                                                  <h5><strong>Standard Double</strong></h5>
+                                                  <h5><strong>{{room.roomname}}</strong></h5>
                                                   <p class="text-muted">Full Board</p>
                                               </td>
-                                              <td>2 Person</td>
+                                              <td>{{room.size}} Person</td>
                                               <td>
                                                   <table><tbody>
                                                       <tr>
@@ -304,38 +304,13 @@
                                                   </tbody></table>
 
                                               </td>
-                                              <td>Rs.5000</td>
+                                              <td>Rs.{{room.price}}</td>
                                             <td><a class="btn-floating btn-large red"><i class="fa fa-trash-o"></i></a></td>
                                           </tr>
                                           <!--/First row-->
 
                                           <!--Second row-->
-                                          <tr>
-
-                                              <th scope="row">
-                                                  <img src="assets/img/A2.jpg" alt="" class="img-fluid">
-                                              </th>
-                                              <td>
-                                                  <h5><strong>Private Cottages</strong></h5>
-                                                  <p class="text-muted">Full Board</p>
-                                              </td>
-                                              <td>2 Person</td>
-                                              <td>
-                                                  <table><tbody>
-                                                      <tr>
-                                                          <td>Attached Bathroom</td>
-                                                          <td><i class="fa fa-check" aria-hidden="true"></i></td>
-                                                      </tr>
-                                                      <tr>
-                                                          <td>Hot Water</td>
-                                                          <td><i class="fa fa-check" aria-hidden="true"></i></td>
-                                                      </tr>
-                                                  </tbody></table>
-
-                                              </td>
-                                              <td>Rs.6000</td>
-                                            <td><a class="btn-floating btn-large red"><i class="fa fa-trash-o"></i></a></td>
-                                          </tr>
+                                    
                                           <!--/Second row-->
 
                                       </tbody>
