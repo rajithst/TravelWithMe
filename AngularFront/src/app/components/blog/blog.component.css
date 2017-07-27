@@ -20,6 +20,7 @@ input#file {
 
 .mdl-card{
   width:10rem;
+  position: absolute   !important;
 }
 .btn-floating {
   display: inline-block;
