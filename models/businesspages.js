@@ -13,9 +13,12 @@ var businesspageSchema = new schema({
 
     userid:{type:Number},
     pagename:{type:String},
+    email:{type:String},
+    telephone:{type:String},
+    website:{type:String},
     businesstype:{type:String},
-    pageimage:{type:String},
-    targetareas:{type:String}
+    description:{type:String},
+    location:{type:String}
 });
 
 
@@ -27,3 +30,31 @@ module.exports.addBpagedata = function (BusinessPage,callback) {
     BusinessPage.save(callback);
 };
 
+module.exports.getpagedata = function (id,callback) {
+
+    Bpage.find({_id:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+};
+
+module.exports.getpages = function (id,callback) {
+
+    console.log({userid:id})
+    Bpage.find({userid:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+};

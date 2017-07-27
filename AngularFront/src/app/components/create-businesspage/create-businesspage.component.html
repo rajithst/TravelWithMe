@@ -21,51 +21,51 @@
     <!-- Form Area -->
     <div class="contact-form">
       <!-- Form -->
-      <form id="contact-us" method="post" action="#">
+      <form id="contact-us" method="post" action="#" >
         <!-- Left Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Name -->
-          <input type="text" name="name" id="name" required="required" class="form" placeholder="Company Name" / [(ngModel)]="cname">
+          <input type="text" name="cname" id="name" required="required" class="form" placeholder="Company Name" [(ngModel)]="cname">
           <!-- Email -->
           <div class="col-md-6">
           <input type="email" name="mail" id="mail" required="required" class="form" placeholder="Email" [(ngModel)]="email" />
           </div>
           <div class="col-md-6">
-          <input type="email" name="mail" id="tel" required="required" class="form" placeholder="Telephone" [(ngModel)]="telephone" />
+          <input type="text" name="mail" id="tel" required="required" class="form" placeholder="Telephone" [(ngModel)]="telephone" />
           </div>
-          <input type="email" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
+          <input type="text" name="mail" id="web" required="required" class="form" placeholder="Web Site" [(ngModel)]="website" />
           <!-- Subject -->
           <div class="form-inline">
-            <label><h6>Business Type</h6></label><br>
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio11" checked="checked">
-              <label for="radio11">Hotel</label>
-            </fieldset>
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio21">
-              <label for="radio21">Resturent</label>
-            </fieldset>
+            <div class="btn-group">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng>Business Type</button>
 
-            <fieldset class="form-group">
-              <input name="group1" type="radio" id="radio31">
-              <label for="radio31">Other</label>
-            </fieldset>
+              <div class="dropdown-menu">
+                <a class="dropdown-item"   name="hotel" >Hotel</a>
+                <a class="dropdown-item"  name="restaurant">Resturent</a>
+                <a class="dropdown-item"  name="traveleq" >Travel Accessaries</a>
+                <a class="dropdown-item" name="guide" >Guide</a>
+                <a class="dropdown-item"  name="other">Other</a>
+              </div>
+            </div>
+
           </div>
         </div><!-- End Left Inputs -->
         <!-- Right Inputs -->
         <div class="col-xs-6 wow animated fadeIn" data-wow-delay=".5s">
           <!-- Message -->
-          <textarea name="message" id="message" class="form textarea"  placeholder="Description"></textarea>
-          <input type="email" name="mail" id="location" required="required" class="form" placeholder="Location" />
-          <ul class="list-group" *ngshow>
+          <textarea name="message" id="message" class="form textarea"  placeholder="Description" name="desc" [(ngModel)]="desc"></textarea>
+          <input placeholder="location" type="text" name="mail" id="location" required="required" class="form" placeholder="Location" (keyup)="getLocation()" [(ngModel)]="location" [value]="fautoplace" />
 
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-          </ul>
+          <div class="col-md-6">
+            <div class="row  list-group" >
+
+              <li class="list-group-item list-group-item-action" *ngFor="let place of result"><a  (click)="addToTagfrom($event);false">{{ place.description}}</a></li>
+
+
+            </div>
+
+          </div>
         </div><!-- End Right Inputs -->
 
   <div class="row">
@@ -75,7 +75,7 @@
         <!-- Bottom Submit -->
         <div class="relative fullwidth col-xs-12">
           <!-- Send Button -->
-          <button type="submit" id="submit" name="submit" class="form-btn semibold" [routerLink]="['/profile/hotel-page']">Create Page</button>
+          <button type="submit" id="submit" name="submit" class="form-btn semibold" (click)="pageCreate(); false">Create Page</button>
         </div><!-- End Bottom Submit -->
         <!-- Clear -->
         <div class="clear"></div>

@@ -3,17 +3,14 @@ import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './google-map.directive';
-
+declare var $: any;
 declare var google:any;
 declare var jQuery:any;
 
 @Component({
   selector: 'app-root',
-   styles: [`
-    .sebm-google-map-container {
-       height: 500px;
-     },
-   `],
+  styleUrls: ['./map.css'],
+
   templateUrl:"./map.component.html",
 
  providers : [ GoogleMapsAPIWrapper ]
@@ -56,6 +53,12 @@ export class MapComponent implements OnInit {
     }
 
     ngOnInit() {
+
+        if (window.location.href.indexOf('reload')==-1) {
+          window.location.replace(window.location.href+'?reload');
+        }
+
+      // $("#tripcreate").modal('show');
       //set google maps defaults
       this.zoom = 8;
       this.latitude = 7.25;

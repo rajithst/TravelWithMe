@@ -43,7 +43,11 @@ export class BlogComponent implements OnInit {
 
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+   
+  }
+
+
 
 
   fileChange(input){

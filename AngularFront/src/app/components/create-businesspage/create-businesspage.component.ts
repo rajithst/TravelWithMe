@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BusinesspageService } from '../../services/businesspage.service';
-import { Router,ActivatedRoute } from '@angular/router';
-
+import { Router,ActivatedRoute,NavigationExtras } from '@angular/router';
+import { GoogleAPIService } from '../../services/google-api.service';
 
 
 @Component({
@@ -12,10 +12,23 @@ import { Router,ActivatedRoute } from '@angular/router';
 export class CreateBusinesspageComponent implements OnInit {
 
   user:any;
-  pagename:String;
+  cname:String;
   businesstype:Number;
   pageimage:String;
   targetareas:String;
+  email:String;
+  telephone:String;
+  website:String;
+  location:String;
+  result:String;
+  fautoplace:any;
+  profile: any;
+  desc: any;
+  data: any;
+  uid:any;
+
+
+
   public latitude: number;
   public longitude: number;
   public zoom: number;
@@ -25,49 +38,67 @@ export class CreateBusinesspageComponent implements OnInit {
   constructor(
     private bservices:BusinesspageService,
     private route:Router,
-    private acroute: ActivatedRoute
+    private acroute: ActivatedRoute,
+    private googleApi:GoogleAPIService,
 
 
 
   ) { }
 
-
-
-
-
-  
-
   ngOnInit() {
 
+     
+
+    this.fautoplace='';
     this.zoom = 2;
     this.latitude = 7.7505019;
     this.longitude = 80.1652569;
 
-    this.sub = this.acroute.params.subscribe(params => {
-      this.id = +params['me'];
-      console.log(this.id)
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+    const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id,
+      profilepic :this.profile.picture_large,
+      name :this.profile.name
+    };
 
-    });
 
+    console.log(data)
 
   }
 
 
   pageCreate(){
-
-   const user = {
-
-      id:this.id,
-      pagename: this.pagename,
-      businesstype: this.businesstype,
-      pageimage:'test',
-      targetareas:"1,2,3,4"
+     const data = {
+      id: this.profile.identities[0].user_id,
+      provider: this.profile.identities[0].provider,
+      userid: this.profile.user_id,
+      profilepic :this.profile.picture_large
     };
-    this.bservices.submitPagedata(user).subscribe(data=>{
+
+   const bpage = {
+
+       uid:data.id,
+      pagename: this.cname,
+      email: this.email,
+      telephone: this.telephone,
+      website: this.website,
+      businesstype: 'hotels',
+      description: this.desc,
+      location: this.location,
+
+    };
+    this.bservices.submitPagedata(bpage).subscribe(data=>{
 
       if(data.success){
-       console.log("done");
-        this.route.navigate(['/profile'])
+
+        let navextras: NavigationExtras={
+           queryParams:{"message":JSON.stringify(data.msg._id)}
+         };
+
+
+        this.route.navigate(['/profile/hotel-page'],navextras)
       }else{
 
         console.log("error")
@@ -78,6 +109,21 @@ export class CreateBusinesspageComponent implements OnInit {
 
     });
 
+  }
+
+  getLocation(){
+
+    this.googleApi.getPlaces(this.location).subscribe(res=>{
+      this.result = res.data.predictions;
+      console.log(this.result)
+    })
+
+  }
+
+  addToTagfrom(e){
+    console.log(e.target.innerText)
+    this.fautoplace = e.target.innerText;
+    return false;
   }
 
 

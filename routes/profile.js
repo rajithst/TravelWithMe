@@ -20,13 +20,18 @@ router.post('/createpage',function (req,res,next) {
 
     var BusinessPage = new Bpage({
 
-        userid:req.body.id,
+        userid:req.body.uid,
         pagename:req.body.pagename,
+        email:req.body.email,
+        telephone:req.body.telephone,
+        website:req.body.website,
         businesstype:req.body.businesstype,
-        pageimage:req.body.pageimage,
-        targetareas:req.body.targetareas
+        description:req.body.description,
+        location:req.body.location
 
     });
+
+    console.log(BusinessPage)
 
 
     Bpage.addBpagedata(BusinessPage,function (err,docs) {
@@ -34,7 +39,7 @@ router.post('/createpage',function (req,res,next) {
             res.json({success:false,msg:"Failed to create page"});
         }else{
             console.log(docs);
-            res.json({success:true,msg:"Successfully created page"});
+            res.json({success:true,msg:docs});
         }
     })
 

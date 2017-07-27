@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-
+import { Http,Headers,Response } from '@angular/http';
 import { FacebookService } from '../../services/facebook.service';
 import { GoogleAPIService } from '../../services/google-api.service';
 import {  UserServicesService } from '../../services/user-services.service';
@@ -29,13 +29,14 @@ export class ProfileComponent implements OnInit {
   nearby:any;
   results:any;
   followers:any;
+  pages:any;
 
 
 
 
   constructor(
     private authService: AuthService,
-
+  private http:Http,
     private FbService: FacebookService,
     private PlaceAPI:GoogleAPIService,
     private UserServie:UserServicesService
@@ -75,13 +76,15 @@ export class ProfileComponent implements OnInit {
           /*places*/
 
           this.nearby = this.user.nearby.results;
-          console.log(this.nearby)
+        
 
 
           });
-        };
 
-
+        this.http.get("http://localhost:3000/hotel/pages/"+data.id).subscribe((res:Response)=>{
+            this.pages = res.json().docs;
+    })
+  }
 
   FollowUser(followerid:any,action:number){
 
@@ -105,6 +108,9 @@ export class ProfileComponent implements OnInit {
      })
 
   }
+
+
+  
 
 
 }

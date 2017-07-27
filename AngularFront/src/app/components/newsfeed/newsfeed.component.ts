@@ -32,6 +32,8 @@ export class NewsfeedComponent implements OnInit{
   ngOnInit() {
 
 
+    
+
     $('body').addClass(this.bodyClasses);
     $("body").css( 'background-color', '#ecf0f1');
 

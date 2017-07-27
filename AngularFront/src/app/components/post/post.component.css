@@ -19,21 +19,21 @@
   margin: -23px 20px;
   float: right;
   background-color: #4B515D;
-   
+
   height: 3rem !important;
   width: 3rem !important;
   line-height: 0;
 }
 
 #profile-circle{
-        border-radius:100px; 
+        border-radius:100px;
         height:55px;
         width:55px;
-        
+
 }
 
 .card {
- 
+
   /*background-color: #B6B6B4;*/
   background-color: #ffffff;
   /*width:790px;*/
@@ -56,21 +56,12 @@
 
 .mdl-button{
   margin-left: 60%;
-  
+
 }
 
 
 
 
-.btn{
-  height: 30px;
-  width:160px;
-  padding: 10px;
-  justify-content: center;
-   /*border-radius: 10px;*/
-   /*margin-left: 50%;*/
-  
-}
 
 .card-text{
   text-align: justify;
@@ -80,7 +71,7 @@
 
 .card-share{
   padding-bottom: 10px;
-  
+
 }
 
 .img-fluid{
@@ -92,7 +83,7 @@
     margin-bottom: 0px;
     width: 95%;
     height: 220px;
-     
+
 }
 
 
@@ -138,7 +129,7 @@ div.stars {
   display: inline-block;
 }
 
-input.star {display: none; 
+input.star {display: none;
 
 }
 
@@ -229,13 +220,13 @@ color: #fff;
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
-  
+
 }
 
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
-  
+
 }
 .upmargin{
   margin-top: 20px;

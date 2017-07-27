@@ -137,32 +137,40 @@
           <div class="col-md-6">
             <div class="row list-group" *ngIf="Tresult">
 
+
               <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
             </div>
+
+            <li class="list-group-item list-group-item-action" *ngFor="let place of Tresult"><a (click)="addToTagto($event);false" id="{{place.place_id}}">{{ place.description}}</a></li>
           </div>
+
         </div>
-
-        <div class="col-md-6">
-          <div id="set_dest">
-
-          </div>
-        </div>
-
-        <!--<div class="col-md-6">-->
-        <!--<div class="container-fluid">-->
-        <!--<img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">-->
-        <!--</div>-->
-        <!--</div>-->
       </div>
 
-      <!-- Modal Footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">
+      <div class="col-md-6">
+        <div id="set_dest">
+
+        </div>
+      </div>
+
+      <!--<div class="col-md-6">-->
+      <!--<div class="container-fluid">-->
+      <!--<img class="img-responsive img-fluid" src="http://www.srilankaforholidays.com/images/srilankamap1.jpg">-->
+      <!--</div>-->
+      <!--</div>-->
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">
         Close
       </button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/profile/create/trip']" (click)="callLocationPass()">
+      <button type="button" class="btn btn-primary" data-dismiss="modal" [routerLink]="['/profile/create/trip']" (click)="callLocationPass()">
         Let's Go
       </button>
-      </div>
     </div>
   </div>
+
+</div>
+
+ 

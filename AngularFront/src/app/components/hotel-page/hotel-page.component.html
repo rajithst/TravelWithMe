@@ -177,7 +177,7 @@
               <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-ride="carousel">
                 <!--Slides-->
                 <div class="carousel-caption">
-                  <h3 class="h3-responsive">Serene Bridge Resort</h3>
+                  <h3 class="h3-responsive" *ngFor="let item of hoteldata">{{item.pagename}}</h3>
                 </div>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
@@ -236,7 +236,16 @@
             <!--Panel 1 home-->
             <div class="tab-pane fade in active show" id="panel51" role="tabpanel" aria-expanded="true">
                 <!--Content of Home included from home.html-->
-                <app-hotel-page-home></app-hotel-page-home>
+                <section class="section ">
+
+                    <!--Section heading-->
+                    <h1 class="section-heading" *ngFor="let item of hoteldata">welcome to {{item.pagename}}</h1>
+                    <!--Section sescription-->
+                    <p class="section-description" *ngFor="let item of hoteldata">{{item.description}} </p>
+
+
+
+                </section>
             </div>
             <!--/.Panel 1-->
 
@@ -618,7 +627,83 @@
             <!--Panel 7 Contact Us-->
             <div class="tab-pane fade" id="panel57" role="tabpanel" aria-expanded="false" style="margin-top: -2rem;">
                 <!--Content of Contact Us included from contactUs.html-->
-                <app-hotel-page-contact></app-hotel-page-contact>
+                <br>
+                    <h4><strong>General Contact</strong></h4>
+
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <a class="btn-floating btn-small mdb-color"><i class="fa fa-map-marker"></i></a>
+                                <p *ngFor="let item of hoteldata">{{item.pagename}}<br>182/2 High Level Road,<br>Watareka,<br>Padukka,<br>Sri Lanka.</p>
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="btn-floating btn-small mdb-color"><i class="fa fa-phone"></i></a>
+                                <p *ngFor="let item of hoteldata">{{item.telephone}}</p>
+                            
+                                
+                            </div>
+
+                            <div class="col-md-4">
+                                <a class="btn-floating btn-small mdb-color"><i class="fa fa-envelope"></i></a>
+                                <p *ngFor="let item of hoteldata">{{item.email}}</p>
+                                <p *ngFor="let item of hoteldata">{{item.website}}</p>
+                            </div>
+                        </div>
+
+                    <hr>
+                    <h4><strong>Send Message</strong></h4>
+
+
+                        <!--Naked Form-->
+                        <div class="card-block">
+
+                            <!--Header-->
+                            <div class="text-center">
+                                <h3><i class="fa fa-envelope"></i> Write to us:</h3>
+                                <hr class="mt-2 mb-2">
+                            </div>
+
+                            <!--Body-->
+                            <br>
+
+                            <!--Body-->
+                            <div class="md-form">
+                                <i class="fa fa-user prefix"></i>
+                                <input type="text" id="form3" class="form-control">
+                                <label for="form3">Your name</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="text" id="form2" class="form-control">
+                                <label for="form2">Your email</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-tag prefix"></i>
+                                <input type="text" id="form32" class="form-control">
+                                <label for="form34">Subject</label>
+                            </div>
+
+                            <div class="md-form">
+                                <i class="fa fa-pencil prefix"></i>
+                                <textarea type="text" id="form8" class="md-textarea"></textarea>
+                                <label for="form8">Message</label>
+                            </div>
+
+                            <div class="text-center">
+                                <button class="btn btn-default">Submit</button>
+                            </div>
+
+                        </div>
+                        <!--Naked Form-->
+
+
+                    <hr>
+                    <h4><strong>Location</strong></h4>
+
+                    <div id="map" style="height:350px;background:yellow"></div>
+
             </div>
             <!--/.Panel 7-->
 

@@ -12,6 +12,7 @@ import { ChartsModule } from 'ng2-charts';
 //dinesh
 import { AgmCoreModule } from "angular2-google-maps/core";
 import { FormControl, ReactiveFormsModule } from "@angular/forms";
+import { TripService} from "./services/trip.service"; 
 // import { MapComponent} from './components/map/map.component';
 /* components */
 import { AppComponent } from './app.component';
@@ -186,7 +187,9 @@ const appRoute: Routes = [
     FacebookService,
     GoogleAPIService,
     UserServicesService,
-    LocationPassService
+    LocationPassService,
+    //dinesh
+    TripService
 
 
   ],

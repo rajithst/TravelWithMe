@@ -4,10 +4,11 @@ const schema = mongoose.Schema;
 var async = require('async');
 var fs = require('fs');
 var TripSchema = new schema({
- 
+    name:{type:String},
     waypoints:{type:String},
     from:{type:String},
     to : {type:String}
+     
 
 });
 
