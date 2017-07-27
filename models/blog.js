@@ -25,12 +25,11 @@ const Blogtab =  module.exports = mongoose.model('Blogtab',blogSchema);
 
 module.exports.addBlogpost = function (PostData,callback) {
 
-    var dt=new Date();
-    var text = "f";
+    var randomnumber=Math.floor(Math.random()*101)
     var pos=PostData.featured_img.indexOf(",");
 
     var base64d=PostData.featured_img.substring(pos+1);
-    var path="AngularFront/src/assets/uploads/images/blog/"+text+"_"+PostData.userid+"_"+dt+".png";
+    var path="AngularFront\\src\\assets\\images\\blog\\"+PostData.userid+"_"+randomnumber+".png";
 
     fs.writeFile(path,base64d,'base64',function(err){
         if(err) {
@@ -42,7 +41,7 @@ module.exports.addBlogpost = function (PostData,callback) {
     });
 
 
-    PostData.featured_img = "assets/uploads/images/blog/"+text+"_"+PostData.userid+"_"+dt+".png";
+    PostData.featured_img = "assets/images/blog/"+PostData.userid+"_"+randomnumber+".png";
     PostData.save(callback);
 };
 
