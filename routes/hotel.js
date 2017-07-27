@@ -43,8 +43,8 @@ router.get('/gethotelfeeddata/:id',function(req,res){
 
 router.get('/getnearby/:id',function(req,res){
 
-        client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+req.params.id+"+nearby+places&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
-
+        client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+req.params.id+"+nearby+places&key=AIzaSyAWW68whIfUp2nh7kCcpm9-VHpGSDioNsI", function (data, response) {
+            console.log(data);
             res.json({data: data});
 
         });

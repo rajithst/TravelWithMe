@@ -64,8 +64,9 @@ export class NewsfeedComponent implements OnInit{
           const Userdata = {id:data.id};
 
           this.BlogService.getPosts(Userdata.id).subscribe(res=>{
-            this.posts = res.data[ res.data.length-1]
-            console.log(this.posts)
+            //this.posts = res.data[ res.data.length-1]
+            this.posts = res.data;
+            console.log(res)
 
 
           });

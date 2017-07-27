@@ -139,7 +139,7 @@ export class BlogComponent implements OnInit {
     };
 
     /*this.model.userid = data.userid;*/
-    this.model.userid = '820503218103311';
+    this.model.userid = data.id;
     this.model.username = data.name,
     this.model.img = data.profilepic,
     this.model.postTitle = this.postTitle;
@@ -149,7 +149,7 @@ export class BlogComponent implements OnInit {
 
 
     this.blogService.addBlogpost(this.model).subscribe(res=>{
-      swal("Add Blogpost");
+    
       this.alert = res;
     })
   }

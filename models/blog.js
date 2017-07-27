@@ -48,9 +48,9 @@ module.exports.addBlogpost = function (PostData,callback) {
 };
 
 
-module.exports.getFollowersPosts = (usersArray,callbacl)=>{
+module.exports.getFollowersPosts = (usersArray,callback)=>{
 
-    var results = [];
+    /*var results = [];
 
     async.each(usersArray,function (item,callback) {
 
@@ -73,7 +73,18 @@ module.exports.getFollowersPosts = (usersArray,callbacl)=>{
 
         console.log(results);
         callbacl(null,results)
-    });
+    });*/
+ Blogtab.find({}).sort({'dateAdded': -1}).exec(function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+
 
 };
 
