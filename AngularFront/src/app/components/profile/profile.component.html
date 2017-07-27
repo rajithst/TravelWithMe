@@ -144,48 +144,205 @@ x<script>
       <!--Panel 2 About-->
       <div class="tab-pane fade" id="panel52" role="tabpanel" aria-expanded="false">
 
-        <h4><strong>Personal Info</strong></h4>
+        <!--Personal Info-->
+            <div class="card">
+                <div class="card-block">
 
-        <p><strong>Name</strong>: Nuwan Tharaka Manchnayaka</p>
-        <p><strong>Country</strong>: Sri Lanka</p>
-        <p><strong>City</strong>: Colombo</p>
-        <p><strong>Age</strong>: 23</p>
-
-        <hr>
-        <h4><strong>Introducing Myself</strong></h4>
-
-        <p>My name is Nuwan. I'm a social guy with a big smile and 3 passions:People, Travel and Social Media.
-            January 2013 I decided to combine my passions and started a unique social travel project around the world.</p>
-
-        <hr>
-        <h4><strong>Why I Travel</strong></h4>
-
-        <p>To see new places, adventures, different cultures, local foods, music, habits ... meet new peoples and much more.</p>
-
-        <hr>
-        <h4><strong>I like to Do</strong></h4>
-
-        <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Hiking</p>
-        <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Camping</p>
-        <p><i class="fa fa-circle" aria-hidden="true" mb-1 deep-purple-text></i> Drafting</p>
-
-        <hr>
-        <h4><strong>Social Media Links</strong></h4>
-
-        <a href="https://www.facebook.com/nuwantharaka.manchanayaka" target="_blank" class="icons-sm fb-ic"><i class="fa fa-facebook"></i> </a>
-        <a class="icons-sm tw-ic"><i class="fa fa-twitter"></i> </a>
-        <a class="icons-sm gplus-ic"><i class="fa fa-google-plus"></i> </a>
-        <a class="icons-sm ins-ic"><i class="fa fa-instagram"> </i> </a>
-        <a class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i> </a>
-        <a class="icons-sm yt-ic"><i class="fa fa-youtube"> </i> </a>
-        <a class="icons-sm email-ic"><i class="fa fa-envelope-o"> </i> </a>
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Personal Info:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
 
 
-        <style>
-            .icons-sm{
-                white-space: nowrap;
-            }
-        </style>
+                    <br>
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <i class="fa fa-user prefix"></i>
+                        <input type="text" id="nameID" class="form-control" value="Nuwan Tharaka">
+                        <label for="nameID">Name</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-globe prefix"></i>
+                        <input type="text" id="countryID" class="form-control" value="Sri Lanka">
+                        <label for="countryID">Country</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-map-marker prefix"></i>
+                        <input type="text" id="cityID" class="form-control" value="Colombo">
+                        <label for="cityID">City</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-calendar prefix"></i>
+                        <input placeholder="Selected date" type="text" id="bdID" class="form-control datepicker" value="1 December, 1994">
+                        <label for="bdID">Birthday</label>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button class="btn btn-deep-orange waves-effect waves-light">Save</button>
+                    </div>
+
+                </div>
+            </div>
+            <!--Personal Info-->
+
+            <!--Profile Pic-->
+            <div class="card">
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Profile Picture:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
+
+                    <br>
+
+                    <!--Body-->
+                    <form>
+                        <div class="file-field">
+
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate valid" type="text" placeholder="Upload your Profile Picture">
+                            </div>
+
+                            <div class="btn btn-deep-orange waves-effect waves-light" style="
+                                padding-bottom: 0px;
+                                padding-top: 0px;
+                                padding-left: 30px;
+                                padding-right: 30px;">
+                                <span>Choose file</span>
+                                <input type="file">
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+            <!--Profile Pic-->
+
+            <!--Introducing Yourself-->
+            <div class="card">
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Introducing Yourself:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
+
+
+                    <br>
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <textarea type="text" id="introID" class="md-textarea" autocomplete="off">My name is Nuwan. I'm a social guy with a big smile and 3 passions:People, Travel and Social Media.January 2013 I decided to combine my passions and started a unique social travel project around the world.</textarea>
+                        <label for="introID" class="">Something about you</label>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button class="btn btn-deep-orange waves-effect waves-light">Save</button>
+                    </div>
+
+                </div>
+            </div>
+            <!--Introducing Yourself-->
+
+            <!--Why you Travel-->
+            <div class="card">
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Why you Travel:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
+
+
+                    <br>
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <textarea type="text" id="yItravelID" class="md-textarea" autocomplete="off">To see new places, adventures, different cultures, local foods, music, habits ... meet new peoples and much more.</textarea>
+                        <label for="yItravelID" class="">Reason for travelling</label>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button class="btn btn-deep-orange waves-effect waves-light">Save</button>
+                    </div>
+
+                </div>
+            </div>
+            <!--Why you Travel-->
+
+            <!--Your Likes:-->
+            <div class="card">
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Your Likes:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
+
+
+                    <br>
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <input type="text" id="likeID" class="form-control" value=" Hiking, Camping, Drafting">
+                        <label for="likeID">What you like to do</label>
+                    </div>
+
+
+                    <div class="text-center">
+                        <button class="btn btn-deep-orange waves-effect waves-light">Save</button>
+                    </div>
+
+                </div>
+            </div>
+            <!--Your Likes:-->
+
+            <!--visited and visiting-->
+            <div class="card">
+                <div class="card-block">
+
+                    <!--Header-->
+                    <div class="text-center">
+                        <h3> Visited and Visiting:</h3>
+                        <hr class="mt-2 mb-2">
+                    </div>
+
+
+                    <br>
+
+                    <!--Body-->
+                    <div class="md-form">
+                        <i class="fa fa-paper-plane prefix"></i>
+                        <input type="text" id="visitedID" class="form-control" value="Nuwara Eliya, Ella, Polonnaruwa">
+                        <label for="visitedID">Places, You have visited</label>
+                    </div>
+
+                    <div class="md-form">
+                        <i class="fa fa-paper-plane-o prefix"></i>
+                        <input type="text" id="visitingID" class="form-control" value="Ampara, Mathale">
+                        <label for="visitingID">Places, You hope to visit</label>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-deep-orange waves-effect waves-light">Save</button>
+                    </div>
+
+                </div>
+            </div>
+            <!--visited and visiting-->
 
       </div>
       <!--/.Panel 2-->
@@ -251,7 +408,64 @@ x<script>
       </div>
 
       <div class="tab-pane fade" id="panel55" role="tabpanel" aria-expanded="false">
-        <h3>Privacy settings</h3>
+        <h3><strong>Privacy settings</strong></h3>
+        <hr>
+        <h4><strong>Who can see my stuff ?</strong></h4>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio1">
+            <label for="radio1">Public</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio2">
+            <label for="radio2">Friend</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio3">
+            <label for="radio3">Only Me</label>
+        </fieldset>
+
+        <hr>
+
+        <h4><strong>Who can see my persanal info ?</strong></h4>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio1">
+            <label for="radio1">Public</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio2">
+            <label for="radio2">Friend</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio3">
+            <label for="radio3">Only Me</label>
+        </fieldset>
+
+        <hr>
+
+        <h4><strong>Who can contact me ?</strong></h4>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio1">
+            <label for="radio1">Public</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio2">
+            <label for="radio2">Friend</label>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <input name="group1" type="radio" id="radio3">
+            <label for="radio3">Only Me</label>
+        </fieldset>
+
+
       </div>
 
 
