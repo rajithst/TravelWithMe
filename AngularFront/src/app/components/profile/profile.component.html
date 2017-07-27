@@ -23,7 +23,7 @@ x<script>
       <div  *ngIf="user" class="card testimonial-card  ">
 
         <!--Background color-->
-        <div class="card-up deep-purple cardone">
+        <div class="card-up blue cardone">
         </div>
 
         <!--Avatar-->
@@ -36,7 +36,7 @@ x<script>
           <hr>
           <!-- Nav tabs -->
           <div class="tabs-wrapper">
-            <ul class="nav classic-tabs deep-purple accent-4 " role="tablist">
+            <ul class="nav classic-tabs blue accent-4 " role="tablist">
               <li class="nav-item tabpad">
                 <a class="nav-link waves-light waves-effect waves-light active tabpad" data-toggle="tab" href="#panel51" role="tab" aria-expanded="true">Time Line</a>
               </li>
@@ -185,14 +185,16 @@ x<script>
           <mdl-card mdl-shadow="2" *ngFor="let page of pages">
             <mdl-card-title>
               <h2 mdl-card-title-text>{{page.pagename}}</h2>
-              <br>
-              <h5>{{page.businesstype}}</h5>
+
+
             </mdl-card-title>
+            <img class="img-responsive img-fluid" src="https://palacestation.sclv.com/~/media/Images/Page-Background-Images/Palace/Hotel/PS_Hotel_KingRoom_new.jpg?h=630&la=en&w=1080">
+            <h5 class="red-text"><i class="fa fa-money"></i> {{page.businesstype}}</h5>
             <mdl-card-supporting-text>
               {{page.email}}
             </mdl-card-supporting-text>
             <mdl-card-actions mdl-card-border>
-              <button mdl-button mdl-colored mdl-ripple>Get Started</button>
+              <button mdl-button mdl-colored mdl-ripple>View Page</button>
             </mdl-card-actions>
             <mdl-card-menu>
 
