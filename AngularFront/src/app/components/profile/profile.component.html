@@ -182,23 +182,25 @@ x<script>
         <div class = "row">
 
             <h3>Pages you Manage</h3>
-            <div class="card" *ngFor="let page of pages">
-              <!--First column-->
-              <div class="col-md-5 mb-r wow fadeIn" data-wow-delay="0.3s">
-                <!--Featured image-->
-                <div class="view overlay hm-white-slight">
-                  <h2>{{page.pagename}}</h2>
-                  <h2>{{page.email}}</h2>
-                  <h2>{{page.businesstype}}</h2>
-                  <a class="btn btn-primary btn-rounded">View Page</a>
-                  <img src="http://cdn.c.photoshelter.com/img-get/I0000HRADrIT1AeY/s/700/700/Panorama-photo-of-Kandy-Lake-and-the-Temple-of-the-Sacred-Tooth-Relic-Temple-of-the-Tooth-Sri-Dalada-Maligawa-at-sunrise-Kandy-Central-Province-Sri-Lanka-Asia.jpg">
-                  <a>
-                    <div class="mask"></div>
-                  </a>
-                </div>
-              </div>
+          <mdl-card mdl-shadow="2" *ngFor="let page of pages">
+            <mdl-card-title>
+              <h2 mdl-card-title-text>{{page.pagename}}</h2>
+              <br>
+              <h5>{{page.businesstype}}</h5>
+            </mdl-card-title>
+            <mdl-card-supporting-text>
+              {{page.email}}
+            </mdl-card-supporting-text>
+            <mdl-card-actions mdl-card-border>
+              <button mdl-button mdl-colored mdl-ripple>Get Started</button>
+            </mdl-card-actions>
+            <mdl-card-menu>
 
-            </div>
+            </mdl-card-menu>
+          </mdl-card>
+
+
+
         </div>
 
       </div>
