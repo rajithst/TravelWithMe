@@ -16,7 +16,9 @@ var blogSchema = new schema({
     postTtile:{type:String},
     body:{type:String},
     featured_img:{type:String},
-    dateAdded:{type:String}
+    dateAdded:{type:String},
+    location:{type:String},
+
 });
 
 
@@ -78,6 +80,20 @@ module.exports.getFollowersPosts = (usersArray,callbacl)=>{
 module.exports.getpostData = (id,callback)=>{
 
     Blogtab.find({_id:id},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+}
+
+module.exports.getblogData = (key,callback)=>{
+
+    Blogtab.find({location:key},function(err,docs){
 
          if (err) throw err;
 

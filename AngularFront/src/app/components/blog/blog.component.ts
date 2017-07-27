@@ -14,7 +14,7 @@ export class BlogComponent implements OnInit {
 
     private javascript1 = require('./js1');
 
-  model = {userid:" ",username:" ",img:" ",postTitle:" ",body:" ",featured_img:" "};
+  model = {userid:" ",username:" ",img:" ",postTitle:" ",body:" ",featured_img:" ",location:""};
 
 
   path='';
@@ -32,7 +32,7 @@ export class BlogComponent implements OnInit {
   body:string;
   featured_img:String;
   alert:string;
-
+  location:string;
 
   constructor(
     private mapService:GooglemapsService,
@@ -144,6 +144,7 @@ export class BlogComponent implements OnInit {
     this.model.img = data.profilepic,
     this.model.postTitle = this.postTitle;
     this.model.body = this.body;
+    this.model.location = this.location;
 
 
 

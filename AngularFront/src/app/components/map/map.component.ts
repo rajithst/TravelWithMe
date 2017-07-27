@@ -3,6 +3,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from 'angular2-google-maps/core';
 import { DirectionsMapDirective } from './google-map.directive';
+import { Http,Headers,RequestOptions,Response} from '@angular/http';
 declare var $: any;
 declare var google:any;
 declare var jQuery:any;
@@ -44,11 +45,15 @@ export class MapComponent implements OnInit {
 
     public origin :any ; // its a example aleatory position
     public destination : any; // its a example aleatory position
+    public blogdata:any;
+    public roomsdata:any;
+
     constructor(
       private mapsAPILoader: MapsAPILoader,
       private ngZone: NgZone,
       private gmapsApi: GoogleMapsAPIWrapper,
-      private _elementRef : ElementRef
+      private _elementRef : ElementRef,
+      private http:Http
     ) {
     }
 
@@ -161,6 +166,20 @@ export class MapComponent implements OnInit {
 
     private getMapCusotmStyles() {
       // Write your Google Map Custom Style Code Here.
+    }
+
+    getDestinationLocation(e){
+      var key = e.target.value;
+
+      this.http.get("http://localhost:3000/blog/getblogdata/"+key).subscribe(data=>{
+            this.blogdata = data.json().docs;
+            console.log(this.blogdata)
+          })
+
+          /*this.http.get("http://localhost:3000/hotel/getroomdata/"+key).subscribe(data=>{
+            this.roomsdata = data.json().docs;
+            console.log(this.roomsdata)
+          })*/
     }
 
 }

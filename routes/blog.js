@@ -31,7 +31,8 @@ router.post('/submitpost',function (req,res) {
         postTtile: req.body.postTitle,
         body: req.body.body,
         featured_img:req.body.featured_img,
-        dateAdded: Date()
+        dateAdded: Date(),
+        location:req.body.location
     });
 
    console.log(blogpost)
@@ -98,6 +99,22 @@ router.get('/getPostdata/:id',(req,res)=>{
             })
         });
 
+
+        router.get('/getblogdata/:key',(req,res)=>{
+
+            Blogpost.getpostData(req.params.key,(err,docs)=>{
+
+                if (err){
+                    throw err
+                }
+
+                if (docs){
+
+                     res.json({msg:true,data:docs})
+                }
+
+            })
+        });
 
 
 module.exports = router;

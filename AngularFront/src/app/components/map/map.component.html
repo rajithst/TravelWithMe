@@ -258,7 +258,7 @@
               <label  for="start">Start Point</label>
               <input  id="start" placeholder="Enter source  location" required="required" class="form col-md-3" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #pickupInput [formControl]="destinationInput" />
               <label for="end">End Point</label>
-              <input id="end" placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" /><br>
+              <input id="end" placeholder="Enter destination" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="col-md-3 form" #pickupOutput [formControl]="destinationOutput" (keyup)="getDestinationLocation($event)" /><br>
               <label  for="waypoint">Wayoints</label>
               <input id="waypoint" placeholder="waypoint input" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control form" #waypoint [formControl]="waypointOutput" />
               <div class="text-center">

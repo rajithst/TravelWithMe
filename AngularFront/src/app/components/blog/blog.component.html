@@ -86,17 +86,12 @@
             <h2 mdl-card-title-text>Post Details</h2>
           </mdl-card-title>
           <mdl-card-supporting-text>
-            <mdl-textfield type="text" label="Location"  floating-label ></mdl-textfield>
+            <mdl-textfield type="text" label="Location"  floating-label [(ngModel)]="location" name="location" ></mdl-textfield>
             <div class="col-md-12">
               <label for="chips">Tags</label>
               <div class="chips chips-initial" id="chips"></div>
             </div>
             <div class="col-md-12">
-
-              <div class="md-form">
-                <textarea type="text" id="form76" class="md-textarea"></textarea>
-                <label for="form76">Description about blog post</label>
-              </div>
               <div class="md-form">
                 <div class="btn btn-primary btn-sm">
                   <span>Choose file</span>
