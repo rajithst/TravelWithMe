@@ -31,6 +31,7 @@ export class MapComponent implements OnInit {
     public mapCustomStyles : any;
     public estimatedTime: any;
     public estimatedDistance: any;
+    public urls:any;
 
     @ViewChild("pickupInput")
     public pickupInputElementRef: ElementRef;
@@ -77,7 +78,7 @@ export class MapComponent implements OnInit {
       this.latitude = 7.25;
       this.longitude = 80.5795;
       //this.iconurl = '../image/map-icon.png';
-      this.iconurl = '../image/map-icon.png';
+      this.iconurl = '../../../assets/images/map-icon.png';
 
      // this.mapCustomStyles = this.getMapCusotmStyles();
       //create search FormControl
@@ -139,6 +140,24 @@ export class MapComponent implements OnInit {
               else {
                   this.vc.destination = { longitude: place.geometry.location.lng(), latitude: place.geometry.location.lat() }; // its a example aleatory position
                   this.vc.destinationPlaceId = place.place_id;
+                  var photos = place.photos;
+                  if(photos===undefined){
+                    this.urls="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%2813%29.jpg"
+                  }else{
+                    this.urls = photos[0].getUrl({
+                    maxWidth:500,
+                    maxHeight:500
+                  });
+                  console.log(this.urls);
+
+                  }
+                  
+                  // photos.forEach((photo)=>{
+                  //   this.urls.push(photo.getUrl({
+                  //     maxWidth:500,
+                  //     maxHeight:undefined
+                  //   }))
+                  // })
               }
 
               if(this.vc.directionsDisplay === undefined){ this.mapsAPILoader.load().then(() => {
