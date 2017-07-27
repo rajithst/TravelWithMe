@@ -3,7 +3,7 @@ import { GooglemapsService } from '../../services/googlemaps.service';
 import { BlogServiceService } from '../../services/blog-service.service';
 
 import './js1.js';
-
+declare var swal:any;
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -148,8 +148,8 @@ export class BlogComponent implements OnInit {
 
 
     this.blogService.addBlogpost(this.model).subscribe(res=>{
-
-      //this.alert = res;
+      swal("Add Blogpost");
+      this.alert = res;
     })
   }
 
