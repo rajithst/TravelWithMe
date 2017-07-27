@@ -92,11 +92,11 @@
             <div class=" wow animated " data-wow-delay=".5s">
               <!-- Name -->
               <div class="col-md-6">
-              <input type="text" name="name" id="roomname" required="required" class="form" placeholder="Room Name" />
+              <input type="text" name="name" id="roomname" required="required" class="form" placeholder="Room Name" [(ngModel)]="name"/>
               </div>
               <!-- Email -->
               <div class="col-md-6">
-                <input type="email" name="price" id="Rprice" required="required" class="form" placeholder="Price" />
+                <input type="text" name="price" id="Rprice" required="required" class="form" placeholder="Price" [(ngModel)]="price" />
               </div>
               <div class="row">
               <div class="col-md-6">
@@ -125,17 +125,17 @@
                   <input id="Rsize" type="range" min="0" max="4" />
                 </form>
               </div>
-                <div class="col-md-6">
-                  <div class="file-field">
-                    <div class="btn btn-primary btn-sm">
-                      <span>Upload Image</span>
-                      <input type="file">
-                    </div>
-                    <div class="file-path-wrapper" >
-                      <input class="file-path validate" type="text" placeholder="Upload your file">
-                    </div>
+                  <div class="md-form">
+                <div class="btn btn-primary btn-sm">
+                  <span>Choose file</span>
+
+                  <input id="file" class="file-path validate" type="file" name="student_img" required (change)="fileChange(input)" #input   />
+                  <div>
                   </div>
+
                 </div>
+                <img src='' alt=""/>
+              </div>
               </div>
 
 
