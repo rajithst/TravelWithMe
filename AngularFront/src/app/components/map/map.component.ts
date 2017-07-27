@@ -47,6 +47,7 @@ export class MapComponent implements OnInit {
     public destination : any; // its a example aleatory position
     public blogdata:any;
     public roomsdata:any;
+    public nearby:any;
 
     constructor(
       private mapsAPILoader: MapsAPILoader,
@@ -184,6 +185,11 @@ export class MapComponent implements OnInit {
           this.http.get("http://localhost:3000/hotel/gethotelfeeddata/"+key).subscribe(data=>{
             this.roomsdata = data.json().docs;
             console.log(this.roomsdata)
+          })
+
+          this.http.get("http://localhost:3000/hotel/getnearby/"+key).subscribe(data=>{
+            this.nearby = data.json().data.results;
+            console.log(this.nearby)
           })
     }
 

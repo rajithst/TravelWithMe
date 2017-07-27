@@ -3,6 +3,8 @@ const router = express.Router();
 const config = require('../config/database');
 const Bpage = require('../models/businesspages');
 const Room = require('../models/rooms');
+    const Client = require('node-rest-client').Client;
+    const client = new Client();
 
 router.get('/gethoteldata/:id',function(req,res){
 
@@ -37,6 +39,18 @@ router.get('/gethotelfeeddata/:id',function(req,res){
             })
 
 })
+
+
+router.get('/getnearby/:id',function(req,res){
+
+        client.get("https://maps.googleapis.com/maps/api/place/textsearch/json?query="+req.params.id+"+nearby+places&key=AIzaSyD1wsxf68A21P1FVZyMBeop5X3io-2MH_E", function (data, response) {
+
+            res.json({data: data});
+
+        });
+
+})
+
 
 
 router.get('/getroomdata/:id',function(req,res){

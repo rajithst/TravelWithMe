@@ -83,6 +83,7 @@
 
                         <div class="card-block">
                           <h4 class="card-title">{{item.pagename}}</h4>
+                          <h5 class="card-title">Location {{item.location}}</h5>
 
                           <p class="card-text">{{item.description}} </p>
                           <a href="#" class="btn btn-primary">View</a>
@@ -103,19 +104,15 @@
             <!--Panel 2-->
             <div class="tab-pane fade" id="panel6" role="tabpanel">
               <br>
-              <div class="container-fluid">
-                <div class="col-lg-6 view hm-zoom animated fadeIn">
-                  <h3 class="text-mid">Pasikuda</h3>
+              <div class="container-fluid" *ngIf="nearby">
+                <div class="col-lg-6 view hm-zoom animated fadeIn" *ngFor="let items of nearby">
+                  <h3 class="text-mid">{{items.name}}</h3>
+                  <h3 class="text-mid">{{items.rating}}</h3>
                   <a class="btn-floating btn-small blue pull-right"><i class="fa fa-plus"></i></a>
-                  <img src="https://www.roughguides.com/wp-content/uploads/2015/08/18.-Thailand-832-168817-1680x1050.jpg">
+                  <img [src]="items.icon">
 
                 </div>
-                <div class="col-lg-6 animated fadeIn">
-                  <div class="text-mid">Pasikuda</div>
-                  <a class="btn-floating btn-small blue pull-right"><i class="fa fa-plus"></i></a>
-                  <img src="https://www.roughguides.com/wp-content/uploads/2015/08/18.-Thailand-832-168817-1680x1050.jpg">
-
-                </div>
+              
 
 
               </div>
