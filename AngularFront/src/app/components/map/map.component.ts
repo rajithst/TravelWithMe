@@ -172,7 +172,7 @@ export class MapComponent implements OnInit {
       var key = e.target.value;
 
       this.http.get("http://localhost:3000/blog/getblogdata/"+key).subscribe(data=>{
-            this.blogdata = data.json().docs;
+            this.blogdata = data.json().data;
             console.log(this.blogdata)
           })
 
@@ -180,6 +180,11 @@ export class MapComponent implements OnInit {
             this.roomsdata = data.json().docs;
             console.log(this.roomsdata)
           })*/
+
+          this.http.get("http://localhost:3000/hotel/gethotelfeeddata/"+key).subscribe(data=>{
+            this.roomsdata = data.json().docs;
+            console.log(this.roomsdata)
+          })
     }
 
 }

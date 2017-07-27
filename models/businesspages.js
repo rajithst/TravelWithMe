@@ -44,6 +44,20 @@ module.exports.getpagedata = function (id,callback) {
     })
 };
 
+module.exports.getpagefeeddata = function (id,callback) {
+
+    Bpage.find({location:{'$regex': id, '$options': 'i'}},function(err,docs){
+
+         if (err) throw err;
+
+             if (docs){
+                 callback(null,docs);
+             }
+
+
+    })
+};
+
 module.exports.getpages = function (id,callback) {
 
     console.log({userid:id})

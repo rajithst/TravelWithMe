@@ -14,6 +14,7 @@ export class ViewpostComponent implements OnInit {
   bodyClasses:string ="fixed-sn blue-skin";
   postID: string;
   postdata:any;
+  blogdata:any;
 
 
   constructor(route: ActivatedRoute, private http:Http) {
@@ -31,6 +32,12 @@ export class ViewpostComponent implements OnInit {
     this.http.get("http://localhost:3000/blog/getPostdata/"+this.postID,{headers:headers}).subscribe((res:Response)=>{
       this.postdata = res.json().data[0];
       console.log(this.postdata)
+
+      this.http.get("http://localhost:3000/blog/getblogdata/"+this.postdata.location).subscribe(data=>{
+            this.blogdata = data.json().docs;
+            console.log(this.blogdata)
+          })
+
     })
 
   

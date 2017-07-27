@@ -93,7 +93,7 @@ module.exports.getpostData = (id,callback)=>{
 
 module.exports.getblogData = (key,callback)=>{
 
-    Blogtab.find({location:key},function(err,docs){
+    Blogtab.find({location:{'$regex': key, '$options': 'i'}},function(err,docs){
 
          if (err) throw err;
 

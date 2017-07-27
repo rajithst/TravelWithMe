@@ -102,7 +102,7 @@ router.get('/getPostdata/:id',(req,res)=>{
 
         router.get('/getblogdata/:key',(req,res)=>{
 
-            Blogpost.getpostData(req.params.key,(err,docs)=>{
+            Blogpost.getblogData(req.params.key,(err,docs)=>{
 
                 if (err){
                     throw err

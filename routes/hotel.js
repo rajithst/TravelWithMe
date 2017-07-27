@@ -21,6 +21,24 @@ router.get('/gethoteldata/:id',function(req,res){
 
 })
 
+router.get('/gethotelfeeddata/:id',function(req,res){
+
+      Bpage.getpagefeeddata(req.params.id,(err,docs)=>{
+
+                if (err){
+                    throw err
+                }
+
+                if (docs){
+
+                     res.json({docs})
+                }
+
+            })
+
+})
+
+
 router.get('/getroomdata/:id',function(req,res){
 
       Room.getroomdata(req.params.id,(err,docs)=>{
