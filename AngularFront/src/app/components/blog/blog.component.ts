@@ -149,7 +149,7 @@ export class BlogComponent implements OnInit {
 
 
     this.blogService.addBlogpost(this.model).subscribe(res=>{
-    
+      //swal("Oops...", "Something went wrong!", "error");
       this.alert = res;
     })
   }
